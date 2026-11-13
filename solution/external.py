@@ -20,13 +20,13 @@ def save_prepared(
     y_home: np.ndarray,
     period: np.ndarray,
     match_id: str,
+    extra_arrays: dict[str, np.ndarray] | None = None,
 ) -> Path:
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     names = sorted(batch.values)
     matrix, _ = batch.matrix(names)
-    np.savez_compressed(
-        output,
+    payload = dict(
         X=matrix,
         feature_names=np.asarray(names),
         y_alive=np.asarray(y_alive, dtype=np.int8),
@@ -37,6 +37,9 @@ def save_prepared(
         match_id=np.asarray(str(match_id)),
         nearest_codes=batch.nearest_codes,
     )
+    if extra_arrays:
+        payload.update({name: np.asarray(value) for name, value in extra_arrays.items()})
+    np.savez_compressed(output, **payload)
     return output
 
 
@@ -94,6 +97,20 @@ def _normalise_group(value, home_id: int, away_id: int) -> int:
     return -1
 
 
+def _stable_team_mask(labels: np.ndarray, radius: int) -> np.ndarray:
+    """Frames whose centred window is fully known and belongs to one team."""
+    labels = np.asarray(labels, dtype=np.int8)
+    index = np.arange(len(labels))
+    low = np.maximum(0, index - max(0, radius))
+    high = np.minimum(len(labels), index + max(0, radius) + 1)
+    home_sum = np.concatenate(([0], np.cumsum(labels == 1)))
+    away_sum = np.concatenate(([0], np.cumsum(labels == 0)))
+    home_count = home_sum[high] - home_sum[low]
+    away_count = away_sum[high] - away_sum[low]
+    width = high - low
+    return (home_count == width) | (away_count == width)
+
+
 def prepare_skillcorner_match(
     match_dir: str | Path,
     output: str | Path,
@@ -102,6 +119,8 @@ def prepare_skillcorner_match(
     fps: float = 10.0,
     pitch: tuple[float, float] = (105.0, 68.0),
     boundary_exclusion_s: float = 1.0,
+    possession_stability_s: float = 1.0,
+    require_phase_agreement: bool = True,
 ) -> Path:
     folder = Path(match_dir)
     match_id = folder.name
@@ -126,25 +145,43 @@ def prepare_skillcorner_match(
     for item in periods:
         period[int(item["start_frame"]): int(item["end_frame"]) + 1] = int(item["period"])
 
-    y_alive = np.full(n_frames, -1, dtype=np.int8)
-    y_alive[period > 0] = 0
+    raw_y_alive = np.full(n_frames, -1, dtype=np.int8)
+    raw_y_alive[period > 0] = 0
+    phase_y_home = np.full(n_frames, -1, dtype=np.int8)
+    phase_team_conflict = np.zeros(n_frames, dtype=bool)
     phase_path = folder / f"{match_id}_phases_of_play.csv"
     boundaries: list[int] = []
     with phase_path.open("r", encoding="utf-8-sig", newline="") as handle:
         for row in csv.DictReader(handle):
             start, stop = int(row["frame_start"]), int(row["frame_end"])
-            y_alive[max(0, start): min(n_frames, stop + 1)] = 1
+            # SkillCorner duration is (frame_end - frame_start) / fps, so intervals are half-open.
+            low, high = max(0, start), min(n_frames, stop)
+            if low >= high:
+                continue
+            raw_y_alive[low:high] = 1
+            phase_team = _normalise_group(row.get("team_in_possession_id"), home_id, away_id)
+            if phase_team >= 0:
+                existing = phase_y_home[low:high]
+                phase_team_conflict[low:high] |= (existing >= 0) & (existing != int(phase_team == HOME))
+                phase_y_home[low:high] = int(phase_team == HOME)
             boundaries.extend((start, stop))
+    phase_y_home[phase_team_conflict] = -1
+    eval_y_alive = raw_y_alive.copy()
+    eval_y_home = np.full(n_frames, -1, dtype=np.int8)
+    eval_team_known = (raw_y_alive == 1) & (phase_y_home >= 0)
+    eval_y_home[eval_team_known] = phase_y_home[eval_team_known]
+    y_alive = raw_y_alive.copy()
     exclusion = int(round(boundary_exclusion_s * fps))
     for boundary in boundaries:
         y_alive[max(0, boundary - exclusion): min(n_frames, boundary + exclusion + 1)] = -1
 
     arrays: dict[str, np.ndarray] = {}
     nearest_codes = np.full(n_frames, -1, dtype=np.int8)
-    y_home = np.full(n_frames, -1, dtype=np.int8)
+    raw_y_home = np.full(n_frames, -1, dtype=np.int8)
     frames = np.arange(n_frames, dtype=np.int32)
     ball_xy_history = np.full((n_frames, 2), np.nan)
     rows: dict[int, tuple[dict[str, float], int]] = {}
+    previous_player_position: dict[object, tuple[int, float, float]] = {}
     tracking_path = folder / f"{match_id}_tracking_extrapolated.jsonl"
     for record in _jsonl_objects(tracking_path):
         frame = int(record["frame"])
@@ -158,15 +195,25 @@ def prepare_skillcorner_match(
             ball_xy_history[frame] = ball_xy
         players = []
         for player in record.get("player_data") or []:
+            identifier = player.get("player_id", player.get("trackable_object"))
             team = _normalise_group(player.get("group_name", player.get("group")), home_id, away_id)
             if team < 0:
-                identifier = player.get("player_id", player.get("trackable_object"))
                 team = player_team.get(identifier, player_team.get(str(identifier), -1))
             if team < 0 or player.get("x") is None or player.get("y") is None:
                 continue
-            x = (float(player["x"]) + pitch[0] / 2) / pitch[0]
-            y = (float(player["y"]) + pitch[1] / 2) / pitch[1]
-            players.append((team, x, y, float(player.get("speed", np.nan))))
+            player_x_m, player_y_m = float(player["x"]), float(player["y"])
+            player_speed = float(player.get("speed", np.nan))
+            if not np.isfinite(player_speed) and identifier is not None:
+                previous = previous_player_position.get(identifier)
+                if previous is not None and previous[0] == frame - 1:
+                    player_speed = float(
+                        np.hypot(player_x_m - previous[1], player_y_m - previous[2]) * fps
+                    )
+            if identifier is not None:
+                previous_player_position[identifier] = (frame, player_x_m, player_y_m)
+            x = (player_x_m + pitch[0] / 2) / pitch[0]
+            y = (player_y_m + pitch[1] / 2) / pitch[1]
+            players.append((team, x, y, player_speed))
         row, nearest = spatial_features(ball_xy, np.nan, players, pitch, radii)
         rows[frame] = row, nearest
         possession = record.get("possession") or {}
@@ -174,7 +221,7 @@ def prepare_skillcorner_match(
             possession.get("group", possession.get("team_id")), home_id, away_id
         )
         if possession_team >= 0:
-            y_home[frame] = int(possession_team == HOME)
+            raw_y_home[frame] = int(possession_team == HOME)
 
     valid_pairs = np.isfinite(ball_xy_history[1:, 0]) & np.isfinite(ball_xy_history[:-1, 0])
     speed = np.full(n_frames, np.nan)
@@ -193,7 +240,25 @@ def prepare_skillcorner_match(
         raise ValueError(f"no tracking frames read from {tracking_path}")
     add_temporal_features(arrays, fps, temporal_windows_s, pitch)
     batch = FeatureBatch(frames, fps, arrays, nearest_codes)
-    return save_prepared(output, batch, y_alive, y_home, period, match_id)
+    stability_radius = int(round(possession_stability_s * fps))
+    stable_home = _stable_team_mask(raw_y_home, stability_radius)
+    home_eligible = (y_alive == 1) & (raw_y_home >= 0) & stable_home
+    if require_phase_agreement:
+        home_eligible &= phase_y_home == raw_y_home
+    y_home = np.full(n_frames, -1, dtype=np.int8)
+    y_home[home_eligible] = raw_y_home[home_eligible]
+    return save_prepared(
+        output, batch, y_alive, y_home, period, match_id,
+        extra_arrays={
+            "raw_y_alive": raw_y_alive,
+            "raw_y_home": raw_y_home,
+            "phase_y_home": phase_y_home,
+            "eval_y_alive": eval_y_alive,
+            "eval_y_home": eval_y_home,
+            "home_stable": stable_home.astype(np.int8),
+            "phase_team_conflict": phase_team_conflict.astype(np.int8),
+        },
+    )
 
 
 def prepare_metrica_game3(
@@ -255,5 +320,8 @@ def prepare_metrica_game3(
                 y_home[selected] = -1
     y_alive[conflict] = -1
     y_home[conflict] = -1
-    return save_prepared(output, batch, y_alive, y_home, period, "metrica-game-3")
+    return save_prepared(
+        output, batch, y_alive, y_home, period, "metrica-game-3",
+        extra_arrays={"event_conflict": conflict.astype(np.int8)},
+    )
 

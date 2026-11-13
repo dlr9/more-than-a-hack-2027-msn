@@ -82,7 +82,11 @@ def select_classifier(train_files: list[Path], validation_files: list[Path], tar
 
 
 def _truth_and_blocks(batch: dict) -> tuple[np.ndarray, list[tuple[int, int]]]:
-    known = (batch["y_alive"] >= 0) & ((batch["y_alive"] == 0) | (batch["y_home"] >= 0))
+    # Strict labels train the classifiers; the fuller phase-based surrogate is needed to assess
+    # whole spells without turning every high-confidence island into a separate possession.
+    y_alive = batch.get("eval_y_alive", batch["y_alive"])
+    y_home = batch.get("eval_y_home", batch["y_home"])
+    known = (y_alive >= 0) & ((y_alive == 0) | (y_home >= 0))
     indices = np.flatnonzero(known)
     blocks: list[tuple[int, int]] = []
     if len(indices):
@@ -95,9 +99,9 @@ def _truth_and_blocks(batch: dict) -> tuple[np.ndarray, list[tuple[int, int]]]:
             previous = index
         blocks.append((start, previous))
     truth = np.full(len(known), "X", dtype="<U1")
-    truth[batch["y_alive"] == 0] = "D"
-    truth[(batch["y_alive"] == 1) & (batch["y_home"] == 1)] = "H"
-    truth[(batch["y_alive"] == 1) & (batch["y_home"] == 0)] = "A"
+    truth[y_alive == 0] = "D"
+    truth[(y_alive == 1) & (y_home == 1)] = "H"
+    truth[(y_alive == 1) & (y_home == 0)] = "A"
     return truth, blocks
 
 

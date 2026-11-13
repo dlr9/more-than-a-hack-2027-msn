@@ -114,11 +114,17 @@ class SolutionTests(unittest.TestCase):
             prepare_skillcorner_match(
                 match, output, [1.0, 2.0], [0.2], fps=10.0,
                 pitch=(105.0, 68.0), boundary_exclusion_s=0.0,
+                possession_stability_s=0.0, require_phase_agreement=False,
             )
             with np.load(output, allow_pickle=False) as prepared:
                 self.assertEqual(prepared["nearest_codes"].tolist(), [HOME, AWAY, HOME, AWAY])
-                self.assertEqual(prepared["y_home"].tolist(), [1, 0, 1, 0])
+                self.assertEqual(prepared["raw_y_home"].tolist(), [1, 0, 1, 0])
+                self.assertEqual(prepared["y_home"].tolist(), [-1, 0, 1, -1])
                 self.assertEqual(prepared["y_alive"].tolist(), [-1, 1, 1, -1])
+                self.assertEqual(prepared["eval_y_alive"].tolist(), [1, 1, 1, 0])
+                names = prepared["feature_names"].astype(str).tolist()
+                speed_column = names.index("home_local_speed_mean_mps")
+                self.assertTrue(np.isfinite(prepared["X"][1, speed_column]))
 
     def test_submission_contract(self):
         with tempfile.TemporaryDirectory() as folder:

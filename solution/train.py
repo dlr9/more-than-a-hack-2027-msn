@@ -40,8 +40,14 @@ def main() -> None:
     if args.command == "prepare-skillcorner":
         root, output = Path(args.root), Path(args.out)
         matches = sorted(path for path in root.iterdir() if path.is_dir())
+        label_config = config["skillcorner_labels"]
         for match in matches:
-            print(prepare_skillcorner_match(match, output / f"{match.name}.npz", radii, windows))
+            print(prepare_skillcorner_match(
+                match, output / f"{match.name}.npz", radii, windows,
+                boundary_exclusion_s=float(label_config["boundary_exclusion_s"]),
+                possession_stability_s=float(label_config["possession_stability_s"]),
+                require_phase_agreement=bool(label_config["require_phase_agreement"]),
+            ))
         split = deterministic_match_split([path.name for path in matches], config["random_seed"])
         print(write_split(output / "split.json", split, config["random_seed"]))
     elif args.command == "prepare-metrica":

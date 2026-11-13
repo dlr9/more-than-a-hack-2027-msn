@@ -9,6 +9,11 @@
   "second_half_kickoff_frame": 113742,
   "distance_radii_m": [1.0, 2.0, 3.0, 5.0, 10.0],
   "temporal_windows_s": [0.2, 0.5, 1.0],
+  "skillcorner_labels": {
+    "boundary_exclusion_s": 1.0,
+    "possession_stability_s": 1.0,
+    "require_phase_agreement": true
+  },
   "random_seed": 2027,
   "model_grid": {
     "max_leaf_nodes": [15, 31],
