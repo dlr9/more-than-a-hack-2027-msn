@@ -3,750 +3,140 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>More than a Hack 2027 初赛 Solution 技术报告</title>
+  <title>More than a Hack 2027 初赛：完整技术方案与模型报告</title>
   <style>
-    :root {
-      --navy: #102a43;
-      --blue: #1769aa;
-      --cyan: #0b7285;
-      --green: #237a57;
-      --amber: #a65f00;
-      --red: #b42318;
-      --ink: #243b53;
-      --muted: #627d98;
-      --line: #d9e2ec;
-      --paper: #ffffff;
-      --wash: #f4f7fa;
-      --code: #122230;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--wash);
-      font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.72;
-    }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    code, pre { font-family: Consolas, "SFMono-Regular", monospace; }
-    code {
-      padding: .08em .32em;
-      border-radius: 4px;
-      background: #eaf2f8;
-      color: #173f5f;
-    }
-    pre {
-      overflow-x: auto;
-      margin: 14px 0;
-      padding: 16px 18px;
-      border-radius: 9px;
-      color: #e8f1f8;
-      background: var(--code);
-      line-height: 1.55;
-      font-size: 14px;
-    }
-    pre code { padding: 0; color: inherit; background: transparent; }
-
-    .hero {
-      padding: 54px 24px 46px;
-      color: white;
-      background:
-        radial-gradient(circle at 82% 16%, rgba(69, 183, 209, .32), transparent 28%),
-        linear-gradient(135deg, #0d2538 0%, #123f5a 58%, #0b7285 100%);
-    }
-    .hero-inner, .page { max-width: 1180px; margin: 0 auto; }
-    .eyebrow {
-      margin: 0 0 10px;
-      color: #9ee7f3;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    h1 { margin: 0; font-size: clamp(30px, 5vw, 51px); line-height: 1.16; }
-    .subtitle { max-width: 860px; margin: 18px 0 0; color: #d9edf3; font-size: 19px; }
-    .meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
-    .meta span {
-      padding: 5px 10px;
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      font-size: 13px;
-    }
-
-    .page { padding: 28px 22px 70px; }
-    .toc, section {
-      margin: 20px 0;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--paper);
-      box-shadow: 0 4px 18px rgba(16, 42, 67, .045);
-    }
-    section { scroll-margin-top: 12px; }
-    h2 { margin: 0 0 18px; color: var(--navy); font-size: 27px; line-height: 1.3; }
-    h3 { margin: 27px 0 10px; color: #194d6b; font-size: 20px; }
-    h4 { margin: 20px 0 8px; color: var(--ink); font-size: 17px; }
-    p { margin: 10px 0; }
-    ul, ol { padding-left: 1.35em; }
-    li { margin: 5px 0; }
-    .toc ol { columns: 2; column-gap: 42px; margin-bottom: 0; }
-
-    .summary-grid, .stage-grid, .module-grid, .metric-grid {
-      display: grid;
-      gap: 14px;
-    }
-    .summary-grid { grid-template-columns: repeat(4, 1fr); }
-    .stage-grid { grid-template-columns: repeat(2, 1fr); }
-    .module-grid { grid-template-columns: repeat(2, 1fr); }
-    .metric-grid { grid-template-columns: repeat(2, 1fr); }
-    .card {
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fbfdff;
-    }
-    .card h3, .card h4 { margin-top: 0; }
-    .big { margin-top: 2px; color: var(--navy); font-size: 27px; font-weight: 750; }
-    .small { color: var(--muted); font-size: 13px; }
-
-    .badge {
-      display: inline-block;
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: .02em;
-    }
-    .done { color: #145c3c; background: #dff5e9; }
-    .candidate { color: #875000; background: #fff0cf; }
-    .ready { color: #135b72; background: #dff4fa; }
-    .pending { color: #7d2f2f; background: #fde8e7; }
-
-    .callout {
-      margin: 16px 0;
-      padding: 14px 17px;
-      border-left: 4px solid var(--cyan);
-      border-radius: 4px 9px 9px 4px;
-      background: #eef9fb;
-    }
-    .callout.warning { border-color: var(--amber); background: #fff8e8; }
-    .callout.success { border-color: var(--green); background: #eef9f3; }
-    .callout strong { color: var(--navy); }
-
-    .flow {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 12px 0 4px;
-    }
-    .flow-box {
-      min-width: 150px;
-      padding: 14px 12px;
-      border: 1px solid #b8d7e5;
-      border-radius: 9px;
-      background: #f2fafd;
-      text-align: center;
-      font-weight: 700;
-    }
-    .flow-box small { display: block; margin-top: 5px; color: var(--muted); font-weight: 400; }
-    .arrow { align-self: center; color: var(--blue); font-size: 25px; font-weight: 700; }
-
-    table {
-      width: 100%;
-      margin: 14px 0;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    th, td { padding: 10px 11px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
-    th { color: var(--navy); background: #edf4f8; }
-    tbody tr:nth-child(even) { background: #fbfdff; }
-    .num { text-align: right; font-variant-numeric: tabular-nums; }
-    .nowrap { white-space: nowrap; }
-
-    .file { font-weight: 750; color: #174a68; }
-    .status-list { list-style: none; padding: 0; }
-    .status-list li { position: relative; padding-left: 25px; }
-    .status-list li::before {
-      position: absolute;
-      left: 0;
-      top: .05em;
-      color: var(--green);
-      content: "✓";
-      font-weight: 900;
-    }
-    .status-list li.wait::before { color: var(--amber); content: "○"; }
-    .hash { word-break: break-all; font-size: 13px; }
-    footer { margin-top: 22px; color: var(--muted); text-align: center; font-size: 13px; }
-
-    @media (max-width: 900px) {
-      .summary-grid { grid-template-columns: repeat(2, 1fr); }
-      .module-grid, .stage-grid, .metric-grid { grid-template-columns: 1fr; }
-      .toc ol { columns: 1; }
-      .flow { justify-content: flex-start; }
-    }
-    @media (max-width: 560px) {
-      body { font-size: 15px; }
-      .hero { padding: 38px 18px; }
-      .page { padding: 18px 10px 50px; }
-      .toc, section { padding: 20px 16px; border-radius: 8px; }
-      .summary-grid { grid-template-columns: 1fr; }
-    }
-    @media print {
-      body { background: white; font-size: 11pt; }
-      .hero { padding: 26px; background: #123f5a !important; print-color-adjust: exact; }
-      .page { max-width: none; padding: 0; }
-      .toc, section { box-shadow: none; break-inside: avoid; margin: 10px 0; }
-      h2, h3 { break-after: avoid; }
-      pre, table, .card, .callout { break-inside: avoid; }
-      a { color: inherit; }
-    }
+    :root{--navy:#102a43;--blue:#1769aa;--cyan:#087f8c;--green:#237a57;--green-bg:#edf8f2;--amber:#a65f00;--amber-bg:#fff7e6;--red:#b42318;--red-bg:#fff1f0;--ink:#243b53;--muted:#627d98;--line:#d9e2ec;--paper:#fff;--wash:#f4f7fa;--code:#122230}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--wash);font-family:"Segoe UI","Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:16px;line-height:1.72}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}code,pre{font-family:Consolas,"SFMono-Regular",monospace}code{padding:.08em .34em;border-radius:4px;color:#173f5f;background:#eaf2f8}pre{overflow-x:auto;margin:14px 0;padding:16px 18px;border-radius:9px;color:#e8f1f8;background:var(--code);line-height:1.55;font-size:14px}pre code{padding:0;color:inherit;background:transparent}
+    .hero{padding:54px 24px 46px;color:#fff;background:radial-gradient(circle at 82% 16%,rgba(69,183,209,.32),transparent 28%),linear-gradient(135deg,#0d2538 0%,#123f5a 58%,#087f8c 100%)}.hero-inner,.page{max-width:1180px;margin:0 auto}.eyebrow{margin:0 0 10px;color:#9ee7f3;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}h1{margin:0;font-size:clamp(30px,5vw,50px);line-height:1.16}.subtitle{max-width:920px;margin:18px 0 0;color:#d9edf3;font-size:19px}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.meta span{padding:5px 10px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08);font-size:13px}
+    .page{padding:28px 22px 70px}.toc,section{margin:20px 0;padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--paper);box-shadow:0 4px 18px rgba(16,42,67,.045)}section{scroll-margin-top:12px}h2{margin:0 0 18px;color:var(--navy);font-size:27px;line-height:1.3}h3{margin:27px 0 10px;color:#194d6b;font-size:20px}p{margin:10px 0}ul,ol{padding-left:1.35em}li{margin:5px 0}.toc ol{columns:2;column-gap:42px;margin-bottom:0}
+    .grid-2,.grid-3,.grid-4,.metric-grid,.stage-grid{display:grid;gap:15px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4,.stage-grid,.metric-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.card,.metric,.stage{padding:17px;border:1px solid var(--line);border-radius:10px;background:#fbfdff}.card h3,.stage h3{margin-top:0}.metric .value{display:block;color:var(--navy);font-size:25px;font-weight:800;line-height:1.2}.metric .label{display:block;margin-top:5px;color:var(--muted);font-size:13px}.stage .letter{color:var(--cyan);font-size:28px;font-weight:800}.stage p{margin-bottom:0;font-size:14px}
+    .badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;font-weight:700;vertical-align:middle}.done{color:var(--green);background:var(--green-bg)}.candidate{color:var(--amber);background:var(--amber-bg)}.risk{color:var(--red);background:var(--red-bg)}.callout{margin:16px 0;padding:15px 18px;border-left:4px solid var(--blue);border-radius:4px 8px 8px 4px;background:#eef6fc}.callout.good{border-color:var(--green);background:var(--green-bg)}.callout.warn{border-color:var(--amber);background:var(--amber-bg)}.callout.danger{border-color:var(--red);background:var(--red-bg)}
+    .flow{display:flex;align-items:stretch;gap:8px;overflow-x:auto;padding:12px 0 5px}.flow-box{min-width:145px;flex:1;padding:14px 12px;border:1px solid #b8d4e6;border-radius:9px;color:#153e56;background:#f1f8fc;text-align:center;font-weight:700}.flow-box small{display:block;margin-top:4px;color:var(--muted);font-weight:400}.arrow{align-self:center;color:var(--cyan);font-size:23px}.table-wrap{overflow-x:auto;margin:14px 0}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px 11px;border:1px solid var(--line);text-align:left}th{color:var(--navy);background:#eef3f7}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}tr.total td{font-weight:800;background:#f7fafc}.up{color:var(--green);font-weight:700}.down{color:var(--red);font-weight:700}.muted{color:var(--muted)}.small{color:var(--muted);font-size:13px}.feature-list code{white-space:nowrap}footer{margin-top:26px;color:var(--muted);text-align:center;font-size:13px}
+    @media(max-width:900px){.grid-4,.stage-grid,.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:1fr}}@media(max-width:650px){.grid-2,.grid-4,.stage-grid,.metric-grid{grid-template-columns:1fr}.toc ol{columns:1}.toc,section{padding:21px 17px}.hero{padding:40px 18px 34px}}@media print{body{color:#111;background:#fff;font-size:11pt}.hero{padding:28px 0;color:#111;background:#fff;border-bottom:2px solid #222}.hero-inner,.page{max-width:none}.eyebrow,.subtitle{color:#333}.meta span{border-color:#aaa;background:#fff}.page{padding:0}.toc,section{box-shadow:none;break-inside:avoid}a{color:inherit}.flow{overflow:visible}}
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Team Technical Handoff</p>
-      <h1>More than a Hack 2027<br>初赛 Solution 技术报告</h1>
-      <p class="subtitle">从官方 baseline 的字节级复现，到规则增强、跨供应商特征协议、双分类器和三状态时序解码的当前实现说明。</p>
-      <div class="meta">
-        <span>报告日期：2026-11-13</span>
-        <span>目标比赛：BAR-ATH</span>
-        <span>战术视频：25 fps / 199,319 帧</span>
-        <span>工作目录：E:\python_project\hack2027</span>
-      </div>
-    </div>
-  </header>
+  <header class="hero"><div class="hero-inner">
+    <p class="eyebrow">More than a Hack 2027 · Phase 1</p>
+    <h1>控球识别方案：完整技术框架与模型报告</h1>
+    <p class="subtitle">从官方 baseline 精确复现、规则增强、外部弱监督样本构造，到双概率模型与三状态时序解码；同时记录真实结果、未解决问题和下一步边界。</p>
+    <div class="meta"><span>报告日期：2026-11-13</span><span>代码：6a1b639</span><span>数据标签：external-training-samples-v1</span><span>模型标签：model-v1-promoted</span><span>随机种子：2027</span></div>
+  </div></header>
 
   <main class="page">
-    <nav class="toc" aria-label="目录">
-      <h2>目录</h2>
-      <ol>
-        <li><a href="#executive">执行摘要</a></li>
-        <li><a href="#goal">任务理解与设计原则</a></li>
-        <li><a href="#architecture">总体架构与数据流</a></li>
-        <li><a href="#stages">四阶段完成情况</a></li>
-        <li><a href="#modules">代码模块说明</a></li>
-        <li><a href="#features">统一特征协议</a></li>
-        <li><a href="#models">监督模型与 Viterbi</a></li>
-        <li><a href="#metrics">评估指标与公开真值</a></li>
-        <li><a href="#results">已完成结果</a></li>
-        <li><a href="#usage">环境与使用命令</a></li>
-        <li><a href="#tests">测试与可复现性</a></li>
-        <li><a href="#limits">限制、风险与下一步</a></li>
-        <li><a href="#handoff">建议的三人协作方式</a></li>
-      </ol>
-    </nav>
+    <nav class="toc"><h2>目录</h2><ol>
+      <li><a href="#summary">结论摘要</a></li><li><a href="#problem">任务理解与指标</a></li><li><a href="#framework">总体框架与阶段状态</a></li><li><a href="#data">数据来源、审计与拆分</a></li><li><a href="#labels">训练标签构造与清洗</a></li><li><a href="#features">统一 44 维特征</a></li><li><a href="#models">模型选择与训练方案</a></li><li><a href="#external-results">外部验证与测试结果</a></li><li><a href="#public-results">官方 5 分钟真值结果</a></li><li><a href="#limitations">不足与局限性</a></li><li><a href="#decision">当前决策与下一步</a></li><li><a href="#reproduce">产物、哈希与复现</a></li>
+    </ol></nav>
 
-    <section id="executive">
-      <h2>1. 执行摘要</h2>
-      <div class="summary-grid">
-        <div class="card">
-          <span class="badge done">已完成</span>
-          <div class="big">阶段 A</div>
-          <div>官方 <code>smooth50</code> 精确复现</div>
-        </div>
-        <div class="card">
-          <span class="badge candidate">候选</span>
-          <div class="big">阶段 B</div>
-          <div>规则增强 <code>heuristic_v1</code></div>
-        </div>
-        <div class="card">
-          <span class="badge ready">代码就绪</span>
-          <div class="big">阶段 C</div>
-          <div>SkillCorner / Metrica 转换</div>
-        </div>
-        <div class="card">
-          <span class="badge ready">代码就绪</span>
-          <div class="big">阶段 D</div>
-          <div>双模型、Viterbi、晋级门槛</div>
-        </div>
-      </div>
-
-      <div class="callout success">
-        <strong>当前最可靠成果：</strong>自行实现的 <code>reference_smooth50.csv</code> 与官方 <code>baseline_smooth50.csv</code> 字节级完全一致，SHA256 相同。这说明 ATD 解析、主客队映射、帧编号、米制距离和多数投票均已正确复现。
-      </div>
-      <div class="callout warning">
-        <strong>必须区分“代码完成”和“模型验证完成”：</strong>阶段 C、D 已具备真实的数据转换、训练、选参、评估和模型落盘代码，并通过合成数据端到端测试；但外部数据尚未下载和运行，所以当前没有真实训练模型，也没有被标记为 <code>promoted=true</code> 的最终模型。
-      </div>
+    <section id="summary"><h2>1. 结论摘要</h2>
+      <div class="metric-grid"><div class="metric"><span class="value">0.8674</span><span class="label">SkillCorner test · model MacroF1</span></div><div class="metric"><span class="value">0.4886</span><span class="label">SkillCorner test · model SpellF1</span></div><div class="metric"><span class="value">0.7597</span><span class="label">官方 5 分钟 · model MacroF1</span></div><div class="metric"><span class="value">0.2533</span><span class="label">官方 5 分钟 · model SpellF1</span></div></div>
+      <div class="callout good"><strong>已经完成：</strong>阶段 A 与官方 <code>baseline_smooth50</code> 字节级一致；外部数据已审计、清洗和按比赛拆分；两个概率分类器已训练；Viterbi 参数已在外部验证集选择；Metrica 跨供应商门槛通过；<code>model_v1</code> 已晋级并生成确定性目标候选。</div>
+      <div class="callout warn"><strong>必须保留的事实：</strong>模型在外部 SkillCorner test 上同时提高 MacroF1 与 SpellF1，但在赛事官方 5 分钟上，MacroF1 从 <code>0.6207</code> 提升到 <code>0.7597</code>，SpellF1 却从 <code>0.3256</code> 降到 <code>0.2533</code>。模型更会识别死球，但目标域 possession 被切得过碎。</div>
+      <div class="callout danger"><strong>不能做的结论：</strong>不能把 SkillCorner 的代理时间线视为赛事真值；不能宣称阶段 B 已优于阶段 A；不能依据公开 5 分钟继续调参；也不能把更准确的总体控球比例误解为逐帧控球队判断已经提升。</div>
     </section>
 
-    <section id="goal">
-      <h2>2. 任务理解与设计原则</h2>
-      <p>提交文件需要针对战术视频的每一帧输出一个标签：</p>
-      <ul>
-        <li><code>H</code>：主队控球。</li>
-        <li><code>A</code>：客队控球。</li>
-        <li><code>D</code>：死球或比赛未处于活球控球状态。</li>
-        <li><code>X</code>：不评分区间或主动弃权。</li>
-      </ul>
-      <p>当前实现遵循以下原则：</p>
-      <ol>
-        <li><strong>先建立可信下限。</strong>不修改官方 <code>starter/baseline.py</code>，在独立模块内精确复现。</li>
-        <li><strong>每次增强都可回退。</strong>reference、heuristic、model/final 是独立模式。</li>
-        <li><strong>公开五分钟不参与选参。</strong>它只适合排查帧对齐、主客映射和输出异常。</li>
-        <li><strong>外部数据按比赛拆分。</strong>禁止同一比赛的帧泄漏到训练集和验证集。</li>
-        <li><strong>避免供应商特有身份特征。</strong>模型不使用球员 ID、号码、球队名称或固定进攻方向。</li>
-        <li><strong>逐帧概率与时序约束分离。</strong>模型负责估计概率，Viterbi 负责生成连续 possession。</li>
-      </ol>
+    <section id="problem"><h2>2. 任务理解与评价指标</h2>
+      <p>目标是为目标比赛每个视频帧输出 <code>H</code>、<code>A</code>、<code>D</code> 或 <code>X</code>：</p>
+      <ul><li><strong>H / A：</strong>活球时主队或客队拥有 controlled possession。</li><li><strong>D：</strong>死球；即使供应商字段仍写有球队，赛事标签也必须是 D。</li><li><strong>X：</strong>官方不评分区间。</li><li>争抢、折射、loose ball 不立即换权；只有另一方建立 controlled possession 才切换。</li></ul>
+      <div class="grid-2"><div class="card"><h3>MacroF1：帧级分类</h3><p>分别计算 H/A/D 的 F1 后取平均，关注每个状态有多少帧预测正确。它对短暂抖动不如 SpellF1 敏感。</p></div><div class="card"><h3>SpellF1：连续片段</h3><p>关注整段 possession 是否与真值在时间上匹配。一个真实片段被切成多个短片段，即使大多数帧标签正确，也会明显降分。</p></div></div>
+      <p class="small">赛事定义与评分细节见本地 <a href="../CHALLENGE.md">CHALLENGE.md</a>、<a href="../EVALUATION.md">EVALUATION.md</a>，以及<a href="https://github.com/metrica-sports/more-than-a-hack-2027">官方仓库</a>。</p>
     </section>
 
-    <section id="architecture">
-      <h2>3. 总体架构与数据流</h2>
-
-      <h3>3.1 目标比赛：reference / heuristic</h3>
-      <div class="flow" aria-label="目标比赛数据流">
-        <div class="flow-box">ATD XML + TXT<small>球队与逐帧轨迹</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">ATD 解析<small>frame_id − 1，米制坐标</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">最近球员 + 特征<small>H/A/NOBODY 与空间特征</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">smooth50 / 规则<small>reference 或 heuristic</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">提交 CSV<small>frame,label</small></div>
-      </div>
-
-      <h3>3.2 外部监督：SkillCorner / Metrica</h3>
-      <div class="flow" aria-label="监督模型数据流">
-        <div class="flow-box">外部比赛<small>tracking + phase/event</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">统一 NPZ<small>X / y_alive / y_home</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">两个概率模型<small>P(alive), P(home|alive)</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">三状态发射概率<small>P(H), P(A), P(D)</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">Viterbi<small>半场重置与切换惩罚</small></div>
-        <div class="arrow">→</div>
-        <div class="flow-box">晋级门槛<small>SkillCorner + Metrica</small></div>
-      </div>
-
-      <h3>3.3 输出层级</h3>
-      <table>
-        <thead><tr><th>运行模式</th><th>用途</th><th>是否允许作为最终模型</th></tr></thead>
-        <tbody>
-          <tr><td><code>reference</code></td><td>复现官方 baseline，作为最低回退点。</td><td>可以；它是已验证下限。</td></tr>
-          <tr><td><code>heuristic</code></td><td>规则增强候选，加入缺球和 Smart Tagging 规则。</td><td>需要外部验证后再决定。</td></tr>
-          <tr><td><code>model</code></td><td>允许加载尚未晋级的模型，用于本地诊断。</td><td>不应直接作为最终提交。</td></tr>
-          <tr><td><code>final</code></td><td>加载监督模型并生成正式候选。</td><td>只有模型元数据中 <code>promoted=true</code> 才允许运行。</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="stages">
-      <h2>4. 四阶段完成情况</h2>
+    <section id="framework"><h2>3. 总体框架与阶段状态</h2>
       <div class="stage-grid">
-        <article class="card">
-          <h3>阶段 A：官方 baseline 复现 <span class="badge done">完成</span></h3>
-          <ul class="status-list">
-            <li>解析 ATD XML，建立 track slot 到主客队的映射。</li>
-            <li>流式解析 ATD TXT，执行 <code>video_frame = frame_id - 1</code>。</li>
-            <li>按 105.3 × 68 米缩放坐标并寻找最近球员。</li>
-            <li>实现官方 ±50 帧多数投票，平局偏向 H。</li>
-            <li>与官方 CSV 字节级一致，通过 validator。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>阶段 B：heuristic_v1 <span class="badge candidate">候选</span></h3>
-          <ul class="status-list">
-            <li>缺球时保留上一个 H/A 的半场内弱先验。</li>
-            <li>清理少于 12 帧、两侧标签相同的 H/A 抖动。</li>
-            <li>使用 Smart Tagging SET PIECES 构造 D 证据。</li>
-            <li>用球速和未来持续性检测重新开球。</li>
-            <li>评分区间外输出 X，第二半场开球前输出 D。</li>
-            <li class="wait">尚未用独立外部比赛证明优于 reference。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>阶段 C：外部数据 <span class="badge ready">代码就绪</span></h3>
-          <ul class="status-list">
-            <li>SkillCorner tracking / phases 转统一 NPZ。</li>
-            <li>phase 边界前后 1 秒排除。</li>
-            <li>按比赛用种子 2027 拆分 train/validation/test。</li>
-            <li>Metrica PASS/CARRY 与 BALL OUT/SET PIECE 构造高置信标签。</li>
-            <li>重叠、冲突或球队未知帧全部排除。</li>
-            <li class="wait">真实外部数据尚未下载和转换。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>阶段 D：监督模型 <span class="badge ready">代码就绪</span></h3>
-          <ul class="status-list">
-            <li>两个 HistGradientBoostingClassifier。</li>
-            <li>固定网格、逆类别频率权重与随机种子。</li>
-            <li>概率组合成 H/A/D 三状态发射概率。</li>
-            <li>Viterbi 在验证比赛上选择转移惩罚。</li>
-            <li>实现 SkillCorner 与 Metrica 晋级门槛。</li>
-            <li>合成数据端到端训练测试通过。</li>
-            <li class="wait">真实模型尚未训练，当前无 final 模型。</li>
-          </ul>
-        </article>
+        <div class="stage"><div class="letter">A</div><h3>官方复现 <span class="badge done">完成</span></h3><p>ATD 解析、track slot 主客映射、米制最近球员、<code>±50</code> 帧多数投票；输出与官方 smooth50 完全一致。</p></div>
+        <div class="stage"><div class="letter">B</div><h3>规则增强 <span class="badge candidate">未晋级</span></h3><p>缺球弱先验、短 H/A 抖动清理、Smart Tagging 定位球与重新开球、评分区间约束；已生成合法候选，但未完成独立真值评分。</p></div>
+        <div class="stage"><div class="letter">C</div><h3>外部样本 <span class="badge done">完成</span></h3><p>SkillCorner 20 场和 Metrica Game 3 转成共同 NPZ 协议；严格标签与弱监督完整时间线分开保存。</p></div>
+        <div class="stage"><div class="letter">D</div><h3>监督模型 <span class="badge done">已晋级</span></h3><p>两个 HistGradientBoosting 分类器、三状态发射概率、Viterbi 解码、外部晋级门槛和目标候选生成。</p></div>
       </div>
+      <h3>3.1 最终模型数据流</h3><div class="flow"><div class="flow-box">ATD tracking<small>球与球员逐帧坐标</small></div><div class="arrow">→</div><div class="flow-box">44 维特征<small>空间 + 历史窗口</small></div><div class="arrow">→</div><div class="flow-box">两个分类器<small>P(alive), P(home|alive)</small></div><div class="arrow">→</div><div class="flow-box">三状态概率<small>P(H), P(A), P(D)</small></div><div class="arrow">→</div><div class="flow-box">Viterbi<small>半场内独立解码</small></div><div class="arrow">→</div><div class="flow-box">提交 CSV<small>H / A / D / X</small></div></div>
+      <pre><code>P(H) = P(alive) × P(home | alive)
+P(A) = P(alive) × (1 - P(home | alive))
+P(D) = 1 - P(alive)</code></pre>
+      <h3>3.2 代码模块职责</h3><div class="table-wrap"><table><thead><tr><th>模块</th><th>职责</th><th>当前用途</th></tr></thead><tbody>
+        <tr><td><code>solution/atd.py</code></td><td>解析目标 ATD、帧号转换、主客映射、球速</td><td>A/B/model 共用</td></tr><tr><td><code>solution/features.py</code></td><td>供应商无关的 44 维空间与历史特征</td><td>三种数据共用</td></tr><tr><td><code>solution/heuristic.py</code></td><td>smooth50、短片段清理、Smart Tagging 规则</td><td>阶段 A/B</td></tr><tr><td><code>solution/external.py</code></td><td>外部数据转换、严格标签与弱时间线构造</td><td>阶段 C</td></tr><tr><td><code>solution/modeling.py</code></td><td>分类器选参、训练、验证门槛、模型保存</td><td>阶段 D</td></tr><tr><td><code>solution/decoder.py</code></td><td>三状态概率与 Viterbi 解码</td><td>阶段 D</td></tr><tr><td><code>solution/run.py</code></td><td>reference / heuristic / model / final 统一入口</td><td>生成候选</td></tr><tr><td><code>solution/train.py</code></td><td>外部数据准备和训练 CLI</td><td>复现训练</td></tr>
+      </tbody></table></div>
     </section>
 
-    <section id="modules">
-      <h2>5. 代码模块说明：每部分做什么、怎么使用</h2>
-      <div class="module-grid">
-        <article class="card">
-          <h3><span class="file">solution/run.py</span></h3>
-          <p><strong>职责：</strong>统一推理入口。读取配置和目标数据，根据模式调用 reference、heuristic 或模型管线，最后写出 CSV、标签计数和 SHA256。</p>
-          <p><strong>使用：</strong><code>python -m solution.run --mode ... --out ...</code></p>
-          <p><strong>保护：</strong><code>final</code> 模式会拒绝未通过晋级门槛的模型。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/atd.py</span></h3>
-          <p><strong>职责：</strong>解析 ATD XML/TXT；映射 track slot；按视频帧对齐；计算逐帧空间特征；在原始球速缺失时用连续球位置重建速度。</p>
-          <p><strong>输入：</strong>metadata XML、raw TXT、帧数、球场尺寸、fps。</p>
-          <p><strong>输出：</strong><code>FeatureBatch</code>，包含特征数组与最近球队代码。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/features.py</span></h3>
-          <p><strong>职责：</strong>提供与数据供应商无关的统一特征计算；同一字段可用于目标 ATD、SkillCorner 和 Metrica。</p>
-          <p><strong>核心：</strong><code>spatial_features()</code> 计算单帧特征，<code>add_temporal_features()</code> 计算 0.2/0.5/1 秒窗口特征。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/heuristic.py</span></h3>
-          <p><strong>职责：</strong>实现官方多数投票和规则增强，包括短片段清理、缺球弱先验、重新开球检测和 Smart Tagging 覆盖。</p>
-          <p><strong>使用：</strong>通常由 <code>run.py --mode reference/heuristic</code> 调用，不需要单独运行。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/external.py</span></h3>
-          <p><strong>职责：</strong>把 SkillCorner 和 Metrica Game 3 转成共同 NPZ 协议，并保存比赛级标签、半场和最近球员 baseline。</p>
-          <p><strong>SkillCorner：</strong>possession.group 提供 H/A；phases-of-play 提供 alive/dead 候选。</p>
-          <p><strong>Metrica：</strong>仅作为跨供应商高置信度检查。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/train.py</span></h3>
-          <p><strong>职责：</strong>外部数据准备和训练的命令入口。</p>
-          <p><strong>子命令：</strong><code>prepare-skillcorner</code>、<code>prepare-metrica</code>、<code>fit</code>。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/modeling.py</span></h3>
-          <p><strong>职责：</strong>训练两个分类器、选择概率模型、选择 Viterbi 参数、与 nearest-player + smooth50 比较、执行晋级门槛、保存模型和报告。</p>
-          <p><strong>输出：</strong><code>alive.joblib</code>、<code>home.joblib</code>、<code>training_report.json</code>。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/decoder.py</span></h3>
-          <p><strong>职责：</strong>把两个概率头组合为 H/A/D 发射概率，并在每个半场独立运行 Viterbi。</p>
-          <p><strong>保证：</strong>块外默认 X，状态不会跨越中场。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/submission.py</span></h3>
-          <p><strong>职责：</strong>统一输出 <code>frame,label</code> CSV、检查标签只含 H/A/D/X、计算 SHA256。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">solution/config.json</span></h3>
-          <p><strong>职责：</strong>集中管理可调参数，避免常数散落在源码。</p>
-          <p><strong>内容：</strong>smooth50、短片段 12 帧、重新开球 2 m/s、特征窗口、随机种子、模型网格和 Viterbi 网格。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">tests/test_solution.py</span></h3>
-          <p><strong>职责：</strong>覆盖帧映射、米制距离、主客映射、缺球、短片段、Viterbi、比赛拆分、CSV 契约和训练冒烟测试。</p>
-        </article>
-        <article class="card">
-          <h3><span class="file">environment-solution.yml / requirements-solution.txt</span></h3>
-          <p><strong>职责：</strong>固定 Python 和主要依赖版本，保证三名队员的训练与推理环境一致。</p>
-        </article>
-      </div>
+    <section id="data"><h2>4. 数据来源、审计与拆分</h2>
+      <div class="grid-3"><div class="card"><h3>赛事目标数据</h3><p>用于最终推理，不用于模型拟合或参数选择。公开 5 分钟仅在模型冻结后进行一次管线检查。</p></div><div class="card"><h3>SkillCorner</h3><p>20 场、1,241,620 帧。用于训练两个分类器、选择超参数和 Viterbi；固定 commit <code>4340d274…</code>。</p></div><div class="card"><h3>Metrica Game 3</h3><p>只做跨供应商高置信 H/A 退化检查，不参与模型拟合；固定 commit <code>e706dd50…</code>。</p></div></div>
+      <h3>4.1 数据完整性</h3><ul><li>SkillCorner 20 个 tracking 文件共 1,823,448,331 字节，全部通过官方 LFS SHA256 校验。</li><li>20 场统一生成 44 特征 schema；Metrica 与 SkillCorner schema 一致。</li><li>清洗后 SkillCorner NPZ 约 161.1 MiB；原始数据、缓存和模型均保留在 Git 忽略目录。</li><li>来源、commit、archive 哈希和清洗统计记录于 <code>docs/external_data_audit.md</code>。</li></ul>
+      <h3>4.2 比赛级拆分</h3><p>固定随机种子 <code>2027</code>，按完整比赛拆分，禁止相邻帧跨集合造成泄漏：</p><div class="table-wrap"><table><thead><tr><th>集合</th><th class="num">比赛数</th><th class="num">alive</th><th class="num">dead</th><th class="num">H</th><th class="num">A</th><th>用途</th></tr></thead><tbody><tr><td>train</td><td class="num">14</td><td class="num">328,121</td><td class="num">353,896</td><td class="num">129,675</td><td class="num">128,553</td><td>模型拟合</td></tr><tr><td>validation</td><td class="num">3</td><td class="num">68,416</td><td class="num">74,514</td><td class="num">30,972</td><td class="num">19,367</td><td>模型与 Viterbi 选择</td></tr><tr><td>test</td><td class="num">3</td><td class="num">63,177</td><td class="num">80,321</td><td class="num">22,164</td><td class="num">25,537</td><td>晋级后一次性确认</td></tr></tbody></table></div><p class="small">Test 已读取一次，后续 model_v2 不得继续使用它选参数或选版本。</p>
     </section>
 
-    <section id="features">
-      <h2>6. 统一逐帧特征协议</h2>
-      <p>模型特征不依赖具体球员或球队身份。字段按类别如下：</p>
-      <table>
-        <thead><tr><th>类别</th><th>主要字段</th><th>用途</th></tr></thead>
-        <tbody>
-          <tr><td>球观测</td><td><code>ball_visible</code>、<code>ball_speed_mps</code>、<code>ball_speed_missing</code></td><td>区分可靠球运动、缺球和速度重建。</td></tr>
-          <tr><td>最近距离</td><td>双方第 1/2/3 名球员距离、前三人平均距离</td><td>判断哪一方在局部空间内更可能控制球。</td></tr>
-          <tr><td>距离差</td><td><code>nearest_distance_margin_m</code></td><td>表示主客队最近球员相对优势。</td></tr>
-          <tr><td>局部密度</td><td>双方在 1/2/3/5/10 米内人数</td><td>描述争抢、压迫和局部人数结构。</td></tr>
-          <tr><td>可见与速度</td><td>双方可见人数、双方 5 米局部平均速度</td><td>处理广播视野差异和局部动态。</td></tr>
-          <tr><td>场地边界</td><td>球到四条边界的米制距离</td><td>辅助识别边线、底线和潜在死球。</td></tr>
-          <tr><td>时间窗口</td><td>0.2/0.5/1 秒可见率、距离均值、球位移</td><td>让单帧模型观察短期运动上下文。</td></tr>
-        </tbody>
-      </table>
-      <div class="callout">
-        <strong>域适配原则：</strong>不使用 player ID、球衣号码、具体球队名称或固定进攻方向。match ID 只用于比赛级拆分和审计，不作为训练特征。
-      </div>
+    <section id="labels"><h2>5. 训练标签构造与样本选取</h2>
+      <h3>5.1 语义风险</h3><p>赛事的 possession 是 corrected tracking 下的 controlled-possession 定义；SkillCorner 的 <code>possession.group</code> 是供应商逐帧估计，公开文档没有承诺两者使用相同换权规则。因此 SkillCorner 只被视为<strong>弱监督</strong>，不直接当成赛事真值。</p>
+      <h3>5.2 Alive/dead 严格标签</h3><ol><li>SkillCorner phase 区间按 <code>[frame_start, frame_end)</code> 解释。</li><li>phase 内部是 raw alive；正式半场内没有 phase 的帧是 raw dead 候选。</li><li>每个 phase 起止边界前后 1 秒全部设为 unknown，不训练 alive/dead 或 H/A。</li><li>最终全量严格样本：alive <strong>459,714</strong>，dead <strong>508,731</strong>。</li></ol>
+      <h3>5.3 Home/away 高置信标签</h3><p>只有同时满足以下条件的帧才训练 <code>P(home | alive)</code>：</p><ul><li>当前帧是 clean alive；</li><li><code>possession.group</code> 已知；</li><li>以当前帧为中心前后 1 秒均为同一球队；</li><li><code>possession.group</code> 与 phase 的 <code>team_in_possession_id</code> 一致；</li><li>不在 phase 边界、换权附近或来源冲突位置。</li></ul><p>最终全量高置信 H/A：H <strong>182,811</strong>，A <strong>173,457</strong>，共 <strong>356,268</strong> 帧。两种 SkillCorner 球队来源在可比较帧上的一致率为 <strong>83.74%</strong>；严格清洗后保留率为 <strong>58.19%</strong>。</p>
+      <h3>5.4 严格标签与完整弱时间线分离</h3><div class="grid-2"><div class="card"><h3><code>y_alive / y_home</code></h3><p>高置信、边界排除后的标签。仅这些标签进入两个分类器的 <code>fit()</code>。</p></div><div class="card"><h3><code>eval_y_alive / eval_y_home</code></h3><p>用 phase 覆盖和 phase 球队构造完整代理时间线，只用于粗粒度 SpellF1 和 Viterbi 选择，不参与分类器拟合。</p></div></div>
+      <h3>5.5 Metrica 高置信样本</h3><ul><li>PASS、CARRY 内部去掉首尾 2 帧，作为高置信 H/A。</li><li>BALL OUT 结束后到下一次 SET PIECE 开始前，作为高置信 D。</li><li>重叠、事件冲突或球队未知帧全部排除。</li><li>得到 H 37,512、A 35,094、D 27,360；其中 72,606 个 H/A 帧用于跨供应商门槛。</li></ul>
     </section>
 
-    <section id="models">
-      <h2>7. 监督模型、时序解码与晋级机制</h2>
-
-      <h3>7.1 两个概率模型</h3>
-      <div class="metric-grid">
-        <div class="card">
-          <h4><code>P(alive)</code></h4>
-          <p>训练 alive/dead 分类器。SkillCorner 半场内、未被 phase 覆盖的部分作为 dead 候选；所有 phase 边界前后 1 秒从训练中排除。</p>
-        </div>
-        <div class="card">
-          <h4><code>P(home | alive)</code></h4>
-          <p>只使用 alive 且 possession.group 已知的帧训练。内部标签为 home=1、away=0、未知=-1。</p>
-        </div>
-      </div>
-      <p>两者均使用固定版本的 <code>HistGradientBoostingClassifier</code>，使用逆类别频率 sample weight 和随机种子 2027。</p>
-
-      <h3>7.2 固定模型网格</h3>
-      <pre><code>max_leaf_nodes:      15, 31
-learning_rate:      0.05, 0.1
-l2_regularization:  0, 1
-max_iter:           300（启用 early stopping）</code></pre>
-      <p>概率模型先按 validation balanced accuracy 选择，log loss 作为次要判断；随后再独立选择 Viterbi 参数，避免把所有参数放在一个大搜索中。</p>
-
-      <h3>7.3 三状态发射概率</h3>
-      <pre><code>P(D) = 1 - P(alive)
-P(H) = P(alive) × P(home | alive)
-P(A) = P(alive) × (1 - P(home | alive))</code></pre>
-
-      <h3>7.4 Viterbi 网格与选参顺序</h3>
-      <ul>
-        <li>H↔A 转移惩罚：1、2、3、4、5。</li>
-        <li>H/A↔D 转移惩罚：0.5、1、2、3。</li>
-        <li>优先平均 spellF1；同分时依次比较 macroF1、预测片段数和较小惩罚。</li>
-        <li>每个半场独立解码，不允许 possession 跨越中场。</li>
-      </ul>
-
-      <h3>7.5 自动晋级门槛</h3>
-      <ol>
-        <li>SkillCorner validation 平均 spellF1 相比 nearest-player + smooth50 至少提升 0.02。</li>
-        <li>至少 70% 的 validation 比赛 spellF1 不下降。</li>
-        <li>Metrica Game 3 高置信 H/A 帧 macroF1 不得下降超过 0.02。</li>
-        <li>三个条件满足后设置 <code>promoted=true</code>，才评估 SkillCorner test。</li>
-      </ol>
+    <section id="features"><h2>6. 统一 44 维输入特征</h2>
+      <p>两个分类器使用同一组 44 个特征。特征不包含球员 ID、球衣号码、比赛 ID、具体球队名称或 SkillCorner possession 字段；缺失值由 HistGradientBoosting 原生处理。</p>
+      <div class="table-wrap feature-list"><table><thead><tr><th>类别</th><th class="num">数量</th><th>字段与意义</th></tr></thead><tbody><tr><td>球基本状态</td><td class="num">5</td><td><code>ball_visible</code>、<code>ball_x/y</code>、<code>ball_speed_mps</code>、<code>ball_speed_missing</code></td></tr><tr><td>可见球员数</td><td class="num">2</td><td><code>n_home_visible</code>、<code>n_away_visible</code></td></tr><tr><td>最近三人距离</td><td class="num">8</td><td>双方 <code>d1/d2/d3</code> 及最近三人均值，按真实球场长宽换算为米</td></tr><tr><td>局部速度</td><td class="num">2</td><td>双方距球 5 米内球员的平均速度</td></tr><tr><td>局部人数</td><td class="num">10</td><td>双方在 1/2/3/5/10 米内的球员数</td></tr><tr><td>最近距离差</td><td class="num">1</td><td><code>away_d1 - home_d1</code>，是 nearest-player 的连续形式</td></tr><tr><td>边界距离</td><td class="num">4</td><td>球到两条底线和两条边线的米制距离</td></tr><tr><td>历史窗口</td><td class="num">12</td><td>0.2/0.5/1.0 秒内的球可见率、双方最近距离均值、球位移</td></tr><tr class="total"><td>合计</td><td class="num">44</td><td>当前帧空间状态 + 仅使用过去信息的短时动态</td></tr></tbody></table></div>
+      <div class="callout"><strong>跨供应商原则：</strong>同一特征函数用于 SkillCorner、Metrica 和目标 ATD；坐标先统一为归一化球场坐标，所有距离再按各自球场长宽换算为米。SkillCorner 球员速度由同一球员连续帧位置重建。</div>
     </section>
 
-    <section id="metrics">
-      <h2>8. 评估指标与五分钟公开真值</h2>
-      <div class="metric-grid">
-        <div class="card">
-          <h3>macroF1</h3>
-          <p>分别计算 H、A、D 的逐帧 F1，再等权平均。它回答“每一帧的类别是否正确”。</p>
-          <pre><code>macroF1 = (F1_H + F1_A + F1_D) / 3</code></pre>
-        </div>
-        <div class="card">
-          <h3>spellF1_mean</h3>
-          <p>将连续 H/A/D 看成 possession spell，通过时间 IoU 一对一匹配。它重点惩罚抖动、片段拆分/合并和切换时机错误，也是更关键的排名指标。</p>
-        </div>
-      </div>
-
-      <h3>8.1 五分钟公开区间</h3>
-      <p>公开真值包含 7,500 个评分帧，即 25 fps 下的 300 秒。当前官方 scoreboard 中：</p>
-      <table>
-        <thead><tr><th>提交</th><th class="num">公开 macroF1</th><th class="num">公开 spellF1_mean</th><th>说明</th></tr></thead>
-        <tbody>
-          <tr><td>baseline_smooth50</td><td class="num">0.620733</td><td class="num">0.325581</td><td>官方现有评分。</td></tr>
-          <tr><td>reference_smooth50</td><td class="num">0.620733</td><td class="num">0.325581</td><td>与官方文件字节相同，因此分数严格相同。</td></tr>
-          <tr><td>heuristic_v1</td><td class="num">未计算</td><td class="num">未计算</td><td>当前只通过 validator 和确定性检查。</td></tr>
-        </tbody>
-      </table>
-      <div class="callout warning">
-        <strong>不可用公开五分钟选版本。</strong>官方 smooth125 在公开五分钟 spellF1 更高，但官方公布的全场表现低于 smooth50。这说明 17 个左右的公开 possession 无法可靠排序模型。即使未来计算 heuristic 的公开分数，也只能用于管线检查。
-      </div>
+    <section id="models"><h2>7. 模型选择与训练方案</h2>
+      <h3>7.1 两个概率模型</h3><div class="grid-2"><div class="card"><h3>Alive/dead</h3><p><code>HistGradientBoostingClassifier</code></p><ul><li>输出：<code>P(alive)</code></li><li>max_leaf_nodes：15</li><li>learning_rate：0.1</li><li>L2：0</li><li>实际迭代：300</li></ul></div><div class="card"><h3>Home/away</h3><p><code>HistGradientBoostingClassifier</code></p><ul><li>输出：<code>P(home | alive)</code></li><li>max_leaf_nodes：31</li><li>learning_rate：0.1</li><li>L2：0</li><li>实际迭代：300</li></ul></div></div>
+      <h3>7.2 分类器候选网格</h3><pre><code>max_leaf_nodes     ∈ {15, 31}
+learning_rate      ∈ {0.05, 0.1}
+l2_regularization ∈ {0, 1}
+max_iter           = 300
+early_stopping     = True
+random_state       = 2027</code></pre><p>每个分类器比较 8 个组合。优先选择 validation balanced accuracy 更高的候选，其次 log loss 更低；仍相同时偏向更简单模型。训练使用逆类别频率 sample weight。两模型都运行到 300 轮上限，没有提前停止。</p>
+      <h3>7.3 Viterbi 参数选择</h3><pre><code>H ↔ A penalty   ∈ {1, 2, 3, 4, 5}
+H/A ↔ D penalty ∈ {0.5, 1, 2, 3}</code></pre><p>在三场 validation 完整弱时间线上评估 20 组组合，先最大化平均 SpellF1，再比较 MacroF1、预测片段数和较小惩罚。最终选中 <code>H↔A=5.0</code>、<code>H/A↔D=3.0</code>。半场分别解码，不评分区间保持 X。</p>
+      <h3>7.4 预先冻结的晋级规则</h3><ol><li>SkillCorner validation 平均 SpellF1 相对 nearest-player + smooth50 至少提升 0.02。</li><li>至少 70% 的 validation 比赛 SpellF1 不下降。</li><li>Metrica Game 3 高置信 H/A macroF1 不得下降超过 0.02。</li><li>全部通过后才设置 <code>promoted=true</code> 并首次读取 SkillCorner test。</li><li>公开 5 分钟不参与模型、阈值、Viterbi 或版本选择。</li></ol>
     </section>
 
-    <section id="results">
-      <h2>9. 当前已完成结果</h2>
-      <h3>9.1 reference_smooth50</h3>
-      <table>
-        <tbody>
-          <tr><th>文件</th><td><code>evaluation/results/reference_smooth50.csv</code></td></tr>
-          <tr><th>行数</th><td>199,319，frame 0..199318</td></tr>
-          <tr><th>标签计数</th><td>H=72,957；A=54,842；D=71,520；X=0</td></tr>
-          <tr><th>SHA256</th><td class="hash"><code>d444caa1aebb6fb58386033a5967c83302b8dd984ea91c86381bf208332702ff</code></td></tr>
-          <tr><th>验收</th><td>与官方 baseline_smooth50 字节相同；官方 validator 通过；重复运行哈希相同。</td></tr>
-        </tbody>
-      </table>
-
-      <h3>9.2 heuristic_v1</h3>
-      <table>
-        <tbody>
-          <tr><th>文件</th><td><code>evaluation/results/heuristic_v1.csv</code></td></tr>
-          <tr><th>行数</th><td>199,319，frame 0..199318</td></tr>
-          <tr><th>标签计数</th><td>H=81,021；A=66,302；D=11,534；X=40,462</td></tr>
-          <tr><th>SHA256</th><td class="hash"><code>7be6f83419e2cfb67b2672bc06f48bfe82db56f95d280e8886792c1c532f115c</code></td></tr>
-          <tr><th>验收</th><td>官方 validator 通过；重复运行哈希相同；尚未通过外部性能晋级。</td></tr>
-        </tbody>
-      </table>
-      <div class="callout warning">
-        <strong>风险提示：</strong>heuristic 使用缺球延续 H/A 的弱先验，因此 D 比 reference 显著减少。这是符合方案的候选方向，但强度是否合理必须通过外部比赛验证，不能仅凭目标比赛的标签分布判断。
-      </div>
+    <section id="external-results"><h2>8. 外部验证与独立测试结果</h2>
+      <h3>8.1 单模型 validation 指标</h3><div class="metric-grid"><div class="metric"><span class="value">0.941686</span><span class="label">Alive/dead balanced accuracy</span></div><div class="metric"><span class="value">0.186500</span><span class="label">Alive/dead log loss</span></div><div class="metric"><span class="value">0.929729</span><span class="label">Home/away balanced accuracy</span></div><div class="metric"><span class="value">0.165535</span><span class="label">Home/away log loss</span></div></div>
+      <h3>8.2 SkillCorner validation</h3><div class="table-wrap"><table><thead><tr><th>比赛</th><th class="num">A: SpellF1</th><th class="num">Model: SpellF1</th><th class="num">A: MacroF1</th><th class="num">Model: MacroF1</th></tr></thead><tbody><tr><td>1925299</td><td class="num">0.3201</td><td class="num up">0.5279</td><td class="num">0.6264</td><td class="num up">0.8806</td></tr><tr><td>2013725</td><td class="num">0.2803</td><td class="num up">0.4938</td><td class="num">0.5193</td><td class="num up">0.8457</td></tr><tr><td>2017461</td><td class="num">0.2389</td><td class="num up">0.4959</td><td class="num">0.5868</td><td class="num up">0.8577</td></tr><tr class="total"><td>平均</td><td class="num">0.2798</td><td class="num up">0.5059</td><td class="num">0.5775</td><td class="num up">0.8614</td></tr></tbody></table></div><p>SpellF1 提升 <strong>0.2261</strong>，3/3 比赛不下降，外部 validation 门槛通过。</p>
+      <h3>8.3 Metrica 跨供应商检查</h3><p>72,606 个高置信 H/A 帧上，阶段 A 的 H/A macroF1 为 <code>0.611810</code>，模型为 <code>0.645642</code>，提升 <code>0.033833</code>。Metrica 没有参与模型拟合。</p>
+      <h3>8.4 SkillCorner test（晋级后首次且仅一次读取）</h3><div class="table-wrap"><table><thead><tr><th>比赛</th><th class="num">A: SpellF1</th><th class="num">Model: SpellF1</th><th class="num">A: MacroF1</th><th class="num">Model: MacroF1</th></tr></thead><tbody><tr><td>1996435</td><td class="num">0.3498</td><td class="num up">0.5193</td><td class="num">0.6013</td><td class="num up">0.8895</td></tr><tr><td>2011166</td><td class="num">0.2842</td><td class="num up">0.4808</td><td class="num">0.6129</td><td class="num up">0.8683</td></tr><tr><td>2015213</td><td class="num">0.2663</td><td class="num up">0.4657</td><td class="num">0.5002</td><td class="num up">0.8444</td></tr><tr class="total"><td>平均</td><td class="num">0.3001</td><td class="num up">0.4886</td><td class="num">0.5715</td><td class="num up">0.8674</td></tr></tbody></table></div><p>平均 SpellF1 增加 <strong>0.1885</strong>，平均 MacroF1 增加 <strong>0.2959</strong>，3/3 test 比赛均提升。</p><div class="callout warn">这些结果验证的是 SkillCorner phase/possession 映射出的代理任务。它证明模型在外部比赛上有效，但不能证明 controlled-possession 边界与赛事真值完全一致。</div>
+      <h3>8.5 目标比赛候选输出</h3><p><code>evaluation/results/model_v1.csv</code> 共 199,319 行，帧号从 0 到 199,318 连续；标签分布为 H 46,142、A 30,389、D 82,326、X 40,462。官方 validator 返回 OK，连续生成两次 SHA256 一致。整场候选包含 699 个 possession，平均时长约 4.4 秒；这也提示目标域短片段仍然偏多。</p>
     </section>
 
-    <section id="usage">
-      <h2>10. 环境与使用命令</h2>
-      <h3>10.1 创建或同步环境</h3>
-      <pre><code>cd E:\python_project\hack2027
+    <section id="public-results"><h2>9. 官方 5 分钟真值结果</h2>
+      <p>官方窗口包含 7,500 个评分帧、17 个真实 possession，真实平均 possession 时长 14.19 秒。阶段 A 使用官方已评分 smooth50；<code>model_v1</code> 在外部选择完成后只评分一次；阶段 B 没有评分。</p>
+      <div class="table-wrap"><table><thead><tr><th>指标</th><th class="num">阶段 A</th><th class="num">阶段 B</th><th class="num">model_v1</th><th>解释</th></tr></thead><tbody>
+        <tr><td>Accuracy</td><td class="num">0.7132</td><td class="num muted">未评分</td><td class="num up">0.7755</td><td>净增 467 个正确帧</td></tr><tr><td>MacroF1</td><td class="num">0.6207</td><td class="num muted">未评分</td><td class="num up">0.7597</td><td>帧级三分类明显提升</td></tr><tr><td>SpellF1</td><td class="num up">0.3256</td><td class="num muted">未评分</td><td class="num down">0.2533</td><td>模型 possession 过碎</td></tr><tr><td>H F1</td><td class="num">0.7781</td><td class="num muted">未评分</td><td class="num up">0.8487</td><td>精度提升、召回下降</td></tr><tr><td>A F1</td><td class="num up">0.7615</td><td class="num muted">未评分</td><td class="num down">0.7227</td><td>客队类别下降</td></tr><tr><td>D F1</td><td class="num">0.3225</td><td class="num muted">未评分</td><td class="num up">0.7076</td><td>模型最主要提升来源</td></tr><tr><td>Alive/dead F1</td><td class="num">0.8990</td><td class="num muted">未评分</td><td class="num up">0.9173</td><td>状态判断提升</td></tr><tr><td>真实活球帧球队准确率</td><td class="num up">0.8349</td><td class="num muted">未评分</td><td class="num down">0.7704</td><td>实际 H/A 完整任务下降</td></tr><tr><td>双方都判 alive 时球队准确率</td><td class="num">0.8582</td><td class="num muted">未评分</td><td class="num up">0.8663</td><td>单看球队分类器略有提升</td></tr><tr><td>Home share 绝对误差</td><td class="num">0.0485</td><td class="num muted">未评分</td><td class="num up">0.0037</td><td>总体比例校准更好</td></tr><tr><td>预测 possession 数</td><td class="num">26</td><td class="num muted">未评分</td><td class="num down">43</td><td>真值为 17</td></tr><tr><td>平均 possession 时长</td><td class="num">10.80 s</td><td class="num muted">未评分</td><td class="num down">5.27 s</td><td>真值为 14.19 s</td></tr><tr><td>Fragmentation</td><td class="num">1.43</td><td class="num muted">未评分</td><td class="num down">3.00</td><td>模型过度分段</td></tr>
+      </tbody></table></div>
+      <h3>9.1 Accuracy 的真实来源</h3><div class="table-wrap"><table><thead><tr><th>正确识别的真值类别</th><th class="num">阶段 A</th><th class="num">model_v1</th><th class="num">变化</th></tr></thead><tbody><tr><td>H</td><td class="num">3,041</td><td class="num">2,833</td><td class="num down">−208</td></tr><tr><td>A</td><td class="num">1,994</td><td class="num">1,813</td><td class="num down">−181</td></tr><tr><td>D</td><td class="num">314</td><td class="num">1,170</td><td class="num up">+856</td></tr><tr class="total"><td>合计</td><td class="num">5,349</td><td class="num">5,816</td><td class="num up">+467</td></tr></tbody></table></div>
+      <p>总体 Accuracy 提高 6.23 个百分点，但 H/A 正确帧合计减少 389；净提升几乎全部来自死球识别。若真值与预测都为 alive，球队准确率从 85.82% 略升到 86.63%，说明 Home 模型本身有一点增益；问题是 Alive 模型把更多真实活球判成 D。</p>
+      <h3>9.2 正确解读</h3><ul><li><strong>帧级分类：</strong>模型优于阶段 A，特别是 D。</li><li><strong>活球控球队完整判断：</strong>当前 5 分钟上反而下降，不能宣称实际控球预测已显著提高。</li><li><strong>总体控球比例：</strong>误差从 4.85 个百分点降到 0.37 个百分点，但总体比例正确不等于每帧正确。</li><li><strong>连续 possession：</strong>模型显著过度分段，导致 SpellF1 低于阶段 A。</li></ul>
+    </section>
 
-# 新建环境
-conda env create -f environment-solution.yml
+    <section id="limitations"><h2>10. 不足与局限性</h2><ol>
+      <li><strong>标签语义不完全一致。</strong>SkillCorner possession 不保证遵循赛事 controlled-possession 换权规则；边界、争抢、折射和 loose ball 是最高风险区。</li><li><strong>Viterbi 使用弱监督完整时间线。</strong>它适合比较粗粒度连续性，但 phase 边界不是 corrected tracking 真值。</li><li><strong>目标域时序碎片化。</strong>官方 5 分钟中模型预测 43 个 possession，而真值只有 17 个。</li><li><strong>Alive 模型存在 false-dead 风险。</strong>H/A 模型在双方都判 alive 时略优，但更多真实活球被判成 D。</li><li><strong>Viterbi 最优点位于搜索上界。</strong>外部 validation 在 <code>(5,3)</code> 最佳，提示可能需要更强平滑；扩大网格必须成为新的预注册实验。</li><li><strong>Early stopping 未提前停止。</strong>两个模型均跑满 300 轮，需要在新交叉验证协议中研究迭代上限。</li><li><strong>供应商域偏移仍存在。</strong>采样率、坐标质量、球缺失模式、速度重建和 phase 生成方式不同；Metrica 门槛不能覆盖完整 H/A/D 时序。</li><li><strong>公开真值规模很小。</strong>只有 5 分钟、17 个 possession，适合暴露错误，不足以稳定排序候选，也不得用于调参。</li><li><strong>阶段 B 尚无实证排名。</strong>已生成合法 CSV，但没有独立可比分数。</li><li><strong>晋级不等于最终最优。</strong><code>model_v1</code> 通过的是冻结的外部门槛；reference smooth50 仍是回退点。</li>
+    </ol></section>
 
-# 或同步已有环境
-conda activate hack2027
-python -m pip install -r requirements-solution.txt</code></pre>
+    <section id="decision"><h2>11. 当前决策与下一步</h2>
+      <div class="grid-3"><div class="card"><h3>model_v1 <span class="badge done">外部晋级</span></h3><p>保留为最终候选。外部泛化、死球识别和帧级 MacroF1 更好，但有目标域时序碎片化。</p></div><div class="card"><h3>reference_smooth50 <span class="badge done">回退点</span></h3><p>与官方 baseline 完全一致；公开 5 分钟 SpellF1 高于 model_v1，但 MacroF1 和死球识别较低。</p></div><div class="card"><h3>heuristic_v1 <span class="badge candidate">待验证</span></h3><p>规则合理但尚无独立真值结果，不进入已验证候选排名。</p></div></div>
+      <h3>11.1 model_v2 的合规方向</h3><ol><li>先冻结新实验假设、参数网格和晋级规则，再运行实验。</li><li>不再使用已读取的 SkillCorner test 选参；使用 train/validation 内部比赛级交叉验证或 nested CV。</li><li>重点分析 false-dead、短 D 插入和 H↔A 短抖动，不只优化 Accuracy。</li><li>研究概率校准、最短持续时间、半马尔可夫解码或显式 duration model。</li><li>同时约束 MacroF1、SpellF1、片段数、持续时间和真实活球帧球队准确率。</li><li>保持公开 5 分钟封存，不用它决定阈值、惩罚、特征或版本。</li></ol>
+      <div class="callout"><strong>当前研发判断：</strong>保留现有 44 维特征与 Home/away 分类器，优先修复 Alive 的 false-dead 和时序解码的过度切分。现有结果既不支持完全推翻分类模型，也不支持仅增加分类器复杂度解决 SpellF1。</div>
+    </section>
 
-      <h3>10.2 生成阶段 A 与阶段 B</h3>
-      <pre><code>conda activate hack2027
+    <section id="reproduce"><h2>12. 产物、哈希与复现</h2>
+      <h3>12.1 关键产物</h3><div class="table-wrap"><table><thead><tr><th>产物</th><th>位置</th><th>SHA256 / 状态</th></tr></thead><tbody><tr><td>阶段 A</td><td><code>evaluation/results/reference_smooth50.csv</code></td><td><code>d444caa1…02ff</code>，与官方完全一致</td></tr><tr><td>阶段 B</td><td><code>evaluation/results/heuristic_v1.csv</code></td><td><code>7be6f834…115c</code>，未独立晋级</td></tr><tr><td>Alive 模型</td><td><code>local_artifacts/models/alive.joblib</code></td><td><code>73b7d4da…c267</code></td></tr><tr><td>Home 模型</td><td><code>local_artifacts/models/home.joblib</code></td><td><code>6a510ce0…8fdf</code></td></tr><tr><td>训练报告</td><td><code>local_artifacts/models/training_report.json</code></td><td><code>455b024e…6167</code></td></tr><tr><td>目标候选</td><td><code>evaluation/results/model_v1.csv</code></td><td><code>2790393f…7905</code>，validator OK</td></tr></tbody></table></div>
+      <h3>12.2 复现命令</h3><pre><code>conda activate hack2027
 
-python -m solution.run --mode reference `
-  --out evaluation/results/reference_smooth50.csv
-
-python -m solution.run --mode heuristic `
-  --out evaluation/results/heuristic_v1.csv
-
-python evaluation\validate_submission.py `
-  evaluation\results\reference_smooth50.csv
-
-python evaluation\validate_submission.py `
-  evaluation\results\heuristic_v1.csv</code></pre>
-
-      <h3>10.3 准备 SkillCorner</h3>
-      <pre><code>python -m solution.train prepare-skillcorner `
-  --root D:\PublicFootballData\skillcorner\data\matches `
-  --out local_artifacts\skillcorner</code></pre>
-      <p>输出每场比赛的 NPZ 和固定的 <code>split.json</code>。</p>
-
-      <h3>10.4 准备 Metrica Game 3</h3>
-      <pre><code>python -m solution.train prepare-metrica `
-  --meta D:\PublicFootballData\metrica\Sample_Game_3_metadata.xml `
-  --raw D:\PublicFootballData\metrica\Sample_Game_3_tracking.txt `
-  --events D:\PublicFootballData\metrica\Sample_Game_3_events.json `
-  --out local_artifacts\metrica_game3.npz</code></pre>
-
-      <h3>10.5 训练、选参和晋级</h3>
-      <pre><code>python -m solution.train fit `
-  --prepared local_artifacts\skillcorner `
-  --split local_artifacts\skillcorner\split.json `
+python -m solution.train fit `
+  --prepared local_artifacts\skillcorner_clean `
+  --split local_artifacts\skillcorner_clean\split.json `
   --metrica local_artifacts\metrica_game3.npz `
-  --out local_artifacts\models</code></pre>
+  --out local_artifacts\models
 
-      <h3>10.6 生成模型诊断或最终候选</h3>
-      <pre><code># 未晋级模型仅作诊断
-python -m solution.run --mode model `
-  --model-dir local_artifacts\models `
-  --out evaluation\results\model_diagnostic.csv
-
-# 只有 promoted=true 才能执行
 python -m solution.run --mode final `
   --model-dir local_artifacts\models `
-  --out evaluation\results\final_candidate.csv</code></pre>
+  --out evaluation\results\model_v1.csv
+
+python evaluation\validate_submission.py evaluation\results\model_v1.csv</code></pre>
+      <h3>12.3 进一步阅读</h3><ul><li><a href="external_data_audit.md">外部数据审计、清洗与训练样本报告</a></li><li><a href="model_training_validation.md">双模型训练与验证报告</a></li><li><a href="../solution/README.md">Solution 命令与模块说明</a></li><li><a href="https://github.com/SkillCorner/opendata">SkillCorner Open Data</a></li><li><a href="https://github.com/metrica-sports/sample-data">Metrica Sports Sample Data</a></li></ul>
     </section>
-
-    <section id="tests">
-      <h2>11. 测试、确定性和仓库卫生</h2>
-      <h3>11.1 自动化测试</h3>
-      <p>当前 9 项 unittest 全部通过：</p>
-      <pre><code>python -m unittest discover -s tests -v</code></pre>
-      <ul>
-        <li>ATD 1-based → video 0-based。</li>
-        <li>非正方形球场的米制距离。</li>
-        <li>主客队 track slot 映射。</li>
-        <li>官方多数投票规则。</li>
-        <li>缺球不直接判 D，且先验不跨半场。</li>
-        <li>短 H/A 抖动不跨 D 或半场。</li>
-        <li>Viterbi 半场重置和块外 X。</li>
-        <li>比赛级拆分可复现且无交叉。</li>
-        <li>双分类器 → Viterbi → 报告 → joblib 的端到端冒烟测试。</li>
-      </ul>
-
-      <h3>11.2 已完成工程检查</h3>
-      <ul class="status-list">
-        <li><code>python -m compileall -q solution tests</code> 通过。</li>
-        <li><code>python -m pip check</code> 无损坏依赖。</li>
-        <li><code>git diff --check</code> 通过。</li>
-        <li>reference 和 heuristic 都通过官方 validator。</li>
-        <li>两份候选连续运行 SHA256 不变。</li>
-        <li>数据、NPZ、joblib 和候选 CSV 均由 .gitignore 隔离。</li>
-      </ul>
-    </section>
-
-    <section id="limits">
-      <h2>12. 当前限制、主要风险与下一步</h2>
-      <h3>12.1 当前尚未完成</h3>
-      <ul>
-        <li>尚未下载和本地准备真实 SkillCorner 比赛。</li>
-        <li>尚未准备 Metrica Game 3 的统一 NPZ。</li>
-        <li>尚未训练真实 <code>alive.joblib</code> 和 <code>home.joblib</code>。</li>
-        <li>尚未产生真实 <code>training_report.json</code>。</li>
-        <li>尚无 <code>promoted=true</code> 的模型。</li>
-        <li>heuristic_v1 尚未完成独立外部性能验证。</li>
-      </ul>
-
-      <h3>12.2 建议的下一里程碑</h3>
-      <ol>
-        <li>下载外部数据到仓库外目录，并记录来源版本或 commit。</li>
-        <li>先转换 1 场 SkillCorner，人工抽查字段、fps、主客映射和标签覆盖。</li>
-        <li>转换全部比赛并冻结 <code>split.json</code>。</li>
-        <li>准备 Metrica Game 3，并统计高置信 H/A/D 标签规模。</li>
-        <li>执行完整训练，检查概率模型和 Viterbi 验证报告。</li>
-        <li>只有晋级门槛通过后才运行 test 和目标比赛模型推理。</li>
-        <li>最终在 reference、heuristic、promoted model 中选择经过外部验证的最高版本。</li>
-      </ol>
-
-      <h3>12.3 外部数据与许可</h3>
-      <ul>
-        <li>SkillCorner：<a href="https://github.com/SkillCorner/opendata">github.com/SkillCorner/opendata</a>，仓库标注 MIT License，公开成果应注明数据来源。</li>
-        <li>Metrica：<a href="https://github.com/metrica-sports/sample-data">github.com/metrica-sports/sample-data</a>，README 要求公开使用时注明来源；再分发前应重新核对当前条款。</li>
-        <li>赛事受限数据继续保存在本地 <code>data/</code>，不得上传公共 Git、云盘或第三方服务。</li>
-      </ul>
-    </section>
-
-    <section id="handoff">
-      <h2>13. 建议的三人协作方式</h2>
-      <div class="stage-grid">
-        <article class="card">
-          <h3>工作流 1：外部数据与模型</h3>
-          <ul>
-            <li>下载和审计 SkillCorner/Metrica。</li>
-            <li>检查共同特征字段和标签覆盖率。</li>
-            <li>运行两个分类器、模型网格和训练报告。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>工作流 2：规则与时序</h3>
-          <ul>
-            <li>检查 heuristic 的死球与重开球片段。</li>
-            <li>分析 Viterbi 转移、fragmentation 和 spellF1。</li>
-            <li>保证所有规则不跨半场、不使用公开五分钟调参。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>工作流 3：集成与交付</h3>
-          <ul>
-            <li>统一环境、命令、配置和本地路径。</li>
-            <li>维护回归测试、validator 和确定性哈希。</li>
-            <li>冻结 Git commit、配置、模型与提交文件。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>版本选择规则</h3>
-          <ul>
-            <li>reference 是永久最低回退点。</li>
-            <li>heuristic 只有通过外部验证才替代 reference。</li>
-            <li>监督模型只有 <code>promoted=true</code> 才进入最终候选。</li>
-          </ul>
-        </article>
-      </div>
-
-      <h3>提交前冻结记录</h3>
-      <pre><code>git rev-parse HEAD
-python --version
-python -m pip freeze
-Get-FileHash solution\config.json -Algorithm SHA256
-Get-FileHash local_artifacts\models\alive.joblib -Algorithm SHA256
-Get-FileHash local_artifacts\models\home.joblib -Algorithm SHA256
-Get-FileHash &lt;team-name&gt;.csv -Algorithm SHA256
-python evaluation\validate_submission.py &lt;team-name&gt;.csv</code></pre>
-    </section>
-
-    <footer>
-      <p>本报告描述 2026-11-13 工作区中的当前实现。受限数据、模型产物和候选 CSV 不应随报告一同公开分发。</p>
-    </footer>
+    <footer>本报告依据冻结代码、训练报告和本地评分产物生成。公开 5 分钟仅用于一次性管线检查，不参与模型选择。</footer>
   </main>
 </body>
 </html>
