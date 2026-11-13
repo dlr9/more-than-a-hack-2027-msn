@@ -9,7 +9,7 @@ import numpy as np
 
 from solution.atd import read_atd, team_metadata
 from solution.decoder import emission_probabilities, viterbi_decode
-from solution.external import deterministic_match_split
+from solution.external import deterministic_match_split, prepare_skillcorner_match
 from solution.features import AWAY, HOME, NOBODY, FeatureBatch
 from solution.heuristic import (carry_missing_ball_prior, clean_short_team_runs,
                                 find_restart, majority_smooth)
@@ -77,6 +77,48 @@ class SolutionTests(unittest.TestCase):
         sets = [set(first[name]) for name in ("train", "validation", "test")]
         self.assertFalse(sets[0] & sets[1] or sets[0] & sets[2] or sets[1] & sets[2])
         self.assertEqual(set.union(*sets), set(ids))
+
+    def test_skillcorner_player_id_maps_to_metadata_team(self):
+        with tempfile.TemporaryDirectory() as folder:
+            match = Path(folder) / "123"
+            match.mkdir()
+            metadata = {
+                "home_team": {"id": 10},
+                "away_team": {"id": 20},
+                "match_periods": [{"period": 1, "start_frame": 0, "end_frame": 3}],
+                "players": [
+                    {"id": 101, "trackable_object": 1101, "team_id": 10},
+                    {"id": 201, "trackable_object": 1201, "team_id": 20},
+                ],
+            }
+            (match / "123_match.json").write_text(json.dumps(metadata), encoding="utf-8")
+            (match / "123_phases_of_play.csv").write_text(
+                "frame_start,frame_end\n0,3\n", encoding="utf-8"
+            )
+            records = []
+            for frame in range(4):
+                home_x, away_x = ((0.1, 2.0) if frame % 2 == 0 else (2.0, 0.1))
+                records.append({
+                    "frame": frame,
+                    "ball_data": {"x": 0.0, "y": 0.0},
+                    "possession": {"group": "home team" if frame % 2 == 0 else "away team"},
+                    "player_data": [
+                        {"player_id": 101, "x": home_x, "y": 0.0, "is_detected": True},
+                        {"player_id": 201, "x": away_x, "y": 0.0, "is_detected": True},
+                    ],
+                })
+            (match / "123_tracking_extrapolated.jsonl").write_text(
+                "\n".join(json.dumps(record) for record in records) + "\n", encoding="utf-8"
+            )
+            output = Path(folder) / "prepared.npz"
+            prepare_skillcorner_match(
+                match, output, [1.0, 2.0], [0.2], fps=10.0,
+                pitch=(105.0, 68.0), boundary_exclusion_s=0.0,
+            )
+            with np.load(output, allow_pickle=False) as prepared:
+                self.assertEqual(prepared["nearest_codes"].tolist(), [HOME, AWAY, HOME, AWAY])
+                self.assertEqual(prepared["y_home"].tolist(), [1, 0, 1, 0])
+                self.assertEqual(prepared["y_alive"].tolist(), [-1, 1, 1, -1])
 
     def test_submission_contract(self):
         with tempfile.TemporaryDirectory() as folder:

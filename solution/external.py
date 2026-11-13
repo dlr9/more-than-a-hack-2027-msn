@@ -107,11 +107,19 @@ def prepare_skillcorner_match(
     match_id = folder.name
     metadata = json.loads((folder / f"{match_id}_match.json").read_text(encoding="utf-8"))
     home_id, away_id = int(metadata["home_team"]["id"]), int(metadata["away_team"]["id"])
-    object_team = {
-        player.get("trackable_object"): (HOME if int(player["team_id"]) == home_id else AWAY)
-        for player in metadata.get("players", [])
-        if player.get("trackable_object") is not None
-    }
+    # Current SkillCorner Open Data tracking rows identify players with ``player_id``. Older
+    # exports and some customer examples use ``trackable_object`` instead, so retain both keys.
+    player_team: dict[object, int] = {}
+    for player in metadata.get("players", []):
+        team_id = int(player["team_id"])
+        if team_id not in (home_id, away_id):
+            continue
+        team = HOME if team_id == home_id else AWAY
+        for key in ("id", "trackable_object"):
+            identifier = player.get(key)
+            if identifier is not None:
+                player_team[identifier] = team
+                player_team[str(identifier)] = team
     periods = metadata["match_periods"]
     n_frames = max(int(item["end_frame"]) for item in periods) + 1
     period = np.zeros(n_frames, dtype=np.int8)
@@ -152,7 +160,8 @@ def prepare_skillcorner_match(
         for player in record.get("player_data") or []:
             team = _normalise_group(player.get("group_name", player.get("group")), home_id, away_id)
             if team < 0:
-                team = object_team.get(player.get("trackable_object"), -1)
+                identifier = player.get("player_id", player.get("trackable_object"))
+                team = player_team.get(identifier, player_team.get(str(identifier), -1))
             if team < 0 or player.get("x") is None or player.get("y") is None:
                 continue
             x = (float(player["x"]) + pitch[0] / 2) / pitch[0]
