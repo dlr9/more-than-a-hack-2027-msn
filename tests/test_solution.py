@@ -183,6 +183,10 @@ class SolutionTests(unittest.TestCase):
             output = root / "models"
             report = train_from_split(prepared, split_path, output, config)
             self.assertIn("mean_macro_f1", report["selected_viterbi"])
+            self.assertIsNone(report["selected_viterbi"]["mean_spell_f1"])
+            self.assertFalse(report["validation_gate"]["passed"])
+            self.assertIsNone(report["test"])
+            self.assertEqual(report["selected_viterbi"]["team_switch_penalty"], 3.)
             self.assertTrue((output / "alive.joblib").is_file())
             self.assertTrue((output / "home.joblib").is_file())
             self.assertTrue((output / "training_report.json").is_file())

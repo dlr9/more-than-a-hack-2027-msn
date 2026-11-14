@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 
 from .decoder import emission_probabilities, viterbi_decode
-from .heuristic import majority_smooth
+from .evidence import labels_from_batch, period_reference, score_sequence
 
 
 def _imports():
@@ -104,22 +104,8 @@ def select_classifier(train_files: list[Path], validation_files: list[Path], tar
 
 
 def _truth_and_blocks(batch: dict) -> tuple[np.ndarray, list[tuple[int, int]]]:
-    # Unknown labels remain unknown. Legacy phase-complement arrays are audit-only.
-    y_alive = batch["y_alive"]
-    y_home = batch["y_home"]
-    known = (y_alive >= 0) & ((y_alive == 0) | (y_home >= 0))
-    # Decoder boundaries come ONLY from periods, never label availability.
-    blocks = []
-    periods = np.asarray(batch["period"])
-    cuts = np.r_[0, np.flatnonzero(periods[1:] != periods[:-1]) + 1, len(periods)]
-    for start, end in zip(cuts[:-1], cuts[1:]):
-        if end > start and periods[start] > 0:
-            blocks.append((int(start), int(end - 1)))
-    truth = np.full(len(known), "X", dtype="<U1")
-    truth[y_alive == 0] = "D"
-    truth[(y_alive == 1) & (y_home == 1)] = "H"
-    truth[(y_alive == 1) & (y_home == 0)] = "A"
-    return truth, blocks
+    from .quality import period_blocks
+    return labels_from_batch(batch), period_blocks(batch["period"])
 
 
 def _probabilities(alive, home, batch: dict, pd) -> np.ndarray:
@@ -141,24 +127,19 @@ def _evaluate_files(files: list[Path], alive, home, selected: dict, reference_wi
             float(selected["team_switch_penalty"]),
             float(selected["dead_switch_penalty"]),
         )
-        baseline = majority_smooth(batch["nearest_codes"], max(1, round(reference_window / 25 * float(batch["fps"]))))
-        model_result = pm.evaluate(pm.label_codes(truth), pm.label_codes(predicted), bootstrap_n=0)
-        baseline_result = pm.evaluate(pm.label_codes(truth), pm.label_codes(baseline), bootstrap_n=0)
+        baseline = period_reference(batch, reference_window / 25.)
+        model_result = score_sequence(truth, predicted, batch["period"], float(batch["fps"]))
+        baseline_result = score_sequence(truth, baseline, batch["period"], float(batch["fps"]))
         matches.append({
             "match_id": str(batch["match_id"]),
-            "model_spell_f1": float(model_result["spell_f1_mean"]),
-            "baseline_spell_f1": float(baseline_result["spell_f1_mean"]),
-            "model_macro_f1": float(model_result["macro_f1"]),
-            "baseline_macro_f1": float(baseline_result["macro_f1"]),
+            "model_spell_f1": None, "baseline_spell_f1": None,
+            "model_macro_f1": model_result["partial_macro_f1"],
+            "baseline_macro_f1": baseline_result["partial_macro_f1"],
+            "model_diagnostics": model_result, "baseline_diagnostics": baseline_result,
         })
-    return {
-        "matches": matches,
-        "mean_model_spell_f1": float(np.mean([row["model_spell_f1"] for row in matches])),
-        "mean_baseline_spell_f1": float(np.mean([row["baseline_spell_f1"] for row in matches])),
-        "non_decrease_fraction": float(np.mean([
-            row["model_spell_f1"] >= row["baseline_spell_f1"] for row in matches
-        ])),
-    }
+    return {"matches": matches, "mean_model_spell_f1": None,
+            "mean_baseline_spell_f1": None, "non_decrease_fraction": None,
+            "status": "incomplete_or_unverified_truth"}
 
 
 def _binary_macro_f1(truth: np.ndarray, predicted: np.ndarray) -> float:
@@ -180,7 +161,7 @@ def _metrica_gate(path: str | Path, home, reference_window: int, pd, alive=None,
     names = batch["feature_names"].astype(str).tolist()
     frame = pd.DataFrame(batch["X"], columns=names)
     model_prediction = (home.predict_proba(frame[list(home.feature_names_in_)])[:, 1] >= 0.5).astype(int)
-    baseline_labels = majority_smooth(batch["nearest_codes"], reference_window)
+    baseline_labels = period_reference(batch, reference_window / 25.)
     baseline_prediction = np.full(len(baseline_labels), -1, dtype=int)
     baseline_prediction[baseline_labels == "H"] = 1
     baseline_prediction[baseline_labels == "A"] = 0
@@ -241,54 +222,23 @@ def train_from_split(prepared_dir: str | Path, split_path: str | Path,
     home, home_report = select_classifier(train_files, validation_files, "y_home",
                                            config["model_grid"], config["random_seed"], True)
 
-    # Select transition penalties on full validation timelines using the official spell metric.
-    from evaluation import possession_metrics as pm
-    viterbi_rows = []
-    for team_penalty, dead_penalty in itertools.product(
-        config["viterbi_grid"]["team_switch_penalty"],
-        config["viterbi_grid"]["dead_switch_penalty"],
-    ):
-        spell_scores, macro_scores, segment_counts = [], [], []
-        for path in validation_files:
-            batch = load_prepared(path)
-            probabilities = _probabilities(alive, home, batch, pd)
-            truth, blocks = _truth_and_blocks(batch)
-            predicted = viterbi_decode(probabilities, blocks, float(team_penalty), float(dead_penalty))
-            result = pm.evaluate(pm.label_codes(truth), pm.label_codes(predicted), bootstrap_n=0)
-            spell_scores.append(result["spell_f1_mean"])
-            macro_scores.append(result["macro_f1"])
-            segment_counts.append(result["n_pred_segments"])
-        viterbi_rows.append({"team_switch_penalty": team_penalty,
-                             "dead_switch_penalty": dead_penalty,
-                             "mean_spell_f1": float(np.mean(spell_scores)),
-                             "mean_macro_f1": float(np.mean(macro_scores)),
-                             "mean_pred_segments": float(np.mean(segment_counts))})
-    selected = max(viterbi_rows, key=lambda row: (row["mean_spell_f1"],
-                                                   row["mean_macro_f1"],
-                                                   -row["mean_pred_segments"],
-                                                   -row["team_switch_penalty"],
-                                                   -row["dead_switch_penalty"]))
+    # Weak/partial labels cannot rank full-spell decoders. Keep the predeclared baseline.
+    selected = {"team_switch_penalty": 3., "dead_switch_penalty": 1.,
+                "mean_spell_f1": None,
+                "status": "fixed_not_selected_incomplete_truth"}
     reference_window = int(config.get("reference_window_frames", 50))
-    validation = _evaluate_files(
-        validation_files, alive, home, selected, reference_window, pd, pm
-    )
-    validation["mean_spell_f1_delta"] = (
-        validation["mean_model_spell_f1"] - validation["mean_baseline_spell_f1"]
-    )
-    validation["passed"] = (
-        validation["mean_spell_f1_delta"] >= 0.02
-        and validation["non_decrease_fraction"] >= 0.70
-    )
+    validation = _evaluate_files(validation_files, alive, home, selected,
+                                 reference_window, pd, None)
+    selected["mean_macro_f1"] = float(np.mean([
+        row["model_macro_f1"] for row in validation["matches"]]))
+    viterbi_rows = [selected.copy()]
+    validation["mean_spell_f1_delta"] = None
+    validation["passed"] = False
     metrica = None if metrica_path is None else _metrica_gate(
         metrica_path, home, reference_window, pd, alive, selected
     )
     promoted = False  # Full H/A/D external sequence gate and fresh holdout are not established.
     test_report = None
-    if promoted:
-        test_files = [paths[match] for match in split["test"]]
-        test_report = _evaluate_files(
-            test_files, alive, home, selected, reference_window, pd, pm
-        )
     schema, view = next(iter(protocols))
     metadata = {**selected, "seed": config["random_seed"], "promoted": promoted,
                 "schema_version": schema, "observation_view": view,
