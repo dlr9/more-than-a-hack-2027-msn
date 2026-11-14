@@ -118,7 +118,7 @@ class OfflineAssetTests(unittest.TestCase):
 
     def test_shell_wrappers_reject_multiple_codex_environment_names(self):
         scripts = Path(__file__).resolve().parents[1] / 'scripts'
-        for name in ('official_assets_preflight.command', 'run_offline_reference.command'):
+        for name in ('official_assets_preflight.command', 'run_offline_reference.command', 'run_offline_baseline.command'):
             with self.subTest(script=name):
                 # No assets or arguments: the inherited-environment check must run first.
                 result = subprocess.run(['/bin/bash', str(scripts / name)],

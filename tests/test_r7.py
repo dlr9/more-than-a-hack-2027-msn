@@ -61,3 +61,12 @@ class R7Tests(unittest.TestCase):
         with self.assertRaises(ValueError):extended(b,a,h,pred)
 
 if __name__=='__main__':unittest.main()
+
+class ReleaseBoundaryTests(unittest.TestCase):
+    def test_nonpublic_paths_and_secret_content_fail_closed(self):
+        from scripts.audit_public_release import allowed,inspect_blob
+        for path in ['evaluation/gt/anything.csv','local_artifacts/r7/x.npz','docs/private_target_report.md','data/a.xml','docs/../data/a.py']:
+            self.assertFalse(allowed(path))
+        inspect_blob('docs/R7_MODEL_CARD.md',b'Public aggregate statistics only')
+        with self.assertRaises(ValueError):inspect_blob('docs/R7_MODEL_CARD.md',b'frame,label\n0,H\n')
+        with self.assertRaises(ValueError):inspect_blob('docs/R7_MODEL_CARD.md',b'ghp_'+b'a'*36)
