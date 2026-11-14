@@ -1,0 +1,31 @@
+{
+  "version": "external-evidence-v3.0",
+  "status": "frozen_before_new_experiments",
+  "date": "2026-11-14",
+  "development_matches": ["1874553", "1886347", "1899585", "1927964"],
+  "sealed_old_test": ["1996435", "2011166", "2015213"],
+  "folds": "heldout=i, calibration=(i+1)%4, train=remaining two",
+  "cross_provider": "Metrica Game 3, one previously viewed development game; never independent final test",
+  "baseline": {"reference_half_window_s": 2.0, "respect_periods": true},
+  "timing": {"transition_tolerances_s": [0.48, 1.0], "short_spell_s": 0.48, "missing_short_s": 0.5, "missing_medium_s": 2.0, "control_evidence_s": 0.3, "decoder_reference_fps": 10.0},
+  "label_policy": {
+    "primary": "strict y_alive/y_home masks with source semantics; unknown is excluded only from frame scoring",
+    "skillcorner_dead": "not_established; phase complement only a separately named proxy sensitivity",
+    "metrica_dead": "partial event proxy, not independently adjudicated continuous GT",
+    "full_spell": "null unless independently verified complete HAD annotation covers every frame of each declared period",
+    "censored_spell": "diagnostic only, never ranks or promotes models",
+    "decoder_boundaries": "metadata periods only, independent of labels"
+  },
+  "model": {"max_iter": 60, "max_leaf_nodes": 15, "learning_rate": 0.1, "l2_regularization": 1.0, "early_stopping": false, "seed": 2027, "training_hz": 2},
+  "experiments": {
+    "E0": "No training: compare historical fixed-50 reference and period-scoped 2-second reference; audit label coverage, censored spells, fps and duration",
+    "E1": "Replay fixed observed baseline once; fix Home probabilities, compare raw weighted Alive, analytical prior correction, and logistic calibration on separate calibration match; all Alive results explicitly proxy-only",
+    "E2": "Fix baseline Alive and visible-ball Home; train one missing-ball Home expert on natural missing and already input-masked/recomputed dropout caches; gate only on ball visibility; no new features or grid search",
+    "E3": "Fix both baseline probabilities; compare original per-frame Viterbi with fps-normalized transition costs. Report argmax/decoder error attribution and censored boundary support. No event/HSMM training without trustworthy boundary evidence"
+  },
+  "uncertainty": "paired bootstrap over four SkillCorner heldout matches, 2000 draws, seed 2027; no frame-IID or repeated-Metrica bootstrap",
+  "retention_rule": "Missing expert remains experimental only if natural-missing Brier improves in >=3 of 4 matches, paired mean Brier delta CI upper<0, visible predictions unchanged and no >0.01 drop in per-match primary partial macro F1; otherwise revert to observed baseline. Timing fixes are engineering correctness, not evidence of model superiority.",
+  "promotion": "No automatic promotion: independent complete HAD + credible dead labels + fresh holdout + team approval remain required",
+  "historical_results": "v2 reports immutable; all four matches and Metrica already development data",
+  "budget": "Replay eight baseline heads; four missing experts; no hyperparameter search or new large downloads"
+}
