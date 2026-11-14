@@ -1,0 +1,19 @@
+{
+ "version":"R7-E01-E05-v1", "status":"frozen_before_new_fits",
+ "base_git_sha":"7e87ea3884d8591afc9e534223517c71067e259f",
+ "matches":["J03WPY","J03WOH","J03WQQ"],
+ "split":"three whole-match LOMO, two train one validation, no calibration; previously used development, no blind claim",
+ "E01":"Reload trusted hash-verified M1/M2/M3; recompute natural and original dropout, exact prediction/probability replay before extended scoring; no fitting",
+ "E02":"M4_no_ball_motion: remove exactly 5 direct ball motion features from both heads, train natural; same HGB and fixed decoder as M1",
+ "E03":"Two label-blind renewal processes: short durations .2/.5/1s, gaps uniform2..6s seed7101; long2/5/10s gaps20..60s seed7102; per-half SeedSequence(seed,block_index). Mask RAW ball positions then recompute all44 features; evaluation-only new corruptions, distinct from training seed2027. Raw derived kinematics regenerated, never matrix visibility-only edits.",
+ "E04":"M5_no_ball_motion_aug same view as M4, natural+original R6 raw-mask seed2027 training; M6_geometry_aug also removes local player speeds(2) and temporal nearest-distance means(6), leaving31 geometry/visibility columns. Full 2x2 for full/ablated x natural/aug = M1/M2/M4/M5. M6 is one extra preregistered weak-motion view, not a search.",
+ "E05":"Complete official spell by 5 IoU; HAD confusion/macro/perclass; falseD cuts and missedD including frame/segment denominators; typed pair boundaries perhalf +/-1s; shortspells<1/1..3/ge3; probability/argmax/decoder attribution; natural/originaldropout/short/long separately",
+ "features":"schema4 R7 views, original schema3 unchanged; base contract preserved, mismatched views rejected. Geometry can still inherit source positional artifacts; removing5 features is not proof all shortcuts removed.",
+ "HGB":{"max_iter":60,"max_leaf_nodes":15,"learning_rate":0.1,"l2_regularization":1,"early_stopping":false,"random_state":2027,"fit_hz":2,"weights":"natural"},
+ "decoder":{"team_cost":7.5,"dead_cost":2.5,"fps":25,"M3_only":"frozen factor4; never retune"},
+ "retention":"M4 diagnostic only. At most M5 or M6 eligible experimental candidate: against M2 natural per-match spell loss no more .02, original-dropout mean gain >=.01 and improves >=2/3 matches; short and long mean not worse; each domain no match missedD segment rate or missedD frame rate increase >.02. If neither passes, retain R6-M1 research fallback and REVERT new deployment candidates. Do not relax thresholds after scores.",
+ "holdout":"J03WMX/J03WN1 sealed until a separate one-shot protocol commits exact final model/hash and comparison; one evaluation only, no tuning on results. If no new candidate passes, evaluate frozen M1/M2/M3 reference set once to test existing claims.",
+ "extra_development":"J03WOY/J03WR9 optional only under an additional protocol; not needed for initial fit",
+ "budget":"18 new HGB classifiers, two threads; no network framework, no decoder grid; preserve all outputs",
+ "competition_promoted":false
+}

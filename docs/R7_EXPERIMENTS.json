@@ -1,0 +1,11 @@
+[
+  {
+    "experiment_id": "RESTORE",
+    "utc": "2026-11-14T16:06:33.194549+00:00",
+    "base": "7e87ea3",
+    "models_hash_and_size_verified": 30,
+    "remote_pr2": "093361a3d02ffa9ce195e65ccbb4ad5159624dad",
+    "decision": "KEEP",
+    "next": "E01/E02 actual training"
+  }
+]
