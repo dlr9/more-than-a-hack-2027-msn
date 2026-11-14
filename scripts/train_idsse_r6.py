@@ -47,6 +47,14 @@ def main():
     manifest=json.loads(Path('docs/R6_IDSSE_INPUTS.json').read_text())
     for path,sha in manifest.items():
         if digest(path)!=sha:raise ValueError('input drift '+path)
+    for match in IDS:
+        checked=json.loads(Path(f'local_artifacts/r6/floodlight_crosscheck_{match}.json').read_text())
+        if checked['match']!=match or len(checked['halves'])!=2:
+            raise ValueError('incomplete independent parser crosscheck')
+        if not all(h['labels_equal'] and h['ball_xy_equal'] and h['transition_positions_equal'] for h in checked['halves']):
+            raise ValueError('independent parser mismatch')
+        for path,sha in checked['files'].items():
+            if digest(path)!=sha:raise ValueError('crosschecked source drift')
     OUT.mkdir(parents=True)
     cache={(m,v):load_prepared(ROOT/m/(v+'.npz'))for m in IDS for v in ['natural','dropout']}
     rows=[];models=[]

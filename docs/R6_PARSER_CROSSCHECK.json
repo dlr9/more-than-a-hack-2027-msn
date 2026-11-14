@@ -1,0 +1,158 @@
+{
+  "J03WPY": {
+    "match": "J03WPY",
+    "dependencies": {
+      "floodlight": "1.2.0",
+      "lxml": "6.1.3",
+      "numpy": "2.4.6",
+      "iso8601": "2.1.0"
+    },
+    "floodlight_parser_sha256": "b03cc2432f7ff862daee9a9bf12b767009499927d1a1725e227204e20a581125",
+    "files": {
+      "local_artifacts/r6/idsse-hf/DFL_04_03_positions_raw_observed_DFL-COM-000002_DFL-MAT-J03WPY.xml": "845202c29ad93d696653436da426a7cdaefb848298e07b7343de6529581671e1",
+      "local_artifacts/r6/idsse-hf/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WPY.xml": "566dd5e4c86e124ab90fcdba51100881f0436e22afa71832945a451a2d95a420",
+      "local_artifacts/r6/prepared/J03WPY/raw.npz": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c"
+    },
+    "halves": [
+      {
+        "period": "firstHalf",
+        "frames": 69131,
+        "ball_status_counts": {
+          "0": 22951,
+          "1": 46180
+        },
+        "ball_possession_counts": {
+          "1": 44369,
+          "2": 24762
+        },
+        "status_sha256": "c1a7fa2e0dc8bb337ea548741eef49ed07d41a9d16777f6a0e40b9ef96081813",
+        "possession_sha256": "03461e426905b19889b469b0585fc22e2f985e438aeaa2f01807572c8a47b412",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      },
+      {
+        "period": "secondHalf",
+        "frames": 77080,
+        "ball_status_counts": {
+          "0": 41800,
+          "1": 35280
+        },
+        "ball_possession_counts": {
+          "1": 34825,
+          "2": 42255
+        },
+        "status_sha256": "9d43457fed4a3f31e934ec807ae8b1ad41d80004f6eeaa0fd54595c585ca01da",
+        "possession_sha256": "09c2adda5a355c6b664f04309dbd2e0218fffaafa74ec6fab7cc5d3eaff80c7d",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      }
+    ],
+    "maxrss_bytes": 566362112
+  },
+  "J03WOH": {
+    "match": "J03WOH",
+    "dependencies": {
+      "floodlight": "1.2.0",
+      "lxml": "6.1.3",
+      "numpy": "2.4.6",
+      "iso8601": "2.1.0"
+    },
+    "floodlight_parser_sha256": "b03cc2432f7ff862daee9a9bf12b767009499927d1a1725e227204e20a581125",
+    "files": {
+      "local_artifacts/r6/idsse-hf/DFL_04_03_positions_raw_observed_DFL-COM-000002_DFL-MAT-J03WOH.xml": "ec4dcf30200aad694dea263d5289485fcd0ca42badddaeb7c81f5cd5a4229d4f",
+      "local_artifacts/r6/idsse-hf/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WOH.xml": "f23b3ee13b988b1ff9a0bce438c416dac47e71355bbc7ee1dab21aaf3e33c18c",
+      "local_artifacts/r6/prepared/J03WOH/raw.npz": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899"
+    },
+    "halves": [
+      {
+        "period": "firstHalf",
+        "frames": 69424,
+        "ball_status_counts": {
+          "0": 31580,
+          "1": 37844
+        },
+        "ball_possession_counts": {
+          "1": 36608,
+          "2": 32816
+        },
+        "status_sha256": "10233591b70e397d0790c05d8ca08e464ead7b694664675bd1c402bb91ce08c6",
+        "possession_sha256": "077950ef11735e66453445ff8e1a07f149239f91e4f38784722d483118267128",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      },
+      {
+        "period": "secondHalf",
+        "frames": 67790,
+        "ball_status_counts": {
+          "0": 33689,
+          "1": 34101
+        },
+        "ball_possession_counts": {
+          "1": 32854,
+          "2": 34936
+        },
+        "status_sha256": "5f6961523a76e321b6976111961d2cbfa8b2f0f94fc9bda673d3d62a2617a7cf",
+        "possession_sha256": "3ddf50a5ef315830fb59175e66c1dc55641db651df2f0e49aacaac53d5cf3330",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      }
+    ],
+    "maxrss_bytes": 619741184
+  },
+  "J03WQQ": {
+    "match": "J03WQQ",
+    "dependencies": {
+      "floodlight": "1.2.0",
+      "lxml": "6.1.3",
+      "numpy": "2.4.6",
+      "iso8601": "2.1.0"
+    },
+    "floodlight_parser_sha256": "b03cc2432f7ff862daee9a9bf12b767009499927d1a1725e227204e20a581125",
+    "files": {
+      "local_artifacts/r6/idsse-hf/DFL_04_03_positions_raw_observed_DFL-COM-000002_DFL-MAT-J03WQQ.xml": "cbefcb0bd7f39f3b94ee69a7bc97aac0f936425062c1cc1b144733df36804d6f",
+      "local_artifacts/r6/idsse-hf/DFL_02_01_matchinformation_DFL-COM-000002_DFL-MAT-J03WQQ.xml": "e976aa0c5dba862cfa898ea57ec226efce9d1bc04b23b8d775908db86aa6fa41",
+      "local_artifacts/r6/prepared/J03WQQ/raw.npz": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e"
+    },
+    "halves": [
+      {
+        "period": "firstHalf",
+        "frames": 69204,
+        "ball_status_counts": {
+          "0": 22125,
+          "1": 47079
+        },
+        "ball_possession_counts": {
+          "1": 33300,
+          "2": 35904
+        },
+        "status_sha256": "5fe11e4eef9a31c06e3816ba7a06ccf23f975d8a9253e4ce4558833c1fa6eba7",
+        "possession_sha256": "16a2b290f13eb1f2896b2ba21e743203816809a6219a133818658b5852f4e5af",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      },
+      {
+        "period": "secondHalf",
+        "frames": 73141,
+        "ball_status_counts": {
+          "0": 35868,
+          "1": 37273
+        },
+        "ball_possession_counts": {
+          "1": 34987,
+          "2": 38154
+        },
+        "status_sha256": "935e8db4fff48e935fe81361e667e769ce9083455c436415d04b306edeb93093",
+        "possession_sha256": "831a8beac4d52f4ac7b5079c2d767c84c4bf06a0add7a705f5d5cbbbfb32b58b",
+        "labels_equal": true,
+        "ball_xy_equal": true,
+        "transition_positions_equal": true
+      }
+    ],
+    "maxrss_bytes": 626319360
+  }
+}
