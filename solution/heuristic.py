@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import numpy as np
 
+from .config import timing_frames
+
 from .features import AWAY, HOME, NOBODY, FeatureBatch
 
 
@@ -102,14 +104,14 @@ def apply_set_piece_evidence(
             start,
             stop,
             float(config["restart_speed_mps"]),
-            int(config["restart_future_window_frames"]),
-            int(config["restart_future_min_hits"]),
+            timing_frames(config, "restart_future_window_frames", batch.fps),
+            timing_frames({"restart_hits_frames": config["restart_future_min_hits"]}, "restart_hits_frames", batch.fps),
         )
         # A broad set-piece tag alone does not establish a dead interval.
         team = (event.get("tags", {}).get("Team") or "").strip().casefold()
         label = team_name_to_label.get(team)
         if label and restart < stop:
-            seed_stop = min(len(out), restart + int(config["restart_team_seed_frames"]))
+            seed_stop = min(len(out), restart + timing_frames(config, "restart_team_seed_frames", batch.fps))
             out[restart:seed_stop] = label
     return out
 
@@ -121,9 +123,12 @@ def heuristic_labels(
     blocks: list[tuple[int, int]],
     config: dict,
 ) -> np.ndarray:
-    labels = majority_smooth(batch.nearest_codes, int(config["reference_window_frames"]))
+    labels = np.full(len(batch.frame), "X", dtype="<U1")
+    for start, stop in blocks:
+        labels[start:stop+1] = majority_smooth(batch.nearest_codes[start:stop+1],
+            timing_frames(config, "reference_window_frames", batch.fps))
     labels = carry_missing_ball_prior(labels, batch.values["ball_visible"], blocks)
-    labels = clean_short_team_runs(labels, int(config["short_team_run_frames"]), blocks)
+    labels = clean_short_team_runs(labels, timing_frames(config, "short_team_run_frames", batch.fps), blocks)
     mapping = {team_names[0].strip().casefold(): "H", team_names[1].strip().casefold(): "A"}
     labels = apply_set_piece_evidence(labels, batch, events, mapping, config)
     output = np.full(len(labels), "X", dtype="<U1")

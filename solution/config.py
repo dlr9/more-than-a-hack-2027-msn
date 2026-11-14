@@ -18,3 +18,11 @@ def load_config(path: str | Path | None = None) -> dict[str, Any]:
         raise ValueError(f"unsupported config version: {config.get('version')!r}")
     return config
 
+
+
+def timing_frames(config: dict, frame_key: str, fps: float) -> int:
+    """Legacy frame counts are specified at 25 FPS; optional seconds take precedence."""
+    from .evidence import seconds_to_frames
+    seconds_key = frame_key.removesuffix("_frames") + "_s"
+    seconds = config[seconds_key] if seconds_key in config else config[frame_key] / 25.
+    return seconds_to_frames(float(seconds), fps, minimum=1)
