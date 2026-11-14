@@ -1,0 +1,138 @@
+{
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1874553/1874553_match.json",
+      "path": "local_artifacts/external/skillcorner/1874553/1874553_match.json",
+      "bytes": 33730,
+      "sha256": "e6974e402779d8be44e75bf88ef2a3acfd4d025b87b3fc57f518fa826a645ad8",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1874553/1874553_phases_of_play.csv",
+      "path": "local_artifacts/external/skillcorner/1874553/1874553_phases_of_play.csv",
+      "bytes": 115978,
+      "sha256": "e70054b64202a3f318b7208edec9a329da1f4cfcafeeb72ae197176c4a043a8c",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1886347/1886347_phases_of_play.csv",
+      "path": "local_artifacts/external/skillcorner/1886347/1886347_phases_of_play.csv",
+      "bytes": 121864,
+      "sha256": "d1c3066f7ed0598069d0d1b317bb30261eca3d7786fd9d540985f395e4c8aea9",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1874553/1874553_dynamic_events.csv",
+      "path": "local_artifacts/external/skillcorner/1874553/1874553_dynamic_events.csv",
+      "bytes": 4738858,
+      "sha256": "92507490abbbeec7697227581c864cfb0a96c29b214dd63dcaa48929bb6c6408",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1886347/1886347_match.json",
+      "path": "local_artifacts/external/skillcorner/1886347/1886347_match.json",
+      "bytes": 27541,
+      "sha256": "30c608e78663e9f490b3545479a3ce67b171f418c5133d5609cb249a2466abb2",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1899585/1899585_match.json",
+      "path": "local_artifacts/external/skillcorner/1899585/1899585_match.json",
+      "bytes": 27810,
+      "sha256": "41de8cb74a0512fcf0cbaaa5c615ae3e7dcaaf6745b9c78a050b59b906b1cb06",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1899585/1899585_phases_of_play.csv",
+      "path": "local_artifacts/external/skillcorner/1899585/1899585_phases_of_play.csv",
+      "bytes": 119735,
+      "sha256": "e40562010c1b7c4aa6e0dbc17425dd236a1d82ce538ec03e77367a74e3f96b7e",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1874553/1874553_tracking_extrapolated.jsonl",
+      "path": "local_artifacts/external/skillcorner/1874553/1874553_tracking_extrapolated.jsonl",
+      "bytes": 90729279,
+      "sha256": "ea97f58f8eaad925feaeacc6395ec24860dd80027af8a89450276adebd29d265",
+      "lfs_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1886347/1886347_dynamic_events.csv",
+      "path": "local_artifacts/external/skillcorner/1886347/1886347_dynamic_events.csv",
+      "bytes": 4918599,
+      "sha256": "b21368b9b94eb8f83032fe14a2a8da88ab7eda048b4f8078c06d0e6955d12bfb",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1927964/1927964_match.json",
+      "path": "local_artifacts/external/skillcorner/1927964/1927964_match.json",
+      "bytes": 33400,
+      "sha256": "f967f911c20f5c5f8c89bbe2020a30c92731173616d5a1e4bafeb65435278b76",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1927964/1927964_phases_of_play.csv",
+      "path": "local_artifacts/external/skillcorner/1927964/1927964_phases_of_play.csv",
+      "bytes": 117263,
+      "sha256": "9216447a63a912edcad1a4d36370372210dcc800a7f48fc10127fd7de9eae503",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1899585/1899585_dynamic_events.csv",
+      "path": "local_artifacts/external/skillcorner/1899585/1899585_dynamic_events.csv",
+      "bytes": 4375032,
+      "sha256": "14c62ffc99aa5fd62998c238036873509a9d82ced44354697a1db4251424d557",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1927964/1927964_dynamic_events.csv",
+      "path": "local_artifacts/external/skillcorner/1927964/1927964_dynamic_events.csv",
+      "bytes": 5509112,
+      "sha256": "638747f76b43690974f95958952dfe62c9e50d64648f9456f43f66d5d91201f3",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_3/Sample_Game_3_events.json",
+      "path": "local_artifacts/external/metrica/Sample_Game_3_events.json",
+      "bytes": 1709486,
+      "sha256": "28a53bfe9eaf32535362335553d517cdce0eabb588af6166009081753751f4e0",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_3/Sample_Game_3_metadata.xml",
+      "path": "local_artifacts/external/metrica/Sample_Game_3_metadata.xml",
+      "bytes": 81806,
+      "sha256": "009c7dcfcb66192014917ca1559c158f612353e390eafb85f8214b06a1c7dec1",
+      "lfs_verified": false
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1886347/1886347_tracking_extrapolated.jsonl",
+      "path": "local_artifacts/external/skillcorner/1886347/1886347_tracking_extrapolated.jsonl",
+      "bytes": 89280839,
+      "sha256": "3577e2803da95390f8b2f85d47829eb55fbbfee6211c94adc65db0dc78e46b41",
+      "lfs_verified": true
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1927964/1927964_tracking_extrapolated.jsonl",
+      "path": "local_artifacts/external/skillcorner/1927964/1927964_tracking_extrapolated.jsonl",
+      "bytes": 91049828,
+      "sha256": "858c7a756ca3d33017f864775af5999d2c0f364e58ab60ae040c8b9ebab17827",
+      "lfs_verified": true
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/SkillCorner/opendata/4340d274572876239c154c90bc507a9b3250a656/data/matches/1899585/1899585_tracking_extrapolated.jsonl",
+      "path": "local_artifacts/external/skillcorner/1899585/1899585_tracking_extrapolated.jsonl",
+      "bytes": 85550410,
+      "sha256": "90b6289ec2181192d1793ec6240fbbe8225ff0219c7956710c6278c31a661100",
+      "lfs_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_3/Sample_Game_3_tracking.txt",
+      "path": "local_artifacts/external/metrica/Sample_Game_3_tracking.txt",
+      "bytes": 53443115,
+      "sha256": "570e6ce82c2d93bc92723af331d93c31110bec1d6dc0be07c6d44ca3f981d658",
+      "lfs_verified": false
+    }
+  ],
+  "failures": []
+}

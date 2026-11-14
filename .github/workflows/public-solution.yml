@@ -1,0 +1,35 @@
+name: Public solution tests
+on:
+  pull_request:
+  push:
+    branches: ['codex/**']
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    env:
+      OMP_NUM_THREADS: '2'
+      LOKY_MAX_CPU_COUNT: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /solution/*.py
+            /solution/config.json
+            /tests/*.py
+            /scripts/check_public_tree.py
+            /requirements-solution.txt
+            /games.py
+            /starter/*.py
+            /evaluation/possession_metrics.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+          cache: pip
+          cache-dependency-path: requirements-solution.txt
+      - run: python scripts/check_public_tree.py
+      - run: python -m pip install -r requirements-solution.txt
+      - run: python -m unittest discover -s tests -v

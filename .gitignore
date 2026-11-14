@@ -62,3 +62,10 @@ __pycache__/
 venv/
 env/
 .DS_Store
+
+# -- local solution artifacts ---------------------------------------------------------------
+# Prepared external matches, fitted models and final candidates are reproducible local outputs.
+local_artifacts/
+models/
+*.joblib
+*.npz
