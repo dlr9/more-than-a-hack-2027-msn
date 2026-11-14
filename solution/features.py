@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Iterable
 
 import numpy as np
@@ -19,6 +19,9 @@ class FeatureBatch:
     fps: float
     values: dict[str, np.ndarray]
     nearest_codes: np.ndarray
+    schema_version: int = 1
+    observation_view: str = "legacy_all"
+    quality: dict[str, np.ndarray] = field(default_factory=dict)
 
     def matrix(self, names: Iterable[str] | None = None) -> tuple[np.ndarray, list[str]]:
         selected = list(names) if names is not None else sorted(self.values)
@@ -37,8 +40,19 @@ def _trailing_nanmean(values: np.ndarray, window: int) -> np.ndarray:
 
 
 def add_temporal_features(
-    values: dict[str, np.ndarray], fps: float, windows_s: Iterable[float], pitch: tuple[float, float]
+    values: dict[str, np.ndarray], fps: float, windows_s: Iterable[float], pitch: tuple[float, float],
+    blocks: list[tuple[int, int]] | None = None,
 ) -> None:
+    if blocks is not None:
+        windows_s = list(windows_s)
+        for start, stop in blocks:
+            local = {k: v[start:stop + 1].copy() for k, v in values.items()}
+            add_temporal_features(local, fps, windows_s, pitch)
+            for name, column in local.items():
+                if name not in values:
+                    values[name] = np.full(len(values["ball_x"]), np.nan)
+                values[name][start:stop + 1] = column
+        return
     visible = values["ball_visible"].astype(float)
     ball_x = values["ball_x"]
     ball_y = values["ball_y"]
@@ -57,6 +71,9 @@ def add_temporal_features(
                 & np.isfinite(ball_x[:-window])
                 & np.isfinite(ball_y[:-window])
             )
+            known = np.isfinite(ball_x) & np.isfinite(ball_y)
+            cumulative = np.concatenate(([0], np.cumsum(known)))
+            valid &= cumulative[window + 1:] - cumulative[:-window - 1] == window + 1
             dx = (ball_x[window:] - ball_x[:-window]) * length
             dy = (ball_y[window:] - ball_y[:-window]) * width
             target = displacement[window:]
@@ -73,13 +90,22 @@ def spatial_features(
 ) -> tuple[dict[str, float], int]:
     """Features for one frame from ``(team, x_norm, y_norm, speed)`` players."""
     length, width = pitch
+    if ball_xy is not None and not np.isfinite(ball_xy).all():
+        ball_xy = None
+    if ball_xy is None:
+        ball_speed = np.nan
     by_team: dict[int, list[tuple[float, float]]] = {HOME: [], AWAY: []}
     player_counts = {HOME: 0, AWAY: 0}
+    nearest, nearest_distance = NOBODY, np.inf
     for team, x, y, speed in players:
+        if team not in (HOME, AWAY) or not np.isfinite([x, y]).all():
+            continue
         player_counts[team] += 1
         if ball_xy is not None:
             distance = float(np.hypot((x - ball_xy[0]) * length, (y - ball_xy[1]) * width))
             by_team[team].append((distance, speed))
+            if distance < nearest_distance:
+                nearest, nearest_distance = team, distance
     for entries in by_team.values():
         entries.sort(key=lambda item: item[0])
 
@@ -117,9 +143,4 @@ def spatial_features(
         out.update({"ball_to_x0_m": x * length, "ball_to_x1_m": (1 - x) * length,
                     "ball_to_y0_m": y * width, "ball_to_y1_m": (1 - y) * width})
 
-    nearest = NOBODY
-    combined = [(distance, team) for team, entries in by_team.items() for distance, _ in entries]
-    if combined:
-        nearest = min(combined, key=lambda item: item[0])[1]
     return out, nearest
-

@@ -9,7 +9,7 @@ from typing import Iterator
 
 import numpy as np
 
-from .atd import read_atd, team_metadata
+from .atd import read_atd, team_metadata, track_team_intervals
 from .features import AWAY, HOME, FeatureBatch, add_temporal_features, spatial_features
 
 
@@ -36,6 +36,8 @@ def save_prepared(
         fps=np.asarray(batch.fps),
         match_id=np.asarray(str(match_id)),
         nearest_codes=batch.nearest_codes,
+        schema_version=np.asarray(batch.schema_version),
+        observation_view=np.asarray(batch.observation_view),
     )
     if extra_arrays:
         payload.update({name: np.asarray(value) for name, value in extra_arrays.items()})
@@ -121,10 +123,18 @@ def prepare_skillcorner_match(
     boundary_exclusion_s: float = 1.0,
     possession_stability_s: float = 1.0,
     require_phase_agreement: bool = True,
+    label_policy: str = "conservative",
+    player_view: str = "observed",
+    ball_dropout_mask: np.ndarray | None = None,
 ) -> Path:
+    if label_policy not in {"conservative", "legacy_phase_complement"}:
+        raise ValueError("unknown label policy")
+    if player_view not in {"observed", "all"}:
+        raise ValueError("unknown player view")
     folder = Path(match_dir)
     match_id = folder.name
     metadata = json.loads((folder / f"{match_id}_match.json").read_text(encoding="utf-8"))
+    pitch = (float(metadata.get("pitch_length", pitch[0])), float(metadata.get("pitch_width", pitch[1])))
     home_id, away_id = int(metadata["home_team"]["id"]), int(metadata["away_team"]["id"])
     # Current SkillCorner Open Data tracking rows identify players with ``player_id``. Older
     # exports and some customer examples use ``trackable_object`` instead, so retain both keys.
@@ -142,6 +152,8 @@ def prepare_skillcorner_match(
     periods = metadata["match_periods"]
     n_frames = max(int(item["end_frame"]) for item in periods) + 1
     period = np.zeros(n_frames, dtype=np.int8)
+    if ball_dropout_mask is not None and np.shape(ball_dropout_mask) != (n_frames,):
+        raise ValueError("dropout mask length mismatch")
     for item in periods:
         period[int(item["start_frame"]): int(item["end_frame"]) + 1] = int(item["period"])
 
@@ -165,12 +177,16 @@ def prepare_skillcorner_match(
                 phase_team_conflict[low:high] |= (existing >= 0) & (existing != int(phase_team == HOME))
                 phase_y_home[low:high] = int(phase_team == HOME)
             boundaries.extend((start, stop))
+    raw_y_alive[period == 0] = -1
+    phase_y_home[period == 0] = -1
     phase_y_home[phase_team_conflict] = -1
     eval_y_alive = raw_y_alive.copy()
     eval_y_home = np.full(n_frames, -1, dtype=np.int8)
     eval_team_known = (raw_y_alive == 1) & (phase_y_home >= 0)
     eval_y_home[eval_team_known] = phase_y_home[eval_team_known]
     y_alive = raw_y_alive.copy()
+    if label_policy == "conservative":
+        y_alive[y_alive == 0] = -1  # Phase absence has no verified D semantics.
     exclusion = int(round(boundary_exclusion_s * fps))
     for boundary in boundaries:
         y_alive[max(0, boundary - exclusion): min(n_frames, boundary + exclusion + 1)] = -1
@@ -181,20 +197,31 @@ def prepare_skillcorner_match(
     frames = np.arange(n_frames, dtype=np.int32)
     ball_xy_history = np.full((n_frames, 2), np.nan)
     rows: dict[int, tuple[dict[str, float], int]] = {}
+    quality = np.zeros((n_frames, 3), dtype=np.int16)  # detected, extrapolated, unknown
+    seen_frames = set()
     previous_player_position: dict[object, tuple[int, float, float]] = {}
     tracking_path = folder / f"{match_id}_tracking_extrapolated.jsonl"
     for record in _jsonl_objects(tracking_path):
         frame = int(record["frame"])
-        if not 0 <= frame < n_frames:
-            continue
+        if frame != len(seen_frames) or not 0 <= frame < n_frames:
+            raise ValueError("duplicate, missing, unordered or out-of-range external frame")
+        seen_frames.add(frame)
         ball = record.get("ball_data") or {}
         bx, by = ball.get("x"), ball.get("y")
         ball_xy = None if bx is None or by is None else ((float(bx) + pitch[0] / 2) / pitch[0],
                                                          (float(by) + pitch[1] / 2) / pitch[1])
+        if ball_dropout_mask is not None and ball_dropout_mask[frame]:
+            ball_xy = None
+        if ball_xy is not None and not np.isfinite(ball_xy).all():
+            ball_xy = None
         if ball_xy is not None:
             ball_xy_history[frame] = ball_xy
         players = []
         for player in record.get("player_data") or []:
+            detected = player.get("is_detected")
+            quality[frame, 0 if detected is True else 1 if detected is False else 2] += 1
+            if player_view == "observed" and detected is not True:
+                continue
             identifier = player.get("player_id", player.get("trackable_object"))
             team = _normalise_group(player.get("group_name", player.get("group")), home_id, away_id)
             if team < 0:
@@ -205,7 +232,7 @@ def prepare_skillcorner_match(
             player_speed = float(player.get("speed", np.nan))
             if not np.isfinite(player_speed) and identifier is not None:
                 previous = previous_player_position.get(identifier)
-                if previous is not None and previous[0] == frame - 1:
+                if previous is not None and previous[0] == frame - 1 and period[frame] == period[frame - 1]:
                     player_speed = float(
                         np.hypot(player_x_m - previous[1], player_y_m - previous[2]) * fps
                     )
@@ -223,7 +250,9 @@ def prepare_skillcorner_match(
         if possession_team >= 0:
             raw_y_home[frame] = int(possession_team == HOME)
 
-    valid_pairs = np.isfinite(ball_xy_history[1:, 0]) & np.isfinite(ball_xy_history[:-1, 0])
+    if len(seen_frames) != n_frames:
+        raise ValueError("incomplete external tracking timeline")
+    valid_pairs = np.isfinite(ball_xy_history[1:]).all(axis=1) & np.isfinite(ball_xy_history[:-1]).all(axis=1) & (period[1:] == period[:-1])
     speed = np.full(n_frames, np.nan)
     delta = ball_xy_history[1:] - ball_xy_history[:-1]
     movement = np.hypot(delta[:, 0] * pitch[0], delta[:, 1] * pitch[1]) * fps
@@ -238,8 +267,11 @@ def prepare_skillcorner_match(
             arrays[name][frame] = value
     if not arrays:
         raise ValueError(f"no tracking frames read from {tracking_path}")
-    add_temporal_features(arrays, fps, temporal_windows_s, pitch)
-    batch = FeatureBatch(frames, fps, arrays, nearest_codes)
+    blocks = [(int(item["start_frame"]), int(item["end_frame"])) for item in periods]
+    add_temporal_features(arrays, fps, temporal_windows_s, pitch, blocks=blocks)
+    for team in ("home", "away"):
+        arrays[f"n_{team}_positions"] = arrays.pop(f"n_{team}_visible")
+    batch = FeatureBatch(frames, fps, arrays, nearest_codes, schema_version=2, observation_view=player_view)
     stability_radius = int(round(possession_stability_s * fps))
     stable_home = _stable_team_mask(raw_y_home, stability_radius)
     home_eligible = (y_alive == 1) & (raw_y_home >= 0) & stable_home
@@ -250,11 +282,19 @@ def prepare_skillcorner_match(
     return save_prepared(
         output, batch, y_alive, y_home, period, match_id,
         extra_arrays={
+            "label_policy": np.asarray(label_policy),
+            "label_source": np.where(y_alive == 1, "phase_presence_weak", np.where(y_alive == 0, "phase_complement_unverified", "unknown")),
+            "label_mask": (y_alive >= 0),
+            "label_confidence": np.where(y_alive >= 0, "weak", "unknown"),
+            "player_quality_counts": quality,
+            "ball_dropout_mask": np.zeros(n_frames, dtype=bool) if ball_dropout_mask is None else ball_dropout_mask,
             "raw_y_alive": raw_y_alive,
             "raw_y_home": raw_y_home,
             "phase_y_home": phase_y_home,
             "eval_y_alive": eval_y_alive,
             "eval_y_home": eval_y_home,
+            "home_label_source": np.where(y_home >= 0, "stable_possession_phase_agreement" if require_phase_agreement else "stable_possession", "unknown"),
+            "home_label_mask": y_home >= 0,
             "home_stable": stable_home.astype(np.int8),
             "phase_team_conflict": phase_team_conflict.astype(np.int8),
         },
@@ -277,19 +317,36 @@ def prepare_metrica_game3(
     max_event_frame = max(int(event["end"]["frame"]) for event in events)
     with Path(raw_path).open("r", encoding="utf-8") as handle:
         line_count = sum(1 for _ in handle)
-    n_frames = max(max_event_frame + 1, line_count)
-    batch = read_atd(raw_path, team_map, n_frames, pitch, fps, radii, temporal_windows_s)
+    n_frames = line_count
+    if max_event_frame > n_frames:
+        raise ValueError("events exceed tracking timeline")
+    # Metrica event frame IDs and ATD IDs are both one-based; convert together.
+    for event in events:
+        for endpoint in ("start", "end"):
+            event[endpoint]["frame"] = int(event[endpoint]["frame"]) - 1
+    import xml.etree.ElementTree as ET
+    metadata_root = ET.parse(meta_path).getroot()
+    parameters = {node.findtext("Name"): node.findtext("Value") for node in metadata_root.iter("ProviderParameter")}
+    period = np.zeros(n_frames, dtype=np.int8)
+    blocks = []
+    for number, name in enumerate(("first_half", "second_half"), 1):
+        low, high = int(parameters[name + "_start"]) - 1, int(parameters[name + "_end"]) - 1
+        if low < 0 or high >= n_frames or high < low:
+            raise ValueError("invalid metadata period bounds")
+        period[low:high + 1] = number
+        blocks.append((low, high))
+    batch = read_atd(raw_path, team_map, n_frames, pitch, fps, radii, temporal_windows_s,
+                     blocks=blocks, schema_version=2, coordinates_only=True,
+                     track_layout=track_team_intervals(meta_path))
     y_alive = np.full(n_frames, -1, dtype=np.int8)
     y_home = np.full(n_frames, -1, dtype=np.int8)
     conflict = np.zeros(n_frames, dtype=bool)
-    period = np.zeros(n_frames, dtype=np.int8)
     team_lookup = {team_names[0].casefold(): HOME, team_names[1].casefold(): AWAY,
                    "team a": HOME, "team b": AWAY}
     for event in events:
         start, stop = int(event["start"]["frame"]), int(event["end"]["frame"])
         event_type = (event.get("type", {}).get("name") or "").upper()
         event_period = int(event.get("period", 0))
-        period[max(0, start): min(n_frames, stop + 1)] = event_period
         if event_type in {"PASS", "CARRY"}:
             low, high = start + 2, stop - 1
             team = team_lookup.get((event.get("team", {}).get("name") or "").casefold(), -1)
@@ -308,7 +365,8 @@ def prepare_metrica_game3(
         start = int(event["end"]["frame"]) + 1
         next_restart = next(
             (candidate for candidate in events[index + 1:]
-             if (candidate.get("type", {}).get("name") or "").upper() == "SET PIECE"),
+             if candidate.get("period") == event.get("period")
+             and (candidate.get("type", {}).get("name") or "").upper() == "SET PIECE"),
             None,
         )
         if next_restart is not None:
@@ -322,6 +380,8 @@ def prepare_metrica_game3(
     y_home[conflict] = -1
     return save_prepared(
         output, batch, y_alive, y_home, period, "metrica-game-3",
-        extra_arrays={"event_conflict": conflict.astype(np.int8)},
+        extra_arrays={"event_conflict": conflict.astype(np.int8),
+                      "label_policy": np.asarray("partial_event_interiors"),
+                      "full_had_ground_truth": np.asarray(False)},
     )
 

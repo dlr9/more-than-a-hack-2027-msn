@@ -20,6 +20,9 @@ def main() -> None:
     skill = sub.add_parser("prepare-skillcorner")
     skill.add_argument("--root", required=True)
     skill.add_argument("--out", required=True)
+    skill.add_argument("--match-id", action="append", required=True, help="explicit public OTHER match ID; no directory scanning")
+    skill.add_argument("--label-policy", choices=["conservative", "legacy_phase_complement"], default="conservative")
+    skill.add_argument("--player-view", choices=["observed", "all"], default="observed")
 
     metrica = sub.add_parser("prepare-metrica")
     metrica.add_argument("--meta", required=True)
@@ -39,17 +42,21 @@ def main() -> None:
     windows = [float(value) for value in config["temporal_windows_s"]]
     if args.command == "prepare-skillcorner":
         root, output = Path(args.root), Path(args.out)
-        matches = sorted(path for path in root.iterdir() if path.is_dir())
+        if any(not m.isdigit() for m in args.match_id):
+            raise ValueError("match IDs must be numeric")
+        if set(args.match_id) & {"1996435", "2011166", "2015213"}:
+            raise ValueError("sealed old test matches must not be reprocessed for development")
+        matches = [root / m for m in sorted(set(args.match_id))]
         label_config = config["skillcorner_labels"]
         for match in matches:
             print(prepare_skillcorner_match(
                 match, output / f"{match.name}.npz", radii, windows,
+                label_policy=args.label_policy, player_view=args.player_view,
                 boundary_exclusion_s=float(label_config["boundary_exclusion_s"]),
                 possession_stability_s=float(label_config["possession_stability_s"]),
                 require_phase_agreement=bool(label_config["require_phase_agreement"]),
             ))
-        split = deterministic_match_split([path.name for path in matches], config["random_seed"])
-        print(write_split(output / "split.json", split, config["random_seed"]))
+        print("Prepared only requested matches; supply a reviewed group split for training.")
     elif args.command == "prepare-metrica":
         print(prepare_metrica_game3(args.meta, args.raw, args.events, args.out, radii, windows))
     else:

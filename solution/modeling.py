@@ -25,7 +25,24 @@ def _imports():
 
 def load_prepared(path: str | Path) -> dict:
     with np.load(path, allow_pickle=False) as data:
-        return {name: data[name] for name in data.files}
+        batch = {name: data[name] for name in data.files}
+    x = batch["X"]
+    n = len(x)
+    if x.ndim != 2 or x.shape[1] != len(batch["feature_names"]) or np.isinf(x).any():
+        raise ValueError("invalid prepared feature matrix")
+    if len(set(batch["feature_names"].tolist())) != x.shape[1]:
+        raise ValueError("duplicate feature names")
+    for name in ("frame", "period", "y_alive", "y_home", "nearest_codes"):
+        if batch[name].shape != (n,):
+            raise ValueError(f"invalid prepared column {name}")
+    if not np.array_equal(batch["frame"], np.arange(n)):
+        raise ValueError("prepared frames must be contiguous zero-based")
+    for name in ("y_alive", "y_home"):
+        if not np.isin(batch[name], [-1, 0, 1]).all():
+            raise ValueError("invalid prepared labels")
+    if not np.isfinite(batch["fps"]) or float(batch["fps"]) <= 0:
+        raise ValueError("invalid prepared fps")
+    return batch
 
 
 def _weights(y: np.ndarray) -> np.ndarray:
@@ -40,6 +57,9 @@ def _combine(files: list[Path], target: str, require_alive: bool = False):
     names = batches[0]["feature_names"].astype(str).tolist()
     if any(batch["feature_names"].astype(str).tolist() != names for batch in batches[1:]):
         raise ValueError("prepared matches use different feature schemas")
+    protocols = {(int(b.get("schema_version", 1)), str(b.get("observation_view", "legacy_all"))) for b in batches}
+    if len(protocols) != 1:
+        raise ValueError("prepared schema/view mismatch")
     matrices, labels = [], []
     for batch in batches:
         y = batch[target]
@@ -58,6 +78,8 @@ def select_classifier(train_files: list[Path], validation_files: list[Path], tar
     validation_x, validation_y, validation_names = _combine(validation_files, target, require_alive)
     if names != validation_names:
         raise ValueError("training and validation feature schemas differ")
+    if set(np.unique(train_y)) != {0, 1}:
+        raise ValueError(f"{target} requires both classes; unknown labels cannot become negatives")
     train_frame = pd.DataFrame(train_x, columns=names)
     validation_frame = pd.DataFrame(validation_x, columns=names)
     candidates = []
@@ -67,7 +89,7 @@ def select_classifier(train_files: list[Path], validation_files: list[Path], tar
         model = Classifier(
             max_leaf_nodes=int(leaves), learning_rate=float(rate),
             l2_regularization=float(l2), max_iter=int(grid["max_iter"]),
-            early_stopping=True, random_state=seed,
+            early_stopping=False, random_state=seed,
         )
         model.fit(train_frame, train_y, sample_weight=_weights(train_y))
         probability = model.predict_proba(validation_frame)[:, 1]
@@ -82,22 +104,17 @@ def select_classifier(train_files: list[Path], validation_files: list[Path], tar
 
 
 def _truth_and_blocks(batch: dict) -> tuple[np.ndarray, list[tuple[int, int]]]:
-    # Strict labels train the classifiers; the fuller phase-based surrogate is needed to assess
-    # whole spells without turning every high-confidence island into a separate possession.
-    y_alive = batch.get("eval_y_alive", batch["y_alive"])
-    y_home = batch.get("eval_y_home", batch["y_home"])
+    # Unknown labels remain unknown. Legacy phase-complement arrays are audit-only.
+    y_alive = batch["y_alive"]
+    y_home = batch["y_home"]
     known = (y_alive >= 0) & ((y_alive == 0) | (y_home >= 0))
-    indices = np.flatnonzero(known)
-    blocks: list[tuple[int, int]] = []
-    if len(indices):
-        start = previous = int(indices[0])
-        for raw_index in indices[1:]:
-            index = int(raw_index)
-            if index != previous + 1 or batch["period"][index] != batch["period"][previous]:
-                blocks.append((start, previous))
-                start = index
-            previous = index
-        blocks.append((start, previous))
+    # Decoder boundaries come ONLY from periods, never label availability.
+    blocks = []
+    periods = np.asarray(batch["period"])
+    cuts = np.r_[0, np.flatnonzero(periods[1:] != periods[:-1]) + 1, len(periods)]
+    for start, end in zip(cuts[:-1], cuts[1:]):
+        if end > start and periods[start] > 0:
+            blocks.append((int(start), int(end - 1)))
     truth = np.full(len(known), "X", dtype="<U1")
     truth[y_alive == 0] = "D"
     truth[(y_alive == 1) & (y_home == 1)] = "H"
@@ -124,7 +141,7 @@ def _evaluate_files(files: list[Path], alive, home, selected: dict, reference_wi
             float(selected["team_switch_penalty"]),
             float(selected["dead_switch_penalty"]),
         )
-        baseline = majority_smooth(batch["nearest_codes"], reference_window)
+        baseline = majority_smooth(batch["nearest_codes"], max(1, round(reference_window / 25 * float(batch["fps"]))))
         model_result = pm.evaluate(pm.label_codes(truth), pm.label_codes(predicted), bootstrap_n=0)
         baseline_result = pm.evaluate(pm.label_codes(truth), pm.label_codes(baseline), bootstrap_n=0)
         matches.append({
@@ -155,7 +172,7 @@ def _binary_macro_f1(truth: np.ndarray, predicted: np.ndarray) -> float:
     return float(np.mean(scores))
 
 
-def _metrica_gate(path: str | Path, home, reference_window: int, pd) -> dict:
+def _metrica_gate(path: str | Path, home, reference_window: int, pd, alive=None, selected=None) -> dict:
     batch = load_prepared(path)
     mask = (batch["y_alive"] == 1) & (batch["y_home"] >= 0)
     if not np.any(mask):
@@ -169,12 +186,25 @@ def _metrica_gate(path: str | Path, home, reference_window: int, pd) -> dict:
     baseline_prediction[baseline_labels == "A"] = 0
     model_score = _binary_macro_f1(batch["y_home"][mask], model_prediction[mask])
     baseline_score = _binary_macro_f1(batch["y_home"][mask], baseline_prediction[mask])
+    had = {"status": "not_tested"}
+    if alive is not None:
+        from sklearn.metrics import f1_score
+        truth, blocks = _truth_and_blocks(batch)
+        params = selected or {"team_switch_penalty": 3., "dead_switch_penalty": 1.}
+        prediction = viterbi_decode(_probabilities(alive, home, batch, pd), blocks,
+                                    params["team_switch_penalty"], params["dead_switch_penalty"])
+        valid = (truth != "X") & (batch["period"] > 0)
+        had = {"status": "partial_labels_only", "n": int(valid.sum()),
+               "per_class_f1": dict(zip("HAD", f1_score(truth[valid], prediction[valid], labels=list("HAD"), average=None, zero_division=0).tolist()))}
     return {
+        "partial_had": had,
         "n_frames": int(np.sum(mask)),
         "model_ha_macro_f1": model_score,
         "baseline_ha_macro_f1": baseline_score,
         "delta": model_score - baseline_score,
-        "passed": model_score - baseline_score >= -0.02,
+        "ha_noninferiority": model_score - baseline_score >= -0.02,
+        "full_had_sequence_status": "not_tested",
+        "passed": False,
     }
 
 
@@ -184,11 +214,26 @@ def train_from_split(prepared_dir: str | Path, split_path: str | Path,
     joblib, pd, _, _, _ = _imports()
     folder = Path(prepared_dir)
     split = json.loads(Path(split_path).read_text(encoding="utf-8"))
+    groups = [set(map(str, split[name])) for name in ("train", "validation", "test")]
+    if any(len(split[name]) != len(groups[i]) for i, name in enumerate(("train", "validation", "test"))):
+        raise ValueError("duplicate match ID within split")
+    if any(groups[i] & groups[j] for i in range(3) for j in range(i + 1, 3)):
+        raise ValueError("match overlap between train/validation/test")
+    sealed = {"1996435", "2011166", "2015213"}
+    if (groups[0] | groups[1]) & sealed:
+        raise ValueError("previously consumed test matches cannot be used for development")
     paths = {path.stem: path for path in folder.glob("*.npz")}
     missing = [match for group in ("train", "validation", "test")
                for match in split[group] if match not in paths]
     if missing:
         raise FileNotFoundError(f"prepared matches missing: {sorted(set(missing))}")
+    development = {m: load_prepared(paths[m]) for m in split["train"] + split["validation"]}
+    if any(str(b["match_id"]) != m for m, b in development.items()):
+        raise ValueError("prepared match identity does not match split")
+    protocols = {(int(b.get("schema_version", 1)), str(b.get("observation_view", "legacy_all")))
+                 for b in development.values()}
+    if len(protocols) != 1:
+        raise ValueError("training/validation schema or observation view mismatch")
     train_files = [paths[match] for match in split["train"]]
     validation_files = [paths[match] for match in split["validation"]]
     alive, alive_report = select_classifier(train_files, validation_files, "y_alive",
@@ -235,16 +280,19 @@ def train_from_split(prepared_dir: str | Path, split_path: str | Path,
         and validation["non_decrease_fraction"] >= 0.70
     )
     metrica = None if metrica_path is None else _metrica_gate(
-        metrica_path, home, reference_window, pd
+        metrica_path, home, reference_window, pd, alive, selected
     )
-    promoted = bool(validation["passed"] and metrica is not None and metrica["passed"])
+    promoted = False  # Full H/A/D external sequence gate and fresh holdout are not established.
     test_report = None
     if promoted:
         test_files = [paths[match] for match in split["test"]]
         test_report = _evaluate_files(
             test_files, alive, home, selected, reference_window, pd, pm
         )
-    metadata = {**selected, "seed": config["random_seed"], "promoted": promoted}
+    schema, view = next(iter(protocols))
+    metadata = {**selected, "seed": config["random_seed"], "promoted": promoted,
+                "schema_version": schema, "observation_view": view,
+                "calibration_status": "not_calibrated_legacy_training_path"}
     alive.mtah_metadata = metadata
     home.mtah_metadata = metadata
     output = Path(output_dir)

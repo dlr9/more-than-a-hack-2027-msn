@@ -105,10 +105,10 @@ def apply_set_piece_evidence(
             int(config["restart_future_window_frames"]),
             int(config["restart_future_min_hits"]),
         )
-        out[start:restart] = "D"
+        # A broad set-piece tag alone does not establish a dead interval.
         team = (event.get("tags", {}).get("Team") or "").strip().casefold()
         label = team_name_to_label.get(team)
-        if label:
+        if label and restart < stop:
             seed_stop = min(len(out), restart + int(config["restart_team_seed_frames"]))
             out[restart:seed_stop] = label
     return out
@@ -129,8 +129,5 @@ def heuristic_labels(
     output = np.full(len(labels), "X", dtype="<U1")
     for start, stop in blocks:
         output[start:stop + 1] = labels[start:stop + 1]
-    second_start = blocks[1][0]
-    kickoff = int(config["second_half_kickoff_frame"])
-    output[second_start:kickoff] = "D"
     return output
 

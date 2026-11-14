@@ -15,7 +15,7 @@ import numpy as np
 from games import GAME, GAMES, half_video_blocks, require, source_frames
 from starter.load_smart_tagging import load as load_smart_tagging
 
-from .atd import read_atd, team_metadata
+from .atd import read_atd, team_metadata, track_team_intervals
 from .config import load_config
 from .decoder import emission_probabilities, viterbi_decode
 from .heuristic import heuristic_labels, majority_smooth
@@ -33,6 +33,9 @@ def build_batch(data_dir: str | None, config: dict):
         GAMES[GAME]["fps"],
         [float(value) for value in config["distance_radii_m"]],
         [float(value) for value in config["temporal_windows_s"]],
+        blocks=[(start, stop) for _, start, stop in half_video_blocks(GAME)],
+        schema_version=int(config.get("feature_schema_version", 1)),
+        track_layout=track_team_intervals(meta_path),
     )
     return batch, team_names
 
@@ -47,7 +50,20 @@ def _load_models(model_dir: str | Path):
 
 
 def generate(args: argparse.Namespace) -> Path:
+    if not getattr(args, "offline_team_ack", False):
+        raise RuntimeError("Target inputs require a team-controlled offline environment; no cloud access")
     config = load_config(args.config)
+    if args.mode in ("model", "final"):
+        if not args.model_dir:
+            raise ValueError("--model-dir is required")
+        alive_model, home_model = _load_models(args.model_dir)
+        metadata = getattr(alive_model, "mtah_metadata", {})
+        other = getattr(home_model, "mtah_metadata", {})
+        if metadata != other:
+            raise ValueError("classifier pair metadata differs")
+        config["feature_schema_version"] = int(metadata.get("schema_version", 1))
+        if args.mode == "final":
+            raise RuntimeError("No candidate has a validated full H/A/D gate; final mode is disabled")
     batch, team_names = build_batch(args.data_dir, config)
     blocks = [(start, stop) for _, start, stop in half_video_blocks(GAME)]
 
@@ -63,12 +79,6 @@ def generate(args: argparse.Namespace) -> Path:
             import pandas as pd
         except ImportError as error:
             raise RuntimeError("model mode needs pandas; install requirements-solution.txt") from error
-        alive_model, home_model = _load_models(args.model_dir)
-        if args.mode == "final" and not getattr(alive_model, "mtah_metadata", {}).get("promoted", False):
-            raise RuntimeError(
-                "model did not pass the SkillCorner and Metrica promotion gates; "
-                "use --mode model only for diagnostics or submit heuristic/reference"
-            )
         required_names = sorted(set(alive_model.feature_names_in_) | set(home_model.feature_names_in_))
         matrix, _ = batch.matrix(required_names)
         frame = pd.DataFrame(matrix, columns=required_names)
@@ -82,9 +92,6 @@ def generate(args: argparse.Namespace) -> Path:
             float(metadata.get("team_switch_penalty", 3.0)),
             float(metadata.get("dead_switch_penalty", 1.0)),
         )
-        if len(blocks) > 1:
-            kickoff = int(config["second_half_kickoff_frame"])
-            labels[blocks[1][0]:kickoff] = "D"
 
     path = write_submission(args.out, labels)
     counts = {label: int(np.sum(np.asarray(labels) == label)) for label in "HADX"}
@@ -101,6 +108,7 @@ def main() -> None:
     parser.add_argument("--data-dir")
     parser.add_argument("--config")
     parser.add_argument("--model-dir")
+    parser.add_argument("--offline-team-ack", action="store_true", help="team confirms offline execution and data isolation")
     generate(parser.parse_args())
 
 
