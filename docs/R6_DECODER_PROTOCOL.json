@@ -1,0 +1,11 @@
+{
+  "version":"R6-M2-missing-stability-v1",
+  "status":"frozen_before_decoder_ablation",
+  "hypothesis":"M2 improves missing-ball spell but increases false D cuts under dropout; increase both entering/exiting D costs by4 when either adjacent frame lacks ball observations, retaining existing Home/Alive probabilities and team cost.",
+  "inputs":"exact cached out-of-match M2 probabilities for J03WPY/J03WOH/J03WQQ; no model refit or label input",
+  "mechanism":"one fixed factor4, no search; visibility only; per-half reset; missing never forces either alive or dead",
+  "comparison":"M2 fixed decoder vs M2 plus missing-stability; natural must be bitwise unchanged",
+  "retention":"experimental only if dropout full-spell improves >=2/3 matches and mean delta >=0.01, false-dead cut counts do not increase on any match, and natural predictions identical; otherwise revert",
+  "validation_status":"post-hoc hypothesis based on previous development results, preregistered before this ablation; same development folds, not a fresh test",
+  "no_competition_promotion":true
+}
