@@ -1,0 +1,173 @@
+{
+  "M4": "KEEP_DIAGNOSTIC_ONLY",
+  "candidates": {
+    "M5": {
+      "decision": "REVERT_AS_REPLACEMENT",
+      "paired_spell_deltas": {
+        "natural": [
+          -0.12721712203008956,
+          -0.11314092193533076,
+          -0.16430879189001923
+        ],
+        "dropout": [
+          -0.09274729274729288,
+          -0.08469600288017032,
+          -0.11431602463446383
+        ],
+        "short": [
+          -0.07126179831097867,
+          -0.04472709094763949,
+          -0.06792372368931915
+        ],
+        "long": [
+          -0.11402454069423601,
+          -0.0998924623895523,
+          -0.13518160326670953
+        ]
+      },
+      "paired_dead_miss_increases": {
+        "natural": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.18552609226112338
+          },
+          {
+            "missed_segment_rate": 0.058823529411764705,
+            "missed_frame_rate": 0.23741745698570532
+          },
+          {
+            "missed_segment_rate": 0.04040404040404041,
+            "missed_frame_rate": 0.2421326711844533
+          }
+        ],
+        "dropout": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.1624994208583651
+          },
+          {
+            "missed_segment_rate": 0.00980392156862745,
+            "missed_frame_rate": 0.21509445525440868
+          },
+          {
+            "missed_segment_rate": 0.020202020202020204,
+            "missed_frame_rate": 0.22238890900625938
+          }
+        ],
+        "short": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.1647233247362975
+          },
+          {
+            "missed_segment_rate": 0.0196078431372549,
+            "missed_frame_rate": 0.22903675558075043
+          },
+          {
+            "missed_segment_rate": 0.010101010101010102,
+            "missed_frame_rate": 0.23454554860069318
+          }
+        ],
+        "long": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.16327160970486942
+          },
+          {
+            "missed_segment_rate": 0.029411764705882353,
+            "missed_frame_rate": 0.2066524690128545
+          },
+          {
+            "missed_segment_rate": 0.04040404040404041,
+            "missed_frame_rate": 0.22756194713155034
+          }
+        ]
+      }
+    },
+    "M6": {
+      "decision": "REVERT_AS_REPLACEMENT",
+      "paired_spell_deltas": {
+        "natural": [
+          -0.17781207773517743,
+          -0.20395104568169298,
+          -0.23010954528570943
+        ],
+        "dropout": [
+          -0.15699569956995707,
+          -0.15105364959788248,
+          -0.17994778985320442
+        ],
+        "short": [
+          -0.2362673585000251,
+          -0.19154680196247603,
+          -0.2253265079507772
+        ],
+        "long": [
+          -0.1527276836336353,
+          -0.1729973429710684,
+          -0.19391857932652035
+        ]
+      },
+      "paired_dead_miss_increases": {
+        "natural": [
+          {
+            "missed_segment_rate": 0.020618556701030927,
+            "missed_frame_rate": 0.3127982579419623
+          },
+          {
+            "missed_segment_rate": 0.09803921568627451,
+            "missed_frame_rate": 0.3178384838131425
+          },
+          {
+            "missed_segment_rate": 0.050505050505050504,
+            "missed_frame_rate": 0.40385908644146706
+          }
+        ],
+        "dropout": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.26133959321091565
+          },
+          {
+            "missed_segment_rate": 0.029411764705882353,
+            "missed_frame_rate": 0.26444406992599856
+          },
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.3442484437776973
+          }
+        ],
+        "short": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.2639804790659604
+          },
+          {
+            "missed_segment_rate": 0.0196078431372549,
+            "missed_frame_rate": 0.27058787479507884
+          },
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.3398858482920353
+          }
+        ],
+        "long": [
+          {
+            "missed_segment_rate": 0.0,
+            "missed_frame_rate": 0.2668530215749564
+          },
+          {
+            "missed_segment_rate": 0.0392156862745098,
+            "missed_frame_rate": 0.27207403208261194
+          },
+          {
+            "missed_segment_rate": 0.04040404040404041,
+            "missed_frame_rate": 0.3609401134619695
+          }
+        ]
+      }
+    }
+  },
+  "selected_new_candidate": null,
+  "rollback": "R6-M1 frozen first fold; no formal target promotion"
+}

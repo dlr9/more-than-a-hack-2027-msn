@@ -1,0 +1,115 @@
+{
+  "new_HGB_fits": 18,
+  "artifacts": [
+    {
+      "path": "local_artifacts/r7/core-v1/J03WPY-M4.joblib",
+      "sha256": "393a013cd906958319302f9d2beaefb6f8fafe4c81180268d7ec735d7c603013",
+      "bytes": 325135,
+      "version": "M4",
+      "heldout": "J03WPY",
+      "train": [
+        "J03WOH",
+        "J03WQQ"
+      ],
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WPY-M5.joblib",
+      "sha256": "46dd53284631d9bf1411450e93d24e072f504328dfc4d6f635e4c692bd617ff1",
+      "bytes": 325871,
+      "version": "M5",
+      "heldout": "J03WPY",
+      "train": [
+        "J03WOH",
+        "J03WQQ"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WPY-M6.joblib",
+      "sha256": "9705ba3020c757db7e5c15ca44f3d5b3d1e2e85fc02688e7e97f0fa30b367488",
+      "bytes": 291985,
+      "version": "M6",
+      "heldout": "J03WPY",
+      "train": [
+        "J03WOH",
+        "J03WQQ"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WOH-M4.joblib",
+      "sha256": "2572ca796c2a449d345392fa023ebe04dc1e28ea4b0969c858d8bdd22f7bc040",
+      "bytes": 325087,
+      "version": "M4",
+      "heldout": "J03WOH",
+      "train": [
+        "J03WPY",
+        "J03WQQ"
+      ],
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WOH-M5.joblib",
+      "sha256": "11256b1c560f327bc61656c60c2e81f14ca708a82d18e1e59e5413ac160adb96",
+      "bytes": 325855,
+      "version": "M5",
+      "heldout": "J03WOH",
+      "train": [
+        "J03WPY",
+        "J03WQQ"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WOH-M6.joblib",
+      "sha256": "8e79f422405b441bf7f61996f09746cf2f4ba0f1a65838d05007090eaab7f1cc",
+      "bytes": 291969,
+      "version": "M6",
+      "heldout": "J03WOH",
+      "train": [
+        "J03WPY",
+        "J03WQQ"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WQQ-M4.joblib",
+      "sha256": "3ab5570556fabe4d63f5ba04df0608b60f8f70bf9d2b319fc64e3bc5f4b7bdf2",
+      "bytes": 325023,
+      "version": "M4",
+      "heldout": "J03WQQ",
+      "train": [
+        "J03WPY",
+        "J03WOH"
+      ],
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WQQ-M5.joblib",
+      "sha256": "436f11bc0fdaecabaf1069414e31c07049bed8d1f0a6165eefd5503757f8e176",
+      "bytes": 325759,
+      "version": "M5",
+      "heldout": "J03WQQ",
+      "train": [
+        "J03WPY",
+        "J03WOH"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    },
+    {
+      "path": "local_artifacts/r7/core-v1/J03WQQ-M6.joblib",
+      "sha256": "7ac92655c3a18789a9a43a54760aacf7105d1ebf26bc0e7343bcfa7d35adf00c",
+      "bytes": 291873,
+      "version": "M6",
+      "heldout": "J03WQQ",
+      "train": [
+        "J03WPY",
+        "J03WOH"
+      ],
+      "status": "REVERT_AS_REPLACEMENT"
+    }
+  ],
+  "frozen_prior_registry_sha256": "019012efa38f72e6592454640726a655bb00a5838f95ed0a440bc1b468514976",
+  "competition_promoted": false
+}

@@ -7,5 +7,529 @@
     "remote_pr2": "093361a3d02ffa9ce195e65ccbb4ad5159624dad",
     "decision": "KEEP",
     "next": "E01/E02 actual training"
+  },
+  {
+    "experiment_id": "E01_E02_E04_core",
+    "git_sha": "ca9eb1315139188b18152f045e7ad6c902499aac",
+    "code_sha256": {
+      "scripts/research_r7.py": "107902e120f3da0f13150b773e3a72b67695d85bdc973ce80863d38e8821eb87",
+      "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+      "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+      "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+      "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+      "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+      "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+    "models": [
+      {
+        "heldout": "J03WPY",
+        "variant": "M4",
+        "train": [
+          "J03WOH",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WPY-M4.joblib",
+        "sha256": "393a013cd906958319302f9d2beaefb6f8fafe4c81180268d7ec735d7c603013",
+        "bytes": 325135,
+        "alive": {
+          "n": 22366,
+          "class_counts": [
+            9857,
+            12509
+          ]
+        },
+        "home": {
+          "n": 12509,
+          "class_counts": [
+            6415,
+            6094
+          ]
+        }
+      },
+      {
+        "heldout": "J03WPY",
+        "variant": "M5",
+        "train": [
+          "J03WOH",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WPY-M5.joblib",
+        "sha256": "46dd53284631d9bf1411450e93d24e072f504328dfc4d6f635e4c692bd617ff1",
+        "bytes": 325871,
+        "alive": {
+          "n": 44732,
+          "class_counts": [
+            19714,
+            25018
+          ]
+        },
+        "home": {
+          "n": 25018,
+          "class_counts": [
+            12830,
+            12188
+          ]
+        }
+      },
+      {
+        "heldout": "J03WPY",
+        "variant": "M6",
+        "train": [
+          "J03WOH",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WPY-M6.joblib",
+        "sha256": "9705ba3020c757db7e5c15ca44f3d5b3d1e2e85fc02688e7e97f0fa30b367488",
+        "bytes": 291985,
+        "alive": {
+          "n": 44732,
+          "class_counts": [
+            19714,
+            25018
+          ]
+        },
+        "home": {
+          "n": 25018,
+          "class_counts": [
+            12830,
+            12188
+          ]
+        }
+      },
+      {
+        "heldout": "J03WOH",
+        "variant": "M4",
+        "train": [
+          "J03WPY",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WOH-M4.joblib",
+        "sha256": "2572ca796c2a449d345392fa023ebe04dc1e28ea4b0969c858d8bdd22f7bc040",
+        "bytes": 325087,
+        "alive": {
+          "n": 23085,
+          "class_counts": [
+            9813,
+            13272
+          ]
+        },
+        "home": {
+          "n": 13272,
+          "class_counts": [
+            6202,
+            7070
+          ]
+        }
+      },
+      {
+        "heldout": "J03WOH",
+        "variant": "M5",
+        "train": [
+          "J03WPY",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WOH-M5.joblib",
+        "sha256": "11256b1c560f327bc61656c60c2e81f14ca708a82d18e1e59e5413ac160adb96",
+        "bytes": 325855,
+        "alive": {
+          "n": 46170,
+          "class_counts": [
+            19626,
+            26544
+          ]
+        },
+        "home": {
+          "n": 26544,
+          "class_counts": [
+            12404,
+            14140
+          ]
+        }
+      },
+      {
+        "heldout": "J03WOH",
+        "variant": "M6",
+        "train": [
+          "J03WPY",
+          "J03WQQ"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WOH-M6.joblib",
+        "sha256": "8e79f422405b441bf7f61996f09746cf2f4ba0f1a65838d05007090eaab7f1cc",
+        "bytes": 291969,
+        "alive": {
+          "n": 46170,
+          "class_counts": [
+            19626,
+            26544
+          ]
+        },
+        "home": {
+          "n": 26544,
+          "class_counts": [
+            12404,
+            14140
+          ]
+        }
+      },
+      {
+        "heldout": "J03WQQ",
+        "variant": "M4",
+        "train": [
+          "J03WPY",
+          "J03WOH"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WQQ-M4.joblib",
+        "sha256": "3ab5570556fabe4d63f5ba04df0608b60f8f70bf9d2b319fc64e3bc5f4b7bdf2",
+        "bytes": 325023,
+        "alive": {
+          "n": 22675,
+          "class_counts": [
+            10396,
+            12279
+          ]
+        },
+        "home": {
+          "n": 12279,
+          "class_counts": [
+            5051,
+            7228
+          ]
+        }
+      },
+      {
+        "heldout": "J03WQQ",
+        "variant": "M5",
+        "train": [
+          "J03WPY",
+          "J03WOH"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WQQ-M5.joblib",
+        "sha256": "436f11bc0fdaecabaf1069414e31c07049bed8d1f0a6165eefd5503757f8e176",
+        "bytes": 325759,
+        "alive": {
+          "n": 45350,
+          "class_counts": [
+            20792,
+            24558
+          ]
+        },
+        "home": {
+          "n": 24558,
+          "class_counts": [
+            10102,
+            14456
+          ]
+        }
+      },
+      {
+        "heldout": "J03WQQ",
+        "variant": "M6",
+        "train": [
+          "J03WPY",
+          "J03WOH"
+        ],
+        "path": "local_artifacts/r7/core-v1/J03WQQ-M6.joblib",
+        "sha256": "7ac92655c3a18789a9a43a54760aacf7105d1ebf26bc0e7343bcfa7d35adf00c",
+        "bytes": 291873,
+        "alive": {
+          "n": 45350,
+          "class_counts": [
+            20792,
+            24558
+          ]
+        },
+        "home": {
+          "n": 24558,
+          "class_counts": [
+            10102,
+            14456
+          ]
+        }
+      }
+    ],
+    "cost": {
+      "wall_s": 198.31498247617856,
+      "cpu_s": 235.590071,
+      "peak_rss_bytes": 841367552
+    },
+    "fits": 18,
+    "competition_promoted": false,
+    "utc": "2026-11-14T16:12:30.203650+00:00",
+    "decision": "diagnostic; stress comparison pending",
+    "next": "E03 independent label-blind masks and E05 complete attribution"
+  },
+  {
+    "experiment_id": "E03_prepare",
+    "git_sha": "ca9eb1315139188b18152f045e7ad6c902499aac",
+    "code_sha256": {
+      "scripts/research_r7.py": "107902e120f3da0f13150b773e3a72b67695d85bdc973ce80863d38e8821eb87",
+      "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+      "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+      "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+      "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+      "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+      "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+    "wall_s": 428.20960885914974,
+    "decision": "KEEP label-blind fixed processes",
+    "next": "score all frozen models without further fitting"
+  },
+  {
+    "experiment_id": "E03_E05_stress",
+    "git_sha": "ca9eb1315139188b18152f045e7ad6c902499aac",
+    "code_sha256": {
+      "scripts/research_r7.py": "107902e120f3da0f13150b773e3a72b67695d85bdc973ce80863d38e8821eb87",
+      "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+      "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+      "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+      "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+      "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+      "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+    "wall_s": 492.7561398949474,
+    "competition_promoted": false,
+    "decision": "evaluate frozen retention gate next"
+  },
+  {
+    "experiment_id": "E06_download_repair",
+    "error_class": "MetadataStorageAssumption",
+    "evidence": "small MatchInformation XML is ordinary Git blob, large positions use LFS",
+    "attempted_fix": "verify small XML by pinned Git blob SHA1 and size; verify large XML by LFS SHA256 and size; parse both XMLs",
+    "scores_seen": false,
+    "decision": "KEEP parser/download repair; unchanged frozen models",
+    "next": "resume acquisition before evaluation marker"
+  },
+  {
+    "experiment_id": "E07_output_repair",
+    "utc": "2026-11-15T00:45:45.917844+00:00",
+    "error_class": "DuplicateResultKeyword",
+    "evidence": "all six predictions saved in transfer-v1; final JSON rejected duplicate protocol_sha256 keyword",
+    "attempted_fix": "use separate transfer_protocol_sha256; preserve v1 and rerun identical no-fit diagnostic into v2",
+    "decision": "KEEP engineering fix; no model or parameter change",
+    "next": "finish source transfer summary"
+  },
+  {
+    "experiment_id": "E07_cross_provider_partial",
+    "git_sha": "bf50335811315d4f2d1891ae1e4376f7e69852df",
+    "code_sha256": {
+      "scripts/research_r7.py": "107902e120f3da0f13150b773e3a72b67695d85bdc973ce80863d38e8821eb87",
+      "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+      "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+      "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+      "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+      "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+      "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+    "transfer_script_sha256": "95e2bbefef7388d8b0eb07ac849d1cf8b1c9c7f0e2d762175fbe1e1418ef5de1",
+    "adapter_sha256": "422d05df0588f3c0dd80c36c97db3bfc2a4acf2b486ed2e883c69b90474e6ee0",
+    "transfer_protocol_sha256": "83dc3fa30c90a58d4c050e70ff71fb98145493aa2fb9291c6a62dec7f198f380",
+    "full_spell_f1": null,
+    "wall_s": 32.80841429904103,
+    "decision": "diagnostic only; no selection, no D ground truth",
+    "competition_promoted": false
+  },
+  {
+    "experiment_id": "E02_E04_RETENTION",
+    "hypothesis": "ablation weakens direct freeze proxies while augmentation may retain useful spell quality",
+    "code_sha": "ca9eb1315139188b18152f045e7ad6c902499aac",
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "decisions": {
+      "M5": {
+        "decision": "REVERT_AS_REPLACEMENT",
+        "paired_spell_deltas": {
+          "natural": [
+            -0.12721712203008956,
+            -0.11314092193533076,
+            -0.16430879189001923
+          ],
+          "dropout": [
+            -0.09274729274729288,
+            -0.08469600288017032,
+            -0.11431602463446383
+          ],
+          "short": [
+            -0.07126179831097867,
+            -0.04472709094763949,
+            -0.06792372368931915
+          ],
+          "long": [
+            -0.11402454069423601,
+            -0.0998924623895523,
+            -0.13518160326670953
+          ]
+        },
+        "paired_dead_miss_increases": {
+          "natural": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.18552609226112338
+            },
+            {
+              "missed_segment_rate": 0.058823529411764705,
+              "missed_frame_rate": 0.23741745698570532
+            },
+            {
+              "missed_segment_rate": 0.04040404040404041,
+              "missed_frame_rate": 0.2421326711844533
+            }
+          ],
+          "dropout": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.1624994208583651
+            },
+            {
+              "missed_segment_rate": 0.00980392156862745,
+              "missed_frame_rate": 0.21509445525440868
+            },
+            {
+              "missed_segment_rate": 0.020202020202020204,
+              "missed_frame_rate": 0.22238890900625938
+            }
+          ],
+          "short": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.1647233247362975
+            },
+            {
+              "missed_segment_rate": 0.0196078431372549,
+              "missed_frame_rate": 0.22903675558075043
+            },
+            {
+              "missed_segment_rate": 0.010101010101010102,
+              "missed_frame_rate": 0.23454554860069318
+            }
+          ],
+          "long": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.16327160970486942
+            },
+            {
+              "missed_segment_rate": 0.029411764705882353,
+              "missed_frame_rate": 0.2066524690128545
+            },
+            {
+              "missed_segment_rate": 0.04040404040404041,
+              "missed_frame_rate": 0.22756194713155034
+            }
+          ]
+        }
+      },
+      "M6": {
+        "decision": "REVERT_AS_REPLACEMENT",
+        "paired_spell_deltas": {
+          "natural": [
+            -0.17781207773517743,
+            -0.20395104568169298,
+            -0.23010954528570943
+          ],
+          "dropout": [
+            -0.15699569956995707,
+            -0.15105364959788248,
+            -0.17994778985320442
+          ],
+          "short": [
+            -0.2362673585000251,
+            -0.19154680196247603,
+            -0.2253265079507772
+          ],
+          "long": [
+            -0.1527276836336353,
+            -0.1729973429710684,
+            -0.19391857932652035
+          ]
+        },
+        "paired_dead_miss_increases": {
+          "natural": [
+            {
+              "missed_segment_rate": 0.020618556701030927,
+              "missed_frame_rate": 0.3127982579419623
+            },
+            {
+              "missed_segment_rate": 0.09803921568627451,
+              "missed_frame_rate": 0.3178384838131425
+            },
+            {
+              "missed_segment_rate": 0.050505050505050504,
+              "missed_frame_rate": 0.40385908644146706
+            }
+          ],
+          "dropout": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.26133959321091565
+            },
+            {
+              "missed_segment_rate": 0.029411764705882353,
+              "missed_frame_rate": 0.26444406992599856
+            },
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.3442484437776973
+            }
+          ],
+          "short": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.2639804790659604
+            },
+            {
+              "missed_segment_rate": 0.0196078431372549,
+              "missed_frame_rate": 0.27058787479507884
+            },
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.3398858482920353
+            }
+          ],
+          "long": [
+            {
+              "missed_segment_rate": 0.0,
+              "missed_frame_rate": 0.2668530215749564
+            },
+            {
+              "missed_segment_rate": 0.0392156862745098,
+              "missed_frame_rate": 0.27207403208261194
+            },
+            {
+              "missed_segment_rate": 0.04040404040404041,
+              "missed_frame_rate": 0.3609401134619695
+            }
+          ]
+        }
+      }
+    },
+    "selected_new_candidate": null,
+    "next": "one-shot frozen references and independent provider partial diagnosis; no hyperparameter rescue"
+  },
+  {
+    "experiment_id": "E06_parser_repair",
+    "error_class": "ExplicitNonPlayerObject",
+    "evidence": "J03WMX contains three TeamId=referee objects absent from player roster; no scores produced",
+    "attempted_fix": "exclude only explicit referee TeamId, count excluded objects/records, keep unknown team hard failure",
+    "scores_seen": false,
+    "decision": "KEEP structural parser fix; frozen model/feature parameters unchanged",
+    "next": "resume public parse and independently compare floodlight before one-shot score"
+  },
+  {
+    "experiment_id": "E06_disk_recovery",
+    "utc": "2026-11-15T01:56:21.832737+00:00",
+    "error_class": "ENOSPC",
+    "evidence": "HF Xet download second sealed position XML failed; 186MiB disk free; no evaluation marker/scores",
+    "attempted_fix": "macOS transparent lossless compression of 3 public R6 XML and 1 public SC JSONL; each byte size and SHA256 verified before atomic replacement",
+    "bytes_saved": 931782656,
+    "original_paths_and_hashes_preserved": true,
+    "decision": "KEEP storage repair; no model/result deletion",
+    "next": "resume public download and first sealed evaluation"
   }
 ]

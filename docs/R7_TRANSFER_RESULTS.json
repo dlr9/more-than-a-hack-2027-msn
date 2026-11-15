@@ -1,0 +1,2758 @@
+{
+  "experiment_id": "E07_cross_provider_partial",
+  "git_sha": "bf50335811315d4f2d1891ae1e4376f7e69852df",
+  "code_sha256": {
+    "scripts/research_r7.py": "107902e120f3da0f13150b773e3a72b67695d85bdc973ce80863d38e8821eb87",
+    "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+    "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+    "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+    "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+    "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+  },
+  "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+  "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+  "transfer_script_sha256": "95e2bbefef7388d8b0eb07ac849d1cf8b1c9c7f0e2d762175fbe1e1418ef5de1",
+  "adapter_sha256": "422d05df0588f3c0dd80c36c97db3bfc2a4acf2b486ed2e883c69b90474e6ee0",
+  "transfer_protocol_sha256": "83dc3fa30c90a58d4c050e70ff71fb98145493aa2fb9291c6a62dec7f198f380",
+  "rows": [
+    {
+      "variant": "M1",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.624171118840878,
+        "per_class": {
+          "H": {
+            "precision": 0.957282471626734,
+            "recall": 0.8778548713501012,
+            "f1": 0.9158497964107978,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.935804907695814,
+            "recall": 0.9784732703153547,
+            "f1": 0.956663560111836,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            6073,
+            845,
+            0,
+            0
+          ],
+          [
+            271,
+            12318,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 467,
+          "n_team_spells": 466,
+          "short_team_spells": 0,
+          "mean_team_spell_s": 12.935836909871245
+        },
+        "live_to_dead_proxy_errors": 0,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.8203102961918194,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 49,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 49,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 0,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 0,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 34,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 34,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 0,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 0,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 0,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 65
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.9513256006628004,
+          "home": {
+            "n": 19312,
+            "brier": 0.059117542959030614,
+            "log_loss": 0.20491742686693268,
+            "ece": 0.04708909344878514,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 8771,
+                "predicted": 0.03716428592549068,
+                "observed": 0.006042640519895109
+              },
+              {
+                "bin": 1,
+                "n": 1496,
+                "predicted": 0.14264823054985065,
+                "observed": 0.06951871657754011
+              },
+              {
+                "bin": 2,
+                "n": 866,
+                "predicted": 0.24577663525471605,
+                "observed": 0.1905311778290993
+              },
+              {
+                "bin": 3,
+                "n": 819,
+                "predicted": 0.3488506867598764,
+                "observed": 0.24664224664224665
+              },
+              {
+                "bin": 4,
+                "n": 762,
+                "predicted": 0.4551407024116406,
+                "observed": 0.4304461942257218
+              },
+              {
+                "bin": 5,
+                "n": 897,
+                "predicted": 0.5486419722371402,
+                "observed": 0.5629877369007804
+              },
+              {
+                "bin": 6,
+                "n": 714,
+                "predicted": 0.6471825268108559,
+                "observed": 0.7310924369747899
+              },
+              {
+                "bin": 7,
+                "n": 616,
+                "predicted": 0.751433946410137,
+                "observed": 0.8506493506493507
+              },
+              {
+                "bin": 8,
+                "n": 875,
+                "predicted": 0.8567305561350498,
+                "observed": 0.9645714285714285
+              },
+              {
+                "bin": 9,
+                "n": 3496,
+                "predicted": 0.9572685655178006,
+                "observed": 0.9997139588100686
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.09743589743589744,
+          "home": {
+            "n": 195,
+            "brier": 0.3416072817934088,
+            "log_loss": 0.8790650409790379,
+            "ece": 0.5036518028029385,
+            "reliability": [
+              {
+                "bin": 3,
+                "n": 195,
+                "predicted": 0.39891229976116405,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8841826604897419,
+          "home": {
+            "n": 1511,
+            "brier": 0.11115407527972493,
+            "log_loss": 0.3547544173828758,
+            "ece": 0.03858912578450328,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 369,
+                "predicted": 0.059093495942049726,
+                "observed": 0.016260162601626018
+              },
+              {
+                "bin": 1,
+                "n": 231,
+                "predicted": 0.14333634448623886,
+                "observed": 0.10822510822510822
+              },
+              {
+                "bin": 2,
+                "n": 127,
+                "predicted": 0.24936128238259286,
+                "observed": 0.23622047244094488
+              },
+              {
+                "bin": 3,
+                "n": 111,
+                "predicted": 0.3483667967739301,
+                "observed": 0.2882882882882883
+              },
+              {
+                "bin": 4,
+                "n": 88,
+                "predicted": 0.44774600743207105,
+                "observed": 0.45454545454545453
+              },
+              {
+                "bin": 5,
+                "n": 64,
+                "predicted": 0.5523556675053753,
+                "observed": 0.59375
+              },
+              {
+                "bin": 6,
+                "n": 77,
+                "predicted": 0.6535762178182561,
+                "observed": 0.6753246753246753
+              },
+              {
+                "bin": 7,
+                "n": 108,
+                "predicted": 0.7540772490437634,
+                "observed": 0.6944444444444444
+              },
+              {
+                "bin": 8,
+                "n": 146,
+                "predicted": 0.8547247365995593,
+                "observed": 0.8835616438356164
+              },
+              {
+                "bin": 9,
+                "n": 190,
+                "predicted": 0.9395703948940389,
+                "observed": 0.9947368421052631
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8979107312440646,
+          "home": {
+            "n": 2106,
+            "brier": 0.1423736596218623,
+            "log_loss": 0.44328150569307906,
+            "ece": 0.07155486857123232,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 286,
+                "predicted": 0.06663713970949206,
+                "observed": 0.013986013986013986
+              },
+              {
+                "bin": 1,
+                "n": 337,
+                "predicted": 0.14575057343882766,
+                "observed": 0.0712166172106825
+              },
+              {
+                "bin": 2,
+                "n": 244,
+                "predicted": 0.2519234845147481,
+                "observed": 0.19262295081967212
+              },
+              {
+                "bin": 3,
+                "n": 280,
+                "predicted": 0.3477847673348671,
+                "observed": 0.25
+              },
+              {
+                "bin": 4,
+                "n": 251,
+                "predicted": 0.4522956357651138,
+                "observed": 0.4063745019920319
+              },
+              {
+                "bin": 5,
+                "n": 219,
+                "predicted": 0.5487759020458437,
+                "observed": 0.5799086757990868
+              },
+              {
+                "bin": 6,
+                "n": 196,
+                "predicted": 0.6451523615146811,
+                "observed": 0.7346938775510204
+              },
+              {
+                "bin": 7,
+                "n": 140,
+                "predicted": 0.7480782660677817,
+                "observed": 0.8642857142857143
+              },
+              {
+                "bin": 8,
+                "n": 115,
+                "predicted": 0.8480601777353073,
+                "observed": 0.9739130434782609
+              },
+              {
+                "bin": 9,
+                "n": 38,
+                "predicted": 0.9201899619269008,
+                "observed": 0.9736842105263158
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    },
+    {
+      "variant": "M2",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.6208261263601332,
+        "per_class": {
+          "H": {
+            "precision": 0.9505485768802672,
+            "recall": 0.8641225787799942,
+            "f1": 0.9052775043537518,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.9413933481834242,
+            "recall": 0.9735483358487569,
+            "f1": 0.9572008747266479,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            5978,
+            763,
+            177,
+            0
+          ],
+          [
+            311,
+            12256,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 538,
+          "n_team_spells": 473,
+          "short_team_spells": 1,
+          "mean_team_spell_s": 9.342494714587739
+        },
+        "live_to_dead_proxy_errors": 199,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.8011157601115759,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 57,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 57,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 45,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 45,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 1,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 72
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 4,
+          "false_dead_rate": 0.00020712510356255177,
+          "decoded_ha_accuracy": 0.9441797845898923,
+          "home": {
+            "n": 19312,
+            "brier": 0.060614897999438734,
+            "log_loss": 0.20945242885477589,
+            "ece": 0.048042314392475874,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 8671,
+                "predicted": 0.03667553831819501,
+                "observed": 0.006227655403067697
+              },
+              {
+                "bin": 1,
+                "n": 1574,
+                "predicted": 0.1426382724605207,
+                "observed": 0.06925031766200762
+              },
+              {
+                "bin": 2,
+                "n": 962,
+                "predicted": 0.2494505065787125,
+                "observed": 0.17567567567567569
+              },
+              {
+                "bin": 3,
+                "n": 800,
+                "predicted": 0.3478637097647649,
+                "observed": 0.275
+              },
+              {
+                "bin": 4,
+                "n": 766,
+                "predicted": 0.4561617215166335,
+                "observed": 0.44778067885117495
+              },
+              {
+                "bin": 5,
+                "n": 994,
+                "predicted": 0.5504457872692873,
+                "observed": 0.6016096579476862
+              },
+              {
+                "bin": 6,
+                "n": 651,
+                "predicted": 0.6524236463379823,
+                "observed": 0.7403993855606759
+              },
+              {
+                "bin": 7,
+                "n": 610,
+                "predicted": 0.7510407838728146,
+                "observed": 0.8459016393442623
+              },
+              {
+                "bin": 8,
+                "n": 931,
+                "predicted": 0.8551962674662239,
+                "observed": 0.9656283566058003
+              },
+              {
+                "bin": 9,
+                "n": 3353,
+                "predicted": 0.9568212891140888,
+                "observed": 0.9997017596182524
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 195,
+          "false_dead_rate": 1.0,
+          "decoded_ha_accuracy": 0.0,
+          "home": {
+            "n": 195,
+            "brier": 0.28152074987956427,
+            "log_loss": 0.7563093468773495,
+            "ece": 0.43997568859291025,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 195,
+                "predicted": 0.4625884139711923,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8504301786896096,
+          "home": {
+            "n": 1511,
+            "brier": 0.11351931943548563,
+            "log_loss": 0.36115381310261757,
+            "ece": 0.04354019661994827,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 361,
+                "predicted": 0.057915554482486455,
+                "observed": 0.01662049861495845
+              },
+              {
+                "bin": 1,
+                "n": 220,
+                "predicted": 0.14069624151346682,
+                "observed": 0.09090909090909091
+              },
+              {
+                "bin": 2,
+                "n": 155,
+                "predicted": 0.25085548291584403,
+                "observed": 0.1935483870967742
+              },
+              {
+                "bin": 3,
+                "n": 121,
+                "predicted": 0.3429479687494456,
+                "observed": 0.39669421487603307
+              },
+              {
+                "bin": 4,
+                "n": 74,
+                "predicted": 0.44554269531778007,
+                "observed": 0.5
+              },
+              {
+                "bin": 5,
+                "n": 68,
+                "predicted": 0.5506450916717178,
+                "observed": 0.5882352941176471
+              },
+              {
+                "bin": 6,
+                "n": 87,
+                "predicted": 0.6548583528454099,
+                "observed": 0.6781609195402298
+              },
+              {
+                "bin": 7,
+                "n": 114,
+                "predicted": 0.7501690424269186,
+                "observed": 0.7280701754385965
+              },
+              {
+                "bin": 8,
+                "n": 153,
+                "predicted": 0.8592177768514502,
+                "observed": 0.8823529411764706
+              },
+              {
+                "bin": 9,
+                "n": 158,
+                "predicted": 0.9375290850337027,
+                "observed": 1.0
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8779677113010447,
+          "home": {
+            "n": 2106,
+            "brier": 0.14268651230611332,
+            "log_loss": 0.44476872758707187,
+            "ece": 0.07219457907357943,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 289,
+                "predicted": 0.06587365486421295,
+                "observed": 0.020761245674740483
+              },
+              {
+                "bin": 1,
+                "n": 326,
+                "predicted": 0.14347059512112403,
+                "observed": 0.0736196319018405
+              },
+              {
+                "bin": 2,
+                "n": 276,
+                "predicted": 0.25377400573635184,
+                "observed": 0.14130434782608695
+              },
+              {
+                "bin": 3,
+                "n": 266,
+                "predicted": 0.34375858307449303,
+                "observed": 0.2857142857142857
+              },
+              {
+                "bin": 4,
+                "n": 240,
+                "predicted": 0.45143968818408087,
+                "observed": 0.425
+              },
+              {
+                "bin": 5,
+                "n": 256,
+                "predicted": 0.5478180945728979,
+                "observed": 0.62890625
+              },
+              {
+                "bin": 6,
+                "n": 174,
+                "predicted": 0.6516984332489806,
+                "observed": 0.6724137931034483
+              },
+              {
+                "bin": 7,
+                "n": 142,
+                "predicted": 0.7487216548755469,
+                "observed": 0.8943661971830986
+              },
+              {
+                "bin": 8,
+                "n": 115,
+                "predicted": 0.847026533637659,
+                "observed": 0.991304347826087
+              },
+              {
+                "bin": 9,
+                "n": 22,
+                "predicted": 0.9195711193122932,
+                "observed": 1.0
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    },
+    {
+      "variant": "M3",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.6208261263601332,
+        "per_class": {
+          "H": {
+            "precision": 0.9505485768802672,
+            "recall": 0.8641225787799942,
+            "f1": 0.9052775043537518,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.9413933481834242,
+            "recall": 0.9735483358487569,
+            "f1": 0.9572008747266479,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            5978,
+            763,
+            177,
+            0
+          ],
+          [
+            311,
+            12256,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 538,
+          "n_team_spells": 473,
+          "short_team_spells": 1,
+          "mean_team_spell_s": 9.342494714587739
+        },
+        "live_to_dead_proxy_errors": 199,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.8011157601115759,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 57,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 57,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 45,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 45,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 1,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 72
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 4,
+          "false_dead_rate": 0.00020712510356255177,
+          "decoded_ha_accuracy": 0.9441797845898923,
+          "home": {
+            "n": 19312,
+            "brier": 0.060614897999438734,
+            "log_loss": 0.20945242885477589,
+            "ece": 0.048042314392475874,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 8671,
+                "predicted": 0.03667553831819501,
+                "observed": 0.006227655403067697
+              },
+              {
+                "bin": 1,
+                "n": 1574,
+                "predicted": 0.1426382724605207,
+                "observed": 0.06925031766200762
+              },
+              {
+                "bin": 2,
+                "n": 962,
+                "predicted": 0.2494505065787125,
+                "observed": 0.17567567567567569
+              },
+              {
+                "bin": 3,
+                "n": 800,
+                "predicted": 0.3478637097647649,
+                "observed": 0.275
+              },
+              {
+                "bin": 4,
+                "n": 766,
+                "predicted": 0.4561617215166335,
+                "observed": 0.44778067885117495
+              },
+              {
+                "bin": 5,
+                "n": 994,
+                "predicted": 0.5504457872692873,
+                "observed": 0.6016096579476862
+              },
+              {
+                "bin": 6,
+                "n": 651,
+                "predicted": 0.6524236463379823,
+                "observed": 0.7403993855606759
+              },
+              {
+                "bin": 7,
+                "n": 610,
+                "predicted": 0.7510407838728146,
+                "observed": 0.8459016393442623
+              },
+              {
+                "bin": 8,
+                "n": 931,
+                "predicted": 0.8551962674662239,
+                "observed": 0.9656283566058003
+              },
+              {
+                "bin": 9,
+                "n": 3353,
+                "predicted": 0.9568212891140888,
+                "observed": 0.9997017596182524
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 195,
+          "false_dead_rate": 1.0,
+          "decoded_ha_accuracy": 0.0,
+          "home": {
+            "n": 195,
+            "brier": 0.28152074987956427,
+            "log_loss": 0.7563093468773495,
+            "ece": 0.43997568859291025,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 195,
+                "predicted": 0.4625884139711923,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8504301786896096,
+          "home": {
+            "n": 1511,
+            "brier": 0.11351931943548563,
+            "log_loss": 0.36115381310261757,
+            "ece": 0.04354019661994827,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 361,
+                "predicted": 0.057915554482486455,
+                "observed": 0.01662049861495845
+              },
+              {
+                "bin": 1,
+                "n": 220,
+                "predicted": 0.14069624151346682,
+                "observed": 0.09090909090909091
+              },
+              {
+                "bin": 2,
+                "n": 155,
+                "predicted": 0.25085548291584403,
+                "observed": 0.1935483870967742
+              },
+              {
+                "bin": 3,
+                "n": 121,
+                "predicted": 0.3429479687494456,
+                "observed": 0.39669421487603307
+              },
+              {
+                "bin": 4,
+                "n": 74,
+                "predicted": 0.44554269531778007,
+                "observed": 0.5
+              },
+              {
+                "bin": 5,
+                "n": 68,
+                "predicted": 0.5506450916717178,
+                "observed": 0.5882352941176471
+              },
+              {
+                "bin": 6,
+                "n": 87,
+                "predicted": 0.6548583528454099,
+                "observed": 0.6781609195402298
+              },
+              {
+                "bin": 7,
+                "n": 114,
+                "predicted": 0.7501690424269186,
+                "observed": 0.7280701754385965
+              },
+              {
+                "bin": 8,
+                "n": 153,
+                "predicted": 0.8592177768514502,
+                "observed": 0.8823529411764706
+              },
+              {
+                "bin": 9,
+                "n": 158,
+                "predicted": 0.9375290850337027,
+                "observed": 1.0
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 0,
+          "false_dead_rate": 0.0,
+          "decoded_ha_accuracy": 0.8779677113010447,
+          "home": {
+            "n": 2106,
+            "brier": 0.14268651230611332,
+            "log_loss": 0.44476872758707187,
+            "ece": 0.07219457907357943,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 289,
+                "predicted": 0.06587365486421295,
+                "observed": 0.020761245674740483
+              },
+              {
+                "bin": 1,
+                "n": 326,
+                "predicted": 0.14347059512112403,
+                "observed": 0.0736196319018405
+              },
+              {
+                "bin": 2,
+                "n": 276,
+                "predicted": 0.25377400573635184,
+                "observed": 0.14130434782608695
+              },
+              {
+                "bin": 3,
+                "n": 266,
+                "predicted": 0.34375858307449303,
+                "observed": 0.2857142857142857
+              },
+              {
+                "bin": 4,
+                "n": 240,
+                "predicted": 0.45143968818408087,
+                "observed": 0.425
+              },
+              {
+                "bin": 5,
+                "n": 256,
+                "predicted": 0.5478180945728979,
+                "observed": 0.62890625
+              },
+              {
+                "bin": 6,
+                "n": 174,
+                "predicted": 0.6516984332489806,
+                "observed": 0.6724137931034483
+              },
+              {
+                "bin": 7,
+                "n": 142,
+                "predicted": 0.7487216548755469,
+                "observed": 0.8943661971830986
+              },
+              {
+                "bin": 8,
+                "n": 115,
+                "predicted": 0.847026533637659,
+                "observed": 0.991304347826087
+              },
+              {
+                "bin": 9,
+                "n": 22,
+                "predicted": 0.9195711193122932,
+                "observed": 1.0
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    },
+    {
+      "variant": "M4",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.6102686369591532,
+        "per_class": {
+          "H": {
+            "precision": 0.9463033779477374,
+            "recall": 0.8584851113038451,
+            "f1": 0.9002576928907079,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.9526543518056249,
+            "recall": 0.9094447533561045,
+            "f1": 0.9305482179867518,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            5939,
+            569,
+            410,
+            0
+          ],
+          [
+            337,
+            11449,
+            803,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 1115,
+          "n_team_spells": 658,
+          "short_team_spells": 16,
+          "mean_team_spell_s": 7.431306990881458
+        },
+        "live_to_dead_proxy_errors": 1213,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.6433090024330901,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 299,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 299,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 130,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 132,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 251,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 251,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 109,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 114,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 130,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 48
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 1212,
+          "false_dead_rate": 0.0627589063794532,
+          "decoded_ha_accuracy": 0.8912593206296603,
+          "home": {
+            "n": 19312,
+            "brier": 0.06138397658051583,
+            "log_loss": 0.21193256034673677,
+            "ece": 0.0485753928008875,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 8255,
+                "predicted": 0.035413697134641015,
+                "observed": 0.007510599636583889
+              },
+              {
+                "bin": 1,
+                "n": 1787,
+                "predicted": 0.14222019685519408,
+                "observed": 0.041969781757134866
+              },
+              {
+                "bin": 2,
+                "n": 976,
+                "predicted": 0.24691350206144863,
+                "observed": 0.15881147540983606
+              },
+              {
+                "bin": 3,
+                "n": 761,
+                "predicted": 0.3493377026711157,
+                "observed": 0.2614980289093298
+              },
+              {
+                "bin": 4,
+                "n": 868,
+                "predicted": 0.4518815829614304,
+                "observed": 0.423963133640553
+              },
+              {
+                "bin": 5,
+                "n": 926,
+                "predicted": 0.5460207067653661,
+                "observed": 0.5399568034557235
+              },
+              {
+                "bin": 6,
+                "n": 768,
+                "predicted": 0.6474982101654748,
+                "observed": 0.7174479166666666
+              },
+              {
+                "bin": 7,
+                "n": 655,
+                "predicted": 0.7531081772232077,
+                "observed": 0.8458015267175573
+              },
+              {
+                "bin": 8,
+                "n": 862,
+                "predicted": 0.8571070199742742,
+                "observed": 0.95707656612529
+              },
+              {
+                "bin": 9,
+                "n": 3454,
+                "predicted": 0.9576406489200311,
+                "observed": 0.9997104806022004
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 1,
+          "false_dead_rate": 0.005128205128205128,
+          "decoded_ha_accuracy": 0.9025641025641026,
+          "home": {
+            "n": 195,
+            "brier": 0.23898630549939656,
+            "log_loss": 0.6711141480330014,
+            "ece": 0.3886440044213185,
+            "reliability": [
+              {
+                "bin": 5,
+                "n": 195,
+                "predicted": 0.513920098142784,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 79,
+          "false_dead_rate": 0.05228325612177366,
+          "decoded_ha_accuracy": 0.8312375909993381,
+          "home": {
+            "n": 1511,
+            "brier": 0.1118635028025588,
+            "log_loss": 0.35479345701818826,
+            "ece": 0.04721728120236078,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 367,
+                "predicted": 0.05552301650119692,
+                "observed": 0.01634877384196185
+              },
+              {
+                "bin": 1,
+                "n": 223,
+                "predicted": 0.1404450236578035,
+                "observed": 0.08071748878923767
+              },
+              {
+                "bin": 2,
+                "n": 137,
+                "predicted": 0.24746987523644623,
+                "observed": 0.22627737226277372
+              },
+              {
+                "bin": 3,
+                "n": 123,
+                "predicted": 0.3472628024097437,
+                "observed": 0.34146341463414637
+              },
+              {
+                "bin": 4,
+                "n": 75,
+                "predicted": 0.44128540946560446,
+                "observed": 0.5733333333333334
+              },
+              {
+                "bin": 5,
+                "n": 73,
+                "predicted": 0.5493473504155516,
+                "observed": 0.5753424657534246
+              },
+              {
+                "bin": 6,
+                "n": 76,
+                "predicted": 0.6529468012096997,
+                "observed": 0.6842105263157895
+              },
+              {
+                "bin": 7,
+                "n": 114,
+                "predicted": 0.7532617480852672,
+                "observed": 0.6578947368421053
+              },
+              {
+                "bin": 8,
+                "n": 138,
+                "predicted": 0.8582769189426568,
+                "observed": 0.8840579710144928
+              },
+              {
+                "bin": 9,
+                "n": 185,
+                "predicted": 0.9382404233734863,
+                "observed": 1.0
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 154,
+          "false_dead_rate": 0.0731244064577398,
+          "decoded_ha_accuracy": 0.8290598290598291,
+          "home": {
+            "n": 2106,
+            "brier": 0.14786502166861587,
+            "log_loss": 0.45916742993121024,
+            "ece": 0.07877592407693404,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 190,
+                "predicted": 0.06114807101772718,
+                "observed": 0.04736842105263158
+              },
+              {
+                "bin": 1,
+                "n": 353,
+                "predicted": 0.14816315841160266,
+                "observed": 0.06232294617563739
+              },
+              {
+                "bin": 2,
+                "n": 298,
+                "predicted": 0.24726091668121686,
+                "observed": 0.13758389261744966
+              },
+              {
+                "bin": 3,
+                "n": 252,
+                "predicted": 0.3524709959152697,
+                "observed": 0.27380952380952384
+              },
+              {
+                "bin": 4,
+                "n": 320,
+                "predicted": 0.45270565398449714,
+                "observed": 0.36875
+              },
+              {
+                "bin": 5,
+                "n": 219,
+                "predicted": 0.546461627444955,
+                "observed": 0.5844748858447488
+              },
+              {
+                "bin": 6,
+                "n": 174,
+                "predicted": 0.6474176902760239,
+                "observed": 0.7528735632183908
+              },
+              {
+                "bin": 7,
+                "n": 143,
+                "predicted": 0.7474097592220728,
+                "observed": 0.8111888111888111
+              },
+              {
+                "bin": 8,
+                "n": 118,
+                "predicted": 0.8497181479747022,
+                "observed": 0.9745762711864406
+              },
+              {
+                "bin": 9,
+                "n": 39,
+                "predicted": 0.9209685685919462,
+                "observed": 1.0
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    },
+    {
+      "variant": "M5",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.6010276034843146,
+        "per_class": {
+          "H": {
+            "precision": 0.956641431520991,
+            "recall": 0.8037004914715236,
+            "f1": 0.8735271013354281,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.9518814518814519,
+            "recall": 0.9082532369528954,
+            "f1": 0.9295557091175156,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            5560,
+            578,
+            780,
+            0
+          ],
+          [
+            252,
+            11434,
+            903,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 1026,
+          "n_team_spells": 611,
+          "short_team_spells": 24,
+          "mean_team_spell_s": 5.094271685761047
+        },
+        "live_to_dead_proxy_errors": 1683,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.6450495049504952,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 281,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 281,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 120,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 126,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 236,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 236,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 104,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 107,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 121,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 45
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 1488,
+          "false_dead_rate": 0.07705053852526926,
+          "decoded_ha_accuracy": 0.8799710024855012,
+          "home": {
+            "n": 19312,
+            "brier": 0.06258761057825322,
+            "log_loss": 0.21511542686804022,
+            "ece": 0.04894428838097611,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 8263,
+                "predicted": 0.037045990313134845,
+                "observed": 0.006656178143531405
+              },
+              {
+                "bin": 1,
+                "n": 1793,
+                "predicted": 0.14209175556238626,
+                "observed": 0.044617958728388175
+              },
+              {
+                "bin": 2,
+                "n": 992,
+                "predicted": 0.24661639977130023,
+                "observed": 0.16028225806451613
+              },
+              {
+                "bin": 3,
+                "n": 768,
+                "predicted": 0.350421904465361,
+                "observed": 0.3098958333333333
+              },
+              {
+                "bin": 4,
+                "n": 1106,
+                "predicted": 0.4487480655145395,
+                "observed": 0.43037974683544306
+              },
+              {
+                "bin": 5,
+                "n": 852,
+                "predicted": 0.5521028338742296,
+                "observed": 0.6173708920187794
+              },
+              {
+                "bin": 6,
+                "n": 645,
+                "predicted": 0.6509929643975391,
+                "observed": 0.6961240310077519
+              },
+              {
+                "bin": 7,
+                "n": 635,
+                "predicted": 0.7497281224223892,
+                "observed": 0.8456692913385827
+              },
+              {
+                "bin": 8,
+                "n": 888,
+                "predicted": 0.8561234142047144,
+                "observed": 0.9605855855855856
+              },
+              {
+                "bin": 9,
+                "n": 3370,
+                "predicted": 0.9570193661957653,
+                "observed": 0.9997032640949555
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 195,
+          "false_dead_rate": 1.0,
+          "decoded_ha_accuracy": 0.0,
+          "home": {
+            "n": 195,
+            "brier": 0.27417401987811174,
+            "log_loss": 0.7415504192309093,
+            "ece": 0.43154591476614973,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 195,
+                "predicted": 0.47101818779795285,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 69,
+          "false_dead_rate": 0.045665122435473195,
+          "decoded_ha_accuracy": 0.8378557246856386,
+          "home": {
+            "n": 1511,
+            "brier": 0.11272261973221077,
+            "log_loss": 0.3584996031466025,
+            "ece": 0.04312817900587653,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 356,
+                "predicted": 0.058640319764908196,
+                "observed": 0.011235955056179775
+              },
+              {
+                "bin": 1,
+                "n": 227,
+                "predicted": 0.14074276993145124,
+                "observed": 0.07929515418502203
+              },
+              {
+                "bin": 2,
+                "n": 149,
+                "predicted": 0.24686300369397735,
+                "observed": 0.2483221476510067
+              },
+              {
+                "bin": 3,
+                "n": 127,
+                "predicted": 0.3488002459506716,
+                "observed": 0.36220472440944884
+              },
+              {
+                "bin": 4,
+                "n": 76,
+                "predicted": 0.4542356932858274,
+                "observed": 0.4605263157894737
+              },
+              {
+                "bin": 5,
+                "n": 65,
+                "predicted": 0.5515474601647253,
+                "observed": 0.676923076923077
+              },
+              {
+                "bin": 6,
+                "n": 84,
+                "predicted": 0.6531107525801904,
+                "observed": 0.6666666666666666
+              },
+              {
+                "bin": 7,
+                "n": 117,
+                "predicted": 0.7481756827181789,
+                "observed": 0.6923076923076923
+              },
+              {
+                "bin": 8,
+                "n": 138,
+                "predicted": 0.8557200520523309,
+                "observed": 0.8913043478260869
+              },
+              {
+                "bin": 9,
+                "n": 172,
+                "predicted": 0.9348316989788874,
+                "observed": 1.0
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 149,
+          "false_dead_rate": 0.07075023741690409,
+          "decoded_ha_accuracy": 0.8323836657169991,
+          "home": {
+            "n": 2106,
+            "brier": 0.14956647348885563,
+            "log_loss": 0.4629947771703459,
+            "ece": 0.08135543254459915,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 187,
+                "predicted": 0.06267565166391753,
+                "observed": 0.026737967914438502
+              },
+              {
+                "bin": 1,
+                "n": 370,
+                "predicted": 0.14601535186760572,
+                "observed": 0.05945945945945946
+              },
+              {
+                "bin": 2,
+                "n": 304,
+                "predicted": 0.24843447400540053,
+                "observed": 0.16776315789473684
+              },
+              {
+                "bin": 3,
+                "n": 255,
+                "predicted": 0.35024561884330857,
+                "observed": 0.2980392156862745
+              },
+              {
+                "bin": 4,
+                "n": 307,
+                "predicted": 0.4518035318460819,
+                "observed": 0.3550488599348534
+              },
+              {
+                "bin": 5,
+                "n": 242,
+                "predicted": 0.5476554564293767,
+                "observed": 0.628099173553719
+              },
+              {
+                "bin": 6,
+                "n": 170,
+                "predicted": 0.6467734916505267,
+                "observed": 0.7294117647058823
+              },
+              {
+                "bin": 7,
+                "n": 143,
+                "predicted": 0.7469550774376145,
+                "observed": 0.8741258741258742
+              },
+              {
+                "bin": 8,
+                "n": 103,
+                "predicted": 0.8506284073979757,
+                "observed": 0.9611650485436893
+              },
+              {
+                "bin": 9,
+                "n": 25,
+                "predicted": 0.921538688824177,
+                "observed": 1.0
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    },
+    {
+      "variant": "M6",
+      "partial_metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_SC",
+        "n_known": 19507,
+        "coverage": 0.3235957665638167,
+        "n_label_islands": 322,
+        "partial_macro_f1": 0.5902134744708344,
+        "per_class": {
+          "H": {
+            "precision": 0.9723449202995967,
+            "recall": 0.7318589187626482,
+            "f1": 0.8351340206185567,
+            "support": 6918
+          },
+          "A": {
+            "precision": 0.9144981412639405,
+            "recall": 0.9575025816188736,
+            "f1": 0.9355064027939464,
+            "support": 12589
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion": [
+          [
+            5063,
+            1127,
+            728,
+            0
+          ],
+          [
+            144,
+            12054,
+            391,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 878,
+          "n_team_spells": 524,
+          "short_team_spells": 17,
+          "mean_team_spell_s": 6.259351145038168
+        },
+        "live_to_dead_proxy_errors": 1119,
+        "dead_to_live_proxy_errors": 0,
+        "censored_island_spell_diagnostic": 0.6591916558018254,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 193,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 193,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.5,
+            "tolerance_frames": 5,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 78,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 75,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 153,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 153,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 10,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 65,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 62,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 76,
+          "completely_missed_dead_segments": 0,
+          "stable_team_switches": 51
+        }
+      },
+      "strata": {
+        "visible": {
+          "n_known_ha": 19312,
+          "false_dead": 924,
+          "false_dead_rate": 0.047845898922949465,
+          "decoded_ha_accuracy": 0.8863400994200498,
+          "home": {
+            "n": 19312,
+            "brier": 0.09502478047885639,
+            "log_loss": 0.3112734858728514,
+            "ece": 0.06916997473440628,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 6044,
+                "predicted": 0.05116100321739505,
+                "observed": 0.005129053606882859
+              },
+              {
+                "bin": 1,
+                "n": 2016,
+                "predicted": 0.14185015579646726,
+                "observed": 0.0441468253968254
+              },
+              {
+                "bin": 2,
+                "n": 1266,
+                "predicted": 0.2500827797949547,
+                "observed": 0.12085308056872038
+              },
+              {
+                "bin": 3,
+                "n": 2227,
+                "predicted": 0.3547152407565061,
+                "observed": 0.2801975752132914
+              },
+              {
+                "bin": 4,
+                "n": 2398,
+                "predicted": 0.44317792047476773,
+                "observed": 0.4524603836530442
+              },
+              {
+                "bin": 5,
+                "n": 1023,
+                "predicted": 0.5401745653428505,
+                "observed": 0.6520039100684262
+              },
+              {
+                "bin": 6,
+                "n": 559,
+                "predicted": 0.6494877232575862,
+                "observed": 0.7674418604651163
+              },
+              {
+                "bin": 7,
+                "n": 634,
+                "predicted": 0.7534654514725855,
+                "observed": 0.8769716088328076
+              },
+              {
+                "bin": 8,
+                "n": 1205,
+                "predicted": 0.8571810085665867,
+                "observed": 0.9759336099585062
+              },
+              {
+                "bin": 9,
+                "n": 1940,
+                "predicted": 0.9406850635795544,
+                "observed": 0.9958762886597938
+              }
+            ]
+          }
+        },
+        "missing_short": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_medium": {
+          "n_known_ha": 0,
+          "false_dead": 0,
+          "false_dead_rate": null,
+          "decoded_ha_accuracy": null,
+          "home": {
+            "n": 0,
+            "status": "not_tested"
+          }
+        },
+        "missing_long": {
+          "n_known_ha": 195,
+          "false_dead": 195,
+          "false_dead_rate": 1.0,
+          "decoded_ha_accuracy": 0.0,
+          "home": {
+            "n": 195,
+            "brier": 0.3286650409298726,
+            "log_loss": 0.8522176116138807,
+            "ece": 0.49063519808826783,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 195,
+                "predicted": 0.41192890447583475,
+                "observed": 0.9025641025641026
+              }
+            ]
+          }
+        },
+        "near_opponents_proxy": {
+          "n_known_ha": 1511,
+          "false_dead": 46,
+          "false_dead_rate": 0.03044341495698213,
+          "decoded_ha_accuracy": 0.8127068166776968,
+          "home": {
+            "n": 1511,
+            "brier": 0.157847609220376,
+            "log_loss": 0.48226748029008665,
+            "ece": 0.08175034927089796,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 98,
+                "predicted": 0.07549981346847442,
+                "observed": 0.01020408163265306
+              },
+              {
+                "bin": 1,
+                "n": 198,
+                "predicted": 0.14776514346673006,
+                "observed": 0.06060606060606061
+              },
+              {
+                "bin": 2,
+                "n": 250,
+                "predicted": 0.24985676075616195,
+                "observed": 0.164
+              },
+              {
+                "bin": 3,
+                "n": 311,
+                "predicted": 0.3498128244108966,
+                "observed": 0.2990353697749196
+              },
+              {
+                "bin": 4,
+                "n": 191,
+                "predicted": 0.446222947155733,
+                "observed": 0.5392670157068062
+              },
+              {
+                "bin": 5,
+                "n": 150,
+                "predicted": 0.5490339047271607,
+                "observed": 0.6733333333333333
+              },
+              {
+                "bin": 6,
+                "n": 115,
+                "predicted": 0.6525090514635151,
+                "observed": 0.7739130434782608
+              },
+              {
+                "bin": 7,
+                "n": 79,
+                "predicted": 0.7406095724582649,
+                "observed": 0.7848101265822784
+              },
+              {
+                "bin": 8,
+                "n": 80,
+                "predicted": 0.8552975008266746,
+                "observed": 0.9375
+              },
+              {
+                "bin": 9,
+                "n": 39,
+                "predicted": 0.944449106009367,
+                "observed": 1.0
+              }
+            ]
+          }
+        },
+        "frequent_nearest_switch_proxy": {
+          "n_known_ha": 2106,
+          "false_dead": 94,
+          "false_dead_rate": 0.0446343779677113,
+          "decoded_ha_accuracy": 0.8238366571699905,
+          "home": {
+            "n": 2106,
+            "brier": 0.15891126006874803,
+            "log_loss": 0.48541604734933913,
+            "ece": 0.08327651600123806,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 238,
+                "predicted": 0.05435470991364276,
+                "observed": 0.037815126050420166
+              },
+              {
+                "bin": 1,
+                "n": 190,
+                "predicted": 0.14778007965883147,
+                "observed": 0.07368421052631578
+              },
+              {
+                "bin": 2,
+                "n": 237,
+                "predicted": 0.25115029151536145,
+                "observed": 0.14345991561181434
+              },
+              {
+                "bin": 3,
+                "n": 482,
+                "predicted": 0.35470918296017256,
+                "observed": 0.23236514522821577
+              },
+              {
+                "bin": 4,
+                "n": 446,
+                "predicted": 0.4448505698309545,
+                "observed": 0.4439461883408072
+              },
+              {
+                "bin": 5,
+                "n": 220,
+                "predicted": 0.5430002594328831,
+                "observed": 0.7136363636363636
+              },
+              {
+                "bin": 6,
+                "n": 79,
+                "predicted": 0.6518679871966786,
+                "observed": 0.8227848101265823
+              },
+              {
+                "bin": 7,
+                "n": 79,
+                "predicted": 0.7481880157485215,
+                "observed": 0.8607594936708861
+              },
+              {
+                "bin": 8,
+                "n": 97,
+                "predicted": 0.8578289693332206,
+                "observed": 0.9690721649484536
+              },
+              {
+                "bin": 9,
+                "n": 38,
+                "predicted": 0.9277947758773589,
+                "observed": 0.9736842105263158
+              }
+            ]
+          }
+        }
+      },
+      "waiver": {
+        "purpose": "evaluate",
+        "domain_shift_waivers": [
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          },
+          {
+            "field": "provider",
+            "source": "IDSSE_DFL",
+            "destination": "SkillCorner"
+          },
+          {
+            "field": "observation_view",
+            "source": "available_unknown",
+            "destination": "observed"
+          },
+          {
+            "field": "fps",
+            "source": 25.0,
+            "destination": 10.0
+          }
+        ],
+        "equivalence_established": false
+      },
+      "full_spell_f1": null
+    }
+  ],
+  "reference": {
+    "protocol": "external-evidence-v3.0",
+    "semantics": "partial_SC",
+    "n_known": 19507,
+    "coverage": 0.3235957665638167,
+    "n_label_islands": 322,
+    "partial_macro_f1": 0.6245250749246042,
+    "per_class": {
+      "H": {
+        "precision": 0.9462231893068076,
+        "recall": 0.880023128071697,
+        "f1": 0.9119233073696825,
+        "support": 6918
+      },
+      "A": {
+        "precision": 0.952399501402306,
+        "recall": 0.971085868615458,
+        "f1": 0.9616519174041299,
+        "support": 12589
+      },
+      "D": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "confusion": [
+      [
+        6088,
+        611,
+        219,
+        0
+      ],
+      [
+        346,
+        12225,
+        18,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "full_spell_f1": null,
+    "full_spell_status": "not_established",
+    "prediction_geometry": {
+      "n_segments": 537,
+      "n_team_spells": 435,
+      "short_team_spells": 20,
+      "mean_team_spell_s": 10.034942528735632
+    },
+    "live_to_dead_proxy_errors": 237,
+    "dead_to_live_proxy_errors": 0,
+    "censored_island_spell_diagnostic": 0.80617110799439,
+    "partial_proxy_transitions": [
+      {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "n_gt": 0,
+        "n_pred": 58,
+        "n_matched": 0,
+        "n_missed": 0,
+        "n_spurious": 58,
+        "n_ambiguous": 0,
+        "mean_latency_s": null,
+        "median_latency_s": null,
+        "mean_abs_latency_s": null,
+        "p90_abs_latency_s": null,
+        "nominal_tolerance_s": 0.48,
+        "effective_tolerance_s": 0.5,
+        "tolerance_frames": 5,
+        "dead_entries": {
+          "n_gt": 0,
+          "n_matched": 0,
+          "n_missed": 0,
+          "n_spurious": 7,
+          "mean_latency_s": null
+        },
+        "dead_exits": {
+          "n_gt": 0,
+          "n_matched": 0,
+          "n_missed": 0,
+          "n_spurious": 7,
+          "mean_latency_s": null
+        }
+      },
+      {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "n_gt": 0,
+        "n_pred": 38,
+        "n_matched": 0,
+        "n_missed": 0,
+        "n_spurious": 38,
+        "n_ambiguous": 0,
+        "mean_latency_s": null,
+        "median_latency_s": null,
+        "mean_abs_latency_s": null,
+        "p90_abs_latency_s": null,
+        "nominal_tolerance_s": 1.0,
+        "effective_tolerance_s": 1.0,
+        "tolerance_frames": 10,
+        "dead_entries": {
+          "n_gt": 0,
+          "n_matched": 0,
+          "n_missed": 0,
+          "n_spurious": 7,
+          "mean_latency_s": null
+        },
+        "dead_exits": {
+          "n_gt": 0,
+          "n_matched": 0,
+          "n_missed": 0,
+          "n_spurious": 7,
+          "mean_latency_s": null
+        }
+      }
+    ],
+    "source_proxy_fragmentation": {
+      "false_dead_cuts": 7,
+      "completely_missed_dead_segments": 0,
+      "stable_team_switches": 62
+    }
+  },
+  "full_spell_f1": null,
+  "wall_s": 32.80841429904103,
+  "decision": "diagnostic only; no selection, no D ground truth",
+  "competition_promoted": false
+}
