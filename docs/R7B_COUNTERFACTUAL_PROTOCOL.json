@@ -1,0 +1,14 @@
+{
+  "version":"CF1-v1",
+  "frozen_before_fit_and_evaluation":true,
+  "question":"Can observable ball-staleness/noise interventions expose freezing reliance without deleting genuine motion features? Can label-blind training degradation reduce that sensitivity?",
+  "data":"Only three previously used DFL development matches. Same LOMO folds; no sealed reuse.",
+  "freeze_stress":"Same timeline-only long blocks (2/5/10s) seed7204, hold first available ball coordinate through block, preserve existing missing values; no labels.",
+  "noise_stress":"Independent Gaussian coordinate noise smoothed sigma .25s, expected pointwise std .20m, seed7204, per-period; preserve missing; identical rule for H/A/D.",
+  "training_augmentation":"Natural + one combined noise/freeze/independent long dropout(seed7205) view; rebuild all44 from raw. No label-conditioned manipulation.",
+  "fits":"3 Alive-only HGB, same60iter15leaves at2Hz; frozen R6M2 Home on matching transformed features. No hyperparameter search.",
+  "comparisons":"Frozen M2 vs CF1 on natural, original dropout, R7 long, freeze, noise. Raw argmax and Viterbi full25Hz, D/HA errors and per-match spells. Label-independent masks analyzed posthoc by original state.",
+  "interpretation":"Freeze vs natural changes observation staleness for both live/dead; noise vs natural disrupts exact freezing and adds noise to genuine motion. Neither isolates all vendor shortcut effects. Do not attribute all deleted-feature score loss to shortcut.",
+  "gate":"Experimental unless missing-domain mean spell >=M2+.01, natural delta>=-.01 everymatch, trueDmiss increase<=.02 everymatch/domain, crossprovider failure resolved. No promotion solely on counterfactual stress gains.",
+  "fallback":"R6 frozen models preserved; no target assets or official publicGT."
+}

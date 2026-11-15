@@ -1,0 +1,22 @@
+{
+  "version": "R7-E07-partial-SC-v1",
+  "status": "frozen_before_transfer",
+  "hypothesis": "DFL shortcut removal may reduce cross-provider false dead even when DFL score falls; diagnostic cannot rescue candidates that failed frozen gate",
+  "match": "1874553 previously used in V3, never DFL-model training; not new blind test",
+  "models": "fixed first DFL fold M1..M6, no selection",
+  "raw_adapter": "detected players only, all position speeds recomputed; ball availability unknown provenance explicit; stable IDs guard differences only",
+  "labels": "unchanged strict known phase/team agreement; never phase complement D; fullspell null",
+  "metric": "known H/A classification, falseD, missing duration support, reference, no completeD or boundary claims",
+  "inputs": {
+    "local_artifacts/external/skillcorner/1874553/1874553_match.json": "e6974e402779d8be44e75bf88ef2a3acfd4d025b87b3fc57f518fa826a645ad8",
+    "local_artifacts/external/skillcorner/1874553/1874553_tracking_extrapolated.jsonl": "ea97f58f8eaad925feaeacc6395ec24860dd80027af8a89450276adebd29d265",
+    "local_artifacts/v2/1874553-observed.npz": "73252f2e217dd95e43abd5f0137b15a459235a4b89dade916772014365ff045d",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M1.joblib": "7b555086b890ffc4eb07d7a153bb1f4fd4eeb5d43456581b40ae6b459e0bb0ff",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r6/missing-stability-v1/J03WPY.joblib": "54b444ebdf5578603734a8626d386d36a026bee13bff14bb1ce2c70f861ee041",
+    "local_artifacts/r7/core-v1/J03WPY-M4.joblib": "393a013cd906958319302f9d2beaefb6f8fafe4c81180268d7ec735d7c603013",
+    "local_artifacts/r7/core-v1/J03WPY-M5.joblib": "46dd53284631d9bf1411450e93d24e072f504328dfc4d6f635e4c692bd617ff1",
+    "local_artifacts/r7/core-v1/J03WPY-M6.joblib": "9705ba3020c757db7e5c15ca44f3d5b3d1e2e85fc02688e7e97f0fa30b367488"
+  },
+  "retention": "diagnostic only, no tuning or promotion"
+}

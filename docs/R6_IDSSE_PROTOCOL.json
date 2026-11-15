@@ -1,0 +1,22 @@
+{
+  "version": "R6-IDSSE-M1-v1",
+  "status": "frozen_before_training",
+  "development_matches": ["J03WPY", "J03WOH", "J03WQQ"],
+  "splits": "three leave-one-match-out folds: two whole matches train, one whole match validation; no calibration fitted",
+  "sealed_pressure_holdout": ["J03WMX", "J03WN1"],
+  "unused_development": ["J03WOY", "J03WR9"],
+  "dependency": "input hashes in R6_IDSSE_INPUTS.json; separate floodlight and streaming parser labels/ball XY must agree on every half before full-spell evaluation",
+  "truth": "DFL BallStatus/BallPossession continuous source annotation; not proven equivalent to competition effective-control semantics. No unknown fill. No target data or public target GT.",
+  "feature_schema": "provider_neutral_features_v3: 44 existing names, schema3, positions-only speeds, centered metres to normalized XY, no labels/events/Z/S in features",
+  "models": {
+    "M1": "Natural unweighted HGB Alive and conditional Home; max_iter60, leaves15, lr0.1, l2=1, early_stopping=false, seed2027; deterministic 2Hz fitting, 25Hz evaluation",
+    "M2_dropout": "Identical M1 configuration plus one raw-ball-masked/recomputed training copy (0.5/2/5 second windows, seed2027). Change augmentation only; keep labels unchanged.",
+    "reference": "Per-period smooth50 at25FPS; nearest-player carry reference, no fit",
+    "frozen_V3": "Predeclared first V3 fold 1874553, no model selection. Separate schema2 IDSSE adapter uses reported S/3.6 for local player speeds; neutral schema3 still rejected by original Candidate. Cross-provider diagnostic only."
+  },
+  "decoder": {"team_penalty":7.5,"dead_penalty":2.5,"fps":25,"periods_only":true,"grid_search":false},
+  "evaluation": ["complete period spellF1 using unmodified official matching implementation", "HAD macro and D F1", "argmax vs Viterbi", "false D cuts, missed D segments, stable HA switches", "boundary tolerances 0.48/1 sec", "natural and raw-dropout stress", "probability reliability and missing duration strata"],
+  "M2_retention": "Experimental only if dropout spell improves in >=2/3 matches and mean >=0.01, with no natural per-match spell loss >0.01; otherwise revert. No post-hoc retuning.",
+  "limits": "Three same-league matches share the home club. Match disjointness does not establish team/league transfer. No confidence interval from frames. No competition promotion or TCN.",
+  "budget": "12 small CPU HGB fits; 2 threads; preserve every bundle/probability cache; no extra downloads or sealed test access."
+}

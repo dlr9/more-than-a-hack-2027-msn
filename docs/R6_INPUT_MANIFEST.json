@@ -1,0 +1,11 @@
+{
+  "local_artifacts/v2/1874553-observed.npz": "73252f2e217dd95e43abd5f0137b15a459235a4b89dade916772014365ff045d",
+  "local_artifacts/v2/1874553-dropout.npz": "6775bd0da22005ba60fce3873ea94090e3767065f618a75bff3bb62cf68dc572",
+  "local_artifacts/v2/1886347-observed.npz": "c33bf3ffc65ca70e59b3fa257ea74c0c112972a2975d5ef0bbb40cbb30700eb2",
+  "local_artifacts/v2/1886347-dropout.npz": "2d5043ae62ff2606ac988d5a99d409c49f58c3933f6dc0e189ded60f1f3a9cfa",
+  "local_artifacts/v2/1899585-observed.npz": "a405693f87d58c51418c3f2c56e70da5b3d7202e4f1930900401e1e63db8839d",
+  "local_artifacts/v2/1899585-dropout.npz": "3ad440af73710f9633f467ec5a5303a75dd459a6e0864b12a9278d0699f6b7d0",
+  "local_artifacts/v2/1927964-observed.npz": "60466fa8c4c7ab612e0dd3e845905cc083e56323f5637084dbe5d2c284d61c9b",
+  "local_artifacts/v2/1927964-dropout.npz": "d4c0268055af6a7d7ea1c02ac07be410997ad2ca7edf723ca6224cc4a83950df",
+  "local_artifacts/v2/metrica.npz": "1ad97351cfd27d9661e76de376cb3171b06371b144d7717e088099d64d1481ff"
+}

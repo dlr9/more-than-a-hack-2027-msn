@@ -20,7 +20,8 @@ jobs:
             /solution/*.py
             /solution/config.json
             /tests/*.py
-            /scripts/check_public_tree.py
+            /scripts/*.py
+            /scripts/*.command
             /requirements-solution.txt
             /games.py
             /starter/*.py

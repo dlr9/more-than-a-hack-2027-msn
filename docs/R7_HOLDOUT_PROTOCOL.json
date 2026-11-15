@@ -1,0 +1,24 @@
+{
+  "version": "R7-E06-one-shot-v1",
+  "status": "frozen_before_holdout_acquisition",
+  "utc": "2026-11-14T22:38:38.399311+00:00",
+  "matches": [
+    "J03WMX",
+    "J03WN1"
+  ],
+  "selection": "M5/M6 fail preregistered natural per-match loss gate on all development matches. No R7 candidate selected. Compare fixed first-fold R6 M1/M2/M3, trained J03WOH/J03WQQ; no all-data refit, no choosing best fold.",
+  "frozen_models": {
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M1.joblib": "7b555086b890ffc4eb07d7a153bb1f4fd4eeb5d43456581b40ae6b459e0bb0ff",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r6/missing-stability-v1/J03WPY.joblib": "54b444ebdf5578603734a8626d386d36a026bee13bff14bb1ce2c70f861ee041"
+  },
+  "domains": [
+    "natural",
+    "R6 raw dropout seed2027"
+  ],
+  "metric_contract": "R7 extended complete DFL source label metrics with typed pair transitions; evaluate only after independent floodlight agreement. No event data or videos.",
+  "decision_gate": "M3 gains must not increase completely missed D segment rate or D frame miss rate >.02 on either domain/match compared with M2; no formal competition promotion regardless.",
+  "one_shot": "All three models declared before any sealed acquisition/score. An exclusive evaluation marker prevents rerunning; no post-holdout model/feature/cost tuning.",
+  "source": "public IDSSE CC BY4.0 pinned HF mirror; professional league differs from development league, still same provider processing",
+  "failure_fallback": "Preserve completed per-row results if infrastructure fails; report incomplete evidence without tuning. Existing development results and V3/M1 remain recoverable."
+}

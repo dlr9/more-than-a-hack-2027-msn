@@ -23,7 +23,7 @@ def emission_probabilities(p_alive: np.ndarray, p_home: np.ndarray, eps: float =
     return probabilities / probabilities.sum(axis=1, keepdims=True)
 
 
-def _decode_block(probabilities: np.ndarray, team_penalty: float, dead_penalty: float, control: np.ndarray | None = None) -> np.ndarray:
+def _decode_block(probabilities: np.ndarray, team_penalty: float, dead_penalty: float, control: np.ndarray | None = None, dead_scale: np.ndarray | None = None) -> np.ndarray:
     if len(probabilities) == 0:
         return np.empty(0, dtype=np.int8)
     cost = -np.log(np.clip(probabilities, 1e-12, 1.0))
@@ -40,9 +40,13 @@ def _decode_block(probabilities: np.ndarray, team_penalty: float, dead_penalty: 
     back[0] = -1
     for frame in range(1, len(cost)):
         step = transitions
+        if dead_scale is not None:
+            step = transitions.copy()
+            step[:2, 2] *= dead_scale[frame]
+            step[2, :2] *= dead_scale[frame]
         if control is not None and control[frame] in (0, 1):
             # Local, observed control supports a team switch; it never asserts D.
-            step = transitions.copy()
+            step = step.copy()
             destination = int(control[frame])
             step[1 - destination, destination] *= 0.25
         candidates = scores[frame - 1][:, None] + step
@@ -62,6 +66,7 @@ def viterbi_decode(
     dead_switch_penalty: float,
     outside_label: str = "X",
     control: np.ndarray | None = None,
+    dead_scale: np.ndarray | None = None,
 ) -> np.ndarray:
     """Decode inclusive ``(start, stop)`` blocks independently."""
     probabilities = np.asarray(probabilities, dtype=float)
@@ -78,6 +83,10 @@ def viterbi_decode(
         control = np.asarray(control)
         if control.shape != (len(probabilities),) or not np.isin(control, [-1, 0, 1]).all():
             raise ValueError("invalid control evidence")
+    if dead_scale is not None:
+        dead_scale = np.asarray(dead_scale, dtype=float)
+        if dead_scale.shape != (len(probabilities),) or not np.isfinite(dead_scale).all() or (dead_scale < 1).any():
+            raise ValueError("dead_scale must be a finite >=1 frame vector")
     labels = np.full(len(probabilities), outside_label, dtype="<U1")
     previous = -1
     for start, stop in blocks:
@@ -86,7 +95,8 @@ def viterbi_decode(
         previous = stop
         states = _decode_block(
             probabilities[start:stop + 1], team_switch_penalty, dead_switch_penalty,
-            None if control is None else control[start:stop + 1]
+            None if control is None else control[start:stop + 1],
+            None if dead_scale is None else dead_scale[start:stop + 1]
         )
         labels[start:stop + 1] = STATE_LABELS[states]
     return labels

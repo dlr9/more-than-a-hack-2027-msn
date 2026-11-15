@@ -1,0 +1,21 @@
+{
+  "version": "R7B-P1-P2-v1",
+  "frozen_before_fit": true,
+  "development_matches": ["J03WPY", "J03WOH", "J03WQQ"],
+  "disclosure": "Repeated development matches, shared home team. WMX and WN1 already consumed by R7; excluded from selection.",
+  "partial_transfer": "SkillCorner 1874553 previously examined; first heldout fold WPY fixed, not model ranking; no complete D truth",
+  "hypothesis": "Independent player motion can support Alive when ball is missing but players remain observable; cannot identify state from zero detected players.",
+  "features": "player_only_v1: 46 original-player aggregates, m/s and m/s2, centered .5/2/5s activity windows; no ball/status/labels; same-tracklet differences only; no window across missing frames/period/all-player missing",
+  "training": "3 leave-one-match-out Alive HGB fits, natural full source labels; 2Hz deterministic subsample; 25Hz full-period scores; no sample weighting",
+  "hgb": {"max_iter":60,"max_leaf_nodes":15,"learning_rate":0.1,"l2_regularization":1.0,"early_stopping":false,"random_state":2027},
+  "home_head": "frozen R6-M2; separate attribution, not refit for P1",
+  "decoder": "frozen M2 costs team=3*fps/10, dead=1*fps/10, no M3 tuning",
+  "domains": ["natural", "dropout", "short", "long"],
+  "gate_A": "Use player Alive only after .5 seconds continuously missing ball AND at least 8 detected/available players per team AND speed observed fraction >= .5; otherwise frozen M2. Period/frame-gap reset. No labels.",
+  "calibration_B": "Separate later experiment: one match fit, one match calibrate, third evaluate, rotating fixed listed order; MUST refit both experts on sole fit match, not calibrate existing two-match LOMO heads on their training data. Compare same-training uncalibrated control. No deployment promotion from 3 matches.",
+  "guardrail": "Gate A eligible for KEEP_RESEARCH only if dropout and long mean spellF1 gains >= .01, >=2/3 match gains, natural delta >= -.01 each, true D missed frame rate increases <= .02 each domain/match, and SkillCorner longmissing falseD <1. Otherwise EXPERIMENTAL/REVERT. Player-only remains diagnostic even if complete score poor.",
+  "no_observation": "Do not interpret missing player probability as evidence; evaluate it diagnostically and disclose support. Any temporal fallback requires a separately frozen rule and true-D guardrail.",
+  "counterfactual": "Separate preregistration after first real results: label-independent raw ball freeze/replay/noise; rebuild all44. Ablation alone cannot identify shortcut contribution.",
+  "evaluation": "Unchanged official scorer; full spell5IoU, macroF1, D/HA confusion, rawargmax/decoded, falseDcuts/trueDmisses, typed boundaries, Brier/logloss/ECE descriptively (uncalibrated), per-match/episode counts, no frame-IID interval",
+  "preservation": "Exclusive new model/run paths; completed stages reused by verified hash, no previous artifact overwrite"
+}

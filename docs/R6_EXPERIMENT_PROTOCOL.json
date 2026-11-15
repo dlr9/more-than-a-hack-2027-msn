@@ -1,0 +1,32 @@
+{
+  "version": "r6.0",
+  "status": "frozen_before_training",
+  "seed": 2027,
+  "preserved_pr2": "093361a3d02ffa9ce195e65ccbb4ad5159624dad",
+  "idsse": {
+    "first_download": "J03WPY",
+    "development_pool": ["J03WPY", "J03WOH", "J03WQQ", "J03WOY", "J03WR9"],
+    "sealed_pressure_holdout": ["J03WMX", "J03WN1"],
+    "single_match_rule": "A one-match smoke fit is not independent validation. Freeze actual multi-match hashes and splits in a new appendix before any full-spell selection.",
+    "label_contract": "BallStatus 0=D; status1 and possession1=H, possession2=A; otherwise X. DFL semantics differ from official possession definition.",
+    "full_spell": "Only independently checked complete periods; never label-island ranking. Unknown coverage => null."
+  },
+  "fallback": {
+    "skillcorner_matches": ["1874553", "1886347", "1899585", "1927964"],
+    "folds": "heldout=i; unused calibration=(i+1)%4; train=other two matches",
+    "sealed_legacy_tests": ["1996435", "2011166", "2015213"],
+    "baseline": "Saved V3 baseline per fold, no refit and no overwrite",
+    "F1": "Train natural-weight Home HGB on strict known alive Home labels from existing observed schema2 caches. Keep V3 Alive and all decoder costs fixed. Test effect of removing class weights only.",
+    "F2": "Train one natural-weight Alive HGB on Metrica Game3 period1 known event-proxy labels. Freeze each V3 Home, evaluate period2 as within-match chronological weak validation plus four SkillCorner heldout known-live subsets as cross-provider live false-dead diagnostics. Not an independent HAD match test.",
+    "N1": "Build provider_neutral_features_v3 from public raw inputs: coordinates-only speeds, explicit observation contract. Before any training on new schema freeze rebuilt hashes and an additional single-mechanism comparison. Do not relabel old caches as schema3.",
+    "model": {"max_iter":60,"max_leaf_nodes":15,"learning_rate":0.1,"l2_regularization":1.0,"early_stopping":false,"sampling_hz":2},
+    "F1_retention": "Experimental only: natural Home Brier improves >=3/4 heldout matches, mean HA macro decline <=0.005, no natural per-match partial HAD macro drop >0.01. Do not rank by full spell.",
+    "F2_retention": "Experimental only if Metrica period2 proxy Alive Brier and D F1 improve without any SkillCorner match's known-live false-D rate worsening >0.01; otherwise revert. This is a diagnostic threshold, never full-HAD promotion.",
+    "stress": "Existing raw-masked/recomputed ball-dropout cache; report separately, no extra tuning",
+    "cross_provider": "Metrica sample Game3 only, already viewed development data; no fresh-test claim",
+    "metrics": ["Home/Alive Brier, logloss, ECE", "HA macro F1", "partial HAD macro", "D F1 proxy", "raw-vs-decoded errors", "missing duration strata"],
+    "full_spell_f1": null
+  },
+  "promotion": "No competition promotion without independent full HAD evidence, fresh sealed validation and team approval.",
+  "budget": "2 CPU threads; four F1 Home fits and one F2 Alive fit; no hyperparameter search. IDSSE training supersedes fallback priority if verified data arrives."
+}

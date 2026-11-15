@@ -1,0 +1,11 @@
+{
+  "version":"R7B-public-sample-v1",
+  "frozen_before_scoring":true,
+  "source":"metrica-sports/sample-data pinned e706dd506b360d69d9d123d5b8026e7294b13996 Sample Game 3; existing source manifest hashes checked",
+  "purpose":"Weak event-window cross-provider diagnostic only. Never official competition ATD.",
+  "models":"Fixed WPY-heldout P1, frozen M2, G1; no training or selection",
+  "adapter":"Normalized coordinates to centered meters; variable slot-to-player/channel identity resolved from metadata, same frame/period as existing cached partial labels; speed derived from positions",
+  "labels":"Unchanged existing weak PASS/CARRY interiors and BALL OUT to next SET PIECE proxy; no full H/A/D truth and no full spellF1",
+  "metrics":"Known-label confusion, falseD and trueD proxy misses, probability calibration diagnostics. No unseen test claim.",
+  "failure_policy":"Reject ambiguous identities or manifest mismatch; never substitute target input."
+}

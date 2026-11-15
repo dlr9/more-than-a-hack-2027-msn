@@ -1,0 +1,310 @@
+{
+  "git_sha": "d69062aef1d022c004c713a98ddef094a7ce3124",
+  "hashes": {
+    "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+    "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+    "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+    "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+    "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+    "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+  },
+  "decisions": {
+    "G1": {
+      "decision": "EXPERIMENTAL_NOT_PROMOTED",
+      "reason": "Partial SkillCorner zero-player long gaps remain 195/195 D; observation-specific DFL gains insufficient",
+      "deltas": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "spell_delta": 0.0,
+          "dead_miss_frame_rate_delta": 0.0,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 0
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "spell_delta": 0.0,
+          "dead_miss_frame_rate_delta": 0.0,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 0
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "spell_delta": 0.0,
+          "dead_miss_frame_rate_delta": 0.0,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 0
+        },
+        {
+          "match": "J03WPY",
+          "domain": "dropout",
+          "spell_delta": 0.0605538344668779,
+          "dead_miss_frame_rate_delta": 0.0004942008617627525,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -29
+        },
+        {
+          "match": "J03WOH",
+          "domain": "dropout",
+          "spell_delta": 0.02304062810624463,
+          "dead_miss_frame_rate_delta": 0.0048261808821952225,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -10
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "dropout",
+          "spell_delta": -0.006671268970630362,
+          "dead_miss_frame_rate_delta": 0.011466901177728347,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 15
+        },
+        {
+          "match": "J03WPY",
+          "domain": "short",
+          "spell_delta": 0.01226092896174863,
+          "dead_miss_frame_rate_delta": -0.003660175132430386,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -10
+        },
+        {
+          "match": "J03WOH",
+          "domain": "short",
+          "spell_delta": 0.005430736527140545,
+          "dead_miss_frame_rate_delta": -0.005147926274341569,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -4
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "short",
+          "spell_delta": 0.01628260072319082,
+          "dead_miss_frame_rate_delta": -0.0008966599417171029,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -1
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "spell_delta": 0.04493279695825775,
+          "dead_miss_frame_rate_delta": 0.0033976309246189244,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -5
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "spell_delta": 0.019816385848329954,
+          "dead_miss_frame_rate_delta": 0.004657647581547136,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -2
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "spell_delta": 0.007093794126798003,
+          "dead_miss_frame_rate_delta": 0.0067594364837135525,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 33
+        }
+      ]
+    },
+    "P1": {
+      "decision": "KEEP_DIAGNOSTIC_EXPERT_ONLY",
+      "reason": "Independent player evidence exists, but pure replacement reduces complete spell; zero-player .982 Alive is unsupported missing-branch prior"
+    },
+    "G2_cal": {
+      "decision": "REVERT_AS_REPLACEMENT",
+      "reason": "Disjoint-match sigmoid calibration does not improve consistently vs same-training uncalibrated control",
+      "deltas": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "spell_delta": -0.000693782356064987,
+          "dead_miss_frame_rate_delta": 0.00046331330790258063,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 0
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "spell_delta": -0.0018439457519918712,
+          "dead_miss_frame_rate_delta": -9.19272548989566e-05,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 2
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "spell_delta": 0.0,
+          "dead_miss_frame_rate_delta": 0.0,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 0
+        },
+        {
+          "match": "J03WPY",
+          "domain": "dropout",
+          "spell_delta": 0.004592422502870175,
+          "dead_miss_frame_rate_delta": 0.0018995845624005811,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -5
+        },
+        {
+          "match": "J03WOH",
+          "domain": "dropout",
+          "spell_delta": -0.00835755813953487,
+          "dead_miss_frame_rate_delta": -0.00856455591475279,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 30
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "dropout",
+          "spell_delta": 0.001345761798055678,
+          "dead_miss_frame_rate_delta": 5.173038125290755e-05,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -2
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "spell_delta": 0.0006247008282889155,
+          "dead_miss_frame_rate_delta": 0.0002779879847415482,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -1
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "spell_delta": -0.0060393993663039325,
+          "dead_miss_frame_rate_delta": -0.003477914477010527,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 17
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "spell_delta": -0.0008918617614269708,
+          "dead_miss_frame_rate_delta": -0.000172434604176366,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 1
+        }
+      ]
+    },
+    "CF1": {
+      "decision": "REVERT_AS_REPLACEMENT",
+      "reason": "Noise robustness improves but natural and missing domains degrade",
+      "deltas": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "spell_delta": -0.03862381959792471,
+          "dead_miss_frame_rate_delta": 0.07283285200228568,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 21
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "spell_delta": -0.045265052821071516,
+          "dead_miss_frame_rate_delta": 0.1052413856501555,
+          "dead_miss_segment_rate_delta": 0.0196078431372549,
+          "false_cuts_delta": 10
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "spell_delta": -0.02952941921590968,
+          "dead_miss_frame_rate_delta": 0.06578380149328367,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 10
+        },
+        {
+          "match": "J03WPY",
+          "domain": "dropout",
+          "spell_delta": -0.021845060042484987,
+          "dead_miss_frame_rate_delta": 0.06608392148383808,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 8
+        },
+        {
+          "match": "J03WOH",
+          "domain": "dropout",
+          "spell_delta": -0.016690686011977207,
+          "dead_miss_frame_rate_delta": 0.09709050238244803,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -10
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "dropout",
+          "spell_delta": -0.01760168430223069,
+          "dead_miss_frame_rate_delta": 0.062248892107668166,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": -2
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "spell_delta": -0.03681110188576392,
+          "dead_miss_frame_rate_delta": 0.0663001343608593,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 20
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "spell_delta": -0.0346957444671559,
+          "dead_miss_frame_rate_delta": 0.09327552130414132,
+          "dead_miss_segment_rate_delta": 0.00980392156862745,
+          "false_cuts_delta": 4
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "spell_delta": -0.028413926499032793,
+          "dead_miss_frame_rate_delta": 0.06611142724121877,
+          "dead_miss_segment_rate_delta": 0.0,
+          "false_cuts_delta": 8
+        }
+      ]
+    },
+    "T2": {
+      "decision": "EXPERIMENTAL_NOT_PROMOTED",
+      "reason": "195 knownHA falseD reduced to7, but complete blackout trueDmiss guardrails fail",
+      "deltas": [
+        {
+          "match": "J03WPY",
+          "domain": "scene_blackout",
+          "spell_delta": 0.016073995542236097,
+          "dead_miss_frame_rate_delta": 0.021173418171147936,
+          "dead_miss_segment_rate_delta": 0.020618556701030927,
+          "false_cuts_delta": -10
+        },
+        {
+          "match": "J03WOH",
+          "domain": "scene_blackout",
+          "spell_delta": 0.015732262692200294,
+          "dead_miss_frame_rate_delta": 0.04781749375660727,
+          "dead_miss_segment_rate_delta": 0.0196078431372549,
+          "false_cuts_delta": -14
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "scene_blackout",
+          "spell_delta": 0.018921132834616272,
+          "dead_miss_frame_rate_delta": 0.01695032159053679,
+          "dead_miss_segment_rate_delta": 0.020202020202020204,
+          "false_cuts_delta": -8
+        }
+      ]
+    },
+    "blind_evaluation": {
+      "decision": "NOT_OPENED",
+      "reason": "No new candidate clears frozen guardrails; both R7 reserved matches already consumed; WOY/WR9 remain unscored and require team-overlap check before a new protocol"
+    }
+  }
+}

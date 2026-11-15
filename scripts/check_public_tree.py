@@ -9,6 +9,9 @@ def violations(paths):
     bad=[]
     for path in paths:
         p=PurePosixPath(path)
+        # Exact approved aggregate experiment ledger; no general JSONL exemption.
+        if path == 'docs/R6_EXPERIMENT_LEDGER.jsonl':
+            continue
         if set(p.parts)&FORBIDDEN_PARTS or p.name in FORBIDDEN_NAMES or p.suffix in {'.npz','.joblib','.mp4','.jsonl','.pl3container','.gzip'}:
             bad.append(path)
         elif p.parts[:2] == ('evaluation','results') and p.suffix=='.csv' and not p.name.startswith('baseline_'):

@@ -1,0 +1,305 @@
+{
+  "models": [
+    {
+      "candidate": "P1",
+      "heldout": "J03WPY",
+      "path": "local_artifacts/r7b/p1-v1/J03WPY.joblib",
+      "bytes": 192648,
+      "sha256": "57fb9d58d59963646b32988d2f3f98c037d3c0fafb0a78f6791102c40fff51f5",
+      "receipt": {
+        "stage": "P1_fit",
+        "heldout": "J03WPY",
+        "train": [
+          "J03WOH",
+          "J03WQQ"
+        ],
+        "n": 22366,
+        "class_counts": [
+          9857,
+          12509
+        ],
+        "feature_inputs": {
+          "J03WOH": "bf59f991778184a5e08e9639e2a8ccfae21244c0b938d0ab6f577d5ddb4a687e",
+          "J03WQQ": "383cfe0a052088db47a3b8203c22cb86566abb9a45c2b47642c502228afbb59f"
+        },
+        "model_path": "local_artifacts/r7b/p1-v1/J03WPY.joblib",
+        "model_sha256": "57fb9d58d59963646b32988d2f3f98c037d3c0fafb0a78f6791102c40fff51f5",
+        "wall_s": 1.2943718859460205,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "P1",
+      "heldout": "J03WOH",
+      "path": "local_artifacts/r7b/p1-v1/J03WOH.joblib",
+      "bytes": 192632,
+      "sha256": "d930ccbe4373b9ccff9309acb75bd0f539e0ab3fbb328ff876af2ac19ba6f061",
+      "receipt": {
+        "stage": "P1_fit",
+        "heldout": "J03WOH",
+        "train": [
+          "J03WPY",
+          "J03WQQ"
+        ],
+        "n": 23085,
+        "class_counts": [
+          9813,
+          13272
+        ],
+        "feature_inputs": {
+          "J03WPY": "38740992d06a859a5b4c19fad84ac13b512055a00c7c7feb40855a23b781ac52",
+          "J03WQQ": "383cfe0a052088db47a3b8203c22cb86566abb9a45c2b47642c502228afbb59f"
+        },
+        "model_path": "local_artifacts/r7b/p1-v1/J03WOH.joblib",
+        "model_sha256": "d930ccbe4373b9ccff9309acb75bd0f539e0ab3fbb328ff876af2ac19ba6f061",
+        "wall_s": 1.3185889220330864,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "P1",
+      "heldout": "J03WQQ",
+      "path": "local_artifacts/r7b/p1-v1/J03WQQ.joblib",
+      "bytes": 192440,
+      "sha256": "ff90a78939b10639767c5c3678959e10b00596a2b5e1c5b738ffb8f7a250165a",
+      "receipt": {
+        "stage": "P1_fit",
+        "heldout": "J03WQQ",
+        "train": [
+          "J03WPY",
+          "J03WOH"
+        ],
+        "n": 22675,
+        "class_counts": [
+          10396,
+          12279
+        ],
+        "feature_inputs": {
+          "J03WPY": "38740992d06a859a5b4c19fad84ac13b512055a00c7c7feb40855a23b781ac52",
+          "J03WOH": "bf59f991778184a5e08e9639e2a8ccfae21244c0b938d0ab6f577d5ddb4a687e"
+        },
+        "model_path": "local_artifacts/r7b/p1-v1/J03WQQ.joblib",
+        "model_sha256": "ff90a78939b10639767c5c3678959e10b00596a2b5e1c5b738ffb8f7a250165a",
+        "wall_s": 1.5881784928496927,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "G2",
+      "heldout": "J03WPY",
+      "path": "local_artifacts/r7b/calibration-v1/J03WPY.joblib",
+      "bytes": 360177,
+      "sha256": "89e8bfe72745a522609aaed962dc43bb495f97e34739bf1eff28ee691ecef2aa",
+      "receipt": {
+        "stage": "calibrated_expert_fit",
+        "fit": [
+          "J03WOH"
+        ],
+        "calibration": [
+          "J03WQQ"
+        ],
+        "test": "J03WPY",
+        "model_sha256": "89e8bfe72745a522609aaed962dc43bb495f97e34739bf1eff28ee691ecef2aa",
+        "wall_s": 2.0770960601512343,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "G2",
+      "heldout": "J03WOH",
+      "path": "local_artifacts/r7b/calibration-v1/J03WOH.joblib",
+      "bytes": 360433,
+      "sha256": "361016134d56adbeb173e7aadace7ac42f1e4fc9cde5be5736881d2f1912e31e",
+      "receipt": {
+        "stage": "calibrated_expert_fit",
+        "fit": [
+          "J03WQQ"
+        ],
+        "calibration": [
+          "J03WPY"
+        ],
+        "test": "J03WOH",
+        "model_sha256": "361016134d56adbeb173e7aadace7ac42f1e4fc9cde5be5736881d2f1912e31e",
+        "wall_s": 2.1527464841492474,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "G2",
+      "heldout": "J03WQQ",
+      "path": "local_artifacts/r7b/calibration-v1/J03WQQ.joblib",
+      "bytes": 360161,
+      "sha256": "23d678bf1014bcb8dc69a40254e0358772ca15867b0a3ef3e33957258b857880",
+      "receipt": {
+        "stage": "calibrated_expert_fit",
+        "fit": [
+          "J03WPY"
+        ],
+        "calibration": [
+          "J03WOH"
+        ],
+        "test": "J03WQQ",
+        "model_sha256": "23d678bf1014bcb8dc69a40254e0358772ca15867b0a3ef3e33957258b857880",
+        "wall_s": 2.0726326301228255,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        }
+      }
+    },
+    {
+      "candidate": "CF1",
+      "heldout": "J03WPY",
+      "path": "local_artifacts/r7b/counterfactual-v1/J03WPY.joblib",
+      "bytes": 170784,
+      "sha256": "310a81fd2e917d5dcb9d1b5fc4138d8f1b9d2f3f5ae6a0f0716dc7eb9c051bb8",
+      "receipt": {
+        "stage": "CF1_fit",
+        "heldout": "J03WPY",
+        "train": [
+          "J03WOH",
+          "J03WQQ"
+        ],
+        "n": 44732,
+        "model_sha256": "310a81fd2e917d5dcb9d1b5fc4138d8f1b9d2f3f5ae6a0f0716dc7eb9c051bb8",
+        "wall_s": 1.2477663399185985,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        },
+        "counterfactual_hashes": {
+          "solution/ball_counterfactual.py": "7e6cd8cee2c3b56ebd0574af7ac785ac998b83ee82e9779a2f66be87f637a24d",
+          "scripts/counterfactual_r7b.py": "5453715e4c390a7cfde66a5f346dc4e8b78abae14960324891805afc6d2b3306",
+          "docs/R7B_COUNTERFACTUAL_PROTOCOL.json": "1d7f8411070b27f5ed96e25b78e53cc76f885ebece7a0b694b96e9dfc06fc560"
+        }
+      }
+    },
+    {
+      "candidate": "CF1",
+      "heldout": "J03WOH",
+      "path": "local_artifacts/r7b/counterfactual-v1/J03WOH.joblib",
+      "bytes": 170752,
+      "sha256": "f8dcd73984e9d8268a559140d1078d8d325847e1cc68986a54f1498b5e09f700",
+      "receipt": {
+        "stage": "CF1_fit",
+        "heldout": "J03WOH",
+        "train": [
+          "J03WPY",
+          "J03WQQ"
+        ],
+        "n": 46170,
+        "model_sha256": "f8dcd73984e9d8268a559140d1078d8d325847e1cc68986a54f1498b5e09f700",
+        "wall_s": 1.2454815988894552,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        },
+        "counterfactual_hashes": {
+          "solution/ball_counterfactual.py": "7e6cd8cee2c3b56ebd0574af7ac785ac998b83ee82e9779a2f66be87f637a24d",
+          "scripts/counterfactual_r7b.py": "5453715e4c390a7cfde66a5f346dc4e8b78abae14960324891805afc6d2b3306",
+          "docs/R7B_COUNTERFACTUAL_PROTOCOL.json": "1d7f8411070b27f5ed96e25b78e53cc76f885ebece7a0b694b96e9dfc06fc560"
+        }
+      }
+    },
+    {
+      "candidate": "CF1",
+      "heldout": "J03WQQ",
+      "path": "local_artifacts/r7b/counterfactual-v1/J03WQQ.joblib",
+      "bytes": 170672,
+      "sha256": "aeb89556f44260b113df24f6df3a539027602d80961b4a3851d8896defccaea1",
+      "receipt": {
+        "stage": "CF1_fit",
+        "heldout": "J03WQQ",
+        "train": [
+          "J03WPY",
+          "J03WOH"
+        ],
+        "n": 45350,
+        "model_sha256": "aeb89556f44260b113df24f6df3a539027602d80961b4a3851d8896defccaea1",
+        "wall_s": 1.2491717468947172,
+        "git_sha": "cc1ee8755325a3b62ea4cc4cca25075785651cc2",
+        "hashes": {
+          "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+          "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+          "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+          "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+          "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+          "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+          "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+        },
+        "counterfactual_hashes": {
+          "solution/ball_counterfactual.py": "7e6cd8cee2c3b56ebd0574af7ac785ac998b83ee82e9779a2f66be87f637a24d",
+          "scripts/counterfactual_r7b.py": "5453715e4c390a7cfde66a5f346dc4e8b78abae14960324891805afc6d2b3306",
+          "docs/R7B_COUNTERFACTUAL_PROTOCOL.json": "1d7f8411070b27f5ed96e25b78e53cc76f885ebece7a0b694b96e9dfc06fc560"
+        }
+      }
+    }
+  ],
+  "hgb_fits": 12,
+  "sigmoid_calibrators": 6,
+  "preserved_old_model_count": 39,
+  "competition_promoted": false
+}
