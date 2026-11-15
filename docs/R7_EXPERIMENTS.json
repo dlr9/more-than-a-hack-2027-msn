@@ -531,5 +531,66 @@
     "original_paths_and_hashes_preserved": true,
     "decision": "KEEP storage repair; no model/result deletion",
     "next": "resume public download and first sealed evaluation"
+  },
+  {
+    "experiment_id": "E06_one_shot_sealed",
+    "git_sha": "f099c4f214d375409e657d5d2c5de3ca9d918d95",
+    "code_sha256": {
+      "scripts/research_r7.py": "a6de1349566b8c90405a701535175866d12ada92adaf3a605b043139b38c7d90",
+      "solution/r7_features.py": "976ffde316c89479c6fb84cc78f07985e0ed1946b02f4c4f56da5704bf2a4bb8",
+      "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+      "solution/provider_neutral.py": "4b58e4c077694c58094e94994b6b0b6bbd231ec509d59411224c121d34056776",
+      "solution/features.py": "86480bfe2d2dd5fecb84b7906b145d090f9ae964a562237de92cba3aee56ae08",
+      "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+      "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "protocol_sha256": "3efc3baf7fdae5948bfc653f085ed2d86f063af161b0c918f3f063a1867fa5a1",
+    "input_manifest_sha256": "149ee32dc156e099dbf73566d2142f82b14ba10f760017e9da9b189fcc15c7e7",
+    "holdout_protocol_sha256": "7a167cf8af3283b5727cd168c0bc028a7fe9527423192cc687c3e6abb400f133",
+    "holdout_script_sha256": "7a62a070bf2931264f5cd3cb809d292d75cc7a64107b5385902b27e1b2e5ee5e",
+    "parser_sha256": "65de3d28d486c9acb6a82b77f1fc34f8f5a8a36cff20412e0fabb7b8ae28f0e4",
+    "wall_s": 51.95596789708361,
+    "competition_promoted": false,
+    "decision": "one-shot diagnostic; no changes based on these results",
+    "next": "preserve sealed evidence; any further method development requires new data"
+  },
+  {
+    "experiment_id": "E06_DECISION",
+    "utc": "2026-11-15T02:31:28.095775+00:00",
+    "hypothesis": "fixed missing-stability decoder generalizes its synthetic missing-ball gain without excessive trueD misses",
+    "input_license": "DFL IDSSE CC BY4.0",
+    "checks": [
+      {
+        "match": "J03WMX",
+        "domain": "natural",
+        "missed_segment_rate_delta": 0.0,
+        "missed_frame_rate_delta": 0.0,
+        "within_frozen_limit": true
+      },
+      {
+        "match": "J03WMX",
+        "domain": "dropout",
+        "missed_segment_rate_delta": 0.0,
+        "missed_frame_rate_delta": -0.0006765899864682005,
+        "within_frozen_limit": true
+      },
+      {
+        "match": "J03WN1",
+        "domain": "natural",
+        "missed_segment_rate_delta": 0.0,
+        "missed_frame_rate_delta": 0.0,
+        "within_frozen_limit": true
+      },
+      {
+        "match": "J03WN1",
+        "domain": "dropout",
+        "missed_segment_rate_delta": 0.0,
+        "missed_frame_rate_delta": -0.0019676432006996065,
+        "within_frozen_limit": true
+      }
+    ],
+    "decision": "EXPERIMENTAL_ONLY; no competition promotion",
+    "what_got_worse": "M2/M3 natural scores below M1; cross-provider known-alive missing failure remains",
+    "next": "new independent public provider supervision; do not reuse consumed sealed matches for tuning"
   }
 ]

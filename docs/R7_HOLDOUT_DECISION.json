@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "match": "J03WMX",
+      "domain": "natural",
+      "missed_segment_rate_delta": 0.0,
+      "missed_frame_rate_delta": 0.0,
+      "within_frozen_limit": true
+    },
+    {
+      "match": "J03WMX",
+      "domain": "dropout",
+      "missed_segment_rate_delta": 0.0,
+      "missed_frame_rate_delta": -0.0006765899864682005,
+      "within_frozen_limit": true
+    },
+    {
+      "match": "J03WN1",
+      "domain": "natural",
+      "missed_segment_rate_delta": 0.0,
+      "missed_frame_rate_delta": 0.0,
+      "within_frozen_limit": true
+    },
+    {
+      "match": "J03WN1",
+      "domain": "dropout",
+      "missed_segment_rate_delta": 0.0,
+      "missed_frame_rate_delta": -0.0019676432006996065,
+      "within_frozen_limit": true
+    }
+  ],
+  "all_dead_miss_limits_pass": true,
+  "decision": "retain M3 experimental only; M1 research fallback; no target promotion",
+  "sealed_consumed": true
+}

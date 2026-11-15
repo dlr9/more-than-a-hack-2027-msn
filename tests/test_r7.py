@@ -100,3 +100,10 @@ class FrozenReportTests(unittest.TestCase):
             self.assertTrue(write_public_once(p,{'run':'original'}))
             self.assertFalse(write_public_once(p,{'run':'reproduction'}))
             self.assertEqual(json.loads(p.read_text()),{'run':'original'})
+
+class GitIdentityTests(unittest.TestCase):
+    def test_commit_identity_preserves_timezone_and_author(self):
+        from scripts.release_git_objects import identity
+        item=identity('Synthetic Author <synthetic@example.invalid> 0 +0800')
+        self.assertEqual(item['name'],'Synthetic Author')
+        self.assertEqual(item['date'],'1970-01-01T08:00:00+08:00')

@@ -47,3 +47,9 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 LOKY_MAX_CPU_COUNT=2 .venv/bin/python s
 本地 `local_artifacts/r7/core-v1/{match}-M4/M5/M6.joblib`；实际文件名示例`J03WPY-M4.joblib`。注册表给每个哈希。原始对照与预测在r6目录，R7新域在r7/prepared与stress-v1。固定交接折J03WPY是事先指定（训练J03WOH/J03WQQ），没有按成绩选折。回退 `local_artifacts/r6/idsse-m1-v1/J03WPY-M1.joblib`；V3路径及哈希见R6注册表。
 
 所有候选 `competition_promoted=false`。合并、真实赛事运行及提交仍需团队授权；本轮仅获新Draft PR发布授权。
+
+## 封存与存储恢复完成
+
+两场一次封存评估已完成，HOLDOUT_RESULTS给四半场独立核验及全部逐场指标；不可再用于本轮训练/调参。空间不足曾中断第二场下载，在任何评分前通过macOS透明压缩三份公开XML和一份公开SC JSONL释放约0.93GB，路径、大小和SHA保持不变。没有删除任何模型、原始数据或实验结果；其他平台无需该文件系统机制即可按原路径读取/重建。
+
+87项测试在原工作树及无数据缓存副本通过；原30个模型加新9个模型哈希核对，9个R7模型双域精确回放。发布前已检查新增历史的所有安全文本blob，并验证官方scorer SHA不变。Git HTTPS发送超时且远端无新分支，现采用保留原commit SHA的Git Data API发布；创建Draft后记录PR/CI回执。
