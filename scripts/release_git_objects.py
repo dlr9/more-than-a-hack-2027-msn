@@ -21,15 +21,18 @@ def identity(line):
     date=datetime.datetime.fromtimestamp(int(stamp),datetime.timezone(datetime.timedelta(minutes=minutes))).isoformat()
     return dict(name=name,email=email,date=date)
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--branch',required=True);p.add_argument('--receipt',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--branch',required=True);p.add_argument('--receipt',required=True)
+    p.add_argument('--uploaded-base',default=BASE,help='Previously verified remote ancestor; full public history audit still applies')
+    a=p.parse_args();uploaded_base=a.uploaded_base
     if not a.branch.startswith('codex/'):raise ValueError('new codex branch required')
     if git('status','--porcelain').strip():raise ValueError('commit all reviewed work first')
     checked=audit();head=checked['head']
-    if api(f'git/commits/{BASE}')['sha']!=BASE:raise ValueError('remote source ancestor mismatch')
+    subprocess.run(['git','merge-base','--is-ancestor',uploaded_base,head],check=True)
+    if api(f'git/commits/{uploaded_base}')['sha']!=uploaded_base:raise ValueError('remote source ancestor mismatch')
     # Existing branch is never moved by this publisher; use non-force git/API separately.
     branches=api('branches?per_page=100')
     if any(b['name']==a.branch for b in branches):raise FileExistsError('branch already exists; inspect before any update')
-    raw=git('rev-list','--objects',head,'^'+BASE).decode().splitlines()
+    raw=git('rev-list','--objects',head,'^'+uploaded_base).decode().splitlines()
     ids=[line.split()[0]for line in raw]
     kinds={sha:git('cat-file','-t',sha).decode().strip()for sha in ids}
     blobs=[sha for sha in ids if kinds[sha]=='blob'];uploaded=set()
@@ -52,7 +55,7 @@ def main():
             entries.append(dict(path=path.decode(),mode=mode,type=kind,sha=child))
         if api('git/trees',dict(tree=entries))['sha']!=sha:raise ValueError('tree SHA mismatch')
         uploaded.add(sha)
-    commits=git('rev-list','--reverse',f'{BASE}..{head}').decode().splitlines()
+    commits=git('rev-list','--reverse',f'{uploaded_base}..{head}').decode().splitlines()
     for sha in commits:
         content=git('cat-file','commit',sha).decode();header,message=content.split('\n\n',1)
         fields={};parents=[]
@@ -68,7 +71,7 @@ def main():
         print('Verified commit',sha,flush=True)
     ref=api('git/refs',dict(ref='refs/heads/'+a.branch,sha=head))
     if ref['object']['sha']!=head:raise ValueError('published head mismatch')
-    receipt=dict(repo=REPO,branch=a.branch,head=head,base_source=BASE,objects=len(uploaded),commits=commits,force=False,merge=False)
+    receipt=dict(repo=REPO,branch=a.branch,head=head,base_source=BASE,uploaded_base=uploaded_base,objects=len(uploaded),commits=commits,force=False,merge=False)
     Path(a.receipt).write_text(json.dumps(receipt,indent=2)+'\n')
     print('Published new branch',a.branch,head,flush=True)
 if __name__=='__main__':main()

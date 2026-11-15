@@ -13,7 +13,7 @@ def allowed(path):
     if '..'in p.parts or p.is_absolute():return False
     if path in EXACT:return True
     if len(p.parts)==2 and p.parts[0]in{'solution','scripts','tests'} and p.suffix in{'.py','.command'}:return True
-    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_')) and p.suffix in{'.json','.md'}:return True
+    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_','R7B_')) and p.suffix in{'.json','.md'}:return True
     return False
 
 def inspect_blob(path,content):
