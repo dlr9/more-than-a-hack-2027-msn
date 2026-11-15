@@ -1,0 +1,14 @@
+{
+  "decoder": "viterbi",
+  "window": 12,
+  "gap": 0,
+  "tag_weight": 0.2,
+  "idle": 0.5,
+  "dead_bias": -0.8,
+  "missing_weight": 1.0,
+  "team_penalty": 60.0,
+  "dead_penalty": 30.0,
+  "sustain": 20,
+  "dead_sustain": 30,
+  "distance": 2.0
+}

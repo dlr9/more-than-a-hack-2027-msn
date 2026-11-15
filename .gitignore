@@ -62,3 +62,8 @@ __pycache__/
 venv/
 env/
 .DS_Store
+
+# Local tracking-derived caches and execution logs
+extracted_features.npz
+features_v2.npz
+evaluation/v2_reports/*.log
