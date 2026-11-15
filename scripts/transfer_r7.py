@@ -15,7 +15,7 @@ from scripts.research_r7 import model_path,VARIANTS,write_new,record,source_iden
 from solution.idsse import digest
 
 def main():
-    out=Path('local_artifacts/r7/transfer-v1')
+    out=Path('local_artifacts/r7/transfer-v2')
     if out.exists():raise FileExistsError('preserve cross-provider result')
     protocol=json.loads(Path('docs/R7_TRANSFER_PROTOCOL.json').read_text())
     for p,sha in protocol['inputs'].items():
@@ -46,6 +46,6 @@ def main():
         rows.append(dict(variant=v,partial_metrics=score,strata=strata,waiver=waiver,full_spell_f1=None))
         np.savez_compressed(out/f'{v}.npz',p_alive=a,p_home=h,decoded=pred)
         print('partial transfer',v,score['partial_macro_f1'],flush=True)
-    result=dict(experiment_id='E07_cross_provider_partial',**source_identity(),transfer_script_sha256=digest(__file__),adapter_sha256=digest('solution/r7_skillcorner.py'),protocol_sha256=digest('docs/R7_TRANSFER_PROTOCOL.json'),rows=rows,reference=score_sequence(truth,period_reference(base),base['period'],10.,semantics='partial_SC'),full_spell_f1=None,wall_s=time.monotonic()-started,decision='diagnostic only; no selection, no D ground truth',competition_promoted=False)
+    result=dict(experiment_id='E07_cross_provider_partial',**source_identity(),transfer_script_sha256=digest(__file__),adapter_sha256=digest('solution/r7_skillcorner.py'),transfer_protocol_sha256=digest('docs/R7_TRANSFER_PROTOCOL.json'),rows=rows,reference=score_sequence(truth,period_reference(base),base['period'],10.,semantics='partial_SC'),full_spell_f1=None,wall_s=time.monotonic()-started,decision='diagnostic only; no selection, no D ground truth',competition_promoted=False)
     write_new(out/'results.json',result);write_new('docs/R7_TRANSFER_RESULTS.json',result);record({k:v for k,v in result.items()if k not in{'rows','reference'}})
 if __name__=='__main__':main()
