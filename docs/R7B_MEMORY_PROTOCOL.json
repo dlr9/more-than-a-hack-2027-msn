@@ -1,0 +1,13 @@
+{
+  "version":"T1-T2-v1",
+  "frozen_before_scoring":true,
+  "trigger_evidence":"P1+G1 complete first results: G1 improves DFL missing but 195 zero-player SC frames remain D; pure P1 missing prior gives live with only9.74percent HA accuracy. Independent Home and Alive failures require explicit diagnosis.",
+  "stress":"Public DFL timeline-only simultaneous all-player and ball blackout: durations1/5/10/30s, gaps uniform40..80s, seed7210, period-specific RNG, source labels unchanged. Recompute44 from raw. No player expert used during blackout because reliability gate must be false.",
+  "T1_alive_prior":"Only zero detected/available players AND missing ball. Last ball-visible speed-valid Alive confident >.9 or <.1 anchor; propagate probability toward .5 with30s half-life; expire at30s. Reset period/gap. Observed confident D clears team memory.",
+  "T2_home_prior":"Identical T1 Alive. Additionally last confident Home >.8/<.2 with nearest same-team distance<2m and opponent margin>2m, no intervening observed confident D; decay toward.5 with10s half-life, expire30s. This is a proximity proxy, not verified control.",
+  "models":"Frozen first/LOMO M2 heads and original decoder costs; no fit/no tuning; T1 vs T2 isolates Home memory at same Alive",
+  "domains":"All3 DFL full natural/originaldropout (no zero-player frames, unchanged by assertion), new blackout full25Hz; SC1874553 knownHA diagnostic. No blind claim.",
+  "metrics":"Raw/Viterbi fullspell5IoU, macro, falseD cuts, realD missedframes/segments, boundaries .48/1s, H/A errors, count/length of prior use and partialSC episodes",
+  "guardrail":"Only KEEP_RESEARCH if >=2/3 blackout spell improvements and mean>=.01, trueDmiss frame rate delta<=.02 eachmatch, no complete missed D segment rate increase>.02, SC catastrophic allD removed. Otherwise EXPERIMENTAL only; hidden state remains unidentifiable.",
+  "fallback":"G1 observation quality policy or frozen R6M1 as research baseline; no target deployment certification. No future anchor fitting or additional threshold search this round."
+}
