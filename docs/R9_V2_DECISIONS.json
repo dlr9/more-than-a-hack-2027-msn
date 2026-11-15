@@ -1,0 +1,15 @@
+{
+  "experiments": {
+    "e09d": "KEEP_DIAGNOSTIC: HA dominates; sparse correction can fragment spells; oracle not deployable",
+    "e09e1": "INVALID_INPUT_CONTRACT: reversed home/away encoding; preserve all 24 outputs, no method inference",
+    "e09e1fix": "REVERT_AS_REPLACEMENT: small mixed timing changes, WPY consistently worse",
+    "e09e2": "REVERT_AS_REPLACEMENT: new short segments did not improve natural; stop event weight search",
+    "e09a": "KEEP_RESEARCH_COMPONENT HC_M3 (M2 Alive + C1 Home + M3); C1 Alive REVERT; not universal replacement for H1",
+    "e09a2": "REVERT_FACTORISATION: Metrica missed weak D 25380/25619; HC_M3 retained as research only"
+  },
+  "Gate_R": "HC_M3 conditional evidence vs M3, but not a uniform improvement vs H1; keep Pareto research component",
+  "Gate_T": "TRANSFER_NOT_ESTABLISHED",
+  "Gate_S": "HUMAN_ONLY_UNKNOWN",
+  "competition_promoted": false,
+  "stop": "One event mechanism revision and one head decoder followup completed; no further same-match tuning. Need independent complete crossvendor labels / external event boundary supervision."
+}
