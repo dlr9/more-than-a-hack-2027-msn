@@ -76,7 +76,16 @@ def anchor_probabilities(alive, home, *, frame, period, fps, visible,
     if not np.isfinite(q).all() or not np.isfinite(r).all() or np.any((q<0)|(q>1)|(r<0)|(r>1)):
         raise ValueError('invalid anchor probabilities')
     visible = np.asarray(visible, dtype=bool)
-    hd, ad, speed = map(np.asarray, (home_distance, away_distance, ball_speed))
+    hd, ad = map(np.asarray, (home_distance, away_distance))
+    speed = np.array(ball_speed, dtype=float, copy=True)
+    # Position-derived speed is backward-looking: the first re-observed ball
+    # necessarily has NaN speed. Its next visible sample supplies a forward
+    # velocity over two real observations, within the same continuous block.
+    # This is not a velocity across the hidden gap and uses no inferred ball.
+    for a, b in continuous_blocks(frame, period):
+        idx = np.arange(a, b-1)
+        use = visible[idx] & visible[idx+1] & ~np.isfinite(speed[idx]) & np.isfinite(speed[idx+1])
+        speed[idx[use]] = speed[idx[use]+1]
     reliable = visible & (q >= .9) & np.isfinite(speed) & (speed <= 12) & (speed >= 0) & (np.asarray(player_count) >= 16)
     anchor = np.full(n, -1, dtype=np.int8)
     anchor[reliable & (hd < 2) & (ad-hd > 2) & (r >= .8)] = 1

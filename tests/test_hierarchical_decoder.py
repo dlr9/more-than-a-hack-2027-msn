@@ -56,6 +56,13 @@ class HierarchicalTests(unittest.TestCase):
         self.assertTrue(m['unsupported'].all());self.assertFalse(m['used'].any())
         np.testing.assert_array_equal(q,x['alive'])
 
+    def test_first_reobserved_ball_uses_observed_forward_speed(self):
+        x=self.fixture();x['ball_speed'][20:31]=np.nan
+        self.assertEqual(anchor_probabilities(**x)[2]['used'].sum(),10)
+        # A forward difference across a frame gap cannot establish velocity.
+        x['frame'][31:]+=1
+        self.assertFalse(anchor_probabilities(**x)[2]['used'].any())
+
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):decode([np.nan],[.5],[1],[1],25)
         with self.assertRaises(ValueError):binary_decode([.5],0,.1)

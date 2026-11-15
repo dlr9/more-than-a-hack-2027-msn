@@ -1,0 +1,213 @@
+{
+  "folds": [
+    {
+      "heldout_not_inspected": "J03WPY",
+      "training": [
+        {
+          "match": "J03WOH",
+          "input_sha256": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+          "coverage": {
+            "n_frames": 137214,
+            "n_selected": 10978,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 14,
+                "without_sample": 7
+              },
+              "0p5to1": {
+                "n": 32,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 111,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 245,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 46,
+            "short_without_sample": 7,
+            "boundaries": 502,
+            "boundary_without_sample_within_0p12s": 200,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "input_sha256": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+          "coverage": {
+            "n_frames": 142345,
+            "n_selected": 11388,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 14,
+                "without_sample": 9
+              },
+              "0p5to1": {
+                "n": 23,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 118,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 246,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 37,
+            "short_without_sample": 9,
+            "boundaries": 498,
+            "boundary_without_sample_within_0p12s": 220,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        }
+      ],
+      "short_spell_miss_rate": 0.1927710843373494,
+      "trigger": true
+    },
+    {
+      "heldout_not_inspected": "J03WOH",
+      "training": [
+        {
+          "match": "J03WPY",
+          "input_sha256": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+          "coverage": {
+            "n_frames": 146211,
+            "n_selected": 11697,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 27,
+                "without_sample": 11
+              },
+              "0p5to1": {
+                "n": 30,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 118,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 246,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 57,
+            "short_without_sample": 11,
+            "boundaries": 516,
+            "boundary_without_sample_within_0p12s": 225,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "input_sha256": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+          "coverage": {
+            "n_frames": 142345,
+            "n_selected": 11388,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 14,
+                "without_sample": 9
+              },
+              "0p5to1": {
+                "n": 23,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 118,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 246,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 37,
+            "short_without_sample": 9,
+            "boundaries": 498,
+            "boundary_without_sample_within_0p12s": 220,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        }
+      ],
+      "short_spell_miss_rate": 0.2127659574468085,
+      "trigger": true
+    },
+    {
+      "heldout_not_inspected": "J03WQQ",
+      "training": [
+        {
+          "match": "J03WPY",
+          "input_sha256": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+          "coverage": {
+            "n_frames": 146211,
+            "n_selected": 11697,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 27,
+                "without_sample": 11
+              },
+              "0p5to1": {
+                "n": 30,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 118,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 246,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 57,
+            "short_without_sample": 11,
+            "boundaries": 516,
+            "boundary_without_sample_within_0p12s": 225,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        },
+        {
+          "match": "J03WOH",
+          "input_sha256": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+          "coverage": {
+            "n_frames": 137214,
+            "n_selected": 10978,
+            "ha_spell_sample_coverage": {
+              "lt0p5": {
+                "n": 14,
+                "without_sample": 7
+              },
+              "0p5to1": {
+                "n": 32,
+                "without_sample": 0
+              },
+              "1to3": {
+                "n": 111,
+                "without_sample": 0
+              },
+              "ge3": {
+                "n": 245,
+                "without_sample": 0
+              }
+            },
+            "short_spells": 46,
+            "short_without_sample": 7,
+            "boundaries": 502,
+            "boundary_without_sample_within_0p12s": 200,
+            "max_boundary_sample_distance_seconds": 0.24
+          }
+        }
+      ],
+      "short_spell_miss_rate": 0.17475728155339806,
+      "trigger": true
+    }
+  ],
+  "trigger_at_least_two_folds": true,
+  "caveat": "Uniform sampling can preserve frame proportions while omitting brief spells; this diagnostic does not establish a general bias or model improvement."
+}
