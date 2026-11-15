@@ -1,0 +1,5344 @@
+{
+  "fingerprint": "b7600a774f860b394a4ed8f5ac25aaf099996e665aa875b8567af0f1f540be88",
+  "provenance": {
+    "windows": [
+      [
+        11185,
+        13685
+      ],
+      [
+        13685,
+        16185
+      ],
+      [
+        16185,
+        18685
+      ]
+    ],
+    "purge": 125,
+    "candidates": [
+      {
+        "boost": 0.0,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.0,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.0,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.0,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.0,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.0,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.4,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 0.8,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 30.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 15.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "movement"
+      },
+      {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 60.0,
+        "support": "stationary"
+      }
+    ],
+    "selection": "pooled official F1, full-public refit",
+    "files": {
+      "BAR-ATH_tactical_atd.txt": "f130e350d2bfdf734b7e32f072931fccc6d015c1e837d082064875fe0a700431",
+      "BAR-ATH_tactical_atd.xml": "327e35e32e46a647389b88f883d4f9a2ab931e3e6148aef2fcf8f22b1e93c43a",
+      "BAR-ATH_tactical_smart_tagging.xml": "0594d35e3df01b9c5002372d8615e2e8ef5379ac8f4e84c5ef7a53f4304c9019",
+      "BAR-ATH_possession_gt_public.csv": "24d13807dfd2173b3b567a5f1fa0c597d42653a21d808da6027f98583d446e34",
+      "optimize_v4.py": "e0faf7034f8105e5b68da2f07c23a6f5842ccabaab5993fc365da9f21232a4b1",
+      "fusion_v2.py": "1fb881af8812d9369b48224c23bd44f8e6fef53a3f21d278a86e910174911d2b",
+      "fusion_v3.py": "86541886bce01c3f72995ad8d230055fb76a25e8b6c41f5445bcfbd80e0f229d",
+      "fusion_v4.py": "af3511301f79ecaadd9e135a066d8e18ef30e6f74df871af0e3971446064ec7a",
+      "optimize_v3.py": "d86cc6ff0cb0d5239ad74013b61037db6b0e1d7b1265c12f63a9faaec6468d97",
+      "fusion_v2_config.json": "aeaec9af3d1e41fdf1a46d375777c0a9cef2dbae098d4028112ca767cf3c7930",
+      "possession_metrics.py": "32c878630c74fb52a90c301485d6dff806509d8e933b1177b6035ee8e8f42b80"
+    }
+  },
+  "config": {
+    "boost": 1.2,
+    "team_penalty": 60.0,
+    "dead_penalty": 30.0,
+    "support": "movement"
+  },
+  "accepted": false,
+  "baseline": {
+    "macro_f1": 0.7261058538791283,
+    "spell_f1_mean": 0.5935483870967742,
+    "spell_f1_at_headline": 0.6451612903225806,
+    "spell_iou_headline": 0.5,
+    "spell_bootstrap_low": 0.4129032258064516,
+    "spell_bootstrap_high": 0.7741935483870968,
+    "n_gt_spells": 17,
+    "n_pred_spells": 14,
+    "spell_count_error": -3,
+    "mean_spell_duration_s": 19.374285714285712,
+    "gt_mean_spell_duration_s": 14.190588235294117,
+    "accuracy": 0.7784,
+    "kappa": 0.633974947501172,
+    "alive_dead_f1": 0.9208554480174836,
+    "team_acc_gt_alive": 0.8706682142264964,
+    "team_acc_both_alive": 0.890150873029327,
+    "gt_home_share": 0.5727076770021555,
+    "pred_home_share": 0.61613331367055,
+    "share_err": 0.043425636668394496,
+    "share_defined": true,
+    "n_gt_segments": 21,
+    "n_pred_segments": 18,
+    "fragmentation": 0.8571428571428571,
+    "n_frames": 199319,
+    "n_graded": 7500,
+    "n_abstain_on_graded": 0,
+    "bootstrap_low": 0.5209254237791642,
+    "bootstrap_high": 0.8750511079211758,
+    "bootstrap_n": 1000,
+    "confusion": [
+      [
+        3109,
+        325,
+        20,
+        0
+      ],
+      [
+        323,
+        2142,
+        112,
+        0
+      ],
+      [
+        746,
+        136,
+        587,
+        0
+      ],
+      [
+        49027,
+        32573,
+        69757,
+        40462
+      ]
+    ],
+    "per_class": {
+      "H": {
+        "precision": 0.7441359502154141,
+        "recall": 0.9001158077591198,
+        "f1": 0.814727463312369,
+        "support": 3454
+      },
+      "A": {
+        "precision": 0.8228966577026507,
+        "recall": 0.8311990686845169,
+        "f1": 0.827027027027027,
+        "support": 2577
+      },
+      "D": {
+        "precision": 0.8164116828929068,
+        "recall": 0.39959155888359427,
+        "f1": 0.5365630712979891,
+        "support": 1469
+      }
+    },
+    "transitions": {
+      "12": {
+        "precision": 0.23529411764705882,
+        "recall": 0.2,
+        "f1": 0.2162162162162162,
+        "n_gt": 20,
+        "n_pred": 17,
+        "n_matched": 4,
+        "n_missed": 16,
+        "n_spurious": 13,
+        "n_ambiguous": 0,
+        "mean_latency": -3.75,
+        "median_latency": -4.5,
+        "mean_abs_latency": 4.25,
+        "p90_abs_latency": 6.4,
+        "pairs": [
+          [
+            [
+              12989,
+              2,
+              0
+            ],
+            [
+              12982,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              13785,
+              1,
+              0
+            ],
+            [
+              13786,
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              14846,
+              0,
+              1
+            ],
+            [
+              14841,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              17838,
+              2,
+              1
+            ],
+            [
+              17834,
+              2,
+              1
+            ]
+          ]
+        ],
+        "missed": [
+          [
+            11351,
+            1,
+            0
+          ],
+          [
+            11624,
+            1,
+            0
+          ],
+          [
+            15346,
+            1,
+            0
+          ],
+          [
+            15766,
+            1,
+            0
+          ],
+          [
+            17293,
+            1,
+            0
+          ],
+          [
+            18389,
+            2,
+            0
+          ],
+          [
+            11553,
+            0,
+            1
+          ],
+          [
+            12665,
+            0,
+            1
+          ],
+          [
+            13704,
+            0,
+            1
+          ],
+          [
+            15365,
+            0,
+            1
+          ],
+          [
+            15799,
+            0,
+            1
+          ],
+          [
+            16400,
+            2,
+            1
+          ],
+          [
+            12851,
+            1,
+            2
+          ],
+          [
+            15889,
+            1,
+            2
+          ],
+          [
+            17380,
+            0,
+            2
+          ],
+          [
+            18027,
+            1,
+            2
+          ]
+        ],
+        "spurious": [
+          [
+            11469,
+            1,
+            0
+          ],
+          [
+            11814,
+            1,
+            0
+          ],
+          [
+            15645,
+            1,
+            0
+          ],
+          [
+            17268,
+            2,
+            0
+          ],
+          [
+            18011,
+            1,
+            0
+          ],
+          [
+            11696,
+            0,
+            1
+          ],
+          [
+            12646,
+            0,
+            1
+          ],
+          [
+            13659,
+            0,
+            1
+          ],
+          [
+            16291,
+            2,
+            1
+          ],
+          [
+            12874,
+            1,
+            2
+          ],
+          [
+            16266,
+            0,
+            2
+          ],
+          [
+            17156,
+            1,
+            2
+          ],
+          [
+            17360,
+            0,
+            2
+          ]
+        ]
+      },
+      "25": {
+        "precision": 0.47058823529411764,
+        "recall": 0.4,
+        "f1": 0.4324324324324324,
+        "n_gt": 20,
+        "n_pred": 17,
+        "n_matched": 8,
+        "n_missed": 12,
+        "n_spurious": 9,
+        "n_ambiguous": 0,
+        "mean_latency": -7.0,
+        "median_latency": -6.0,
+        "mean_abs_latency": 13.0,
+        "p90_abs_latency": 23.6,
+        "pairs": [
+          [
+            [
+              12989,
+              2,
+              0
+            ],
+            [
+              12982,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              13785,
+              1,
+              0
+            ],
+            [
+              13786,
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              17268,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              14846,
+              0,
+              1
+            ],
+            [
+              14841,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              17838,
+              2,
+              1
+            ],
+            [
+              17834,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              12851,
+              1,
+              2
+            ],
+            [
+              12874,
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              17360,
+              0,
+              2
+            ]
+          ]
+        ],
+        "missed": [
+          [
+            11351,
+            1,
+            0
+          ],
+          [
+            11624,
+            1,
+            0
+          ],
+          [
+            15346,
+            1,
+            0
+          ],
+          [
+            15766,
+            1,
+            0
+          ],
+          [
+            18389,
+            2,
+            0
+          ],
+          [
+            11553,
+            0,
+            1
+          ],
+          [
+            13704,
+            0,
+            1
+          ],
+          [
+            15365,
+            0,
+            1
+          ],
+          [
+            15799,
+            0,
+            1
+          ],
+          [
+            16400,
+            2,
+            1
+          ],
+          [
+            15889,
+            1,
+            2
+          ],
+          [
+            18027,
+            1,
+            2
+          ]
+        ],
+        "spurious": [
+          [
+            11469,
+            1,
+            0
+          ],
+          [
+            11814,
+            1,
+            0
+          ],
+          [
+            15645,
+            1,
+            0
+          ],
+          [
+            18011,
+            1,
+            0
+          ],
+          [
+            11696,
+            0,
+            1
+          ],
+          [
+            13659,
+            0,
+            1
+          ],
+          [
+            16291,
+            2,
+            1
+          ],
+          [
+            16266,
+            0,
+            2
+          ],
+          [
+            17156,
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "spell_f1": {
+      "0.3": {
+        "precision": 0.7857142857142857,
+        "recall": 0.6470588235294118,
+        "f1": 0.7096774193548386,
+        "n_matched": 11,
+        "n_spurious": 3,
+        "n_missed": 6
+      },
+      "0.4": {
+        "precision": 0.7857142857142857,
+        "recall": 0.6470588235294118,
+        "f1": 0.7096774193548386,
+        "n_matched": 11,
+        "n_spurious": 3,
+        "n_missed": 6
+      },
+      "0.5": {
+        "precision": 0.7142857142857143,
+        "recall": 0.5882352941176471,
+        "f1": 0.6451612903225806,
+        "n_matched": 10,
+        "n_spurious": 4,
+        "n_missed": 7
+      },
+      "0.6": {
+        "precision": 0.5714285714285714,
+        "recall": 0.47058823529411764,
+        "f1": 0.5161290322580646,
+        "n_matched": 8,
+        "n_spurious": 6,
+        "n_missed": 9
+      },
+      "0.7": {
+        "precision": 0.42857142857142855,
+        "recall": 0.35294117647058826,
+        "f1": 0.3870967741935484,
+        "n_matched": 6,
+        "n_spurious": 8,
+        "n_missed": 11
+      }
+    },
+    "gt_home_share_spells": 0.5727076770021555
+  },
+  "baseline_folds": [
+    {
+      "macro_f1": 0.8109392278050186,
+      "spell_f1_mean": 0.5538461538461539,
+      "spell_f1_at_headline": 0.6153846153846153,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 6,
+      "n_pred_spells": 7,
+      "spell_count_error": 1,
+      "mean_spell_duration_s": 13.668571428571429,
+      "gt_mean_spell_duration_s": 15.746666666666668,
+      "accuracy": 0.8472,
+      "kappa": 0.6314881242706937,
+      "alive_dead_f1": 0.9936895246108539,
+      "team_acc_gt_alive": 0.8509737510584251,
+      "team_acc_both_alive": 0.8509737510584251,
+      "gt_home_share": 0.8209144792548687,
+      "pred_home_share": 0.725752508361204,
+      "share_err": 0.09516197089366474,
+      "share_defined": true,
+      "n_gt_segments": 7,
+      "n_pred_segments": 8,
+      "fragmentation": 1.1428571428571428,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          1658,
+          281,
+          0,
+          0
+        ],
+        [
+          71,
+          352,
+          0,
+          0
+        ],
+        [
+          7,
+          23,
+          108,
+          0
+        ],
+        [
+          51469,
+          34520,
+          70368,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.9550691244239631,
+          "recall": 0.8550799381124291,
+          "f1": 0.902312925170068,
+          "support": 1939
+        },
+        "A": {
+          "precision": 0.5365853658536586,
+          "recall": 0.8321513002364066,
+          "f1": 0.6524559777571827,
+          "support": 423
+        },
+        "D": {
+          "precision": 1.0,
+          "recall": 0.782608695652174,
+          "f1": 0.878048780487805,
+          "support": 138
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.14285714285714285,
+          "recall": 0.16666666666666666,
+          "f1": 0.15384615384615383,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 1,
+          "n_missed": 5,
+          "n_spurious": 6,
+          "n_ambiguous": 0,
+          "mean_latency": -7.0,
+          "median_latency": -7.0,
+          "mean_abs_latency": 7.0,
+          "p90_abs_latency": 7.0,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              12851,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              12874,
+              1,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 3,
+          "n_missed": 3,
+          "n_spurious": 4,
+          "n_ambiguous": 0,
+          "mean_latency": -1.0,
+          "median_latency": -7.0,
+          "mean_abs_latency": 16.333333333333332,
+          "p90_abs_latency": 22.2,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12646,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                12851,
+                1,
+                2
+              ],
+              [
+                12874,
+                1,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.4": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.5": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.6": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_matched": 3,
+          "n_spurious": 4,
+          "n_missed": 3
+        },
+        "0.7": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_matched": 3,
+          "n_spurious": 4,
+          "n_missed": 3
+        }
+      },
+      "gt_home_share_spells": 0.8209144792548687
+    },
+    {
+      "macro_f1": 0.5563210510901032,
+      "spell_f1_mean": 0.4666666666666667,
+      "spell_f1_at_headline": 0.5,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 8,
+      "n_pred_spells": 4,
+      "spell_count_error": -4,
+      "mean_spell_duration_s": 25.0,
+      "gt_mean_spell_duration_s": 11.02,
+      "accuracy": 0.7796,
+      "kappa": 0.6035172552744438,
+      "alive_dead_f1": 0.9370748299319728,
+      "team_acc_gt_alive": 0.8843012704174229,
+      "team_acc_both_alive": 0.8843012704174229,
+      "gt_home_share": 0.5136116152450091,
+      "pred_home_share": 0.638,
+      "share_err": 0.12438838475499092,
+      "share_defined": true,
+      "n_gt_segments": 9,
+      "n_pred_segments": 4,
+      "fragmentation": 0.4444444444444444,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          1088,
+          44,
+          0,
+          0
+        ],
+        [
+          211,
+          861,
+          0,
+          0
+        ],
+        [
+          296,
+          0,
+          0,
+          0
+        ],
+        [
+          51610,
+          34271,
+          70476,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.6821316614420063,
+          "recall": 0.9611307420494699,
+          "f1": 0.797946461312798,
+          "support": 1132
+        },
+        "A": {
+          "precision": 0.9513812154696133,
+          "recall": 0.8031716417910447,
+          "f1": 0.8710166919575114,
+          "support": 1072
+        },
+        "D": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 296
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "f1": 0.36363636363636365,
+          "n_gt": 8,
+          "n_pred": 3,
+          "n_matched": 2,
+          "n_missed": 6,
+          "n_spurious": 1,
+          "n_ambiguous": 0,
+          "mean_latency": -2.0,
+          "median_latency": -2.0,
+          "mean_abs_latency": 3.0,
+          "p90_abs_latency": 4.6,
+          "pairs": [
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              15645,
+              1,
+              0
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "f1": 0.36363636363636365,
+          "n_gt": 8,
+          "n_pred": 3,
+          "n_matched": 2,
+          "n_missed": 6,
+          "n_spurious": 1,
+          "n_ambiguous": 0,
+          "mean_latency": -2.0,
+          "median_latency": -2.0,
+          "mean_abs_latency": 3.0,
+          "p90_abs_latency": 4.6,
+          "pairs": [
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              15645,
+              1,
+              0
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.4": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.5": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.6": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.7": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "n_matched": 2,
+          "n_spurious": 2,
+          "n_missed": 6
+        }
+      },
+      "gt_home_share_spells": 0.5136116152450091
+    },
+    {
+      "macro_f1": 0.6823418361594014,
+      "spell_f1_mean": 0.6666666666666667,
+      "spell_f1_at_headline": 0.6666666666666665,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 4,
+      "n_pred_spells": 5,
+      "spell_count_error": 1,
+      "mean_spell_duration_s": 15.112,
+      "gt_mean_spell_duration_s": 14.65,
+      "accuracy": 0.7084,
+      "kappa": 0.5625058512591911,
+      "alive_dead_f1": 0.7948717948717948,
+      "team_acc_gt_alive": 0.8819112627986349,
+      "team_acc_both_alive": 0.9692423105776444,
+      "gt_home_share": 0.2614334470989761,
+      "pred_home_share": 0.4483853890947591,
+      "share_err": 0.18695194199578302,
+      "share_defined": true,
+      "n_gt_segments": 7,
+      "n_pred_segments": 8,
+      "fragmentation": 1.1428571428571428,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          363,
+          0,
+          20,
+          0
+        ],
+        [
+          41,
+          929,
+          112,
+          0
+        ],
+        [
+          443,
+          113,
+          479,
+          0
+        ],
+        [
+          52358,
+          34134,
+          69865,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.42857142857142855,
+          "recall": 0.9477806788511749,
+          "f1": 0.5902439024390244,
+          "support": 383
+        },
+        "A": {
+          "precision": 0.8915547024952015,
+          "recall": 0.8585951940850277,
+          "f1": 0.8747645951035783,
+          "support": 1082
+        },
+        "D": {
+          "precision": 0.7839607201309329,
+          "recall": 0.4628019323671498,
+          "f1": 0.5820170109356015,
+          "support": 1035
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.14285714285714285,
+          "recall": 0.16666666666666666,
+          "f1": 0.15384615384615383,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 1,
+          "n_missed": 5,
+          "n_spurious": 6,
+          "n_ambiguous": 0,
+          "mean_latency": -4.0,
+          "median_latency": -4.0,
+          "mean_abs_latency": 4.0,
+          "p90_abs_latency": 4.0,
+          "pairs": [
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              17268,
+              2,
+              0
+            ],
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              16291,
+              2,
+              1
+            ],
+            [
+              16266,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              17360,
+              0,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 3,
+          "n_missed": 3,
+          "n_spurious": 4,
+          "n_ambiguous": 0,
+          "mean_latency": -16.333333333333332,
+          "median_latency": -20.0,
+          "mean_abs_latency": 16.333333333333332,
+          "p90_abs_latency": 24.0,
+          "pairs": [
+            [
+              [
+                17293,
+                1,
+                0
+              ],
+              [
+                17268,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17380,
+                0,
+                2
+              ],
+              [
+                17360,
+                0,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              16291,
+              2,
+              1
+            ],
+            [
+              16266,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "n_matched": 4,
+          "n_spurious": 1,
+          "n_missed": 0
+        },
+        "0.4": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "n_matched": 4,
+          "n_spurious": 1,
+          "n_missed": 0
+        },
+        "0.5": {
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666665,
+          "n_matched": 3,
+          "n_spurious": 2,
+          "n_missed": 1
+        },
+        "0.6": {
+          "precision": 0.4,
+          "recall": 0.5,
+          "f1": 0.4444444444444445,
+          "n_matched": 2,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.7": {
+          "precision": 0.4,
+          "recall": 0.5,
+          "f1": 0.4444444444444445,
+          "n_matched": 2,
+          "n_spurious": 3,
+          "n_missed": 2
+        }
+      },
+      "gt_home_share_spells": 0.2614334470989761
+    }
+  ],
+  "full": {
+    "macro_f1": 0.7929004877841243,
+    "spell_f1_mean": 0.5935483870967742,
+    "spell_f1_at_headline": 0.6451612903225806,
+    "spell_iou_headline": 0.5,
+    "spell_bootstrap_low": 0.39999999999999997,
+    "spell_bootstrap_high": 0.7870967741935483,
+    "n_gt_spells": 17,
+    "n_pred_spells": 14,
+    "spell_count_error": -3,
+    "mean_spell_duration_s": 17.997142857142858,
+    "gt_mean_spell_duration_s": 14.190588235294117,
+    "accuracy": 0.8121333333333334,
+    "kappa": 0.697377393886568,
+    "alive_dead_f1": 0.9362530413625304,
+    "team_acc_gt_alive": 0.8537555960868844,
+    "team_acc_both_alive": 0.8920651420651421,
+    "gt_home_share": 0.5727076770021555,
+    "pred_home_share": 0.603429115732656,
+    "share_err": 0.030721438730500483,
+    "share_defined": true,
+    "n_gt_segments": 21,
+    "n_pred_segments": 18,
+    "fragmentation": 0.8571428571428571,
+    "n_frames": 199319,
+    "n_graded": 7500,
+    "n_abstain_on_graded": 0,
+    "bootstrap_low": 0.6496032769744748,
+    "bootstrap_high": 0.8639294791146127,
+    "bootstrap_n": 1000,
+    "confusion": [
+      [
+        3007,
+        325,
+        122,
+        0
+      ],
+      [
+        298,
+        2142,
+        137,
+        0
+      ],
+      [
+        496,
+        31,
+        942,
+        0
+      ],
+      [
+        47470,
+        28321,
+        75566,
+        40462
+      ]
+    ],
+    "per_class": {
+      "H": {
+        "precision": 0.7911076032622993,
+        "recall": 0.8705848291835553,
+        "f1": 0.8289455547898001,
+        "support": 3454
+      },
+      "A": {
+        "precision": 0.8574859887910328,
+        "recall": 0.8311990686845169,
+        "f1": 0.8441379310344828,
+        "support": 2577
+      },
+      "D": {
+        "precision": 0.7843463780183181,
+        "recall": 0.6412525527569776,
+        "f1": 0.70561797752809,
+        "support": 1469
+      }
+    },
+    "transitions": {
+      "12": {
+        "precision": 0.29411764705882354,
+        "recall": 0.25,
+        "f1": 0.27027027027027023,
+        "n_gt": 20,
+        "n_pred": 17,
+        "n_matched": 5,
+        "n_missed": 15,
+        "n_spurious": 12,
+        "n_ambiguous": 0,
+        "mean_latency": -3.8,
+        "median_latency": -4.0,
+        "mean_abs_latency": 4.2,
+        "p90_abs_latency": 6.2,
+        "pairs": [
+          [
+            [
+              12989,
+              2,
+              0
+            ],
+            [
+              12982,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              13785,
+              1,
+              0
+            ],
+            [
+              13786,
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              14846,
+              0,
+              1
+            ],
+            [
+              14841,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              16396,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              17838,
+              2,
+              1
+            ],
+            [
+              17834,
+              2,
+              1
+            ]
+          ]
+        ],
+        "missed": [
+          [
+            11351,
+            1,
+            0
+          ],
+          [
+            11624,
+            1,
+            0
+          ],
+          [
+            15346,
+            1,
+            0
+          ],
+          [
+            15766,
+            1,
+            0
+          ],
+          [
+            17293,
+            1,
+            0
+          ],
+          [
+            18389,
+            2,
+            0
+          ],
+          [
+            11553,
+            0,
+            1
+          ],
+          [
+            12665,
+            0,
+            1
+          ],
+          [
+            13704,
+            0,
+            1
+          ],
+          [
+            15365,
+            0,
+            1
+          ],
+          [
+            15799,
+            0,
+            1
+          ],
+          [
+            12851,
+            1,
+            2
+          ],
+          [
+            15889,
+            1,
+            2
+          ],
+          [
+            17380,
+            0,
+            2
+          ],
+          [
+            18027,
+            1,
+            2
+          ]
+        ],
+        "spurious": [
+          [
+            11469,
+            1,
+            0
+          ],
+          [
+            11814,
+            1,
+            0
+          ],
+          [
+            15645,
+            1,
+            0
+          ],
+          [
+            18011,
+            1,
+            0
+          ],
+          [
+            18424,
+            2,
+            0
+          ],
+          [
+            11696,
+            0,
+            1
+          ],
+          [
+            12646,
+            0,
+            1
+          ],
+          [
+            13659,
+            0,
+            1
+          ],
+          [
+            12874,
+            1,
+            2
+          ],
+          [
+            16125,
+            0,
+            2
+          ],
+          [
+            17156,
+            1,
+            2
+          ],
+          [
+            18280,
+            0,
+            2
+          ]
+        ]
+      },
+      "25": {
+        "precision": 0.4117647058823529,
+        "recall": 0.35,
+        "f1": 0.37837837837837834,
+        "n_gt": 20,
+        "n_pred": 17,
+        "n_matched": 7,
+        "n_missed": 13,
+        "n_spurious": 10,
+        "n_ambiguous": 0,
+        "mean_latency": -2.142857142857143,
+        "median_latency": -4.0,
+        "mean_abs_latency": 9.0,
+        "p90_abs_latency": 20.6,
+        "pairs": [
+          [
+            [
+              12989,
+              2,
+              0
+            ],
+            [
+              12982,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              13785,
+              1,
+              0
+            ],
+            [
+              13786,
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              14846,
+              0,
+              1
+            ],
+            [
+              14841,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              16396,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              17838,
+              2,
+              1
+            ],
+            [
+              17834,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              12851,
+              1,
+              2
+            ],
+            [
+              12874,
+              1,
+              2
+            ]
+          ]
+        ],
+        "missed": [
+          [
+            11351,
+            1,
+            0
+          ],
+          [
+            11624,
+            1,
+            0
+          ],
+          [
+            15346,
+            1,
+            0
+          ],
+          [
+            15766,
+            1,
+            0
+          ],
+          [
+            17293,
+            1,
+            0
+          ],
+          [
+            18389,
+            2,
+            0
+          ],
+          [
+            11553,
+            0,
+            1
+          ],
+          [
+            13704,
+            0,
+            1
+          ],
+          [
+            15365,
+            0,
+            1
+          ],
+          [
+            15799,
+            0,
+            1
+          ],
+          [
+            15889,
+            1,
+            2
+          ],
+          [
+            17380,
+            0,
+            2
+          ],
+          [
+            18027,
+            1,
+            2
+          ]
+        ],
+        "spurious": [
+          [
+            11469,
+            1,
+            0
+          ],
+          [
+            11814,
+            1,
+            0
+          ],
+          [
+            15645,
+            1,
+            0
+          ],
+          [
+            18011,
+            1,
+            0
+          ],
+          [
+            18424,
+            2,
+            0
+          ],
+          [
+            11696,
+            0,
+            1
+          ],
+          [
+            13659,
+            0,
+            1
+          ],
+          [
+            16125,
+            0,
+            2
+          ],
+          [
+            17156,
+            1,
+            2
+          ],
+          [
+            18280,
+            0,
+            2
+          ]
+        ]
+      }
+    },
+    "spell_f1": {
+      "0.3": {
+        "precision": 0.7142857142857143,
+        "recall": 0.5882352941176471,
+        "f1": 0.6451612903225806,
+        "n_matched": 10,
+        "n_spurious": 4,
+        "n_missed": 7
+      },
+      "0.4": {
+        "precision": 0.7142857142857143,
+        "recall": 0.5882352941176471,
+        "f1": 0.6451612903225806,
+        "n_matched": 10,
+        "n_spurious": 4,
+        "n_missed": 7
+      },
+      "0.5": {
+        "precision": 0.7142857142857143,
+        "recall": 0.5882352941176471,
+        "f1": 0.6451612903225806,
+        "n_matched": 10,
+        "n_spurious": 4,
+        "n_missed": 7
+      },
+      "0.6": {
+        "precision": 0.6428571428571429,
+        "recall": 0.5294117647058824,
+        "f1": 0.5806451612903226,
+        "n_matched": 9,
+        "n_spurious": 5,
+        "n_missed": 8
+      },
+      "0.7": {
+        "precision": 0.5,
+        "recall": 0.4117647058823529,
+        "f1": 0.45161290322580644,
+        "n_matched": 7,
+        "n_spurious": 7,
+        "n_missed": 10
+      }
+    },
+    "gt_home_share_spells": 0.5727076770021555
+  },
+  "folds": [
+    {
+      "macro_f1": 0.8109392278050186,
+      "spell_f1_mean": 0.5538461538461539,
+      "spell_f1_at_headline": 0.6153846153846153,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 6,
+      "n_pred_spells": 7,
+      "spell_count_error": 1,
+      "mean_spell_duration_s": 13.668571428571429,
+      "gt_mean_spell_duration_s": 15.746666666666668,
+      "accuracy": 0.8472,
+      "kappa": 0.6314881242706937,
+      "alive_dead_f1": 0.9936895246108539,
+      "team_acc_gt_alive": 0.8509737510584251,
+      "team_acc_both_alive": 0.8509737510584251,
+      "gt_home_share": 0.8209144792548687,
+      "pred_home_share": 0.725752508361204,
+      "share_err": 0.09516197089366474,
+      "share_defined": true,
+      "n_gt_segments": 7,
+      "n_pred_segments": 8,
+      "fragmentation": 1.1428571428571428,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          1658,
+          281,
+          0,
+          0
+        ],
+        [
+          71,
+          352,
+          0,
+          0
+        ],
+        [
+          7,
+          23,
+          108,
+          0
+        ],
+        [
+          49535,
+          30163,
+          76659,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.9550691244239631,
+          "recall": 0.8550799381124291,
+          "f1": 0.902312925170068,
+          "support": 1939
+        },
+        "A": {
+          "precision": 0.5365853658536586,
+          "recall": 0.8321513002364066,
+          "f1": 0.6524559777571827,
+          "support": 423
+        },
+        "D": {
+          "precision": 1.0,
+          "recall": 0.782608695652174,
+          "f1": 0.878048780487805,
+          "support": 138
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.14285714285714285,
+          "recall": 0.16666666666666666,
+          "f1": 0.15384615384615383,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 1,
+          "n_missed": 5,
+          "n_spurious": 6,
+          "n_ambiguous": 0,
+          "mean_latency": -7.0,
+          "median_latency": -7.0,
+          "mean_abs_latency": 7.0,
+          "p90_abs_latency": 7.0,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              12851,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              12874,
+              1,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_gt": 6,
+          "n_pred": 7,
+          "n_matched": 3,
+          "n_missed": 3,
+          "n_spurious": 4,
+          "n_ambiguous": 0,
+          "mean_latency": -1.0,
+          "median_latency": -7.0,
+          "mean_abs_latency": 16.333333333333332,
+          "p90_abs_latency": 22.2,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12646,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                12851,
+                1,
+                2
+              ],
+              [
+                12874,
+                1,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.4": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.5": {
+          "precision": 0.5714285714285714,
+          "recall": 0.6666666666666666,
+          "f1": 0.6153846153846153,
+          "n_matched": 4,
+          "n_spurious": 3,
+          "n_missed": 2
+        },
+        "0.6": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_matched": 3,
+          "n_spurious": 4,
+          "n_missed": 3
+        },
+        "0.7": {
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.4615384615384615,
+          "n_matched": 3,
+          "n_spurious": 4,
+          "n_missed": 3
+        }
+      },
+      "gt_home_share_spells": 0.8209144792548687
+    },
+    {
+      "macro_f1": 0.674664452130437,
+      "spell_f1_mean": 0.4666666666666667,
+      "spell_f1_at_headline": 0.5,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 8,
+      "n_pred_spells": 4,
+      "spell_count_error": -4,
+      "mean_spell_duration_s": 24.4,
+      "gt_mean_spell_duration_s": 11.02,
+      "accuracy": 0.8036,
+      "kappa": 0.6517196960669152,
+      "alive_dead_f1": 0.9491817398794143,
+      "team_acc_gt_alive": 0.8843012704174229,
+      "team_acc_both_alive": 0.8843012704174229,
+      "gt_home_share": 0.5136116152450091,
+      "pred_home_share": 0.6290983606557377,
+      "share_err": 0.11548674541072856,
+      "share_defined": true,
+      "n_gt_segments": 9,
+      "n_pred_segments": 5,
+      "fragmentation": 0.5555555555555556,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          1088,
+          44,
+          0,
+          0
+        ],
+        [
+          211,
+          861,
+          0,
+          0
+        ],
+        [
+          236,
+          0,
+          60,
+          0
+        ],
+        [
+          49736,
+          29914,
+          76707,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.7087947882736156,
+          "recall": 0.9611307420494699,
+          "f1": 0.8158980127484063,
+          "support": 1132
+        },
+        "A": {
+          "precision": 0.9513812154696133,
+          "recall": 0.8031716417910447,
+          "f1": 0.8710166919575114,
+          "support": 1072
+        },
+        "D": {
+          "precision": 1.0,
+          "recall": 0.20270270270270271,
+          "f1": 0.3370786516853933,
+          "support": 296
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "n_gt": 8,
+          "n_pred": 4,
+          "n_matched": 2,
+          "n_missed": 6,
+          "n_spurious": 2,
+          "n_ambiguous": 0,
+          "mean_latency": -2.0,
+          "median_latency": -2.0,
+          "mean_abs_latency": 3.0,
+          "p90_abs_latency": 4.6,
+          "pairs": [
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              16125,
+              0,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "n_gt": 8,
+          "n_pred": 4,
+          "n_matched": 2,
+          "n_missed": 6,
+          "n_spurious": 2,
+          "n_ambiguous": 0,
+          "mean_latency": -2.0,
+          "median_latency": -2.0,
+          "mean_abs_latency": 3.0,
+          "p90_abs_latency": 4.6,
+          "pairs": [
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              16125,
+              0,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.4": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.5": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.6": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1": 0.5,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 5
+        },
+        "0.7": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333,
+          "n_matched": 2,
+          "n_spurious": 2,
+          "n_missed": 6
+        }
+      },
+      "gt_home_share_spells": 0.5136116152450091
+    },
+    {
+      "macro_f1": 0.7468494625873786,
+      "spell_f1_mean": 0.75,
+      "spell_f1_at_headline": 0.75,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 4,
+      "n_pred_spells": 4,
+      "spell_count_error": 0,
+      "mean_spell_duration_s": 14.67,
+      "gt_mean_spell_duration_s": 14.65,
+      "accuracy": 0.7856,
+      "kappa": 0.6619594093976797,
+      "alive_dead_f1": 0.8226466575716234,
+      "team_acc_gt_alive": 0.8122866894197952,
+      "team_acc_both_alive": 0.9867330016583747,
+      "gt_home_share": 0.2614334470989761,
+      "pred_home_share": 0.3612815269256987,
+      "share_err": 0.09984807982672261,
+      "share_defined": true,
+      "n_gt_segments": 7,
+      "n_pred_segments": 7,
+      "fragmentation": 1.0,
+      "n_frames": 199319,
+      "n_graded": 2500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          261,
+          0,
+          122,
+          0
+        ],
+        [
+          16,
+          929,
+          137,
+          0
+        ],
+        [
+          253,
+          8,
+          774,
+          0
+        ],
+        [
+          50741,
+          29882,
+          75734,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.49245283018867925,
+          "recall": 0.6814621409921671,
+          "f1": 0.5717415115005476,
+          "support": 383
+        },
+        "A": {
+          "precision": 0.991462113127001,
+          "recall": 0.8585951940850277,
+          "f1": 0.9202575532441802,
+          "support": 1082
+        },
+        "D": {
+          "precision": 0.7492739593417231,
+          "recall": 0.7478260869565218,
+          "f1": 0.7485493230174081,
+          "support": 1035
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.3333333333333333,
+          "n_gt": 6,
+          "n_pred": 6,
+          "n_matched": 2,
+          "n_missed": 4,
+          "n_spurious": 4,
+          "n_ambiguous": 0,
+          "mean_latency": -4.0,
+          "median_latency": -4.0,
+          "mean_abs_latency": 4.0,
+          "p90_abs_latency": 4.0,
+          "pairs": [
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16396,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              18424,
+              2,
+              0
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              18280,
+              0,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.3333333333333333,
+          "n_gt": 6,
+          "n_pred": 6,
+          "n_matched": 2,
+          "n_missed": 4,
+          "n_spurious": 4,
+          "n_ambiguous": 0,
+          "mean_latency": -4.0,
+          "median_latency": -4.0,
+          "mean_abs_latency": 4.0,
+          "p90_abs_latency": 4.0,
+          "pairs": [
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16396,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              18424,
+              2,
+              0
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              18280,
+              0,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 1
+        },
+        "0.4": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 1
+        },
+        "0.5": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 1
+        },
+        "0.6": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 1
+        },
+        "0.7": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "n_matched": 3,
+          "n_spurious": 1,
+          "n_missed": 1
+        }
+      },
+      "gt_home_share_spells": 0.2614334470989761
+    }
+  ],
+  "held_out": [
+    {
+      "block": 1,
+      "config": {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      "metrics": {
+        "macro_f1": 0.8109392278050186,
+        "spell_f1_mean": 0.5538461538461539,
+        "spell_f1_at_headline": 0.6153846153846153,
+        "spell_iou_headline": 0.5,
+        "spell_bootstrap_low": null,
+        "spell_bootstrap_high": null,
+        "n_gt_spells": 6,
+        "n_pred_spells": 7,
+        "spell_count_error": 1,
+        "mean_spell_duration_s": 13.668571428571429,
+        "gt_mean_spell_duration_s": 15.746666666666668,
+        "accuracy": 0.8472,
+        "kappa": 0.6314881242706937,
+        "alive_dead_f1": 0.9936895246108539,
+        "team_acc_gt_alive": 0.8509737510584251,
+        "team_acc_both_alive": 0.8509737510584251,
+        "gt_home_share": 0.8209144792548687,
+        "pred_home_share": 0.725752508361204,
+        "share_err": 0.09516197089366474,
+        "share_defined": true,
+        "n_gt_segments": 7,
+        "n_pred_segments": 8,
+        "fragmentation": 1.1428571428571428,
+        "n_frames": 199319,
+        "n_graded": 2500,
+        "n_abstain_on_graded": 0,
+        "bootstrap_low": null,
+        "bootstrap_high": null,
+        "bootstrap_n": 0,
+        "confusion": [
+          [
+            1658,
+            281,
+            0,
+            0
+          ],
+          [
+            71,
+            352,
+            0,
+            0
+          ],
+          [
+            7,
+            23,
+            108,
+            0
+          ],
+          [
+            49535,
+            30163,
+            76659,
+            40462
+          ]
+        ],
+        "per_class": {
+          "H": {
+            "precision": 0.9550691244239631,
+            "recall": 0.8550799381124291,
+            "f1": 0.902312925170068,
+            "support": 1939
+          },
+          "A": {
+            "precision": 0.5365853658536586,
+            "recall": 0.8321513002364066,
+            "f1": 0.6524559777571827,
+            "support": 423
+          },
+          "D": {
+            "precision": 1.0,
+            "recall": 0.782608695652174,
+            "f1": 0.878048780487805,
+            "support": 138
+          }
+        },
+        "transitions": {
+          "12": {
+            "precision": 0.14285714285714285,
+            "recall": 0.16666666666666666,
+            "f1": 0.15384615384615383,
+            "n_gt": 6,
+            "n_pred": 7,
+            "n_matched": 1,
+            "n_missed": 5,
+            "n_spurious": 6,
+            "n_ambiguous": 0,
+            "mean_latency": -7.0,
+            "median_latency": -7.0,
+            "mean_abs_latency": 7.0,
+            "p90_abs_latency": 7.0,
+            "pairs": [
+              [
+                [
+                  12989,
+                  2,
+                  0
+                ],
+                [
+                  12982,
+                  2,
+                  0
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                11351,
+                1,
+                0
+              ],
+              [
+                11624,
+                1,
+                0
+              ],
+              [
+                11553,
+                0,
+                1
+              ],
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12851,
+                1,
+                2
+              ]
+            ],
+            "spurious": [
+              [
+                11469,
+                1,
+                0
+              ],
+              [
+                11814,
+                1,
+                0
+              ],
+              [
+                11696,
+                0,
+                1
+              ],
+              [
+                12646,
+                0,
+                1
+              ],
+              [
+                13659,
+                0,
+                1
+              ],
+              [
+                12874,
+                1,
+                2
+              ]
+            ]
+          },
+          "25": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1": 0.4615384615384615,
+            "n_gt": 6,
+            "n_pred": 7,
+            "n_matched": 3,
+            "n_missed": 3,
+            "n_spurious": 4,
+            "n_ambiguous": 0,
+            "mean_latency": -1.0,
+            "median_latency": -7.0,
+            "mean_abs_latency": 16.333333333333332,
+            "p90_abs_latency": 22.2,
+            "pairs": [
+              [
+                [
+                  12989,
+                  2,
+                  0
+                ],
+                [
+                  12982,
+                  2,
+                  0
+                ]
+              ],
+              [
+                [
+                  12665,
+                  0,
+                  1
+                ],
+                [
+                  12646,
+                  0,
+                  1
+                ]
+              ],
+              [
+                [
+                  12851,
+                  1,
+                  2
+                ],
+                [
+                  12874,
+                  1,
+                  2
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                11351,
+                1,
+                0
+              ],
+              [
+                11624,
+                1,
+                0
+              ],
+              [
+                11553,
+                0,
+                1
+              ]
+            ],
+            "spurious": [
+              [
+                11469,
+                1,
+                0
+              ],
+              [
+                11814,
+                1,
+                0
+              ],
+              [
+                11696,
+                0,
+                1
+              ],
+              [
+                13659,
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        "spell_f1": {
+          "0.3": {
+            "precision": 0.5714285714285714,
+            "recall": 0.6666666666666666,
+            "f1": 0.6153846153846153,
+            "n_matched": 4,
+            "n_spurious": 3,
+            "n_missed": 2
+          },
+          "0.4": {
+            "precision": 0.5714285714285714,
+            "recall": 0.6666666666666666,
+            "f1": 0.6153846153846153,
+            "n_matched": 4,
+            "n_spurious": 3,
+            "n_missed": 2
+          },
+          "0.5": {
+            "precision": 0.5714285714285714,
+            "recall": 0.6666666666666666,
+            "f1": 0.6153846153846153,
+            "n_matched": 4,
+            "n_spurious": 3,
+            "n_missed": 2
+          },
+          "0.6": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1": 0.4615384615384615,
+            "n_matched": 3,
+            "n_spurious": 4,
+            "n_missed": 3
+          },
+          "0.7": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1": 0.4615384615384615,
+            "n_matched": 3,
+            "n_spurious": 4,
+            "n_missed": 3
+          }
+        },
+        "gt_home_share_spells": 0.8209144792548687
+      }
+    },
+    {
+      "block": 2,
+      "config": {
+        "boost": 1.2,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "stationary"
+      },
+      "metrics": {
+        "macro_f1": 0.5563210510901032,
+        "spell_f1_mean": 0.4666666666666667,
+        "spell_f1_at_headline": 0.5,
+        "spell_iou_headline": 0.5,
+        "spell_bootstrap_low": null,
+        "spell_bootstrap_high": null,
+        "n_gt_spells": 8,
+        "n_pred_spells": 4,
+        "spell_count_error": -4,
+        "mean_spell_duration_s": 25.0,
+        "gt_mean_spell_duration_s": 11.02,
+        "accuracy": 0.7796,
+        "kappa": 0.6035172552744438,
+        "alive_dead_f1": 0.9370748299319728,
+        "team_acc_gt_alive": 0.8843012704174229,
+        "team_acc_both_alive": 0.8843012704174229,
+        "gt_home_share": 0.5136116152450091,
+        "pred_home_share": 0.638,
+        "share_err": 0.12438838475499092,
+        "share_defined": true,
+        "n_gt_segments": 9,
+        "n_pred_segments": 4,
+        "fragmentation": 0.4444444444444444,
+        "n_frames": 199319,
+        "n_graded": 2500,
+        "n_abstain_on_graded": 0,
+        "bootstrap_low": null,
+        "bootstrap_high": null,
+        "bootstrap_n": 0,
+        "confusion": [
+          [
+            1088,
+            44,
+            0,
+            0
+          ],
+          [
+            211,
+            861,
+            0,
+            0
+          ],
+          [
+            296,
+            0,
+            0,
+            0
+          ],
+          [
+            50610,
+            31019,
+            74728,
+            40462
+          ]
+        ],
+        "per_class": {
+          "H": {
+            "precision": 0.6821316614420063,
+            "recall": 0.9611307420494699,
+            "f1": 0.797946461312798,
+            "support": 1132
+          },
+          "A": {
+            "precision": 0.9513812154696133,
+            "recall": 0.8031716417910447,
+            "f1": 0.8710166919575114,
+            "support": 1072
+          },
+          "D": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 296
+          }
+        },
+        "transitions": {
+          "12": {
+            "precision": 0.6666666666666666,
+            "recall": 0.25,
+            "f1": 0.36363636363636365,
+            "n_gt": 8,
+            "n_pred": 3,
+            "n_matched": 2,
+            "n_missed": 6,
+            "n_spurious": 1,
+            "n_ambiguous": 0,
+            "mean_latency": -2.0,
+            "median_latency": -2.0,
+            "mean_abs_latency": 3.0,
+            "p90_abs_latency": 4.6,
+            "pairs": [
+              [
+                [
+                  13785,
+                  1,
+                  0
+                ],
+                [
+                  13786,
+                  1,
+                  0
+                ]
+              ],
+              [
+                [
+                  14846,
+                  0,
+                  1
+                ],
+                [
+                  14841,
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                15346,
+                1,
+                0
+              ],
+              [
+                15766,
+                1,
+                0
+              ],
+              [
+                13704,
+                0,
+                1
+              ],
+              [
+                15365,
+                0,
+                1
+              ],
+              [
+                15799,
+                0,
+                1
+              ],
+              [
+                15889,
+                1,
+                2
+              ]
+            ],
+            "spurious": [
+              [
+                15645,
+                1,
+                0
+              ]
+            ]
+          },
+          "25": {
+            "precision": 0.6666666666666666,
+            "recall": 0.25,
+            "f1": 0.36363636363636365,
+            "n_gt": 8,
+            "n_pred": 3,
+            "n_matched": 2,
+            "n_missed": 6,
+            "n_spurious": 1,
+            "n_ambiguous": 0,
+            "mean_latency": -2.0,
+            "median_latency": -2.0,
+            "mean_abs_latency": 3.0,
+            "p90_abs_latency": 4.6,
+            "pairs": [
+              [
+                [
+                  13785,
+                  1,
+                  0
+                ],
+                [
+                  13786,
+                  1,
+                  0
+                ]
+              ],
+              [
+                [
+                  14846,
+                  0,
+                  1
+                ],
+                [
+                  14841,
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                15346,
+                1,
+                0
+              ],
+              [
+                15766,
+                1,
+                0
+              ],
+              [
+                13704,
+                0,
+                1
+              ],
+              [
+                15365,
+                0,
+                1
+              ],
+              [
+                15799,
+                0,
+                1
+              ],
+              [
+                15889,
+                1,
+                2
+              ]
+            ],
+            "spurious": [
+              [
+                15645,
+                1,
+                0
+              ]
+            ]
+          }
+        },
+        "spell_f1": {
+          "0.3": {
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1": 0.5,
+            "n_matched": 3,
+            "n_spurious": 1,
+            "n_missed": 5
+          },
+          "0.4": {
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1": 0.5,
+            "n_matched": 3,
+            "n_spurious": 1,
+            "n_missed": 5
+          },
+          "0.5": {
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1": 0.5,
+            "n_matched": 3,
+            "n_spurious": 1,
+            "n_missed": 5
+          },
+          "0.6": {
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1": 0.5,
+            "n_matched": 3,
+            "n_spurious": 1,
+            "n_missed": 5
+          },
+          "0.7": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.3333333333333333,
+            "n_matched": 2,
+            "n_spurious": 2,
+            "n_missed": 6
+          }
+        },
+        "gt_home_share_spells": 0.5136116152450091
+      }
+    },
+    {
+      "block": 3,
+      "config": {
+        "boost": 0.0,
+        "team_penalty": 60.0,
+        "dead_penalty": 30.0,
+        "support": "movement"
+      },
+      "metrics": {
+        "macro_f1": 0.6823418361594014,
+        "spell_f1_mean": 0.6666666666666667,
+        "spell_f1_at_headline": 0.6666666666666665,
+        "spell_iou_headline": 0.5,
+        "spell_bootstrap_low": null,
+        "spell_bootstrap_high": null,
+        "n_gt_spells": 4,
+        "n_pred_spells": 5,
+        "spell_count_error": 1,
+        "mean_spell_duration_s": 15.112,
+        "gt_mean_spell_duration_s": 14.65,
+        "accuracy": 0.7084,
+        "kappa": 0.5625058512591911,
+        "alive_dead_f1": 0.7948717948717948,
+        "team_acc_gt_alive": 0.8819112627986349,
+        "team_acc_both_alive": 0.9692423105776444,
+        "gt_home_share": 0.2614334470989761,
+        "pred_home_share": 0.4483853890947591,
+        "share_err": 0.18695194199578302,
+        "share_defined": true,
+        "n_gt_segments": 7,
+        "n_pred_segments": 8,
+        "fragmentation": 1.1428571428571428,
+        "n_frames": 199319,
+        "n_graded": 2500,
+        "n_abstain_on_graded": 0,
+        "bootstrap_low": null,
+        "bootstrap_high": null,
+        "bootstrap_n": 0,
+        "confusion": [
+          [
+            363,
+            0,
+            20,
+            0
+          ],
+          [
+            41,
+            929,
+            112,
+            0
+          ],
+          [
+            443,
+            113,
+            479,
+            0
+          ],
+          [
+            52358,
+            34134,
+            69865,
+            40462
+          ]
+        ],
+        "per_class": {
+          "H": {
+            "precision": 0.42857142857142855,
+            "recall": 0.9477806788511749,
+            "f1": 0.5902439024390244,
+            "support": 383
+          },
+          "A": {
+            "precision": 0.8915547024952015,
+            "recall": 0.8585951940850277,
+            "f1": 0.8747645951035783,
+            "support": 1082
+          },
+          "D": {
+            "precision": 0.7839607201309329,
+            "recall": 0.4628019323671498,
+            "f1": 0.5820170109356015,
+            "support": 1035
+          }
+        },
+        "transitions": {
+          "12": {
+            "precision": 0.14285714285714285,
+            "recall": 0.16666666666666666,
+            "f1": 0.15384615384615383,
+            "n_gt": 6,
+            "n_pred": 7,
+            "n_matched": 1,
+            "n_missed": 5,
+            "n_spurious": 6,
+            "n_ambiguous": 0,
+            "mean_latency": -4.0,
+            "median_latency": -4.0,
+            "mean_abs_latency": 4.0,
+            "p90_abs_latency": 4.0,
+            "pairs": [
+              [
+                [
+                  17838,
+                  2,
+                  1
+                ],
+                [
+                  17834,
+                  2,
+                  1
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                17293,
+                1,
+                0
+              ],
+              [
+                18389,
+                2,
+                0
+              ],
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                17380,
+                0,
+                2
+              ],
+              [
+                18027,
+                1,
+                2
+              ]
+            ],
+            "spurious": [
+              [
+                17268,
+                2,
+                0
+              ],
+              [
+                18011,
+                1,
+                0
+              ],
+              [
+                16291,
+                2,
+                1
+              ],
+              [
+                16266,
+                0,
+                2
+              ],
+              [
+                17156,
+                1,
+                2
+              ],
+              [
+                17360,
+                0,
+                2
+              ]
+            ]
+          },
+          "25": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1": 0.4615384615384615,
+            "n_gt": 6,
+            "n_pred": 7,
+            "n_matched": 3,
+            "n_missed": 3,
+            "n_spurious": 4,
+            "n_ambiguous": 0,
+            "mean_latency": -16.333333333333332,
+            "median_latency": -20.0,
+            "mean_abs_latency": 16.333333333333332,
+            "p90_abs_latency": 24.0,
+            "pairs": [
+              [
+                [
+                  17293,
+                  1,
+                  0
+                ],
+                [
+                  17268,
+                  2,
+                  0
+                ]
+              ],
+              [
+                [
+                  17838,
+                  2,
+                  1
+                ],
+                [
+                  17834,
+                  2,
+                  1
+                ]
+              ],
+              [
+                [
+                  17380,
+                  0,
+                  2
+                ],
+                [
+                  17360,
+                  0,
+                  2
+                ]
+              ]
+            ],
+            "missed": [
+              [
+                18389,
+                2,
+                0
+              ],
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                18027,
+                1,
+                2
+              ]
+            ],
+            "spurious": [
+              [
+                18011,
+                1,
+                0
+              ],
+              [
+                16291,
+                2,
+                1
+              ],
+              [
+                16266,
+                0,
+                2
+              ],
+              [
+                17156,
+                1,
+                2
+              ]
+            ]
+          }
+        },
+        "spell_f1": {
+          "0.3": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.888888888888889,
+            "n_matched": 4,
+            "n_spurious": 1,
+            "n_missed": 0
+          },
+          "0.4": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.888888888888889,
+            "n_matched": 4,
+            "n_spurious": 1,
+            "n_missed": 0
+          },
+          "0.5": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665,
+            "n_matched": 3,
+            "n_spurious": 2,
+            "n_missed": 1
+          },
+          "0.6": {
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444445,
+            "n_matched": 2,
+            "n_spurious": 3,
+            "n_missed": 2
+          },
+          "0.7": {
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444445,
+            "n_matched": 2,
+            "n_spurious": 3,
+            "n_missed": 2
+          }
+        },
+        "gt_home_share_spells": 0.2614334470989761
+      }
+    }
+  ],
+  "held_out_mean_spell": 0.5623931623931624,
+  "baseline_mean_spell": 0.5623931623931624,
+  "ablations": {
+    "no_visible_boost": {
+      "macro_f1": 0.7261058538791283,
+      "spell_f1_mean": 0.5935483870967742,
+      "spell_f1_at_headline": 0.6451612903225806,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 17,
+      "n_pred_spells": 14,
+      "spell_count_error": -3,
+      "mean_spell_duration_s": 19.374285714285712,
+      "gt_mean_spell_duration_s": 14.190588235294117,
+      "accuracy": 0.7784,
+      "kappa": 0.633974947501172,
+      "alive_dead_f1": 0.9208554480174836,
+      "team_acc_gt_alive": 0.8706682142264964,
+      "team_acc_both_alive": 0.890150873029327,
+      "gt_home_share": 0.5727076770021555,
+      "pred_home_share": 0.61613331367055,
+      "share_err": 0.043425636668394496,
+      "share_defined": true,
+      "n_gt_segments": 21,
+      "n_pred_segments": 18,
+      "fragmentation": 0.8571428571428571,
+      "n_frames": 199319,
+      "n_graded": 7500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          3109,
+          325,
+          20,
+          0
+        ],
+        [
+          323,
+          2142,
+          112,
+          0
+        ],
+        [
+          746,
+          136,
+          587,
+          0
+        ],
+        [
+          49027,
+          32573,
+          69757,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.7441359502154141,
+          "recall": 0.9001158077591198,
+          "f1": 0.814727463312369,
+          "support": 3454
+        },
+        "A": {
+          "precision": 0.8228966577026507,
+          "recall": 0.8311990686845169,
+          "f1": 0.827027027027027,
+          "support": 2577
+        },
+        "D": {
+          "precision": 0.8164116828929068,
+          "recall": 0.39959155888359427,
+          "f1": 0.5365630712979891,
+          "support": 1469
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.23529411764705882,
+          "recall": 0.2,
+          "f1": 0.2162162162162162,
+          "n_gt": 20,
+          "n_pred": 17,
+          "n_matched": 4,
+          "n_missed": 16,
+          "n_spurious": 13,
+          "n_ambiguous": 0,
+          "mean_latency": -3.75,
+          "median_latency": -4.5,
+          "mean_abs_latency": 4.25,
+          "p90_abs_latency": 6.4,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              12851,
+              1,
+              2
+            ],
+            [
+              15889,
+              1,
+              2
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              17268,
+              2,
+              0
+            ],
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              16291,
+              2,
+              1
+            ],
+            [
+              12874,
+              1,
+              2
+            ],
+            [
+              16266,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              17360,
+              0,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.47058823529411764,
+          "recall": 0.4,
+          "f1": 0.4324324324324324,
+          "n_gt": 20,
+          "n_pred": 17,
+          "n_matched": 8,
+          "n_missed": 12,
+          "n_spurious": 9,
+          "n_ambiguous": 0,
+          "mean_latency": -7.0,
+          "median_latency": -6.0,
+          "mean_abs_latency": 13.0,
+          "p90_abs_latency": 23.6,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                17293,
+                1,
+                0
+              ],
+              [
+                17268,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12646,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                12851,
+                1,
+                2
+              ],
+              [
+                12874,
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                17380,
+                0,
+                2
+              ],
+              [
+                17360,
+                0,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              16400,
+              2,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              16291,
+              2,
+              1
+            ],
+            [
+              16266,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.7857142857142857,
+          "recall": 0.6470588235294118,
+          "f1": 0.7096774193548386,
+          "n_matched": 11,
+          "n_spurious": 3,
+          "n_missed": 6
+        },
+        "0.4": {
+          "precision": 0.7857142857142857,
+          "recall": 0.6470588235294118,
+          "f1": 0.7096774193548386,
+          "n_matched": 11,
+          "n_spurious": 3,
+          "n_missed": 6
+        },
+        "0.5": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5882352941176471,
+          "f1": 0.6451612903225806,
+          "n_matched": 10,
+          "n_spurious": 4,
+          "n_missed": 7
+        },
+        "0.6": {
+          "precision": 0.5714285714285714,
+          "recall": 0.47058823529411764,
+          "f1": 0.5161290322580646,
+          "n_matched": 8,
+          "n_spurious": 6,
+          "n_missed": 9
+        },
+        "0.7": {
+          "precision": 0.42857142857142855,
+          "recall": 0.35294117647058826,
+          "f1": 0.3870967741935484,
+          "n_matched": 6,
+          "n_spurious": 8,
+          "n_missed": 11
+        }
+      },
+      "gt_home_share_spells": 0.5727076770021555
+    },
+    "v2_transition_penalties": {
+      "macro_f1": 0.7929004877841243,
+      "spell_f1_mean": 0.5935483870967742,
+      "spell_f1_at_headline": 0.6451612903225806,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 17,
+      "n_pred_spells": 14,
+      "spell_count_error": -3,
+      "mean_spell_duration_s": 17.997142857142858,
+      "gt_mean_spell_duration_s": 14.190588235294117,
+      "accuracy": 0.8121333333333334,
+      "kappa": 0.697377393886568,
+      "alive_dead_f1": 0.9362530413625304,
+      "team_acc_gt_alive": 0.8537555960868844,
+      "team_acc_both_alive": 0.8920651420651421,
+      "gt_home_share": 0.5727076770021555,
+      "pred_home_share": 0.603429115732656,
+      "share_err": 0.030721438730500483,
+      "share_defined": true,
+      "n_gt_segments": 21,
+      "n_pred_segments": 18,
+      "fragmentation": 0.8571428571428571,
+      "n_frames": 199319,
+      "n_graded": 7500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          3007,
+          325,
+          122,
+          0
+        ],
+        [
+          298,
+          2142,
+          137,
+          0
+        ],
+        [
+          496,
+          31,
+          942,
+          0
+        ],
+        [
+          47470,
+          28321,
+          75566,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.7911076032622993,
+          "recall": 0.8705848291835553,
+          "f1": 0.8289455547898001,
+          "support": 3454
+        },
+        "A": {
+          "precision": 0.8574859887910328,
+          "recall": 0.8311990686845169,
+          "f1": 0.8441379310344828,
+          "support": 2577
+        },
+        "D": {
+          "precision": 0.7843463780183181,
+          "recall": 0.6412525527569776,
+          "f1": 0.70561797752809,
+          "support": 1469
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.29411764705882354,
+          "recall": 0.25,
+          "f1": 0.27027027027027023,
+          "n_gt": 20,
+          "n_pred": 17,
+          "n_matched": 5,
+          "n_missed": 15,
+          "n_spurious": 12,
+          "n_ambiguous": 0,
+          "mean_latency": -3.8,
+          "median_latency": -4.0,
+          "mean_abs_latency": 4.2,
+          "p90_abs_latency": 6.2,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16396,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              12665,
+              0,
+              1
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              12851,
+              1,
+              2
+            ],
+            [
+              15889,
+              1,
+              2
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              18424,
+              2,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              12646,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              12874,
+              1,
+              2
+            ],
+            [
+              16125,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              18280,
+              0,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.4117647058823529,
+          "recall": 0.35,
+          "f1": 0.37837837837837834,
+          "n_gt": 20,
+          "n_pred": 17,
+          "n_matched": 7,
+          "n_missed": 13,
+          "n_spurious": 10,
+          "n_ambiguous": 0,
+          "mean_latency": -2.142857142857143,
+          "median_latency": -4.0,
+          "mean_abs_latency": 9.0,
+          "p90_abs_latency": 20.6,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12982,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13786,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12646,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14841,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16396,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17834,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                12851,
+                1,
+                2
+              ],
+              [
+                12874,
+                1,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              15889,
+              1,
+              2
+            ],
+            [
+              17380,
+              0,
+              2
+            ],
+            [
+              18027,
+              1,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11469,
+              1,
+              0
+            ],
+            [
+              11814,
+              1,
+              0
+            ],
+            [
+              15645,
+              1,
+              0
+            ],
+            [
+              18011,
+              1,
+              0
+            ],
+            [
+              18424,
+              2,
+              0
+            ],
+            [
+              11696,
+              0,
+              1
+            ],
+            [
+              13659,
+              0,
+              1
+            ],
+            [
+              16125,
+              0,
+              2
+            ],
+            [
+              17156,
+              1,
+              2
+            ],
+            [
+              18280,
+              0,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5882352941176471,
+          "f1": 0.6451612903225806,
+          "n_matched": 10,
+          "n_spurious": 4,
+          "n_missed": 7
+        },
+        "0.4": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5882352941176471,
+          "f1": 0.6451612903225806,
+          "n_matched": 10,
+          "n_spurious": 4,
+          "n_missed": 7
+        },
+        "0.5": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5882352941176471,
+          "f1": 0.6451612903225806,
+          "n_matched": 10,
+          "n_spurious": 4,
+          "n_missed": 7
+        },
+        "0.6": {
+          "precision": 0.6428571428571429,
+          "recall": 0.5294117647058824,
+          "f1": 0.5806451612903226,
+          "n_matched": 9,
+          "n_spurious": 5,
+          "n_missed": 8
+        },
+        "0.7": {
+          "precision": 0.5,
+          "recall": 0.4117647058823529,
+          "f1": 0.45161290322580644,
+          "n_matched": 7,
+          "n_spurious": 7,
+          "n_missed": 10
+        }
+      },
+      "gt_home_share_spells": 0.5727076770021555
+    }
+  },
+  "health": [
+    {
+      "dead_fraction": 0.4662438496482817,
+      "switches": 169,
+      "median_segment_seconds": 11.1
+    },
+    {
+      "dead_fraction": 0.5002645169416803,
+      "switches": 161,
+      "median_segment_seconds": 10.74
+    }
+  ],
+  "stratified_confusion": {
+    "v2": {
+      "visible": [
+        [
+          3104,
+          325,
+          20,
+          0
+        ],
+        [
+          312,
+          1879,
+          0,
+          0
+        ],
+        [
+          746,
+          113,
+          116,
+          0
+        ],
+        [
+          49043,
+          32859,
+          70340,
+          40462
+        ]
+      ],
+      "missing": [
+        [
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          263,
+          112,
+          0
+        ],
+        [
+          0,
+          23,
+          471,
+          0
+        ],
+        [
+          53189,
+          34890,
+          69893,
+          40462
+        ]
+      ]
+    },
+    "v4": {
+      "visible": [
+        [
+          3002,
+          325,
+          122,
+          0
+        ],
+        [
+          298,
+          1879,
+          14,
+          0
+        ],
+        [
+          496,
+          8,
+          471,
+          0
+        ],
+        [
+          47475,
+          28607,
+          76160,
+          40462
+        ]
+      ],
+      "missing": [
+        [
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          263,
+          123,
+          0
+        ],
+        [
+          0,
+          23,
+          471,
+          0
+        ],
+        [
+          51266,
+          30533,
+          76173,
+          40462
+        ]
+      ]
+    }
+  }
+}

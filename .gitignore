@@ -70,3 +70,9 @@ evaluation/v2_reports/*.log
 features_v3_speed.npz
 evaluation/v3_reports/search.json
 evaluation/v3_reports/*.log
+evaluation/v4_reports/search.json
+evaluation/v4_reports/*.log
+evaluation/v4_refine_reports/search.json
+evaluation/v4_refine_reports/*.log
+evaluation/v4_reports/*.csv
+evaluation/v4_refine_reports/*.csv

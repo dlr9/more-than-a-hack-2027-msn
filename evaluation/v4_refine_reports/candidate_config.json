@@ -1,0 +1,6 @@
+{
+  "boost": 1.2,
+  "team_penalty": 60.0,
+  "dead_penalty": 30.0,
+  "support": "movement"
+}

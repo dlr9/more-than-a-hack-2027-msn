@@ -1,0 +1,26 @@
+{
+  "v2": {
+    "gt_short_spells": 6,
+    "matched_short_spells": 2,
+    "v2_matched_short_lost": 0,
+    "visible_dead_recall": 0.11897435897435897,
+    "predicted_spells": 14,
+    "matched_gt_spells": 10
+  },
+  "v3": {
+    "gt_short_spells": 6,
+    "matched_short_spells": 0,
+    "v2_matched_short_lost": 2,
+    "visible_dead_recall": 0.5753846153846154,
+    "predicted_spells": 9,
+    "matched_gt_spells": 7
+  },
+  "v4": {
+    "gt_short_spells": 6,
+    "matched_short_spells": 1,
+    "v2_matched_short_lost": 1,
+    "visible_dead_recall": 0.48307692307692307,
+    "predicted_spells": 14,
+    "matched_gt_spells": 10
+  }
+}
