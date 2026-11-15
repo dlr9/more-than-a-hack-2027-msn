@@ -49,12 +49,14 @@ def number(frame,name):
     return v if np.isfinite(v)else np.nan
 
 def read_raw(positions,matchinfo):
-    meta=metadata(matchinfo);balls={k:[]for k in SECTIONS};inventory=set()
+    meta=metadata(matchinfo);balls={k:[]for k in SECTIONS};inventory=set();referee_records=0;referee_ids=set()
     for context,frame in iter_frames(positions):
         section=context.get('GameSection')
         if section not in SECTIONS:raise ValueError('unsupported period')
         if context.get('MatchId')!='DFL-MAT-'+meta['match_id']:raise ValueError('match ID conflict')
         team=context.get('TeamId')
+        if team.lower()=='referee':
+            referee_records+=1;referee_ids.add(context.get('PersonId'));continue
         if team.lower()=='ball':balls[section].append(frame)
         else:
             person=context.get('PersonId')
@@ -86,7 +88,7 @@ def read_raw(positions,matchinfo):
     del balls
     seen=np.zeros((total,len(ids)),dtype=bool);outside=0
     for context,f in iter_frames(positions):
-        if context['TeamId'].lower()=='ball':continue
+        if context['TeamId'].lower()in {'ball','referee'}:continue
         section=context['GameSection'];lo,hi=bounds[section];n=int(f['N'])
         if not lo<=n<=hi:outside+=1;continue
         j=offset[section]+n-lo;s=slots[context['PersonId']]
@@ -96,7 +98,7 @@ def read_raw(positions,matchinfo):
     same=raw['period'][1:]==raw['period'][:-1];valid=same&np.isfinite(time[1:])&np.isfinite(time[:-1])
     delta=np.diff(time)[valid];bad=int(np.sum(np.abs(delta-.04)>1e-5))
     if bad:raise ValueError(f'{bad} timestamp/frame intervals disagree with 25 FPS')
-    audit=dict(match_id=meta['match_id'],n_frames=total,bounds=bounds,period_lengths={k:b-a+1 for k,(a,b)in bounds.items()},label_counts=dict(Counter(truth.tolist())),known_fraction=float(np.mean(truth!='X')),missing_ball_records=int(np.sum(ball_seen==0)),duplicate_ball_records=duplicates,player_records_outside_ball_period=outside,timestamp_bad_intervals=bad,pitch=meta['pitch'],position_sha256=digest(positions),metadata_sha256=digest(matchinfo),source='DFL IDSSE CC BY 4.0; ballstatus/possession source semantics, not official competition truth',ball_samples=ball_examples)
+    audit=dict(match_id=meta['match_id'],ignored_referee_records=referee_records,ignored_referee_objects=len(referee_ids),n_frames=total,bounds=bounds,period_lengths={k:b-a+1 for k,(a,b)in bounds.items()},label_counts=dict(Counter(truth.tolist())),known_fraction=float(np.mean(truth!='X')),missing_ball_records=int(np.sum(ball_seen==0)),duplicate_ball_records=duplicates,player_records_outside_ball_period=outside,timestamp_bad_intervals=bad,pitch=meta['pitch'],position_sha256=digest(positions),metadata_sha256=digest(matchinfo),source='DFL IDSSE CC BY 4.0; ballstatus/possession source semantics, not official competition truth',ball_samples=ball_examples)
     for section,p in SECTIONS.items():
         m=raw['period']==p;y=truth[m];edges=np.diff(np.r_[False,y=='X',False].astype(int));starts=np.flatnonzero(edges==1);ends=np.flatnonzero(edges==-1)
         audit[section]=dict(counts=dict(Counter(y.tolist())),longest_unknown_s=float(max(ends-starts,default=0)/25),transitions=int(np.sum(y[1:]!=y[:-1])),dead_segments=int(np.sum(np.diff(np.r_[False,y=='D',False].astype(int))==1)))

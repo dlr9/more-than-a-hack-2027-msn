@@ -47,6 +47,18 @@ class IDSSETests(unittest.TestCase):
             p,m=self.fixture(Path(d),badtime=True)
             with self.assertRaisesRegex(ValueError,'timestamp'):read_raw(p,m)
 
+    def test_explicit_referees_excluded_unknown_player_team_still_rejected(self):
+        with tempfile.TemporaryDirectory() as d:
+            p,m=self.fixture(Path(d));original=p.read_text()
+            referee='<FrameSet GameSection="firstHalf" TeamId="referee" PersonId="ref" MatchId="DFL-MAT-SYNTH"><Frame N="10" X="0" Y="0"/></FrameSet>'
+            p.write_text(original.replace('</Root>',referee+'</Root>'))
+            raw,y,_,audit,_=read_raw(p,m)
+            self.assertEqual(raw['players_xy'].shape[1],2)
+            self.assertEqual(audit['ignored_referee_records'],1)
+            self.assertEqual(''.join(y),'HADXHADX')
+            p.write_text(original.replace('</Root>',referee.replace('TeamId="referee"','TeamId="unverified"')+'</Root>'))
+            with self.assertRaisesRegex(ValueError,'unknown or conflicting player'):read_raw(p,m)
+
     def test_unknown_status_not_inferred_from_possession(self):
         for status,pos in [(None,'1'),('2','2'),('1','0'),('1',None)]:self.assertEqual(label(status,pos),'X')
         self.assertEqual(label('0',None),'D')
