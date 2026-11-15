@@ -16,12 +16,15 @@ def control_episodes(raw, fps):
     ball=np.asarray(raw['ball_xy'],float);players=np.asarray(raw['players_xy'],float)
     if ball.shape!=(n,2) or players.ndim!=3 or players.shape[0]!=n or players.shape[2]!=2:raise ValueError('geometry alignment')
     if np.isinf(ball).any() or np.isinf(players).any():raise ValueError('infinite coordinate')
+    if players.shape[1]==0:return [],np.full(n,-1,dtype=np.int8)
     team=np.broadcast_to(raw['player_team'],players.shape[:2])
     ids=np.broadcast_to(raw.get('player_track_id',np.arange(players.shape[1])),team.shape)
     present=np.isfinite(players).all(2)&np.isin(team,[0,1]);visible=np.isfinite(ball).all(1)
     distance=np.linalg.norm(players-ball[:,None,:],axis=2);distance[~present|~np.isfinite(distance)]=np.inf
     nearest=distance.argmin(1);rows=np.arange(n);own=distance[rows,nearest];side=team[rows,nearest]
     opposing=np.min(np.where(team!=side[:,None],distance,np.inf),axis=1)
+    margin=np.full(n,-np.inf);finite=np.isfinite(own)&np.isfinite(opposing)
+    margin[finite]=opposing[finite]-own[finite]
     chosen=players[rows,nearest];track=ids[rows,nearest]
     signal=np.full(n,-1,dtype=np.int8);events=[]
     for lo,hi in continuous_blocks(frame,period):
@@ -29,7 +32,7 @@ def control_episodes(raw, fps):
         bv=np.diff(ball[lo:hi],axis=0)*fps;pv=np.diff(chosen[lo:hi],axis=0)*fps
         speed=np.linalg.norm(bv,axis=1);pspeed=np.linalg.norm(pv,axis=1);relative=np.linalg.norm(bv-pv,axis=1)
         valid=(visible[lo:hi-1]&visible[lo+1:hi]&(nearest[lo:hi-1]==nearest[lo+1:hi])&(track[lo:hi-1]==track[lo+1:hi])
-            &(side[lo:hi-1]==side[lo+1:hi])&(own[lo+1:hi]<=2)&(opposing[lo+1:hi]-own[lo+1:hi]>=1)
+            &(side[lo:hi-1]==side[lo+1:hi])&(own[lo+1:hi]<=2)&(margin[lo+1:hi]>=1)
             &(speed>=.5)&(speed<=12)&(pspeed<=12)&(relative<=3))
         for t in (0,1):valid&=np.sum(present[lo+1:hi]&(team[lo+1:hi]==t),axis=1)>=8
         values=np.where(valid,side[lo+1:hi],-1)
@@ -39,7 +42,7 @@ def control_episodes(raw, fps):
             if values[a]<0 or b-a<max(2,int(np.ceil(.12*fps))):continue
             start,end=lo+1+a,lo+1+b
             signal[start:end]=values[a]
-            events.append(dict(start=int(start),end=int(end),team='H' if values[a]==1 else 'A',
+            events.append(dict(start=int(start),end=int(end),team='H' if values[a]==0 else 'A',
                 support_seconds=(end-start)/fps,source='observed_relative_motion_v1',confidence='uncalibrated_physical_filter'))
     return events,signal
 

@@ -19,7 +19,7 @@ def execute(experiment):
     root=Path('local_artifacts/r9-v2')/experiment;root.mkdir(parents=True,exist_ok=True)
     for p,h in protocol['inputs'].items():
         if digest(p)!=h:raise ValueError('input drift '+p)
-    code={p:digest(p) for p in ['solution/control_events.py',__file__]}
+    code={p:digest(p) for p in ['solution/control_events.py','scripts/evaluate_r9_control.py']}
     rows=[]
     for m in IDS:
       raw=raw_input(m)
@@ -52,4 +52,4 @@ def execute(experiment):
           print(m,d,v,'spell',round(score['full_spell_f1'],6),'delta',round(score['full_spell_f1']-reference['mean_f1'],6),trace,event_eval,flush=True)
     if not (root/'results.json').exists():write_new(root/'results.json',dict(rows=rows,competition_promoted=False))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('experiment',choices=['e09e1']);a=p.parse_args();execute(a.experiment)
+    p=argparse.ArgumentParser();p.add_argument('experiment',choices=['e09e1fix']);a=p.parse_args();execute(a.experiment)
