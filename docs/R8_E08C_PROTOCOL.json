@@ -1,0 +1,62 @@
+{
+  "experiment_id": "E08C",
+  "frozen_before_new_fits": true,
+  "hypothesis": "17.5\u201321.3% of <1s HA spells in each training-fold pair contain no2Hz sample; one equal-budget training-only boundary mixture may improve transitions and short spells",
+  "eligibility": "Training-only diagnostic trigger met3/3folds. Execute only after E08B failure; no validation-dependent sampling.",
+  "selection": {
+    "uniform_fraction": 0.5,
+    "boundary_radius_seconds": 0.48,
+    "seed_base": 8203,
+    "seed_rule": "8203+10*source_match_index+is_dropout; independent of heldout scores",
+    "remaining": "sample boundary-eligible without replacement, then remaining eligible if insufficient; exact baseline sample count per head and source/domain"
+  },
+  "train_matches": [
+    "J03WPY",
+    "J03WOH",
+    "J03WQQ"
+  ],
+  "folds": "LOMO; exclude heldout; fit Alive and Home on other2matches natural+originaldropout only",
+  "model": {
+    "max_iter": 60,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.1,
+    "l2_regularization": 1,
+    "early_stopping": false,
+    "random_state": 2027
+  },
+  "fits": 6,
+  "bundles": 3,
+  "inference": "Original44 features and frozen M2 decoder, .1s D and .3s team-equivalent penalties. No calibration or new architecture.",
+  "gate": {
+    "controls": [
+      "M2",
+      "M3",
+      "G1"
+    ],
+    "natural_each_delta_at_least": -0.01,
+    "each_stress_domain_mean_delta_at_least": 0.02,
+    "positive_matches_at_least": 2,
+    "each_dead_miss_rate_delta_at_most": 0.02,
+    "each_completely_missed_segments_delta_at_most": 0
+  },
+  "transfer": "Fixed WPY-heldout fold; explicit schema/provider/view/fps compatibility waiver, SC knownHA and Metrica weak proxy only; fullspellnull",
+  "holdouts": "No consumed holdout reuse, no unopened holdout access unless gates pass and new team-overlap protocol",
+  "inputs": {
+    "local_artifacts/r6/prepared/J03WPY/natural.npz": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+    "local_artifacts/r6/prepared/J03WPY/dropout.npz": "427bdd112b30c681ff39f517624535b2b41d8cec53db8da3faca7a68f9e7e046",
+    "local_artifacts/r7/prepared/J03WPY/short.npz": "b313253e94ab30ed399f15847f849bbeedf3ad930017e5b415f453daba2c5d3d",
+    "local_artifacts/r7/prepared/J03WPY/long.npz": "693178e4c6242efe07741355c84c324b8d6bcd2b44adbcc57bdcc683ea4d6f22",
+    "local_artifacts/r6/prepared/J03WOH/natural.npz": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+    "local_artifacts/r6/prepared/J03WOH/dropout.npz": "2fccfce076ff69ed1009c8e5583688a9cda0d5668ef6dfe41089dc9efc7e4a5e",
+    "local_artifacts/r7/prepared/J03WOH/short.npz": "8d5e8b7656d1f4a8996a74a158e9ab432987a572977eb7e7656de682d693a579",
+    "local_artifacts/r7/prepared/J03WOH/long.npz": "218a77be60a995c31381d715c1794576839190f3bb1eb68782c2b4fe25425a48",
+    "local_artifacts/r6/prepared/J03WQQ/natural.npz": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+    "local_artifacts/r6/prepared/J03WQQ/dropout.npz": "73fc53ebf797d481b6972529d14e82f28782c8415c98ca7ade22c4707e1653a4",
+    "local_artifacts/r7/prepared/J03WQQ/short.npz": "123c466fc7bda2ebb7b03632c65cd869e9afa3a02d1e13ca6b2829925dfce9a6",
+    "local_artifacts/r7/prepared/J03WQQ/long.npz": "c43c5eae4fbf3df0ff2f7af721f55b2b460a4f133a28352a021ea804902a7846",
+    "local_artifacts/r7/transfer-v2/prepared.npz": "a9c34b9a3fe42714cf023efbb9acfb2b7da1e0e513781c1c208e1d150d9c77a8",
+    "local_artifacts/r7b/metrica-v1/base.npz": "bff898d00005ee479f6cb911bebe393d4a7bf4f8c3d6898b645f6cf6dd1d4b72",
+    "docs/R8_SAMPLING_DIAGNOSTIC.json": "ebc517e5415c97c7a01fc84b6b58bfa35a0ea00aa2c760f2b3ce00571a6029da"
+  },
+  "competition_promoted": false
+}

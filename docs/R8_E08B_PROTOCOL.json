@@ -1,0 +1,60 @@
+{
+  "experiment_id": "E08B",
+  "frozen_before_results": true,
+  "conditional_on": "E08A gate failure; implementation prepared during E08A scoring",
+  "hypothesis": "Conservative raw short-gap proposals with observed player support may reduce missing-ball false D without inventing long-gap control",
+  "parameters": {
+    "max_seconds": 1.0,
+    "max_speed_mps": 20.0,
+    "max_acceleration_mps2": 60.0,
+    "min_players_each_team": 8,
+    "nearest_m": 2.0,
+    "opponent_margin_m": 1.0,
+    "relative_speed_mps": 8.0,
+    "same_track_required": true,
+    "adjacent_speed_endpoints_required": true
+  },
+  "masks": "Existing label-blind R7 short7101/long7102 and R6 dropout2027; raw missingness from frozen observed views; no labels guide interpolation",
+  "order": "First reconstruct and score hidden-coordinate error/physical/control diagnostics; then regenerate all44 from raw proposals and run fixed M2 bothheads+originaldecoder",
+  "gate": {
+    "required_controls": [
+      "M2",
+      "M3",
+      "G1"
+    ],
+    "natural_each_delta_at_least": -0.01,
+    "short_and_dropout_each_domain_mean_delta_at_least": 0.02,
+    "positive_matches_at_least": 2,
+    "each_dead_miss_rate_delta_at_most": 0.02,
+    "each_completely_missed_segments_delta_at_most": 0,
+    "long_domain": "report all; intentionally no long-gap repair"
+  },
+  "compatibility": "Explicit research-only observation_view waiver; same schema3/fps/provider/units; production API unchanged; evaluation strata retain original visibility",
+  "fits": 0,
+  "models": {
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M2_dropout.joblib": "3e992e6d9ba8e60c19c4572049289638803c28e38d03263ae3c7e0d31f54780b",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M2_dropout.joblib": "d373dd244cf455b1cd74114fa0d2e01be2dde63240a2f1b12e424b66de854e58"
+  },
+  "inputs": {
+    "local_artifacts/r6/prepared/J03WPY/raw.npz": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r6/prepared/J03WPY/natural.npz": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+    "local_artifacts/r6/prepared/J03WPY/dropout.npz": "427bdd112b30c681ff39f517624535b2b41d8cec53db8da3faca7a68f9e7e046",
+    "local_artifacts/r7/prepared/J03WPY/short.npz": "b313253e94ab30ed399f15847f849bbeedf3ad930017e5b415f453daba2c5d3d",
+    "local_artifacts/r7/prepared/J03WPY/long.npz": "693178e4c6242efe07741355c84c324b8d6bcd2b44adbcc57bdcc683ea4d6f22",
+    "local_artifacts/r6/prepared/J03WOH/raw.npz": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M2_dropout.joblib": "3e992e6d9ba8e60c19c4572049289638803c28e38d03263ae3c7e0d31f54780b",
+    "local_artifacts/r6/prepared/J03WOH/natural.npz": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+    "local_artifacts/r6/prepared/J03WOH/dropout.npz": "2fccfce076ff69ed1009c8e5583688a9cda0d5668ef6dfe41089dc9efc7e4a5e",
+    "local_artifacts/r7/prepared/J03WOH/short.npz": "8d5e8b7656d1f4a8996a74a158e9ab432987a572977eb7e7656de682d693a579",
+    "local_artifacts/r7/prepared/J03WOH/long.npz": "218a77be60a995c31381d715c1794576839190f3bb1eb68782c2b4fe25425a48",
+    "local_artifacts/r6/prepared/J03WQQ/raw.npz": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M2_dropout.joblib": "d373dd244cf455b1cd74114fa0d2e01be2dde63240a2f1b12e424b66de854e58",
+    "local_artifacts/r6/prepared/J03WQQ/natural.npz": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+    "local_artifacts/r6/prepared/J03WQQ/dropout.npz": "73fc53ebf797d481b6972529d14e82f28782c8415c98ca7ade22c4707e1653a4",
+    "local_artifacts/r7/prepared/J03WQQ/short.npz": "123c466fc7bda2ebb7b03632c65cd869e9afa3a02d1e13ca6b2829925dfce9a6",
+    "local_artifacts/r7/prepared/J03WQQ/long.npz": "c43c5eae4fbf3df0ff2f7af721f55b2b460a4f133a28352a021ea804902a7846"
+  },
+  "competition_promoted": false
+}
