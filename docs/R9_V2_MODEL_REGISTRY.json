@@ -1,0 +1,49 @@
+{
+  "new_fits": 0,
+  "new_weight_files": 0,
+  "inherited_model_hashes": {
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M1.joblib": "7b555086b890ffc4eb07d7a153bb1f4fd4eeb5d43456581b40ae6b459e0bb0ff",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r6/missing-stability-v1/J03WPY.joblib": "54b444ebdf5578603734a8626d386d36a026bee13bff14bb1ce2c70f861ee041",
+    "local_artifacts/r7b/p1-v1/J03WPY.joblib": "57fb9d58d59963646b32988d2f3f98c037d3c0fafb0a78f6791102c40fff51f5",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M1.joblib": "d55214d9e05c6cbc8acf59c1b2c694737283beabefd15af39511effc2b1ac4a9",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M2_dropout.joblib": "3e992e6d9ba8e60c19c4572049289638803c28e38d03263ae3c7e0d31f54780b",
+    "local_artifacts/r6/missing-stability-v1/J03WOH.joblib": "7b9a6950dfcbf6fc5491a87e6665b019bb93e1fb1a9a9c371ec738599ccd1dba",
+    "local_artifacts/r7b/p1-v1/J03WOH.joblib": "d930ccbe4373b9ccff9309acb75bd0f539e0ab3fbb328ff876af2ac19ba6f061",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M1.joblib": "4e8366a4253e9ab7c4407d4babb8673df1183c5df7526809766755c97c8d563b",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M2_dropout.joblib": "d373dd244cf455b1cd74114fa0d2e01be2dde63240a2f1b12e424b66de854e58",
+    "local_artifacts/r6/missing-stability-v1/J03WQQ.joblib": "9f385d5211dddb0f6666f44405dd24293bf60a6f30244d9fb3438e864f20321b",
+    "local_artifacts/r7b/p1-v1/J03WQQ.joblib": "ff90a78939b10639767c5c3678959e10b00596a2b5e1c5b738ffb8f7a250165a",
+    "local_artifacts/r8/e08c/J03WPY.joblib": "3e0d085df0545c1d76918e0449512ac9119ee3c80ca2cd98877f16069d661bd0",
+    "local_artifacts/r8/e08c/J03WOH.joblib": "2f7940ade06004ded880dd3b4c1e54076965f4c1ecad595e6691ac4ab4f2246c",
+    "local_artifacts/r8/e08c/J03WQQ.joblib": "a059931ae7dc4842aea98784fa4824706151f143ee3b7b802c24d169a0d61753"
+  },
+  "candidates": {
+    "e09d": {
+      "decision": "KEEP_DIAGNOSTIC: HA dominates; sparse correction can fragment spells; oracle not deployable",
+      "prediction_receipts": "docs/R9_V2_E09D_RESULTS.json"
+    },
+    "e09e1": {
+      "decision": "INVALID_INPUT_CONTRACT: reversed home/away encoding; preserve all 24 outputs, no method inference",
+      "prediction_receipts": "docs/R9_V2_E09E1_RESULTS.json"
+    },
+    "e09e1fix": {
+      "decision": "REVERT_AS_REPLACEMENT: small mixed timing changes, WPY consistently worse",
+      "prediction_receipts": "docs/R9_V2_E09E1FIX_RESULTS.json"
+    },
+    "e09e2": {
+      "decision": "REVERT_AS_REPLACEMENT: new short segments did not improve natural; stop event weight search",
+      "prediction_receipts": "docs/R9_V2_E09E2_RESULTS.json"
+    },
+    "e09a": {
+      "decision": "KEEP_RESEARCH_COMPONENT HC_M3 (M2 Alive + C1 Home + M3); C1 Alive REVERT; not universal replacement for H1",
+      "prediction_receipts": "docs/R9_V2_E09A_RESULTS.json"
+    },
+    "e09a2": {
+      "decision": "REVERT_FACTORISATION: Metrica missed weak D 25380/25619; HC_M3 retained as research only",
+      "prediction_receipts": "docs/R9_V2_E09A2_RESULTS.json"
+    }
+  },
+  "scorer_sha": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+  "competition_promoted": false
+}
