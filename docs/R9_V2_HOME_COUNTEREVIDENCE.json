@@ -1,0 +1,41 @@
+{
+  "rows": [
+    {
+      "match": "J03WPY",
+      "known_alive": 81460,
+      "M3": {
+        "Brier": 0.09737171778090278,
+        "wrong_frames": 11061
+      },
+      "C1": {
+        "Brier": 0.10981396681563223,
+        "wrong_frames": 12485
+      }
+    },
+    {
+      "match": "J03WOH",
+      "known_alive": 71945,
+      "M3": {
+        "Brier": 0.10691424904927861,
+        "wrong_frames": 11482
+      },
+      "C1": {
+        "Brier": 0.11570311059182473,
+        "wrong_frames": 12209
+      }
+    },
+    {
+      "match": "J03WQQ",
+      "known_alive": 84352,
+      "M3": {
+        "Brier": 0.10081587111454833,
+        "wrong_frames": 12004
+      },
+      "C1": {
+        "Brier": 0.11352683647342708,
+        "wrong_frames": 13769
+      }
+    }
+  ],
+  "decision": "C1 Home is not prioritized; no retraining"
+}

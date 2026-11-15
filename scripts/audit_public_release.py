@@ -3,7 +3,7 @@ import argparse, hashlib, json, re, subprocess
 from pathlib import PurePosixPath
 
 BASE='1d62c7219868dfcbf98921fd0c7464f10dbed55b'
-EXACT={'.github/workflows/public-solution.yml','requirements-idsse-tools.txt','docs/FEATURE_PROVENANCE.csv','docs/R6_EXPERIMENT_LEDGER.jsonl','docs/R8_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl'}
+EXACT={'.github/workflows/public-solution.yml','requirements-idsse-tools.txt','docs/FEATURE_PROVENANCE.csv','docs/R6_EXPERIMENT_LEDGER.jsonl','docs/R8_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl'}
 SECRETS=[re.compile(rb'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),
          re.compile(rb'gh[pousr]_[A-Za-z0-9]{30,}'),re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),
          re.compile(rb'(?:AKIA|ASIA)[A-Z0-9]{16}'),re.compile(rb'https?://[^\s/:]+:[^\s/@]+@')]
