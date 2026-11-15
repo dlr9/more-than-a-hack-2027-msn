@@ -1,10 +1,10 @@
 # R7B 恢复状态 — 真实研发闭环完成，准备Draft发布
 
 - 分支：`codex/r7b-player-only-missing-alive`，从R7 `e498e9390189bdf22ea3549ebf5f839b45915dbc`接续；未重写main，未修改PR2分支。
-- last_verified_sha: `d69062a`（已冻结并执行的记忆协议源码checkpoint；最终发布SHA由publication receipt核验，避免文档自引用SHA）。
+- last_verified_sha: `b4c3159`（完整研发结果checkpoint；最终发布SHA由publication receipt核验，避免文档自引用SHA）。
 - 当前锁/PID：所有训练、特征准备、评分已完成，无需等待或重启模型任务。未发布源码/报告即本分支当前增量，发布前必须commit和安全审查。
 - 已保存：9个新增bundle，包含12次HGB拟合与6个sigmoid校准器；原R6的30个注册模型及R7的9个bundle全部哈希一致。保留V3和所有旧概率/实验cache。
-- 本轮测试：109项本地测试通过；干净无数据副本测试与最终发布回执见下方追加状态。9个新bundle哈希及30组完整概率/解码精确重放通过；pip check通过；官方scorer未改动。
+- 本轮测试：109项本地测试通过；109项干净无数据副本测试也通过，最终发布回执见下方追加状态。9个新bundle哈希及30组完整概率/解码精确重放通过；pip check通过；官方scorer未改动。
 
 ## 已验证结果与决定
 
@@ -47,3 +47,7 @@ R7 Git HTTPS曾超时，原对象已逐SHA上传至e498e93；R7B采用安全Git�
 - C：由授权成员在工作区外断网环境检查正式资产、执行preflight和官方baseline/validate_submission，核实邮件截止时区。若仅两个MP4则仍缺Tactical ATD XML/TXT。Codex未打开任何目标资产、未声称已跑正式baseline；目标结果不得回传云端。
 
 正式比赛模型选择、合并和提交均留给团队，当前仅授权Draft PR。
+
+## 发布前检查
+
+完整公开增量历史扫描通过：20 commits / 143 text blobs（该检查时head=b4c3159）。无原始数据/权重/逐帧输出进入Git。新对齐拒绝闸门额外验证后，G1的WPY自然/原遮球保存概率仍逐元素一致。远端PR2仍Draft/open且head=093361a3，未修改。新PR创建后追加URL与远端SHA。

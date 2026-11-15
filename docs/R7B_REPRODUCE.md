@@ -54,4 +54,4 @@ export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 LOKY_MAX_CPU_COUNT=2
 .venv/bin/python scripts/audit_public_release.py --out local_artifacts/r7b/release-audit-new.json
 ```
 
-Git HTTPS超时时，`scripts/release_git_objects.py --uploaded-base e498e9390189bdf22ea3549ebf5f839b45915dbc`可复用已逐SHA验证的远端对象；仅创建新codex分支，逐blob/tree/commit核验，不force、不merge。实际发布receipt和PR URL以STATUS为准；已有分支不可用这个创建工具覆盖。
+Git HTTPS超时时，`scripts/release_git_objects.py --uploaded-base e498e9390189bdf22ea3549ebf5f839b45915dbc`可复用已逐SHA验证的远端对象；仅创建新codex分支，逐blob/tree/commit核验，不force、不merge。实际发布receipt和PR URL以STATUS为准；已有分支默认拒绝移动；仅对本轮自己的研发分支，可显式使用 `--update-existing`，它在本地验证祖先关系并让服务端以 `force=false` 执行快进，拒绝重写历史。

@@ -9,9 +9,9 @@ from scripts.audit_public_release import BASE,audit
 
 REPO='dlr9/more-than-a-hack-2027-msn'
 def git(*args):return subprocess.check_output(['git',*args],env={**os.environ,'GIT_NO_LAZY_FETCH':'1'})
-def api(endpoint,payload=None):
+def api(endpoint,payload=None,method='POST'):
     args=['gh','api',f'repos/{REPO}/'+endpoint]
-    if payload is not None:args+=['--method','POST','--input','-']
+    if payload is not None:args+=['--method',method,'--input','-']
     result=subprocess.run(args,input=None if payload is None else json.dumps(payload),capture_output=True,text=True,timeout=90)
     if result.returncode:raise RuntimeError(result.stderr[:800])
     return json.loads(result.stdout)
@@ -23,15 +23,20 @@ def identity(line):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--branch',required=True);p.add_argument('--receipt',required=True)
     p.add_argument('--uploaded-base',default=BASE,help='Previously verified remote ancestor; full public history audit still applies')
+    p.add_argument('--update-existing',action='store_true',help='Only fast-forward an existing branch after local ancestry verification')
     a=p.parse_args();uploaded_base=a.uploaded_base
     if not a.branch.startswith('codex/'):raise ValueError('new codex branch required')
     if git('status','--porcelain').strip():raise ValueError('commit all reviewed work first')
     checked=audit();head=checked['head']
     subprocess.run(['git','merge-base','--is-ancestor',uploaded_base,head],check=True)
     if api(f'git/commits/{uploaded_base}')['sha']!=uploaded_base:raise ValueError('remote source ancestor mismatch')
-    # Existing branch is never moved by this publisher; use non-force git/API separately.
+    # Existing branch moves require explicit opt-in and both local/server ancestry checks.
     branches=api('branches?per_page=100')
-    if any(b['name']==a.branch for b in branches):raise FileExistsError('branch already exists; inspect before any update')
+    current=next((b for b in branches if b['name']==a.branch),None)
+    if current is not None:
+        if not a.update_existing:raise FileExistsError('branch already exists; inspect before any update')
+        subprocess.run(['git','merge-base','--is-ancestor',current['commit']['sha'],head],check=True)
+    elif a.update_existing:raise ValueError('requested existing branch is absent')
     raw=git('rev-list','--objects',head,'^'+uploaded_base).decode().splitlines()
     ids=[line.split()[0]for line in raw]
     kinds={sha:git('cat-file','-t',sha).decode().strip()for sha in ids}
@@ -69,9 +74,10 @@ def main():
         actual=api('git/commits',payload)['sha']
         if actual!=sha:raise ValueError('commit SHA mismatch; no branch publication')
         print('Verified commit',sha,flush=True)
-    ref=api('git/refs',dict(ref='refs/heads/'+a.branch,sha=head))
+    ref=(api('git/refs/heads/'+a.branch,dict(sha=head,force=False),method='PATCH')if current is not None
+         else api('git/refs',dict(ref='refs/heads/'+a.branch,sha=head)))
     if ref['object']['sha']!=head:raise ValueError('published head mismatch')
-    receipt=dict(repo=REPO,branch=a.branch,head=head,base_source=BASE,uploaded_base=uploaded_base,objects=len(uploaded),commits=commits,force=False,merge=False)
+    receipt=dict(repo=REPO,branch=a.branch,head=head,previous_head=current['commit']['sha']if current else None,base_source=BASE,uploaded_base=uploaded_base,objects=len(uploaded),commits=commits,force=False,merge=False)
     Path(a.receipt).write_text(json.dumps(receipt,indent=2)+'\n')
     print('Published new branch',a.branch,head,flush=True)
 if __name__=='__main__':main()
