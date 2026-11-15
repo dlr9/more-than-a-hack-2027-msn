@@ -143,6 +143,8 @@ def transfer(protocol):
 def main():
     protocol=json.loads(PROTOCOL.read_text());ROOT.mkdir(parents=True,exist_ok=True)
     if (ROOT/'results.json').exists():raise FileExistsError('E08A is complete; preserve original results')
+    if digest('solution/hierarchical_decoder.py')!='bbb5a2a5783c83d513c7392dbc3ef776b497313dcdd6b4eed855df4fdb9dfc15':
+        raise ValueError('Original E08A requires checkpoint8086ec6; use replay_r8_anchor_fix.py for amended implementation. Do not relabel the fixed decoder as the original experiment.')
     # All inputs are allowlisted, frozen before scoring, and checked before use.
     for path,sha in protocol['inputs'].items():
         if digest(path)!=sha:raise ValueError('input drift: '+path)

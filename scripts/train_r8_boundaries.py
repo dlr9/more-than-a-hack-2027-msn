@@ -15,6 +15,14 @@ from solution.provider_neutral import FeatureContract,assert_compatible
 from solution.candidate import Candidate
 
 ROOT=Path('local_artifacts/r8/e08c');PROTOCOL=Path('docs/R8_E08C_PROTOCOL.json')
+def save_or_verify(path,**arrays):
+    """Recover an interrupted receipt write only after exact array agreement."""
+    if path.exists():
+        with np.load(path,allow_pickle=False)as saved:
+            if set(saved.files)!=set(arrays):raise ValueError('unreceipted output fields differ')
+            for key,value in arrays.items():np.testing.assert_array_equal(saved[key],value)
+        print('RECOVERED exact existing prediction; file retained',path,flush=True)
+    else:save_prediction(path,**arrays)
 def identity():
     return dict(code_sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),protocol_sha=digest(PROTOCOL),
         code_hashes={p:digest(p)for p in ['solution/boundary_sampling.py','scripts/train_r8_boundaries.py','solution/decoder.py']})
@@ -68,7 +76,7 @@ def evaluate():
             if out.exists():rows.append(json.loads(out.read_text()));continue
             start=time.monotonic();b=load(m,d);a,h=model.probabilities(b);pred=original(a,h,b,'M2')
             score=metrics(b,a,h,pred);raw=np.array(list('HAD'))[np.column_stack([a*h,a*(1-h),1-a]).argmax(1)]
-            save_prediction(out.with_suffix('.npz'),p_alive=a,p_home=h,decoded=pred)
+            save_or_verify(out.with_suffix('.npz'),p_alive=a,p_home=h,decoded=pred)
             row=dict(experiment_id='E08C',match=m,domain=d,variant='C1',metrics=score,argmax_metrics=metrics(b,a,h,raw),prediction_sha256=digest(out.with_suffix('.npz')),
                 model_sha256=digest(ROOT/f'{m}.joblib'),wall_seconds=time.monotonic()-start,**identity())
             write_new(out,row);rows.append(row);print('C1',m,d,score['full_spell_f1'],score['dead_errors'],flush=True)
@@ -89,7 +97,7 @@ def evaluate():
         b=dict(np.load(path));sources=[FeatureContract(**c)for c in model.metadata['training_contracts']]
         waiver=assert_compatible(sources,FeatureContract(**json.loads(str(b['feature_contract_json']))),purpose='evaluate',allow_cross_provider=True,allow_cross_view=True,allow_cross_fps=True,allow_cross_pitch=True)
         a,h=Candidate.probabilities(model,b);pred=original(a,h,b,'M2');truth=labels_from_batch(b)
-        save_prediction(ROOT/f'{source}-C1.npz',p_alive=a,p_home=h,decoded=pred)
+        save_or_verify(ROOT/f'{source}-C1.npz',p_alive=a,p_home=h,decoded=pred)
         strata={}
         for name,mask in visibility_strata(b).items():
             keep=mask&np.isin(truth,['H','A']);n=int(keep.sum());strata[name]=dict(known_live=n,false_dead=int(np.sum(pred[keep]=='D')),ha_accuracy=float(np.mean(pred[keep]==truth[keep]))if n else None)
