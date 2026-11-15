@@ -24,6 +24,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--branch',required=True);p.add_argument('--receipt',required=True)
     p.add_argument('--uploaded-base',default=BASE,help='Previously verified remote ancestor; full public history audit still applies')
     p.add_argument('--update-existing',action='store_true',help='Only fast-forward an existing branch after local ancestry verification')
+    p.add_argument('--workers',type=int,default=4,choices=range(1,5),help='Bounded blob upload concurrency; use1 to diagnose transient concurrent API failures')
     a=p.parse_args();uploaded_base=a.uploaded_base
     if not a.branch.startswith('codex/'):raise ValueError('new codex branch required')
     if git('status','--porcelain').strip():raise ValueError('commit all reviewed work first')
@@ -46,8 +47,10 @@ def main():
         actual=api('git/blobs',dict(content=base64.b64encode(data).decode(),encoding='base64'))['sha']
         if actual!=sha:raise ValueError('blob SHA mismatch')
         return sha
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4)as pool:
-        for sha in pool.map(blob,blobs):uploaded.add(sha)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers)as pool:
+        for sha in pool.map(blob,blobs):
+            uploaded.add(sha)
+            print('Verified blob',sha,flush=True)
     print('Verified uploaded blobs',len(blobs),flush=True)
     trees=set(sha for sha in ids if kinds[sha]=='tree')
     def tree(sha):
