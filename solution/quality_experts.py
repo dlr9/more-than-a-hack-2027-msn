@@ -2,6 +2,8 @@
 import numpy as np
 
 def gate_mask(base,players):
+    if not all(np.array_equal(base[k],players[k])for k in ['frame','period','fps']):
+        raise ValueError('unaligned expert timelines or FPS')
     names=base['feature_names'].tolist();pn=players['feature_names'].tolist()
     visible=base['X'][:,names.index('ball_visible')]==1
     frame,period=base['frame'],base['period'];age=np.zeros(len(frame));fps=float(base['fps'])

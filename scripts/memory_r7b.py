@@ -48,7 +48,11 @@ def main():
             k=mask&(b['y_alive']==1)&(b['y_home']>=0);n=int(k.sum())
             strata[name]=dict(n=n,false_dead=int(np.sum(pred[k]=='D')),ha_accuracy=float(np.mean(pred[k]==labels_from_batch(b)[k]))if n else None,
                 alive_prior_used=int(info['alive_prior_used'][k].sum()),home_prior_used=int(info['home_prior_used'][k].sum()))
-        np.savez_compressed(OUT/f'SC-{variant}.npz',p_alive=a,p_home=h,decoded=pred)
+        cache=OUT/f'SC-{variant}.npz'
+        if cache.exists():
+            with np.load(cache)as saved:
+                if not all(np.array_equal(saved[k],v)for k,v in [('p_alive',a),('p_home',h),('decoded',pred)]):raise ValueError('preserved SC memory replay mismatch')
+        else:np.savez_compressed(cache,p_alive=a,p_home=h,decoded=pred)
         partial.append(dict(variant=variant,strata=strata,full_spell_f1=None));print('SC MEMORY',variant,strata['missing_long'],flush=True)
     path=Path('docs/R7B_MEMORY_RESULTS.json')
     if not path.exists():write_new(path,dict(rows=rows,partial=partial,unchanged_domains=checks,**identity(),extra_hashes={p:digest(p)for p in ['scripts/memory_r7b.py','solution/observation_memory.py','docs/R7B_MEMORY_PROTOCOL.json']}))

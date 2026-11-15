@@ -1,0 +1,625 @@
+{
+  "rows": [
+    {
+      "variant": "M2",
+      "metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_event_proxy",
+        "n_known": 98225,
+        "coverage": 0.6832520641898707,
+        "n_label_islands": 2039,
+        "partial_macro_f1": 0.9459482015065537,
+        "per_class": {
+          "H": {
+            "precision": 0.9329126188169368,
+            "recall": 0.9497494135210066,
+            "f1": 0.941255729778999,
+            "support": 37512
+          },
+          "A": {
+            "precision": 0.9199184864924407,
+            "recall": 0.9518721148914344,
+            "f1": 0.9356225580125198,
+            "support": 35094
+          },
+          "D": {
+            "precision": 0.9993677022299035,
+            "recall": 0.9254069245481868,
+            "f1": 0.9609663167281423,
+            "support": 25619
+          }
+        },
+        "confusion": [
+          [
+            35627,
+            1870,
+            15,
+            0
+          ],
+          [
+            1689,
+            33405,
+            0,
+            0
+          ],
+          [
+            873,
+            1038,
+            23708,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 644,
+          "n_team_spells": 509,
+          "short_team_spells": 9,
+          "mean_team_spell_s": 7.748290766208251
+        },
+        "live_to_dead_proxy_errors": 15,
+        "dead_to_live_proxy_errors": 1911,
+        "censored_island_spell_diagnostic": 0.8708661417322835,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 122,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 122,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.48,
+            "tolerance_frames": 12,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 27,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 3,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 34,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 34,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 25,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 5,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 2,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 2,
+          "completely_missed_dead_segments": 113,
+          "stable_team_switches": 171
+        },
+        "alive": {
+          "n": 98225,
+          "brier": 0.0955820663242355,
+          "log_loss": 0.3079277567925663,
+          "ece": 0.15482202386267038,
+          "reliability": [
+            {
+              "bin": 0,
+              "n": 30,
+              "predicted": 0.058603780702315755,
+              "observed": 0.26666666666666666
+            },
+            {
+              "bin": 1,
+              "n": 5,
+              "predicted": 0.14567825970707277,
+              "observed": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 8,
+              "predicted": 0.24349300534983584,
+              "observed": 0.75
+            },
+            {
+              "bin": 3,
+              "n": 87,
+              "predicted": 0.36139709522668073,
+              "observed": 0.0
+            },
+            {
+              "bin": 4,
+              "n": 342,
+              "predicted": 0.4637710296138868,
+              "observed": 0.0
+            },
+            {
+              "bin": 5,
+              "n": 23265,
+              "predicted": 0.5734526422892156,
+              "observed": 0.0
+            },
+            {
+              "bin": 6,
+              "n": 298,
+              "predicted": 0.6427998276595401,
+              "observed": 0.0
+            },
+            {
+              "bin": 7,
+              "n": 112,
+              "predicted": 0.7752225818655771,
+              "observed": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 100,
+              "predicted": 0.8289482609433202,
+              "observed": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 73978,
+              "predicted": 0.9988871001365142,
+              "observed": 0.9812647003163103
+            }
+          ]
+        }
+      },
+      "full_spell_f1": null,
+      "waiver": "Explicit research-only provider transfer; weak event interiors, no complete state truth"
+    },
+    {
+      "variant": "P1",
+      "metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_event_proxy",
+        "n_known": 98225,
+        "coverage": 0.6832520641898707,
+        "n_label_islands": 2039,
+        "partial_macro_f1": 0.8547932931693866,
+        "per_class": {
+          "H": {
+            "precision": 0.8884015183466891,
+            "recall": 0.8422904670505438,
+            "f1": 0.8647317213350302,
+            "support": 37512
+          },
+          "A": {
+            "precision": 0.9107306273062731,
+            "recall": 0.8790961417906195,
+            "f1": 0.8946338209920399,
+            "support": 35094
+          },
+          "D": {
+            "precision": 0.7607434427653291,
+            "recall": 0.8547562356063859,
+            "f1": 0.8050143371810896,
+            "support": 25619
+          }
+        },
+        "confusion": [
+          [
+            31596,
+            1654,
+            4262,
+            0
+          ],
+          [
+            1618,
+            30851,
+            2625,
+            0
+          ],
+          [
+            2351,
+            1370,
+            21898,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 932,
+          "n_team_spells": 563,
+          "short_team_spells": 8,
+          "mean_team_spell_s": 6.499609236234458
+        },
+        "live_to_dead_proxy_errors": 6887,
+        "dead_to_live_proxy_errors": 3721,
+        "censored_island_spell_diagnostic": 0.8022278481012657,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 235,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 235,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.48,
+            "tolerance_frames": 12,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 103,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 83,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 97,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 97,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 25,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 47,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 35,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 89,
+          "completely_missed_dead_segments": 99,
+          "stable_team_switches": 86
+        },
+        "alive": {
+          "n": 98225,
+          "brier": 0.08315567259415363,
+          "log_loss": 0.2802422944641122,
+          "ece": 0.043621621924048615,
+          "reliability": [
+            {
+              "bin": 0,
+              "n": 16888,
+              "predicted": 0.03150397570920028,
+              "observed": 0.06957603031738513
+            },
+            {
+              "bin": 1,
+              "n": 4113,
+              "predicted": 0.14264488044289114,
+              "observed": 0.35910527595429126
+            },
+            {
+              "bin": 2,
+              "n": 2336,
+              "predicted": 0.24850629675365207,
+              "observed": 0.4987157534246575
+            },
+            {
+              "bin": 3,
+              "n": 1870,
+              "predicted": 0.3482498801719683,
+              "observed": 0.5502673796791444
+            },
+            {
+              "bin": 4,
+              "n": 1920,
+              "predicted": 0.44933662450023054,
+              "observed": 0.6755208333333333
+            },
+            {
+              "bin": 5,
+              "n": 2190,
+              "predicted": 0.5527558132983146,
+              "observed": 0.7447488584474886
+            },
+            {
+              "bin": 6,
+              "n": 2749,
+              "predicted": 0.6523622135231574,
+              "observed": 0.7791924336122227
+            },
+            {
+              "bin": 7,
+              "n": 4182,
+              "predicted": 0.7555214985066808,
+              "observed": 0.8220946915351507
+            },
+            {
+              "bin": 8,
+              "n": 8823,
+              "predicted": 0.8577240825307944,
+              "observed": 0.887226566927349
+            },
+            {
+              "bin": 9,
+              "n": 53154,
+              "predicted": 0.9683392613110852,
+              "observed": 0.9674530609173345
+            }
+          ]
+        }
+      },
+      "full_spell_f1": null,
+      "waiver": "Explicit research-only provider transfer; weak event interiors, no complete state truth"
+    },
+    {
+      "variant": "G1",
+      "metrics": {
+        "protocol": "external-evidence-v3.0",
+        "semantics": "partial_event_proxy",
+        "n_known": 98225,
+        "coverage": 0.6832520641898707,
+        "n_label_islands": 2039,
+        "partial_macro_f1": 0.923582475898499,
+        "per_class": {
+          "H": {
+            "precision": 0.8986241306319928,
+            "recall": 0.950655790147153,
+            "f1": 0.9239079745064511,
+            "support": 37512
+          },
+          "A": {
+            "precision": 0.9077939018424914,
+            "recall": 0.9518721148914344,
+            "f1": 0.9293106326155901,
+            "support": 35094
+          },
+          "D": {
+            "precision": 0.9993101227981419,
+            "recall": 0.8481205355400289,
+            "f1": 0.9175288205734555,
+            "support": 25619
+          }
+        },
+        "confusion": [
+          [
+            35661,
+            1836,
+            15,
+            0
+          ],
+          [
+            1689,
+            33405,
+            0,
+            0
+          ],
+          [
+            2334,
+            1557,
+            21728,
+            0
+          ]
+        ],
+        "full_spell_f1": null,
+        "full_spell_status": "not_established",
+        "prediction_geometry": {
+          "n_segments": 687,
+          "n_team_spells": 530,
+          "short_team_spells": 4,
+          "mean_team_spell_s": 7.703547169811321
+        },
+        "live_to_dead_proxy_errors": 15,
+        "dead_to_live_proxy_errors": 3891,
+        "censored_island_spell_diagnostic": 0.864453125,
+        "partial_proxy_transitions": [
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 162,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 162,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 0.48,
+            "effective_tolerance_s": 0.48,
+            "tolerance_frames": 12,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 46,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 25,
+              "mean_latency_s": null
+            }
+          },
+          {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "n_gt": 0,
+            "n_pred": 67,
+            "n_matched": 0,
+            "n_missed": 0,
+            "n_spurious": 67,
+            "n_ambiguous": 0,
+            "mean_latency_s": null,
+            "median_latency_s": null,
+            "mean_abs_latency_s": null,
+            "p90_abs_latency_s": null,
+            "nominal_tolerance_s": 1.0,
+            "effective_tolerance_s": 1.0,
+            "tolerance_frames": 25,
+            "dead_entries": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 29,
+              "mean_latency_s": null
+            },
+            "dead_exits": {
+              "n_gt": 0,
+              "n_matched": 0,
+              "n_missed": 0,
+              "n_spurious": 11,
+              "mean_latency_s": null
+            }
+          }
+        ],
+        "source_proxy_fragmentation": {
+          "false_dead_cuts": 2,
+          "completely_missed_dead_segments": 114,
+          "stable_team_switches": 170
+        },
+        "alive": {
+          "n": 98225,
+          "brier": 0.039348474545771686,
+          "log_loss": 0.17711592328528777,
+          "ece": 0.057475763437389665,
+          "reliability": [
+            {
+              "bin": 0,
+              "n": 15521,
+              "predicted": 0.02931096636934853,
+              "observed": 0.0005154307067843567
+            },
+            {
+              "bin": 1,
+              "n": 2557,
+              "predicted": 0.1397166058313963,
+              "observed": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 1105,
+              "predicted": 0.24667649551367907,
+              "observed": 0.005429864253393665
+            },
+            {
+              "bin": 3,
+              "n": 817,
+              "predicted": 0.3459438460320099,
+              "observed": 0.0
+            },
+            {
+              "bin": 4,
+              "n": 683,
+              "predicted": 0.450344280002374,
+              "observed": 0.0
+            },
+            {
+              "bin": 5,
+              "n": 746,
+              "predicted": 0.5534261823056146,
+              "observed": 0.0
+            },
+            {
+              "bin": 6,
+              "n": 678,
+              "predicted": 0.6483385938054896,
+              "observed": 0.0
+            },
+            {
+              "bin": 7,
+              "n": 667,
+              "predicted": 0.7515455879701745,
+              "observed": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 727,
+              "predicted": 0.8530227626564871,
+              "observed": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 74724,
+              "predicted": 0.9983768166357286,
+              "observed": 0.9714683368128044
+            }
+          ]
+        }
+      },
+      "full_spell_f1": null,
+      "waiver": "Explicit research-only provider transfer; weak event interiors, no complete state truth"
+    }
+  ],
+  "git_sha": "d69062aef1d022c004c713a98ddef094a7ce3124",
+  "hashes": {
+    "scripts/research_r7b.py": "d510b7df9e6b7a44dea7e7aa67ff473236bfa4dfce9a24d0e38310cfc02e8fd2",
+    "solution/player_only_features.py": "9c9d77b081ff2ed3c5fe62d53fd482b203f30c4f7fbf0226518bf65214db686a",
+    "solution/quality_experts.py": "c4fae6e48162c5218cc3655a83767242becaa48150bc0b121e8a08971199f01e",
+    "solution/r7_metrics.py": "a18ed27b4f88604cca3e839d71ff52f07d358946938a2b9a8542b52f1340362d",
+    "solution/decoder.py": "2ec9f27fd85920496951da9298816b7023b1152235aef831330d370250c903a7",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+    "docs/R7B_PROTOCOL.json": "e1c20023a62f823bc89c5f45cdc34e6086d23fa3daf8315c6252c9a3138477f7"
+  },
+  "adapter_sha256": "59bb4d1576230638b6b7ef1b639fb089d3bc17172b4332dbd05f9bce1b821821",
+  "selection": "diagnostic only; fixed first DFL fold"
+}

@@ -1,5 +1,5 @@
 """Read-only diagnosis of the frozen public SkillCorner transfer, never target data."""
-import json, subprocess, sys
+import argparse,json, subprocess, sys
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -15,7 +15,7 @@ def summary(x):
     return dict(n=len(x),mean=float(x.mean()) if len(x) else None,
                 quantiles=np.quantile(x,[0,.1,.5,.9,1]).tolist() if len(x) else [])
 
-def main():
+def main(output='docs/R7B_MISSING_DIAGNOSIS.json'):
     root=Path('local_artifacts/r7/transfer-v2')
     b=dict(np.load(root/'prepared.npz',allow_pickle=False))
     old=dict(np.load('local_artifacts/v2/1874553-observed.npz',allow_pickle=False))
@@ -64,6 +64,7 @@ def main():
         alignment='exact frame/period/labels/ball-finiteness equality; strict raw possession and phase agreement checked',
         limitation='Partial source proxy labels; one previously examined match; selection is not independent of source possession availability. No true D evaluation.',
         models=aggregate,episodes=episodes,features=features)
-    write_new('docs/R7B_MISSING_DIAGNOSIS.json',result)
+    write_new(output,result)
     print(json.dumps({k:result[k]for k in ['n_frames','n_episodes','models']},indent=2))
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',default='docs/R7B_MISSING_DIAGNOSIS.json');args=parser.parse_args();main(args.output)

@@ -64,8 +64,11 @@ class PlayerOnlyTests(unittest.TestCase):
         players=self.build(self.raw());n=80
         base=dict(X=np.zeros((n,1)),feature_names=np.asarray(['ball_visible']),frame=np.arange(n),period=np.ones(n),fps=np.asarray(10.))
         mask=gate_mask(base,players);self.assertFalse(mask[3]);self.assertTrue(mask[5])
-        base['period'][40:]=2;self.assertFalse(gate_mask(base,players)[40])
+        base['period'][40:]=2;players['period'][40:]=2;self.assertFalse(gate_mask(base,players)[40])
         players['X'][:,players['feature_names'].tolist().index('home_count')]=0
         a,use=fuse(base,players,np.full(n,.2),np.full(n,.9));self.assertFalse(use.any());np.testing.assert_array_equal(a,.2)
+    def test_gate_rejects_alignment_error(self):
+        players=self.build(self.raw());base=dict(X=np.zeros((80,1)),feature_names=np.asarray(['ball_visible']),frame=np.arange(80)+1,period=np.ones(80),fps=np.asarray(10.))
+        with self.assertRaises(ValueError):gate_mask(base,players)
 
 if __name__=='__main__':unittest.main()
