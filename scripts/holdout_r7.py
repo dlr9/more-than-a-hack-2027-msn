@@ -22,12 +22,15 @@ def main():
     for m in IDS:
         for kind in ['matchinformation','positions']:
             filename=name(m,kind);meta=files[filename];dest=ROOT/'raw'/filename
-            if 'lfs'not in meta:raise ValueError('expected LFS content digest')
-            sha=meta['lfs']['oid'];size=meta['size']
+            sha=meta['lfs']['oid'] if 'lfs' in meta else None;size=meta['size']
             if not dest.exists():
                 code='from huggingface_hub import hf_hub_download;hf_hub_download(repo_id='+repr(REPO)+',repo_type="dataset",revision='+repr(REVISION)+',filename='+repr(filename)+',local_dir='+repr(str(ROOT/'raw'))+')'
                 subprocess.run([sys.executable,'-c',code],check=True,timeout=900)
-            info=verify_xml(dest,size,sha256=sha,kind=kind);manifest[str(dest)]=info
+            info=verify_xml(dest,size,sha256=sha,kind=kind)
+            if sha is None:
+                blob=b'blob '+str(size).encode()+b'\0'+dest.read_bytes()
+                if hashlib.sha1(blob).hexdigest()!=meta['oid']:raise ValueError('Git blob digest mismatch')
+            manifest[str(dest)]={**info,'pinned_git_or_lfs_oid':meta.get('lfs',{}).get('oid',meta['oid'])}
             print('verified public sealed file',m,kind,flush=True)
         out=ROOT/'prepared'/m
         if not out.exists():prepare(ROOT/'raw'/name(m,'positions'),ROOT/'raw'/name(m,'matchinformation'),out)
