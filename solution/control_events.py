@@ -80,3 +80,42 @@ def relocate_boundaries(pred,home,frame,period,fps,events):
     np.testing.assert_array_equal(out=='D',pred=='D')
     trace['changed_frames']=int(np.sum(out!=pred))
     return out,trace
+
+
+def decode_control_windows(pred,home,frame,period,fps,events,signal):
+    """Conditional H/A DP only near observed control; dead mask stays frozen.
+
+    One fixed mechanism revision of timing-only E1: can create/remove a team
+    spell using persistent relative-motion evidence, not isolated hard writes.
+    Physical log-odds increment log(9) is a fixed heuristic, not calibration.
+    """
+    pred=np.asarray(pred);home=np.asarray(home,float);signal=np.asarray(signal)
+    if pred.shape!=home.shape or signal.shape!=pred.shape or pred.shape!=np.asarray(frame).shape:raise ValueError('alignment')
+    if not np.isin(pred,list('HAD')).all() or not np.isin(signal,[-1,0,1]).all():raise ValueError('state encoding')
+    if not np.isfinite(home).all() or np.any((home<0)|(home>1)) or not np.isfinite(fps) or fps<=0:raise ValueError('probability/time')
+    out=pred.copy();n=len(pred);window=np.zeros(n,bool)
+    for lo,hi in continuous_blocks(frame,period):
+        for e in events:
+            if lo<=e['start']<e['end']<=hi:
+                window[max(lo,e['start']-round(fps)):min(hi,e['end']+round(fps))]=True
+    window&=pred!='D'
+    ph=np.clip(home,1e-9,1-1e-9);logit=np.log(ph/(1-ph))
+    logit=logit+np.where(signal==0,np.log(9),np.where(signal==1,-np.log(9),0))
+    adjusted=1/(1+np.exp(-logit));cost=-np.log(np.column_stack([1-adjusted,adjusted]))/fps
+    trace=dict(windows=0,changed_frames=0,control_frames=int(np.sum(signal>=0)),proposals=len(events))
+    penalty=.3
+    for lo,hi in continuous_blocks(frame,period):
+        cuts=np.flatnonzero(np.diff(np.r_[False,window[lo:hi],False])).reshape(-1,2)
+        for a,b in cuts:
+            a,b=a+lo,b+lo;trace['windows']+=1;back=np.zeros((b-a,2),dtype=np.int8);score=cost[a].copy()
+            if a>lo and pred[a-1]!='D':score+=penalty*(np.arange(2)!=int(pred[a-1]=='H'))
+            for i in range(a+1,b):
+                choices=score[:,None]+penalty*(np.arange(2)[:,None]!=np.arange(2)[None,:])
+                ix=np.argmin(choices,axis=0);back[i-a]=ix;score=cost[i]+choices[ix,np.arange(2)]
+            if b<hi and pred[b]!='D':score+=penalty*(np.arange(2)!=int(pred[b]=='H'))
+            states=np.empty(b-a,dtype=np.int8);states[-1]=int(np.argmin(score))
+            for i in range(b-a-1,0,-1):states[i-1]=back[i,states[i]]
+            out[a:b]=np.where(states==1,'H','A')
+    np.testing.assert_array_equal(out=='D',pred=='D');trace['changed_frames']=int(np.sum(out!=pred))
+    trace['created_minus_removed_HA_boundaries']=sum(len(np.flatnonzero(out[a+1:b]!=out[a:b-1]))-len(np.flatnonzero(pred[a+1:b]!=pred[a:b-1])) for a,b in continuous_blocks(frame,period))
+    return out,trace

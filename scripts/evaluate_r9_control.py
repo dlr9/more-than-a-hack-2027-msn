@@ -3,7 +3,7 @@ import argparse,json,resource,subprocess,sys,time
 from pathlib import Path
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from solution.control_events import control_episodes,relocate_boundaries
+from solution.control_events import control_episodes,relocate_boundaries,decode_control_windows
 from solution.hierarchical_decoder import continuous_blocks
 from solution.evidence import labels_from_batch
 from solution.idsse import digest
@@ -34,7 +34,7 @@ def execute(experiment):
             if row['protocol_sha']!=digest(protocol_path) or row['code_hashes']!=code or digest(out.with_suffix('.npz'))!=row['prediction_sha']:raise ValueError('run drift')
             rows.append(row);continue
           start=time.monotonic();cpu=time.process_time();path=cache_path(m,v,d);c=dict(np.load(path,allow_pickle=False))
-          pred,trace=relocate_boundaries(c['decoded'],c['p_home'],b['frame'],b['period'],fps,events)
+          pred,trace=(decode_control_windows(c['decoded'],c['p_home'],b['frame'],b['period'],fps,events,signal) if experiment=='e09e2' else relocate_boundaries(c['decoded'],c['p_home'],b['frame'],b['period'],fps,events))
           # No labels enter geometry or inference. Full truth used only below.
           g=pm.label_codes(labels_from_batch(b));pc=pm.label_codes(pred);old=pm.label_codes(c['decoded']);blocks=continuous_blocks(b['frame'],b['period'])
           score=metrics(b,c['p_alive'],c['p_home'],pred)
@@ -52,4 +52,4 @@ def execute(experiment):
           print(m,d,v,'spell',round(score['full_spell_f1'],6),'delta',round(score['full_spell_f1']-reference['mean_f1'],6),trace,event_eval,flush=True)
     if not (root/'results.json').exists():write_new(root/'results.json',dict(rows=rows,competition_promoted=False))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('experiment',choices=['e09e1fix']);a=p.parse_args();execute(a.experiment)
+    p=argparse.ArgumentParser();p.add_argument('experiment',choices=['e09e1fix','e09e2']);a=p.parse_args();execute(a.experiment)

@@ -39,3 +39,18 @@ class ControlEventTests(unittest.TestCase):
     def test_zero_slots(self):
         r=self.raw();r['players_xy']=r['players_xy'][:,:0];r['player_team']=np.array([]);r['player_track_id']=np.array([])
         e,s=control_episodes(r,25);self.assertEqual(e,[]);self.assertTrue(np.all(s==-1))
+    def test_control_window_can_recover_short_team_spell(self):
+        from solution.control_events import decode_control_windows
+        n=50;p=np.full(n,'H');h=np.full(n,.55);signal=np.full(n,-1);signal[20:30]=1
+        q,t=decode_control_windows(p,h,np.arange(n),np.ones(n),25,[dict(start=20,end=30,team='A')],signal)
+        self.assertTrue(np.all(q[20:30]=='A'));self.assertEqual(q[0],'H');self.assertEqual(q[-1],'H')
+        self.assertEqual(t['created_minus_removed_HA_boundaries'],2)
+    def test_control_window_keeps_single_frame_dead(self):
+        from solution.control_events import decode_control_windows
+        n=40;p=np.full(n,'H');p[20]='D';signal=np.ones(n,dtype=int)
+        q,_=decode_control_windows(p,np.full(n,.6),np.arange(n),np.ones(n),25,[dict(start=10,end=30,team='A')],signal)
+        np.testing.assert_array_equal(q=='D',p=='D')
+    def test_no_control_leaves_zero_observation_unchanged(self):
+        from solution.control_events import decode_control_windows
+        p=np.array(list('HADHHHAAAA'));q,_=decode_control_windows(p,np.full(len(p),.4),np.arange(len(p)),np.ones(len(p)),25,[],np.full(len(p),-1))
+        np.testing.assert_array_equal(q,p)
