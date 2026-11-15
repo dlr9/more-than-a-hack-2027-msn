@@ -1,0 +1,11 @@
+{
+  "version":"G2-v1",
+  "frozen_before_fit":true,
+  "rotation":"For heldout index i in [WPY,WOH,WQQ], fit (i+1)%3 and calibrate (i+2)%3. No overlap.",
+  "models":"HGB unchanged60iterations15leaves, ball Alive fit natural+originaldropout, player Alive natural; fixed R6M2 Home head (trained on non-test matches, not calibrated)",
+  "calibration":"C=1 sigmoid logit calibration of each Alive expert on separate match natural+dropout 2Hz samples; singleclass refuses fit",
+  "gate":"Same G1 quality gate, .5 logit weight for player when eligible, otherwise ball; fixed before results, no learned gate",
+  "comparison":"G2_uncal vs G2_cal with identical training data and Home head. Natural/dropout/long complete25Hz. Does not isolate calibration if compared against two-match G1.",
+  "decision":"Only exploratory unless improvement on >=2/3 matches in missing domains, no >.01 natural spell loss, no >.02 trueDmiss rate increase. Calibration does not certify crossprovider transfer.",
+  "preservation":"No refits when model+hash receipt exists. New output calibration-v1. No holdouts/targetGT."
+}

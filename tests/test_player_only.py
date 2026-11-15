@@ -2,6 +2,7 @@ import unittest
 import numpy as np
 from solution.player_only_features import build_player_features,player_inputs
 from solution.decoder import emission_probabilities,viterbi_decode
+from solution.quality_experts import gate_mask,fuse
 
 class PlayerOnlyTests(unittest.TestCase):
     def raw(self,n=80):
@@ -59,5 +60,12 @@ class PlayerOnlyTests(unittest.TestCase):
         a[50:175]=.95
         p=viterbi_decode(emission_probabilities(a,h),[(0,224)],7.5,2.5,dead_scale=scale)
         self.assertTrue(np.all(p=='H'))
+    def test_gate_uses_quality_and_resets(self):
+        players=self.build(self.raw());n=80
+        base=dict(X=np.zeros((n,1)),feature_names=np.asarray(['ball_visible']),frame=np.arange(n),period=np.ones(n),fps=np.asarray(10.))
+        mask=gate_mask(base,players);self.assertFalse(mask[3]);self.assertTrue(mask[5])
+        base['period'][40:]=2;self.assertFalse(gate_mask(base,players)[40])
+        players['X'][:,players['feature_names'].tolist().index('home_count')]=0
+        a,use=fuse(base,players,np.full(n,.2),np.full(n,.9));self.assertFalse(use.any());np.testing.assert_array_equal(a,.2)
 
 if __name__=='__main__':unittest.main()
