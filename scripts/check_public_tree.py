@@ -10,7 +10,7 @@ def violations(paths):
     for path in paths:
         p=PurePosixPath(path)
         # Exact approved aggregate experiment ledger; no general JSONL exemption.
-        if path in {'docs/R6_EXPERIMENT_LEDGER.jsonl', 'docs/R8_EXPERIMENT_LEDGER.jsonl'}:
+        if path in {'docs/R6_EXPERIMENT_LEDGER.jsonl', 'docs/R8_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl'}:
             continue
         if set(p.parts)&FORBIDDEN_PARTS or p.name in FORBIDDEN_NAMES or p.suffix in {'.npz','.joblib','.mp4','.jsonl','.pl3container','.gzip'}:
             bad.append(path)
