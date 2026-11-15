@@ -1,0 +1,16 @@
+{
+  "window": 12,
+  "distance": 2.0,
+  "confidence": 1.0,
+  "attack_weight": 0.2,
+  "setpiece_weight": 0.0,
+  "missing_weight": 1.0,
+  "idle": 0.56,
+  "dead_bias": -1.2,
+  "visible_weight": 0.4,
+  "team_penalty": 100.0,
+  "enter_penalty": 60.0,
+  "exit_penalty": 60.0,
+  "dynamic": 0.0,
+  "gap": 0
+}

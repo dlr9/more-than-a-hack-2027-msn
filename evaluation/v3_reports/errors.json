@@ -1,0 +1,93 @@
+[
+  {
+    "start": 11351,
+    "end": 11469,
+    "seconds": 4.72,
+    "truth": "H",
+    "prediction": "A"
+  },
+  {
+    "start": 11553,
+    "end": 11624,
+    "seconds": 2.84,
+    "truth": "A",
+    "prediction": "H"
+  },
+  {
+    "start": 12645,
+    "end": 12665,
+    "seconds": 0.8,
+    "truth": "H",
+    "prediction": "A"
+  },
+  {
+    "start": 12851,
+    "end": 12874,
+    "seconds": 0.92,
+    "truth": "D",
+    "prediction": "A"
+  },
+  {
+    "start": 13704,
+    "end": 13785,
+    "seconds": 3.24,
+    "truth": "A",
+    "prediction": "H"
+  },
+  {
+    "start": 14842,
+    "end": 14846,
+    "seconds": 0.16,
+    "truth": "H",
+    "prediction": "A"
+  },
+  {
+    "start": 15346,
+    "end": 15365,
+    "seconds": 0.76,
+    "truth": "H",
+    "prediction": "A"
+  },
+  {
+    "start": 15643,
+    "end": 15766,
+    "seconds": 4.92,
+    "truth": "A",
+    "prediction": "H"
+  },
+  {
+    "start": 15799,
+    "end": 15941,
+    "seconds": 5.68,
+    "truth": "AD",
+    "prediction": "H"
+  },
+  {
+    "start": 16400,
+    "end": 16424,
+    "seconds": 0.96,
+    "truth": "A",
+    "prediction": "D"
+  },
+  {
+    "start": 17156,
+    "end": 17380,
+    "seconds": 8.96,
+    "truth": "AH",
+    "prediction": "D"
+  },
+  {
+    "start": 17838,
+    "end": 17843,
+    "seconds": 0.2,
+    "truth": "A",
+    "prediction": "D"
+  },
+  {
+    "start": 18013,
+    "end": 18389,
+    "seconds": 15.04,
+    "truth": "AD",
+    "prediction": "H"
+  }
+]

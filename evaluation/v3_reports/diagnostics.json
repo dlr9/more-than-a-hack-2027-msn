@@ -1,0 +1,18 @@
+[
+  {
+    "model": "v2",
+    "visible_dead_frames": 975,
+    "visible_dead_recall": 0.11897435897435897,
+    "predicted_possessions": 14,
+    "true_possessions": 17,
+    "fragmentation": 0.8571428571428571
+  },
+  {
+    "model": "v3",
+    "visible_dead_frames": 975,
+    "visible_dead_recall": 0.5753846153846154,
+    "predicted_possessions": 9,
+    "true_possessions": 17,
+    "fragmentation": 0.5714285714285714
+  }
+]

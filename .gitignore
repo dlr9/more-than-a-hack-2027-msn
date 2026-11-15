@@ -67,3 +67,6 @@ env/
 extracted_features.npz
 features_v2.npz
 evaluation/v2_reports/*.log
+features_v3_speed.npz
+evaluation/v3_reports/search.json
+evaluation/v3_reports/*.log

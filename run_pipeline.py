@@ -11,8 +11,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data-dir', default=r'F:\non_video_dataset')
     p.add_argument('--skip-extract', action='store_true')
-    p.add_argument('--model', choices=['auto','v1','v2'], default='auto')
-    p.add_argument('--config', type=Path, default=root/'models/fusion_v2_config.json')
+    p.add_argument('--model', choices=['auto','v1','v2','v3'], default='auto')
+    p.add_argument('--config', type=Path)
     p.add_argument('--output', type=Path)
     a = p.parse_args()
     os.environ['MTAH_DATA_DIR'] = a.data_dir
@@ -23,10 +23,13 @@ def main():
         model = json.loads(manifest.read_text())['model'] if manifest.exists() else 'v1'
     from baseline import write_submission
     import possession_metrics as pm
-    if model == 'v2':
-        from fusion_v2 import features, predict, DEFAULT
-        config = dict(DEFAULT, **json.loads(a.config.read_text()))
-        labels = predict(features(a.data_dir, root/'features_v2.npz'), config)
+    if model in ('v2','v3'):
+        import importlib
+        module = importlib.import_module('fusion_'+model)
+        config_path = a.config or root/f'models/fusion_{model}_config.json'
+        config = dict(module.DEFAULT, **json.loads(config_path.read_text()))
+        f = module.features(a.data_dir) if model == 'v3' else module.features(a.data_dir, root/'features_v2.npz')
+        labels = module.predict(f, config)
     else:
         from extract_features import extract_features
         from possession_detector import build_advanced_model
