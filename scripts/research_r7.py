@@ -20,6 +20,13 @@ def js(value):return json.dumps(value,indent=2,default=lambda x:x.item() if isin
 def write_new(path,value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     with path.open('x')as f:f.write(js(value)+'\n')
+def write_public_once(path,value):
+    if Path(path).exists():
+        print('Preserved frozen public report; new results remain in local run directory:',path,flush=True)
+        return False
+    write_new(path,value)
+    return True
+
 def record(row):
     p=Path('docs/R7_EXPERIMENTS.json');records=json.loads(p.read_text());records.append(row);p.write_text(js(records)+'\n')
 def source_identity():
@@ -117,7 +124,7 @@ def core():
         rows.append(dict(match=m,variant='V3',domain='natural',metrics=dict(decoded=extended(b,a,h,v3.predict(legacy)))))
         del raw
     result=dict(experiment_id='E01_E02_E04_core',**identity,models=models,rows=rows,cost=dict(wall_s=time.monotonic()-started,cpu_s=time.process_time()-cpu,peak_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss),fits=18,competition_promoted=False)
-    write_new(out/'results.json',result);write_new('docs/R7_CORE_RESULTS.json',result)
+    write_new(out/'results.json',result);write_public_once('docs/R7_CORE_RESULTS.json',result)
     record({k:v for k,v in result.items()if k!='rows'}|dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),decision='diagnostic; stress comparison pending',next='E03 independent label-blind masks and E05 complete attribution'))
 
 def prepare_stress():
@@ -154,7 +161,7 @@ def stress():
                 rows.append(dict(match=m,variant=v,domain=domain,metrics=score))
             print('stress scored',m,v,flush=True)
     result=dict(experiment_id='E03_E05_stress',**source_identity(),rows=rows,input_manifests={m:json.loads((ROOT/'prepared'/m/'manifest.json').read_text())for m in IDS},wall_s=time.monotonic()-started,competition_promoted=False)
-    write_new(out/'results.json',result);write_new('docs/R7_STRESS_RESULTS.json',result)
+    write_new(out/'results.json',result);write_public_once('docs/R7_STRESS_RESULTS.json',result)
     record({k:v for k,v in result.items()if k not in {'rows','input_manifests'}}|dict(decision='evaluate frozen retention gate next'))
 
 if __name__=='__main__':

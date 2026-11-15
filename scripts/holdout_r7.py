@@ -11,6 +11,7 @@ from solution.modeling import load_prepared
 ROOT=Path('local_artifacts/r7/holdout-v1');IDS=['J03WMX','J03WN1']
 def name(m,kind):return ('DFL_02_01_matchinformation'if kind=='matchinformation'else'DFL_04_03_positions_raw_observed')+f'_DFL-COM-000001_DFL-MAT-{m}.xml'
 def main():
+    if Path('docs/R7_HOLDOUT_RESULTS.json').exists():raise FileExistsError('sealed matches already consumed; inspect published report, do not rescore')
     protocol=json.loads(Path('docs/R7_HOLDOUT_PROTOCOL.json').read_text())
     for p,sha in protocol['frozen_models'].items():
         if digest(p)!=sha:raise ValueError('frozen holdout model changed')
@@ -34,6 +35,9 @@ def main():
             print('verified public sealed file',m,kind,flush=True)
         out=ROOT/'prepared'/m
         if not out.exists():prepare(ROOT/'raw'/name(m,'positions'),ROOT/'raw'/name(m,'matchinformation'),out)
+        audit=json.loads((out/'audit.json').read_text())
+        for domain in ['natural','dropout']:
+            if digest(out/f'{domain}.npz')!=audit[domain]['prepared_sha256']:raise ValueError('prepared holdout drift')
         from floodlight.io.dfl import read_position_data_xml
         xy,poss,status,_,_=read_position_data_xml(ROOT/'raw'/name(m,'positions'),ROOT/'raw'/name(m,'matchinformation'))
         checks[m]=[]
@@ -46,7 +50,7 @@ def main():
                 checks[m].append(dict(period=half,frames=int(mask.sum()),labels_and_xy_equal=True))
         del xy,poss,status
     write_new(ROOT/'acquisition.json',dict(revision=REVISION,files=manifest,independent_checks=checks))
-    identity=dict(**source_identity(),holdout_protocol_sha256=digest('docs/R7_HOLDOUT_PROTOCOL.json'),holdout_script_sha256=digest(__file__))
+    identity=dict(**source_identity(),holdout_protocol_sha256=digest('docs/R7_HOLDOUT_PROTOCOL.json'),holdout_script_sha256=digest(__file__),parser_sha256=digest('solution/idsse.py'))
     write_new(ROOT/'evaluation_started.json',dict(**identity,utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
     started=time.monotonic();rows=[]
     for m in IDS:

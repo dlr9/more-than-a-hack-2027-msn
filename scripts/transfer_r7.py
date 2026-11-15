@@ -11,7 +11,7 @@ from solution.evidence import labels_from_batch,score_sequence,period_reference,
 from solution.calibration import probability_metrics
 from solution.decoder import emission_probabilities,viterbi_decode
 from solution.quality import period_blocks
-from scripts.research_r7 import model_path,VARIANTS,write_new,record,source_identity
+from scripts.research_r7 import model_path,VARIANTS,write_new,write_public_once,record,source_identity
 from solution.idsse import digest
 
 def main():
@@ -47,5 +47,5 @@ def main():
         np.savez_compressed(out/f'{v}.npz',p_alive=a,p_home=h,decoded=pred)
         print('partial transfer',v,score['partial_macro_f1'],flush=True)
     result=dict(experiment_id='E07_cross_provider_partial',**source_identity(),transfer_script_sha256=digest(__file__),adapter_sha256=digest('solution/r7_skillcorner.py'),transfer_protocol_sha256=digest('docs/R7_TRANSFER_PROTOCOL.json'),rows=rows,reference=score_sequence(truth,period_reference(base),base['period'],10.,semantics='partial_SC'),full_spell_f1=None,wall_s=time.monotonic()-started,decision='diagnostic only; no selection, no D ground truth',competition_promoted=False)
-    write_new(out/'results.json',result);write_new('docs/R7_TRANSFER_RESULTS.json',result);record({k:v for k,v in result.items()if k not in{'rows','reference'}})
+    write_new(out/'results.json',result);write_public_once('docs/R7_TRANSFER_RESULTS.json',result);record({k:v for k,v in result.items()if k not in{'rows','reference'}})
 if __name__=='__main__':main()

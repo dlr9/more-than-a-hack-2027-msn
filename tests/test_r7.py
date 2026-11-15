@@ -70,3 +70,33 @@ class ReleaseBoundaryTests(unittest.TestCase):
         inspect_blob('docs/R7_MODEL_CARD.md',b'Public aggregate statistics only')
         with self.assertRaises(ValueError):inspect_blob('docs/R7_MODEL_CARD.md',b'frame,label\n0,H\n')
         with self.assertRaises(ValueError):inspect_blob('docs/R7_MODEL_CARD.md',b'ghp_'+b'a'*36)
+
+class SkillCornerAdapterTests(unittest.TestCase):
+    def test_extrapolated_players_excluded_and_timeline_checked(self):
+        import tempfile
+        from pathlib import Path
+        from solution.r7_skillcorner import read_positions
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d)/'synthetic';folder.mkdir()
+            meta=dict(home_team={'id':1},away_team={'id':2},players=[{'id':10,'team_id':1},{'id':20,'team_id':2}],
+                      match_periods=[{'start_frame':0,'end_frame':1,'period':1}],pitch_length=105,pitch_width=68)
+            (folder/'synthetic_match.json').write_text(json.dumps(meta))
+            rows=[dict(frame=i,ball_data={'x':0,'y':0},player_data=[{'player_id':10,'x':1,'y':0,'is_detected':True},{'player_id':20,'x':2,'y':0,'is_detected':False}])for i in range(2)]
+            p=folder/'synthetic_tracking_extrapolated.jsonl';p.write_text('\n'.join(json.dumps(r)for r in rows))
+            raw,pitch=read_positions(folder)
+            self.assertTrue(np.isfinite(raw['players_xy'][:,0]).all())
+            self.assertTrue(np.isnan(raw['players_xy'][:,1]).all())
+            self.assertEqual(pitch,(105.,68.))
+            p.write_text(json.dumps(rows[1]))
+            with self.assertRaises(ValueError):read_positions(folder)
+
+class FrozenReportTests(unittest.TestCase):
+    def test_reproduction_preserves_original_public_summary(self):
+        import tempfile
+        from pathlib import Path
+        from scripts.research_r7 import write_public_once
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'summary.json'
+            self.assertTrue(write_public_once(p,{'run':'original'}))
+            self.assertFalse(write_public_once(p,{'run':'reproduction'}))
+            self.assertEqual(json.loads(p.read_text()),{'run':'original'})
