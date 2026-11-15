@@ -41,9 +41,9 @@ class ControlEventTests(unittest.TestCase):
         e,s=control_episodes(r,25);self.assertEqual(e,[]);self.assertTrue(np.all(s==-1))
     def test_control_window_can_recover_short_team_spell(self):
         from solution.control_events import decode_control_windows
-        n=50;p=np.full(n,'H');h=np.full(n,.55);signal=np.full(n,-1);signal[20:30]=1
-        q,t=decode_control_windows(p,h,np.arange(n),np.ones(n),25,[dict(start=20,end=30,team='A')],signal)
-        self.assertTrue(np.all(q[20:30]=='A'));self.assertEqual(q[0],'H');self.assertEqual(q[-1],'H')
+        n=100;p=np.full(n,'H');h=np.full(n,.55);signal=np.full(n,-1);signal[40:50]=1
+        q,t=decode_control_windows(p,h,np.arange(n),np.ones(n),25,[dict(start=40,end=50,team='A')],signal)
+        self.assertTrue(np.all(q[40:50]=='A'));self.assertEqual(q[0],'H');self.assertEqual(q[-1],'H')
         self.assertEqual(t['created_minus_removed_HA_boundaries'],2)
     def test_control_window_keeps_single_frame_dead(self):
         from solution.control_events import decode_control_windows
