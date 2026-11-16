@@ -1,0 +1,75 @@
+{
+  "base": "2eea576d369bf683c10e26ea64730bad69f688e8",
+  "read_sources": {
+    "docs/R11_STATUS.md": {
+      "bytes": 6218,
+      "sha256": "11e6b7e11c77fce84552cd1c4783ac1fdad0e6551f645af96bd6ab32345dc605"
+    },
+    "docs/R11_EVENT_RESULTS.json": {
+      "bytes": 16965,
+      "sha256": "4668713b57322181c3b719a606c979964f3a143d564bb77a87f476af99612237"
+    },
+    "docs/R11_EVENT_SOURCE_AUDIT.md": {
+      "bytes": 8640,
+      "sha256": "d19880db3fd4fde97288d2e6e95fcb7d753be39bd61a0ed53711b7dc0b559d55"
+    },
+    "docs/R11_ROI_RESULTS.json": {
+      "bytes": 130848,
+      "sha256": "23724d94c26f90a32073ec450fab3ab1f489c29ba59341b7494802b89451ec3c"
+    },
+    "docs/R11_PUBLIC_MODEL_AUDIT.md": {
+      "bytes": 7023,
+      "sha256": "53f8bcb3da48346605dc9887f09602bc2520a2a6c271d2ad91e1940745af7149"
+    },
+    "r11/acquisition_events.py": {
+      "bytes": 7920,
+      "sha256": "114099b82a3e5e8547ad95cc7558ab6073b1d25366dc18250248b69765de2d33"
+    },
+    "r11/event_learning.py": {
+      "bytes": 1513,
+      "sha256": "d606f724962ee03c68fff3d52cbae1f6611bb4602156f206acaaa014578c9218"
+    },
+    "scripts/train_r11_events.py": {
+      "bytes": 10555,
+      "sha256": "8750bd63e3e88b745173d6301e700fd011662847079c4b301657a85e48e7fa4c"
+    },
+    "solution/idsse.py": {
+      "bytes": 8292,
+      "sha256": "65de3d28d486c9acb6a82b77f1fc34f8f5a8a36cff20412e0fabb7b8ae28f0e4"
+    },
+    "docs/R6_RESULTS.md": {
+      "bytes": 5559,
+      "sha256": "12823bbe4920193f31a9e001d690df746acf6630aa336123fec05f2f98835553"
+    },
+    "evaluation/possession_metrics.py": {
+      "bytes": 33370,
+      "sha256": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+    },
+    "RULES.md": {
+      "bytes": 5965,
+      "sha256": "b6f63456d215e2e6016619f6268580ed8921bb96ba41c7d3037f2733f8d10153"
+    },
+    "EVALUATION.md": {
+      "bytes": 6916,
+      "sha256": "25b61f6d8a2bcbe77396bd9a9cae564b27424538e0a958aa1cd365e1e58ae571"
+    },
+    "SUBMISSION.md": {
+      "bytes": 4454,
+      "sha256": "acb90eebc0f113fc072d90ac77be501e63de1dde65e9227186b4718bc24f22d2"
+    }
+  },
+  "summary": [
+    "R11 solves conditional vendor anchors only, all visible; four heads preserved",
+    "DFL source parser separates labels and observations; source frozen-ball shortcut persists in inherited D baseline",
+    "Official scoring complete5IoU, X fill and gap/half separation unchanged",
+    "Rules allow algorithmic target pseudo learning but cloud restriction still absolute; no target actions",
+    "R7B ledger proves WMX/WN1 exposed; no sealed file read"
+  ],
+  "remote_pr_heads": {
+    "5": "9f701a4",
+    "6": "3fa13c4",
+    "7": "2eea576",
+    "feat/data": "a54219dbff8948507b112234127816c133f7c08b"
+  },
+  "prior_models_preserved": true
+}

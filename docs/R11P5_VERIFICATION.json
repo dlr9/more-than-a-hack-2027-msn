@@ -1,0 +1,386 @@
+{
+  "model_hashes": 12,
+  "exact_probability_arrays_replayed": 24,
+  "rows": [
+    {
+      "match": "J03WPY",
+      "domain": "natural",
+      "full_timeline_hazard_AP": 0.19237565752831892,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 146211,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 2,
+          "lost_matches": 0,
+          "net": 2
+        },
+        "0.4": {
+          "newly_matched": 2,
+          "lost_matches": 0,
+          "net": 2
+        },
+        "0.5": {
+          "newly_matched": 2,
+          "lost_matches": 0,
+          "net": 2
+        },
+        "0.6": {
+          "newly_matched": 3,
+          "lost_matches": 0,
+          "net": 3
+        },
+        "0.7": {
+          "newly_matched": 4,
+          "lost_matches": 1,
+          "net": 3
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 146211,
+          "gt_direct_positive_frames": 3450,
+          "wrong_HA_before": 9377,
+          "wrong_HA_after": 9355
+        },
+        "missing": {
+          "frames": 0,
+          "gt_direct_positive_frames": 0,
+          "wrong_HA_before": 0,
+          "wrong_HA_after": 0
+        }
+      },
+      "false_D_cuts": {
+        "base": 21,
+        "candidate": 21
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 30,
+          "exact_adjacent_owner_and_detected_D": 15
+        },
+        "candidate": {
+          "source_same_team_restarts": 30,
+          "exact_adjacent_owner_and_detected_D": 16
+        }
+      },
+      "D_mask_exact": true
+    },
+    {
+      "match": "J03WPY",
+      "domain": "long",
+      "full_timeline_hazard_AP": 0.16619299030874363,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 146211,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 3,
+          "lost_matches": 0,
+          "net": 3
+        },
+        "0.4": {
+          "newly_matched": 2,
+          "lost_matches": 0,
+          "net": 2
+        },
+        "0.5": {
+          "newly_matched": 2,
+          "lost_matches": 0,
+          "net": 2
+        },
+        "0.6": {
+          "newly_matched": 3,
+          "lost_matches": 0,
+          "net": 3
+        },
+        "0.7": {
+          "newly_matched": 2,
+          "lost_matches": 1,
+          "net": 1
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 126794,
+          "gt_direct_positive_frames": 3011,
+          "wrong_HA_before": 8276,
+          "wrong_HA_after": 8257
+        },
+        "missing": {
+          "frames": 19417,
+          "gt_direct_positive_frames": 439,
+          "wrong_HA_before": 9753,
+          "wrong_HA_after": 9753
+        }
+      },
+      "false_D_cuts": {
+        "base": 126,
+        "candidate": 126
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 30,
+          "exact_adjacent_owner_and_detected_D": 12
+        },
+        "candidate": {
+          "source_same_team_restarts": 30,
+          "exact_adjacent_owner_and_detected_D": 13
+        }
+      },
+      "D_mask_exact": true
+    },
+    {
+      "match": "J03WOH",
+      "domain": "natural",
+      "full_timeline_hazard_AP": 0.2040776198709328,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 137214,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 0,
+          "lost_matches": 0,
+          "net": 0
+        },
+        "0.4": {
+          "newly_matched": 0,
+          "lost_matches": 0,
+          "net": 0
+        },
+        "0.5": {
+          "newly_matched": 0,
+          "lost_matches": 1,
+          "net": -1
+        },
+        "0.6": {
+          "newly_matched": 1,
+          "lost_matches": 0,
+          "net": 1
+        },
+        "0.7": {
+          "newly_matched": 1,
+          "lost_matches": 1,
+          "net": 0
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 137214,
+          "gt_direct_positive_frames": 3265,
+          "wrong_HA_before": 9274,
+          "wrong_HA_after": 9214
+        },
+        "missing": {
+          "frames": 0,
+          "gt_direct_positive_frames": 0,
+          "wrong_HA_before": 0,
+          "wrong_HA_after": 0
+        }
+      },
+      "false_D_cuts": {
+        "base": 14,
+        "candidate": 14
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 34,
+          "exact_adjacent_owner_and_detected_D": 21
+        },
+        "candidate": {
+          "source_same_team_restarts": 34,
+          "exact_adjacent_owner_and_detected_D": 21
+        }
+      },
+      "D_mask_exact": true
+    },
+    {
+      "match": "J03WOH",
+      "domain": "long",
+      "full_timeline_hazard_AP": 0.18441349635227974,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 137214,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 1,
+          "lost_matches": 2,
+          "net": -1
+        },
+        "0.4": {
+          "newly_matched": 1,
+          "lost_matches": 0,
+          "net": 1
+        },
+        "0.5": {
+          "newly_matched": 0,
+          "lost_matches": 0,
+          "net": 0
+        },
+        "0.6": {
+          "newly_matched": 1,
+          "lost_matches": 0,
+          "net": 1
+        },
+        "0.7": {
+          "newly_matched": 2,
+          "lost_matches": 1,
+          "net": 1
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 118639,
+          "gt_direct_positive_frames": 2894,
+          "wrong_HA_before": 8553,
+          "wrong_HA_after": 8515
+        },
+        "missing": {
+          "frames": 18575,
+          "gt_direct_positive_frames": 371,
+          "wrong_HA_before": 7847,
+          "wrong_HA_after": 7847
+        }
+      },
+      "false_D_cuts": {
+        "base": 109,
+        "candidate": 109
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 34,
+          "exact_adjacent_owner_and_detected_D": 17
+        },
+        "candidate": {
+          "source_same_team_restarts": 34,
+          "exact_adjacent_owner_and_detected_D": 17
+        }
+      },
+      "D_mask_exact": true
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "natural",
+      "full_timeline_hazard_AP": 0.10293384572065624,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 142345,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 1,
+          "lost_matches": 3,
+          "net": -2
+        },
+        "0.4": {
+          "newly_matched": 0,
+          "lost_matches": 4,
+          "net": -4
+        },
+        "0.5": {
+          "newly_matched": 0,
+          "lost_matches": 5,
+          "net": -5
+        },
+        "0.6": {
+          "newly_matched": 0,
+          "lost_matches": 4,
+          "net": -4
+        },
+        "0.7": {
+          "newly_matched": 1,
+          "lost_matches": 6,
+          "net": -5
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 142345,
+          "gt_direct_positive_frames": 3280,
+          "wrong_HA_before": 9901,
+          "wrong_HA_after": 10206
+        },
+        "missing": {
+          "frames": 0,
+          "gt_direct_positive_frames": 0,
+          "wrong_HA_before": 0,
+          "wrong_HA_after": 0
+        }
+      },
+      "false_D_cuts": {
+        "base": 30,
+        "candidate": 30
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 42,
+          "exact_adjacent_owner_and_detected_D": 27
+        },
+        "candidate": {
+          "source_same_team_restarts": 42,
+          "exact_adjacent_owner_and_detected_D": 27
+        }
+      },
+      "D_mask_exact": true
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "long",
+      "full_timeline_hazard_AP": 0.09081787382944564,
+      "positive_tolerance_s": 0.2,
+      "full_timeline_frames": 142345,
+      "spell_match_changes": {
+        "0.3": {
+          "newly_matched": 1,
+          "lost_matches": 2,
+          "net": -1
+        },
+        "0.4": {
+          "newly_matched": 1,
+          "lost_matches": 3,
+          "net": -2
+        },
+        "0.5": {
+          "newly_matched": 1,
+          "lost_matches": 4,
+          "net": -3
+        },
+        "0.6": {
+          "newly_matched": 1,
+          "lost_matches": 5,
+          "net": -4
+        },
+        "0.7": {
+          "newly_matched": 1,
+          "lost_matches": 6,
+          "net": -5
+        }
+      },
+      "strata": {
+        "visible": {
+          "frames": 123320,
+          "gt_direct_positive_frames": 2656,
+          "wrong_HA_before": 8373,
+          "wrong_HA_after": 8621
+        },
+        "missing": {
+          "frames": 19025,
+          "gt_direct_positive_frames": 624,
+          "wrong_HA_before": 11746,
+          "wrong_HA_after": 11746
+        }
+      },
+      "false_D_cuts": {
+        "base": 168,
+        "candidate": 168
+      },
+      "restarts": {
+        "base": {
+          "source_same_team_restarts": 42,
+          "exact_adjacent_owner_and_detected_D": 21
+        },
+        "candidate": {
+          "source_same_team_restarts": 42,
+          "exact_adjacent_owner_and_detected_D": 21
+        }
+      },
+      "D_mask_exact": true
+    }
+  ],
+  "new_fits": 0,
+  "warning": "All-timeline evaluation includes D and all near-boundary negatives; training-only exclusion AP remains separately labelled in original results. No decision/threshold changed."
+}
