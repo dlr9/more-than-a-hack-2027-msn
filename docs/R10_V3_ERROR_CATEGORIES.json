@@ -1,0 +1,2609 @@
+{
+  "status": "POSTHOC_EVALUATOR_ONLY_NOT_A_SELECTION_OR_TUNING_PROTOCOL",
+  "purpose": "Explain failure by next true spell duration and wrong-direction nearby signals; never export GT arrays",
+  "experiments": [
+    {
+      "experiment": "C1FIX",
+      "rows": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 19,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 10
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 10
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 9
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 19,
+                "opposite_direction_only_nearby": 2
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 13
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 1
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 7
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 19,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 16,
+                "opposite_direction_only_nearby": 6
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 8
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 20,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 7
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 10
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 15,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 7
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 15,
+                "opposite_direction_only_nearby": 2
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 7
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 9
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 9
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 3
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 8
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 11
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 7
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 4
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 7
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 6
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 2
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 7
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 7
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "experiment": "C2",
+      "rows": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 17,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 10
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 67,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 94,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 17,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 8
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 10
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 48,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 78,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 104,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 17,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 9
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 45,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 68,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 97,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 17,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 10
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 47,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 75,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 106,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 15,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 55,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 96,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 3
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 36,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 103,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 5
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 13,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 14,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 39,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 63,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 101,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 5
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 11,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 3
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 38,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 58,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 105,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 5
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 7
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 3
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 66,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 69,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 5
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "dropout",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 10,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 6
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 12,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 6
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 74,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 90,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 6
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "short",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 5,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 9,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 2
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 5
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 28,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 0
+              },
+              "one_to3": {
+                "old_missed": 77,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 78,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 7
+              }
+            }
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "by_next_GT_spell_length": {
+            "geometry": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 2
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 6,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "M2prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 4,
+                "opposite_direction_only_nearby": 5
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "C1prob": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 4
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 8,
+                "opposite_direction_only_nearby": 1
+              }
+            },
+            "E1fix": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 0,
+                "opposite_direction_only_nearby": 0
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 7,
+                "opposite_direction_only_nearby": 0
+              }
+            },
+            "shuffled_team": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 3
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 4
+              }
+            },
+            "shifted_time": {
+              "lt1": {
+                "old_missed": 26,
+                "recovered": 2,
+                "opposite_direction_only_nearby": 1
+              },
+              "one_to3": {
+                "old_missed": 72,
+                "recovered": 3,
+                "opposite_direction_only_nearby": 1
+              },
+              "ge3": {
+                "old_missed": 86,
+                "recovered": 1,
+                "opposite_direction_only_nearby": 7
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha": "976b220bbd9c9486ceb9027d62f49a74ca90895822c4b94b969969b2b1937b2a"
+}
