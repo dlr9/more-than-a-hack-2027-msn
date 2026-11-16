@@ -1,0 +1,113 @@
+{
+  "posthoc_not_selection": true,
+  "rows": [
+    {
+      "match": "J03WPY",
+      "domain": "natural",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 69,
+          "short_false_D_runs": 68,
+          "opposite_owner_false_D_bridges": 65,
+          "maximum_false_D_seconds": 1.0
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 9,
+          "short_false_D_runs": 8,
+          "opposite_owner_false_D_bridges": 2,
+          "maximum_false_D_seconds": 1.0
+        }
+      }
+    },
+    {
+      "match": "J03WPY",
+      "domain": "long",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 116,
+          "short_false_D_runs": 56,
+          "opposite_owner_false_D_bridges": 77,
+          "maximum_false_D_seconds": 9.96
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 61,
+          "short_false_D_runs": 5,
+          "opposite_owner_false_D_bridges": 23,
+          "maximum_false_D_seconds": 10.08
+        }
+      }
+    },
+    {
+      "match": "J03WOH",
+      "domain": "natural",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 59,
+          "short_false_D_runs": 59,
+          "opposite_owner_false_D_bridges": 55,
+          "maximum_false_D_seconds": 0.6
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 8,
+          "short_false_D_runs": 8,
+          "opposite_owner_false_D_bridges": 1,
+          "maximum_false_D_seconds": 0.6
+        }
+      }
+    },
+    {
+      "match": "J03WOH",
+      "domain": "long",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 99,
+          "short_false_D_runs": 54,
+          "opposite_owner_false_D_bridges": 65,
+          "maximum_false_D_seconds": 10.04
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 50,
+          "short_false_D_runs": 8,
+          "opposite_owner_false_D_bridges": 12,
+          "maximum_false_D_seconds": 10.08
+        }
+      }
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "natural",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 92,
+          "short_false_D_runs": 91,
+          "opposite_owner_false_D_bridges": 83,
+          "maximum_false_D_seconds": 1.04
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 23,
+          "short_false_D_runs": 21,
+          "opposite_owner_false_D_bridges": 3,
+          "maximum_false_D_seconds": 1.8
+        }
+      }
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "long",
+      "variants": {
+        "global": {
+          "wholly_false_D_runs": 139,
+          "short_false_D_runs": 72,
+          "opposite_owner_false_D_bridges": 82,
+          "maximum_false_D_seconds": 10.0
+        },
+        "HC_M3": {
+          "wholly_false_D_runs": 85,
+          "short_false_D_runs": 18,
+          "opposite_owner_false_D_bridges": 20,
+          "maximum_false_D_seconds": 10.08
+        }
+      }
+    }
+  ]
+}

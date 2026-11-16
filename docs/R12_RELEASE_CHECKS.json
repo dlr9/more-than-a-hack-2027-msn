@@ -1,0 +1,14 @@
+{
+  "local_tests": 225,
+  "clean_source_tests": 225,
+  "clean_tests_passed": true,
+  "clean_log_sha256": "9e437ad830796af8fdd9150d5e689102e1d14d4449d8626e311c1a2d9be324ee",
+  "exact_decoder_and_latent_replays": 24,
+  "full_official_ROI_score_equivalences": 54,
+  "dead_bridge_script_replay_exact": true,
+  "remote_PR8_head": "a0acdbaa3b69186f3e161e58a288b2f96fea0693",
+  "remote_PR8_draft": true,
+  "remote_feat_data": "a54219dbff8948507b112234127816c133f7c08b",
+  "historical_branches_modified": false,
+  "restricted_data_accessed": false
+}

@@ -1,0 +1,1220 @@
+{
+  "rows": [
+    {
+      "match": "J03WPY",
+      "domain": "natural",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 81,
+          "true_possessions_cut_by_D": 73,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 16,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9856,
+              "false_D": 199,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 152,
+          "true_possessions_cut_by_D": 133,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 16,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9769,
+              "false_D": 361,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 148,
+          "true_possessions_cut_by_D": 131,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 17,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9790,
+              "false_D": 320,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 113,
+          "true_possessions_cut_by_D": 97,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 16,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9854,
+              "false_D": 251,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 162,
+          "true_possessions_cut_by_D": 133,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 12,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 14736,
+              "false_D": 1936,
+              "missed_D": 933
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 0,
+          "true_possessions_cut_by_D": 0,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 76927,
+              "false_D": 0,
+              "missed_D": 64751
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 20,
+          "true_possessions_cut_by_D": 18,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 17,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9215,
+              "false_D": 102,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 21,
+          "true_possessions_cut_by_D": 19,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 16,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 9377,
+              "false_D": 103,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 23,
+          "true_possessions_cut_by_D": 20,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 146211,
+              "wrong": 15444,
+              "false_D": 106,
+              "missed_D": 0
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 57,
+          "has_correct_anchor": 8
+        },
+        "1to5": {
+          "n": 196,
+          "has_correct_anchor": 51
+        },
+        "ge5": {
+          "n": 168,
+          "has_correct_anchor": 158
+        }
+      },
+      "true_direct_handover_count": 324,
+      "direct_handover_with_correct_anchor_start_within1s": 109
+    },
+    {
+      "match": "J03WPY",
+      "domain": "long",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 181,
+          "true_possessions_cut_by_D": 163,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 14,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8496,
+              "false_D": 210,
+              "missed_D": 1
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9989,
+              "false_D": 9737,
+              "missed_D": 132
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 230,
+          "true_possessions_cut_by_D": 195,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 14,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8601,
+              "false_D": 308,
+              "missed_D": 1
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9910,
+              "false_D": 9656,
+              "missed_D": 132
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 232,
+          "true_possessions_cut_by_D": 197,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 15,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8389,
+              "false_D": 286,
+              "missed_D": 1
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9896,
+              "false_D": 9668,
+              "missed_D": 130
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 210,
+          "true_possessions_cut_by_D": 187,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 14,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8547,
+              "false_D": 253,
+              "missed_D": 1
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9951,
+              "false_D": 9697,
+              "missed_D": 132
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 269,
+          "true_possessions_cut_by_D": 214,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 9,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 13261,
+              "false_D": 1819,
+              "missed_D": 838
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 10814,
+              "false_D": 10814,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 70,
+          "true_possessions_cut_by_D": 68,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 67006,
+              "false_D": 0,
+              "missed_D": 56148
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 11191,
+              "false_D": 4779,
+              "missed_D": 5115
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 124,
+          "true_possessions_cut_by_D": 120,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 15,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8154,
+              "false_D": 159,
+              "missed_D": 6
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9872,
+              "false_D": 9624,
+              "missed_D": 145
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 126,
+          "true_possessions_cut_by_D": 122,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 14,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 8281,
+              "false_D": 160,
+              "missed_D": 5
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9887,
+              "false_D": 9652,
+              "missed_D": 134
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 125,
+          "true_possessions_cut_by_D": 119,
+          "same_team_restarts": 30,
+          "same_team_restarts_both_boundaries_within1s": 19,
+          "strata": {
+            "observed": {
+              "n": 126794,
+              "wrong": 13549,
+              "false_D": 165,
+              "missed_D": 4
+            },
+            "missing": {
+              "n": 19417,
+              "wrong": 9949,
+              "false_D": 9731,
+              "missed_D": 110
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 57,
+          "has_correct_anchor": 7
+        },
+        "1to5": {
+          "n": 196,
+          "has_correct_anchor": 48
+        },
+        "ge5": {
+          "n": 168,
+          "has_correct_anchor": 153
+        }
+      },
+      "true_direct_handover_count": 324,
+      "direct_handover_with_correct_anchor_start_within1s": 96
+    },
+    {
+      "match": "J03WOH",
+      "domain": "natural",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 65,
+          "true_possessions_cut_by_D": 57,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9310,
+              "false_D": 152,
+              "missed_D": 30
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 144,
+          "true_possessions_cut_by_D": 124,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 23,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9333,
+              "false_D": 331,
+              "missed_D": 34
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 128,
+          "true_possessions_cut_by_D": 111,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 21,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9462,
+              "false_D": 254,
+              "missed_D": 34
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 110,
+          "true_possessions_cut_by_D": 95,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9154,
+              "false_D": 226,
+              "missed_D": 30
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 167,
+          "true_possessions_cut_by_D": 133,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 13,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 14655,
+              "false_D": 1844,
+              "missed_D": 1201
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 0,
+          "true_possessions_cut_by_D": 0,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 77029,
+              "false_D": 0,
+              "missed_D": 65269
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 15,
+          "true_possessions_cut_by_D": 11,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9889,
+              "false_D": 54,
+              "missed_D": 41
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 14,
+          "true_possessions_cut_by_D": 11,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 21,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 9311,
+              "false_D": 53,
+              "missed_D": 37
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 14,
+          "true_possessions_cut_by_D": 11,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 26,
+          "strata": {
+            "observed": {
+              "n": 137214,
+              "wrong": 14670,
+              "false_D": 53,
+              "missed_D": 41
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 46,
+          "has_correct_anchor": 7
+        },
+        "1to5": {
+          "n": 188,
+          "has_correct_anchor": 71
+        },
+        "ge5": {
+          "n": 168,
+          "has_correct_anchor": 157
+        }
+      },
+      "true_direct_handover_count": 301,
+      "direct_handover_with_correct_anchor_start_within1s": 110
+    },
+    {
+      "match": "J03WOH",
+      "domain": "long",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 160,
+          "true_possessions_cut_by_D": 138,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 19,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8442,
+              "false_D": 185,
+              "missed_D": 32
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8149,
+              "false_D": 7854,
+              "missed_D": 186
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 226,
+          "true_possessions_cut_by_D": 182,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8512,
+              "false_D": 329,
+              "missed_D": 36
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8066,
+              "false_D": 7764,
+              "missed_D": 186
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 213,
+          "true_possessions_cut_by_D": 175,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8596,
+              "false_D": 272,
+              "missed_D": 36
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8117,
+              "false_D": 7817,
+              "missed_D": 186
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 205,
+          "true_possessions_cut_by_D": 169,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8586,
+              "false_D": 251,
+              "missed_D": 36
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8120,
+              "false_D": 7818,
+              "missed_D": 186
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 256,
+          "true_possessions_cut_by_D": 202,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 12,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 13249,
+              "false_D": 1653,
+              "missed_D": 1043
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8770,
+              "false_D": 8770,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 59,
+          "true_possessions_cut_by_D": 59,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 66281,
+              "false_D": 0,
+              "missed_D": 55464
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 10155,
+              "false_D": 3633,
+              "missed_D": 5363
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 108,
+          "true_possessions_cut_by_D": 102,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 19,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8930,
+              "false_D": 125,
+              "missed_D": 46
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 7972,
+              "false_D": 7625,
+              "missed_D": 204
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 109,
+          "true_possessions_cut_by_D": 104,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 17,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 8599,
+              "false_D": 128,
+              "missed_D": 46
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8051,
+              "false_D": 7732,
+              "missed_D": 204
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 108,
+          "true_possessions_cut_by_D": 103,
+          "same_team_restarts": 34,
+          "same_team_restarts_both_boundaries_within1s": 21,
+          "strata": {
+            "observed": {
+              "n": 118639,
+              "wrong": 13360,
+              "false_D": 133,
+              "missed_D": 39
+            },
+            "missing": {
+              "n": 18575,
+              "wrong": 8007,
+              "false_D": 7851,
+              "missed_D": 53
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 46,
+          "has_correct_anchor": 4
+        },
+        "1to5": {
+          "n": 188,
+          "has_correct_anchor": 61
+        },
+        "ge5": {
+          "n": 168,
+          "has_correct_anchor": 152
+        }
+      },
+      "true_direct_handover_count": 301,
+      "direct_handover_with_correct_anchor_start_within1s": 96
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "natural",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 104,
+          "true_possessions_cut_by_D": 95,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 26,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 9636,
+              "false_D": 309,
+              "missed_D": 3
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 200,
+          "true_possessions_cut_by_D": 167,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 25,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 10031,
+              "false_D": 515,
+              "missed_D": 11
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 163,
+          "true_possessions_cut_by_D": 138,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 25,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 10197,
+              "false_D": 408,
+              "missed_D": 9
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 152,
+          "true_possessions_cut_by_D": 133,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 26,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 10023,
+              "false_D": 383,
+              "missed_D": 3
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 171,
+          "true_possessions_cut_by_D": 133,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 26,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 14576,
+              "false_D": 2106,
+              "missed_D": 996
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 0,
+          "true_possessions_cut_by_D": 0,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 71239,
+              "false_D": 0,
+              "missed_D": 57993
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 30,
+          "true_possessions_cut_by_D": 20,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 27,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 10079,
+              "false_D": 212,
+              "missed_D": 11
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 30,
+          "true_possessions_cut_by_D": 20,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 28,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 9912,
+              "false_D": 212,
+              "missed_D": 11
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 28,
+          "true_possessions_cut_by_D": 18,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 142345,
+              "wrong": 16860,
+              "false_D": 209,
+              "missed_D": 11
+            },
+            "missing": {
+              "n": 0,
+              "wrong": 0,
+              "false_D": 0,
+              "missed_D": 0
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 37,
+          "has_correct_anchor": 7
+        },
+        "1to5": {
+          "n": 175,
+          "has_correct_anchor": 56
+        },
+        "ge5": {
+          "n": 189,
+          "has_correct_anchor": 176
+        }
+      },
+      "true_direct_handover_count": 302,
+      "direct_handover_with_correct_anchor_start_within1s": 115
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "long",
+      "additional_metrics": {
+        "global": {
+          "false_D_runs_inside_true_possessions": 226,
+          "true_possessions_cut_by_D": 188,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 21,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 7986,
+              "false_D": 344,
+              "missed_D": 4
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11937,
+              "false_D": 11664,
+              "missed_D": 136
+            }
+          }
+        },
+        "no_anchors": {
+          "false_D_runs_inside_true_possessions": 295,
+          "true_possessions_cut_by_D": 227,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 8215,
+              "false_D": 486,
+              "missed_D": 4
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11915,
+              "false_D": 11616,
+              "missed_D": 136
+            }
+          }
+        },
+        "shift": {
+          "false_D_runs_inside_true_possessions": 283,
+          "true_possessions_cut_by_D": 221,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 8542,
+              "false_D": 434,
+              "missed_D": 4
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11911,
+              "false_D": 11594,
+              "missed_D": 136
+            }
+          }
+        },
+        "shuffle_team": {
+          "false_D_runs_inside_true_possessions": 257,
+          "true_possessions_cut_by_D": 205,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 7918,
+              "false_D": 385,
+              "missed_D": 4
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11928,
+              "false_D": 11655,
+              "missed_D": 136
+            }
+          }
+        },
+        "PR1_V3": {
+          "false_D_runs_inside_true_possessions": 281,
+          "true_possessions_cut_by_D": 221,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 21,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 12277,
+              "false_D": 1782,
+              "missed_D": 939
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 12697,
+              "false_D": 12697,
+              "missed_D": 0
+            }
+          }
+        },
+        "reference_smooth50": {
+          "false_D_runs_inside_true_possessions": 90,
+          "true_possessions_cut_by_D": 90,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 0,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 62542,
+              "false_D": 0,
+              "missed_D": 51665
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11181,
+              "false_D": 5626,
+              "missed_D": 3829
+            }
+          }
+        },
+        "M3": {
+          "false_D_runs_inside_true_possessions": 167,
+          "true_possessions_cut_by_D": 149,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 20,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 8538,
+              "false_D": 302,
+              "missed_D": 9
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11837,
+              "false_D": 11559,
+              "missed_D": 144
+            }
+          }
+        },
+        "HC_M3": {
+          "false_D_runs_inside_true_possessions": 168,
+          "true_possessions_cut_by_D": 149,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 22,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 8382,
+              "false_D": 305,
+              "missed_D": 9
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11890,
+              "false_D": 11608,
+              "missed_D": 144
+            }
+          }
+        },
+        "V2_idea_untuned": {
+          "false_D_runs_inside_true_possessions": 168,
+          "true_possessions_cut_by_D": 150,
+          "same_team_restarts": 42,
+          "same_team_restarts_both_boundaries_within1s": 17,
+          "strata": {
+            "observed": {
+              "n": 123320,
+              "wrong": 14219,
+              "false_D": 310,
+              "missed_D": 7
+            },
+            "missing": {
+              "n": 19025,
+              "wrong": 11998,
+              "false_D": 11781,
+              "missed_D": 96
+            }
+          }
+        }
+      },
+      "anchor_spell_coverage": {
+        "lt1": {
+          "n": 37,
+          "has_correct_anchor": 6
+        },
+        "1to5": {
+          "n": 175,
+          "has_correct_anchor": 45
+        },
+        "ge5": {
+          "n": 189,
+          "has_correct_anchor": 170
+        }
+      },
+      "true_direct_handover_count": 302,
+      "direct_handover_with_correct_anchor_start_within1s": 92
+    }
+  ],
+  "exact_prediction_replays": 24,
+  "official_and_ROI_equivalent_scores": 54,
+  "protocol_sha": "1cf9d5da327cbc73a00da871c202666c566c12330e42f9a5f133bec082823407",
+  "posthoc_diagnostics_not_selection": true
+}

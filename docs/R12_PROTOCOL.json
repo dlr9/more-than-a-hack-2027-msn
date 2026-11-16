@@ -1,0 +1,64 @@
+{
+  "id": "R12_GLOBAL_V1",
+  "hypothesis": "Global latent control/flight states can contain erroneous local anchors and retain ownership through flight better than hard suffix writes. This is structural information, NOT new independent sensor evidence.",
+  "source": "Public IDSSE CC BY4.0 three consumed development matches; no blind or cross-provider claim",
+  "inputs": {
+    "local_artifacts/r6/prepared/J03WPY/raw.npz": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c",
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r8/e08c/J03WPY.joblib": "3e0d085df0545c1d76918e0449512ac9119ee3c80ca2cd98877f16069d661bd0",
+    "local_artifacts/r6/prepared/J03WPY/natural.npz": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+    "local_artifacts/r7/core-v1/J03WPY-M3-natural.npz": "c42fc3caa73c5cc124513f1bd1fdc9b3d044b69c3bda6902508f88b7347be673",
+    "local_artifacts/r9-v2/e09a/J03WPY-natural-M2A-C1H.npz": "b014d2d2971aa81d0c7d6bb2b1e67b4a4509a985968e9d112bca9499d12ba7d6",
+    "local_artifacts/r7/prepared/J03WPY/long.npz": "693178e4c6242efe07741355c84c324b8d6bcd2b44adbcc57bdcc683ea4d6f22",
+    "local_artifacts/r7/stress-v1/J03WPY-M3-long.npz": "6373ca99cb507baf5ca1ce3cd5a19de765b648e27a31d62ba42081cf71f9ce14",
+    "local_artifacts/r9-v2/e09a/J03WPY-long-M2A-C1H.npz": "2b6a52fcaea28c70a8a8d27222e69ecfd464997acd9b13b5bf462d413cd1afd0",
+    "local_artifacts/r6/prepared/J03WOH/raw.npz": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M2_dropout.joblib": "3e992e6d9ba8e60c19c4572049289638803c28e38d03263ae3c7e0d31f54780b",
+    "local_artifacts/r8/e08c/J03WOH.joblib": "2f7940ade06004ded880dd3b4c1e54076965f4c1ecad595e6691ac4ab4f2246c",
+    "local_artifacts/r6/prepared/J03WOH/natural.npz": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+    "local_artifacts/r7/core-v1/J03WOH-M3-natural.npz": "2fa641e55b4af9e9260883c2a70208ac010302caa3ecbef0d65e8450d2410785",
+    "local_artifacts/r9-v2/e09a/J03WOH-natural-M2A-C1H.npz": "ade046d57b93acef68f7103b7927dd48a2510059f0018686e5baced2f6bcfde1",
+    "local_artifacts/r7/prepared/J03WOH/long.npz": "218a77be60a995c31381d715c1794576839190f3bb1eb68782c2b4fe25425a48",
+    "local_artifacts/r7/stress-v1/J03WOH-M3-long.npz": "806e40a1d7dad2858638a56091df270fa4c147dfdf75051423104d6f834bb682",
+    "local_artifacts/r9-v2/e09a/J03WOH-long-M2A-C1H.npz": "02ea16ac3fc77e51e3e1c14b93f3d899376de2b80d0f8c35a38ba00109c1c3f7",
+    "local_artifacts/r6/prepared/J03WQQ/raw.npz": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M2_dropout.joblib": "d373dd244cf455b1cd74114fa0d2e01be2dde63240a2f1b12e424b66de854e58",
+    "local_artifacts/r8/e08c/J03WQQ.joblib": "a059931ae7dc4842aea98784fa4824706151f143ee3b7b802c24d169a0d61753",
+    "local_artifacts/r6/prepared/J03WQQ/natural.npz": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+    "local_artifacts/r7/core-v1/J03WQQ-M3-natural.npz": "6f0c84efaef686bce54f4ea0fcf2f034e4d7206ad1ee070406ece3827207749f",
+    "local_artifacts/r9-v2/e09a/J03WQQ-natural-M2A-C1H.npz": "f53893000bf0b6b08bea67b1974962067a0b9233555497da9484a01061e4fdda",
+    "local_artifacts/r7/prepared/J03WQQ/long.npz": "c43c5eae4fbf3df0ff2f7af721f55b2b460a4f133a28352a021ea804902a7846",
+    "local_artifacts/r7/stress-v1/J03WQQ-M3-long.npz": "25e760068be8fe6f001da9d9c7f7d294582fd7824043c5ee03114503c0f04a78",
+    "local_artifacts/r9-v2/e09a/J03WQQ-long-M2A-C1H.npz": "a359916cff551aa9d5d940403c9a2232fccabe7456388d8484c29460be72c5d8",
+    "local_artifacts/v3/1874553/baseline.joblib": "e17380aca1d5634f9c341b9839472ae29abe96d4413cec1631ab09a3da5c2913"
+  },
+  "code": {
+    "r12/control_global.py": "2d2b9223fc7331e99c6c27b1b231ac248a48c090aa56e56d53d0b79f8c2f7fa2",
+    "scripts/research_r12.py": "3a83b4f35e68f8a2612a17e0629bf9f64e976570d0db9435f2bc91c03d36964a",
+    "solution/control_events.py": "15312442466c727c033e69cfd84212e1348ff97efb98424fd2a9ab37cdc12616",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+  },
+  "constants": "0.2s grid plus every anchor and baseline edge; log emissions integrated per second; own-control .95 at anchor else .1; opposite acquisition transition .3 with support vs3 otherwise; control-flight .3; enterD .3 exitD .1. Single configuration, no search or tuning.",
+  "anchor": "Existing persistent identity/comotion .12s physical evidence, UNCALIBRATED and NOT independent of HGB geometry; no single touch/nearest-only acquisition.",
+  "baselines": [
+    "reference_smooth50",
+    "frozen_PR1_V3_first_fold",
+    "M3",
+    "HC_M3",
+    "untuned_V2_idea_distance_plus_frozen_Alive"
+  ],
+  "controls": [
+    "no_anchors",
+    "shift30s_perhalf",
+    "shuffle_anchor_team_seed1201"
+  ],
+  "unavailable_ablations": {
+    "remove_visual": "NOT_APPLICABLE no visual input",
+    "remove_SmartTagging": "exact same no-tag execution, not independent ablation"
+  },
+  "raw_pipeline": "Recompute44 from raw allowed observation fields; compare cache feature equality; frozenM2 Alive+C1 Home. labels evaluator-only. OldV3 baseline alone uses source reported player speed for schema2 compatibility.",
+  "gate": ">=2/3 natural improves HC,mean delta>=.02,positive mean5IoU TP and aggregateIoU.5 TP,no Dmiss rate increase>.02,no short recall loss>.02; all controls. Otherwise NO_GO. Any win research-only until independent complete provider validates.",
+  "new_fits": 0,
+  "rollback": "Untouched HC_M3/M3",
+  "stop": "No parameter changes after scores"
+}
