@@ -1,0 +1,60 @@
+{
+  "id": "E11.5-A",
+  "hypothesis": "Full-source direct handover positives and clean interior negatives identify ordered team-control changes autonomously; symmetric temporal contrast is incremental to instantaneous geometry.",
+  "folds": {
+    "J03WPY": [
+      "J03WOH",
+      "J03WQQ"
+    ],
+    "J03WOH": [
+      "J03WPY",
+      "J03WQQ"
+    ],
+    "J03WQQ": [
+      "J03WPY",
+      "J03WOH"
+    ]
+  },
+  "exposure": "All3 intensely consumed development matches,shared home team. WMX/WN1 previously exposed, no sealed data opened.",
+  "source": "IDSSE DFL CC BY4.0 BallStatus/Possession, independently crosschecked; not official target GT",
+  "inputs": {
+    "local_artifacts/r6/prepared/J03WPY/natural.npz": "de50a44b258fa23e3669e933bc501fd3683121237f19b0e41f9e4d9b5b485853",
+    "local_artifacts/r9-v2/e09a/J03WPY-natural-M2A-C1H.npz": "b014d2d2971aa81d0c7d6bb2b1e67b4a4509a985968e9d112bca9499d12ba7d6",
+    "local_artifacts/r7/core-v1/J03WPY-M3-natural.npz": "c42fc3caa73c5cc124513f1bd1fdc9b3d044b69c3bda6902508f88b7347be673",
+    "local_artifacts/r10-v3/c2/J03WPY-natural.npz": "6e2f0e6d3529165e46024c3bca892c8213e8281c46edeafa585e473366cf3fea",
+    "local_artifacts/r7/prepared/J03WPY/long.npz": "693178e4c6242efe07741355c84c324b8d6bcd2b44adbcc57bdcc683ea4d6f22",
+    "local_artifacts/r9-v2/e09a/J03WPY-long-M2A-C1H.npz": "2b6a52fcaea28c70a8a8d27222e69ecfd464997acd9b13b5bf462d413cd1afd0",
+    "local_artifacts/r7/stress-v1/J03WPY-M3-long.npz": "6373ca99cb507baf5ca1ce3cd5a19de765b648e27a31d62ba42081cf71f9ce14",
+    "local_artifacts/r10-v3/c2/J03WPY-long.npz": "8b536103ebc0b17e15dd73c28f6ffe3912431ca3ddd1d853b70c7ca55db1c5f9",
+    "local_artifacts/r6/prepared/J03WOH/natural.npz": "c4e343b0401960de69366e7ccd6aadd701d8cc85d269f4792e99d0f523f2c540",
+    "local_artifacts/r9-v2/e09a/J03WOH-natural-M2A-C1H.npz": "ade046d57b93acef68f7103b7927dd48a2510059f0018686e5baced2f6bcfde1",
+    "local_artifacts/r7/core-v1/J03WOH-M3-natural.npz": "2fa641e55b4af9e9260883c2a70208ac010302caa3ecbef0d65e8450d2410785",
+    "local_artifacts/r10-v3/c2/J03WOH-natural.npz": "58091b035f379ee108c790bdc68cf854d8170e5e5bac62f30a9cf65d1f852cce",
+    "local_artifacts/r7/prepared/J03WOH/long.npz": "218a77be60a995c31381d715c1794576839190f3bb1eb68782c2b4fe25425a48",
+    "local_artifacts/r9-v2/e09a/J03WOH-long-M2A-C1H.npz": "02ea16ac3fc77e51e3e1c14b93f3d899376de2b80d0f8c35a38ba00109c1c3f7",
+    "local_artifacts/r7/stress-v1/J03WOH-M3-long.npz": "806e40a1d7dad2858638a56091df270fa4c147dfdf75051423104d6f834bb682",
+    "local_artifacts/r10-v3/c2/J03WOH-long.npz": "82f9efbcd47d1e3f9749eaa16da1e6729734d285feb7858bb1f6d43fa7307001",
+    "local_artifacts/r6/prepared/J03WQQ/natural.npz": "6966683e1571b7577b31b2c1e1a6932e63b939f37363ea4fbc70e81576738ace",
+    "local_artifacts/r9-v2/e09a/J03WQQ-natural-M2A-C1H.npz": "f53893000bf0b6b08bea67b1974962067a0b9233555497da9484a01061e4fdda",
+    "local_artifacts/r7/core-v1/J03WQQ-M3-natural.npz": "6f0c84efaef686bce54f4ea0fcf2f034e4d7206ad1ee070406ece3827207749f",
+    "local_artifacts/r10-v3/c2/J03WQQ-natural.npz": "d79619c3a56295c20c5d44ef279272e63dac303b0f859068b60d52f3b43be260",
+    "local_artifacts/r7/prepared/J03WQQ/long.npz": "c43c5eae4fbf3df0ff2f7af721f55b2b460a4f133a28352a021ea804902a7846",
+    "local_artifacts/r9-v2/e09a/J03WQQ-long-M2A-C1H.npz": "a359916cff551aa9d5d940403c9a2232fccabe7456388d8484c29460be72c5d8",
+    "local_artifacts/r7/stress-v1/J03WQQ-M3-long.npz": "25e760068be8fe6f001da9d9c7f7d294582fd7824043c5ee03114503c0f04a78",
+    "local_artifacts/r10-v3/c2/J03WQQ-long.npz": "91c27f31ad2bcb2ebe1e0e516c80f58fa0a4554361afd8aae4e11e5893fa1a18"
+  },
+  "code": {
+    "r11p5/timeline.py": "a8190b7edee85cd21ce48bbfd77282b53114190c437281521775dabe1d066ac4",
+    "scripts/research_r11p5.py": "84be5ac9382483a9586930d069addb2309d01b2a0d6f8d442669a8c55ee8d22f"
+  },
+  "features": "Only team-relative distances/counts/speed, visibility, coverage; no absolute coordinates,ball motion,status,phase,event metadata. Team-swap invariant hazard and explicitly antisymmetric direction. context[-.8,0,+.8] vs instant.",
+  "labels": "directHA first frame +/- .2s; negative alive >1s from ANY transition; D and transition-near others excluded. Direction all alive. All-timeline inference, no anchor required.",
+  "sampling": "Training only: all positives, negatives on fixed5Hz grid; direction5Hz. Both natural and pre-existing label-independent long occlusion training domains. No validation sampling.",
+  "model": "StandardScaler+LogisticRegression C1 balanced lbfgs max_iter500 seed115; hazard plus direction per view per fold=12fits. Direction train mirrored and predict antisymmetrized.",
+  "decoder": "Frozen HC_M3 D AND baseline boundaries. Add only hazard>=.8 and -.8/+ .8s opposite direction each confident>=.8,matching prior baseline. Within baseline spell >=1s until next old boundary; no threshold tuning.",
+  "controls": "Instant feature ablation; same120/half .5s spacing proposal budget HC/M3 probability difference,R10C2,learned,30s shift,shuffled direction. Full candidate plus shift/shuffle/instant decoded.",
+  "gate": ">=2/3 natural positive fullspell AND mean>=.02,noDmaskchange,no >.02 short-recall loss; even if pass TRANSFER_NOT_VALIDATED. StageA matched missed-boundary information exceeds bestold in>=2matches.",
+  "uncertainty": "1000 match bootstrap seed115;3 reused matches not statistical confirmation",
+  "stop": "Fail => stop family; no tuning. Keep all receipts.",
+  "scorer_sha": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d"
+}
