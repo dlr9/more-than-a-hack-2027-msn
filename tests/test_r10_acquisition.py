@@ -31,4 +31,13 @@ class AcquisitionTests(unittest.TestCase):
         sh,ti=negative_controls(p,r['frame'],r['period'],10)
         self.assertEqual(sorted(x['team'] for x in sh),sorted(x['team'] for x in p));self.assertEqual(len(ti),len(p));self.assertEqual([x['index'] for x in sh],[x['index'] for x in p])
 
+class ProposalEvaluationTests(unittest.TestCase):
+    def test_ranking_order_does_not_change_time_matching(self):
+        from scripts.probe_r10_acquisition import evaluate_proposals
+        gt=np.repeat([0,1,0,1],50);ref=np.zeros(200,int)
+        p=[dict(index=150,team=1,block=0),dict(index=50,team=1,block=0)]
+        a=evaluate_proposals(p,gt,ref,[(0,200)],10,np.ones(200,bool),np.full(200,.5))
+        b=evaluate_proposals(p[::-1],gt,ref,[(0,200)],10,np.ones(200,bool),np.full(200,.5))
+        self.assertEqual(a,b);self.assertEqual(a['n_matched'],2);self.assertEqual(a['recovered_old_missed'],2)
+
 if __name__=='__main__':unittest.main()

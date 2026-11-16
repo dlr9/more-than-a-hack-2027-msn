@@ -13,7 +13,7 @@ from scripts.research_r7 import IDS,load,checked_path,write_new
 from scripts.evaluate_r8_interpolation import raw_input
 from scripts.evaluate_r8_decoder import prediction_path,metrics,save_prediction
 from scripts.diagnose_r9_spell_loss import cache_path,DOMAINS
-PROTOCOL=Path('docs/R10_V3_PROTOCOL_C1.json');ROOT=Path('local_artifacts/r10-v3/c1')
+PROTOCOL=Path('docs/R10_V3_PROTOCOL_C1FIX.json');ROOT=Path('local_artifacts/r10-v3/c1fix')
 CODE=['r10/acquisition.py','scripts/probe_r10_acquisition.py','solution/control_events.py','solution/r7_metrics.py','evaluation/possession_metrics.py']
 
 
@@ -29,7 +29,7 @@ def freeze():
     models=json.loads(Path('docs/R9_V2_MODEL_REGISTRY.json').read_text())['inherited_model_hashes']
     for p,h in models.items():
         if digest(p)!=h:raise ValueError('frozen model changed '+p)
-    write_new(PROTOCOL,dict(id='E10-C1',frozen_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),base='9f701a4f193d776515a6c2129d5809b6e736b8b2',
+    write_new(PROTOCOL,dict(id='E10-C1FIX',frozen_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),base='9f701a4f193d776515a6c2129d5809b6e736b8b2',
       hypothesis='Team-pooled future receiver proximity confirms acquisitions missed by HC_M3; test signal before fitting.',
       input_contract='Raw metric geometry only; 0=Home/1=Away; DFL complete truth evaluator-only. Future observations allowed; future truth forbidden.',
       evidence='Existing 44 columns contain instantaneous distance; new information is ordered opponent-to-team proximity and two subsequent confirmation windows, invariant to IDs/slots.',
@@ -54,7 +54,7 @@ def evaluate_proposals(proposals,truth,reference,blocks,fps,visible,home):
     for bi,block in enumerate(blocks):
         gt=ha_transitions(truth,block);old=ha_transitions(reference,block)
         _,missed,_=pm.match_transitions(gt,old,round(fps),typed='pair')
-        ps=[(p['index'],1-p['team'],p['team']) for p in proposals if p['block']==bi]
+        ps=sorted((p['index'],1-p['team'],p['team']) for p in proposals if p['block']==bi)
         pairs,_,_=pm.match_transitions(gt,ps,round(fps),typed='pair')
         totals['n_gt']+=len(gt);totals['n_matched']+=len(pairs);totals['old_missed']+=len(missed)
         totals['recovered_old_missed']+=sum(g in missed for g,p in pairs)
@@ -120,7 +120,7 @@ def run():
         baseline={}
         for name,a,h,p in [('M2',m2['p_alive'],m2['p_home'],m2['decoded']),('M3',m3['p_alive'],m3['p_home'],m3['decoded']),('HC_M3',m3['p_alive'],c1['p_home'],hc['decoded']),('H1',h1['p_alive'],h1['p_home'],h1['decoded'])]:
             baseline[name]=metrics(b,a,h,p)
-        row=dict(id='E10-C1',match=m,domain=d,equal_budget=scores,unrestricted_capped=all_scores,budgets_per_block=budgets,baseline=baseline,
+        row=dict(id='E10-C1FIX',match=m,domain=d,equal_budget=scores,unrestricted_capped=all_scores,budgets_per_block=budgets,baseline=baseline,
           availability=dict(frames=len(visible),geometry_valid=int(valid.sum()),missing_ball=int((~visible).sum())),
           protocol_sha=digest(PROTOCOL),code_sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),code_hashes=protocol['code_hashes'],
           proposal_sha=digest(path.with_suffix('.npz')),models=protocol['models'],new_fits=0,candidate_predictions_changed=False,
@@ -128,7 +128,7 @@ def run():
         write_new(path,row);rows.append(row)
         print(m,d,'budgets',budgets,{k:(v['recovered_old_missed'],round(v['precision'],3)) for k,v in scores.items()},flush=True)
     result=dict(rows=rows,decision=gate(rows),new_fits=0)
-    write_new(ROOT/'results.json',result);write_new('docs/R10_V3_RESULTS_C1.json',result)
+    write_new(ROOT/'results.json',result);write_new('docs/R10_V3_RESULTS_C1FIX.json',result)
     print(json.dumps(result['decision']),flush=True)
 
 if __name__=='__main__':
