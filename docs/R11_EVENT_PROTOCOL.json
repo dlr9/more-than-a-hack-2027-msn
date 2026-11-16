@@ -1,0 +1,67 @@
+{
+  "id": "R11-H2-EVENT-LOGISTIC-V1",
+  "frozen_utc": "2026-11-16T07:42:27.576704+00:00",
+  "hypothesis": "New external weak player_possession event supervision can distinguish acquisition from explicit same-team reception and add team evidence at old model errors.",
+  "ground_truth_provenance": "SkillCorner dynamic events combines tracking with Wyscout event alignment; weak provider anchor labels, not independent complete official HAD",
+  "train": [
+    "1886347",
+    "1899585",
+    "1927964"
+  ],
+  "heldout": "1874553",
+  "exposure": "All four previously consumed by team V3; new target-task out-of-match fit only, not fresh blind or independent transfer",
+  "features": "Only observed X44 and timeline; context [-1,0,+1]sec vs matched single-frame ablation. No actor/team/start_type/first/end_type/outcome/pressure/EPV/phase/y_* metadata in X.",
+  "supervision": "acquisition positive: matched nonfullyextrapolated interception/recovery+first+previousopponent; negative: explicit matched successful same-team targeted reception chain; other unknown. Team labels at eligible anchors only.",
+  "stage1": "NOT_IDENTIFIABLE_NO_CONTACT_NEGATIVES; conditional on supplied provider event times; not an autonomous acquisition detector",
+  "training": {
+    "estimator": "SimpleImputer(median,add_indicator=True,keep_empty_features=True)+StandardScaler+LogisticRegression",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "solver": "lbfgs",
+    "seed": 111601,
+    "targets": [
+      "acquisition",
+      "team_away"
+    ],
+    "views": {
+      "single": [
+        0.0
+      ],
+      "context": [
+        -1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "fits": 4
+  },
+  "selection": "Fixed threshold.5 and fixed top20% per-half anchor budget (minimum1). No hyperparameter search. Train imputation/scaling only on three other matches.",
+  "controls": "single-frame same labels/model; frozen M3/HC at exact same provider anchors; shuffled predicted acquisition probabilities and team probabilities per half; +30s roll within each half before anchor scoring. One seed only, not significance.",
+  "gate": "Research only if context AP and balanced accuracy exceed single frame; directional correction must exceed deterioration at old errors. Regardless of result, no complete HAD or natural-missing gate => SCIENTIFICALLY_INCONCLUSIVE, no promotion.",
+  "risk": "Selected provider anchors mostly ball-visible; event quality is not detection quality; exclude frames with no observed players for either team. Do not imply accuracy on SC195zero-observation frames.",
+  "full_spell_f1": null,
+  "new_weights_expected": 4,
+  "inputs": {
+    "local_artifacts/v2/1874553-observed.npz": "73252f2e217dd95e43abd5f0137b15a459235a4b89dade916772014365ff045d",
+    "local_artifacts/external/skillcorner/1874553/1874553_dynamic_events.csv": "92507490abbbeec7697227581c864cfb0a96c29b214dd63dcaa48929bb6c6408",
+    "local_artifacts/external/skillcorner/1874553/1874553_match.json": "e6974e402779d8be44e75bf88ef2a3acfd4d025b87b3fc57f518fa826a645ad8",
+    "local_artifacts/v2/1886347-observed.npz": "c33bf3ffc65ca70e59b3fa257ea74c0c112972a2975d5ef0bbb40cbb30700eb2",
+    "local_artifacts/external/skillcorner/1886347/1886347_dynamic_events.csv": "b21368b9b94eb8f83032fe14a2a8da88ab7eda048b4f8078c06d0e6955d12bfb",
+    "local_artifacts/external/skillcorner/1886347/1886347_match.json": "30c608e78663e9f490b3545479a3ce67b171f418c5133d5609cb249a2466abb2",
+    "local_artifacts/v2/1899585-observed.npz": "a405693f87d58c51418c3f2c56e70da5b3d7202e4f1930900401e1e63db8839d",
+    "local_artifacts/external/skillcorner/1899585/1899585_dynamic_events.csv": "14c62ffc99aa5fd62998c238036873509a9d82ced44354697a1db4251424d557",
+    "local_artifacts/external/skillcorner/1899585/1899585_match.json": "41de8cb74a0512fcf0cbaaa5c615ae3e7dcaaf6745b9c78a050b59b906b1cb06",
+    "local_artifacts/v2/1927964-observed.npz": "60466fa8c4c7ab612e0dd3e845905cc083e56323f5637084dbe5d2c284d61c9b",
+    "local_artifacts/external/skillcorner/1927964/1927964_dynamic_events.csv": "638747f76b43690974f95958952dfe62c9e50d64648f9456f43f66d5d91201f3",
+    "local_artifacts/external/skillcorner/1927964/1927964_match.json": "f967f911c20f5c5f8c89bbe2020a30c92731173616d5a1e4bafeb65435278b76",
+    "local_artifacts/r9-v2/e09a2/SC1874553-M3-M2.npz": "f0c41926fdf698010333f6bce8ed47b50fba60108fdb08a14c75b37d0430dbe9",
+    "local_artifacts/r9-v2/e09a2/SC1874553-M3-C1.npz": "00dd4ec3d4317604e5200ba400a538405c066a5fe546de876e1b342581d13af9"
+  },
+  "code_hashes": {
+    "r11/acquisition_events.py": "114099b82a3e5e8547ad95cc7558ab6073b1d25366dc18250248b69765de2d33",
+    "r11/event_learning.py": "d606f724962ee03c68fff3d52cbae1f6611bb4602156f206acaaa014578c9218",
+    "scripts/train_r11_events.py": "8750bd63e3e88b745173d6301e700fd011662847079c4b301657a85e48e7fa4c"
+  },
+  "rollback": "Untouched frozen M3/HC_M3; learned head optional research only"
+}
