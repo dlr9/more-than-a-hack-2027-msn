@@ -1,0 +1,9 @@
+{
+  "boost": 0.0,
+  "team_penalty": 60.0,
+  "dead_penalty": 30.0,
+  "support": "movement",
+  "out_latch": true,
+  "confirm_frames": 10,
+  "event_refine": true
+}
