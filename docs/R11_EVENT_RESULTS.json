@@ -1,0 +1,620 @@
+{
+  "id": "R11-H2-EVENT-LOGISTIC-V1",
+  "models": [
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/single-acquisition.joblib",
+      "sha256": "d0850e51578f3fc403a400275ed1e068b9901a4f2dc429be613307f13128138f",
+      "train_counts": {
+        "1886347": {
+          "n": 817,
+          "positive": 132
+        },
+        "1899585": {
+          "n": 708,
+          "positive": 158
+        },
+        "1927964": {
+          "n": 982,
+          "positive": 131
+        }
+      },
+      "view": "single",
+      "target": "acquisition",
+      "iterations": [
+        80
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/single-team_away.joblib",
+      "sha256": "b4d1dd7baaa76e398f2f90b2fc026cd50daf15d3e44c033ae518113ec2d48a1e",
+      "train_counts": {
+        "1886347": {
+          "n": 963,
+          "positive": 442
+        },
+        "1899585": {
+          "n": 853,
+          "positive": 405
+        },
+        "1927964": {
+          "n": 1098,
+          "positive": 501
+        }
+      },
+      "view": "single",
+      "target": "team_away",
+      "iterations": [
+        52
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/context-acquisition.joblib",
+      "sha256": "25dc9ce5f2b4e4cdcc0b16b0107d5b0237425fb17faa650b8aa5c5e8809ef8d2",
+      "train_counts": {
+        "1886347": {
+          "n": 817,
+          "positive": 132
+        },
+        "1899585": {
+          "n": 708,
+          "positive": 158
+        },
+        "1927964": {
+          "n": 982,
+          "positive": 131
+        }
+      },
+      "view": "context",
+      "target": "acquisition",
+      "iterations": [
+        165
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/context-team_away.joblib",
+      "sha256": "5c5545ce9b4ccc60f233e5bf0f093003c8973e5bc812e9a09443a3014b53ccce",
+      "train_counts": {
+        "1886347": {
+          "n": 963,
+          "positive": 442
+        },
+        "1899585": {
+          "n": 853,
+          "positive": 405
+        },
+        "1927964": {
+          "n": 1098,
+          "positive": 501
+        }
+      },
+      "view": "context",
+      "target": "team_away",
+      "iterations": [
+        76
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "view": "single",
+      "metrics": {
+        "acquisition": {
+          "n": 776,
+          "positive": 129,
+          "average_precision": 0.4127318477779758,
+          "roc_auc": 0.8110659813330457,
+          "balanced_accuracy": 0.7143344955249631,
+          "confusion": [
+            [
+              488,
+              159
+            ],
+            [
+              42,
+              87
+            ]
+          ],
+          "fixed_budget": {
+            "n": 156,
+            "true_acquisitions": 61,
+            "correct_team_acquisitions": 48
+          }
+        },
+        "team": {
+          "n": 925,
+          "positive": 576,
+          "average_precision": 0.9954197038399256,
+          "roc_auc": 0.992443688315823,
+          "balanced_accuracy": 0.9494264366443808,
+          "confusion": [
+            [
+              324,
+              25
+            ],
+            [
+              17,
+              559
+            ]
+          ]
+        },
+        "against_frozen": {
+          "M3": {
+            "n": 925,
+            "correct": 835,
+            "false_D": 0,
+            "old_errors": 90,
+            "corrected": 60,
+            "deteriorated": 12,
+            "candidate_correct": 883,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          },
+          "HC_M3": {
+            "n": 925,
+            "correct": 810,
+            "false_D": 0,
+            "old_errors": 115,
+            "corrected": 87,
+            "deteriorated": 14,
+            "candidate_correct": 883,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          }
+        },
+        "full_spell_f1": null,
+        "labels": "partial_weak_provider_event_anchors"
+      },
+      "prediction_sha": "6977251d384a40878ed7330a440bca0922eda2817c1196e1a64db114c753d766"
+    },
+    {
+      "view": "context",
+      "metrics": {
+        "acquisition": {
+          "n": 776,
+          "positive": 129,
+          "average_precision": 0.4561861548032021,
+          "roc_auc": 0.8420018451289792,
+          "balanced_accuracy": 0.7639013694691061,
+          "confusion": [
+            [
+              507,
+              140
+            ],
+            [
+              33,
+              96
+            ]
+          ],
+          "fixed_budget": {
+            "n": 156,
+            "true_acquisitions": 73,
+            "correct_team_acquisitions": 58
+          }
+        },
+        "team": {
+          "n": 925,
+          "positive": 576,
+          "average_precision": 0.9956766175039897,
+          "roc_auc": 0.9928615488697867,
+          "balanced_accuracy": 0.9474291626870424,
+          "confusion": [
+            [
+              322,
+              27
+            ],
+            [
+              16,
+              560
+            ]
+          ]
+        },
+        "against_frozen": {
+          "M3": {
+            "n": 925,
+            "correct": 835,
+            "false_D": 0,
+            "old_errors": 90,
+            "corrected": 59,
+            "deteriorated": 12,
+            "candidate_correct": 882,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          },
+          "HC_M3": {
+            "n": 925,
+            "correct": 810,
+            "false_D": 0,
+            "old_errors": 115,
+            "corrected": 83,
+            "deteriorated": 11,
+            "candidate_correct": 882,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          }
+        },
+        "full_spell_f1": null,
+        "labels": "partial_weak_provider_event_anchors"
+      },
+      "prediction_sha": "133f8412c3d91528457ba1e1cc101a37229bd1353dc7339de9393f08d162c9d5"
+    },
+    {
+      "view": "shuffled_time",
+      "metrics": {
+        "acquisition": {
+          "n": 776,
+          "positive": 129,
+          "average_precision": 0.1648127159726256,
+          "roc_auc": 0.5017852221942657,
+          "balanced_accuracy": 0.5119993290440075,
+          "confusion": [
+            [
+              492,
+              155
+            ],
+            [
+              95,
+              34
+            ]
+          ],
+          "fixed_budget": {
+            "n": 156,
+            "true_acquisitions": 26,
+            "correct_team_acquisitions": 14
+          }
+        },
+        "team": {
+          "n": 925,
+          "positive": 576,
+          "average_precision": 0.6309981138182343,
+          "roc_auc": 0.5139883794969755,
+          "balanced_accuracy": 0.523482270773639,
+          "confusion": [
+            [
+              120,
+              229
+            ],
+            [
+              171,
+              405
+            ]
+          ]
+        },
+        "against_frozen": {
+          "M3": {
+            "n": 925,
+            "correct": 835,
+            "false_D": 0,
+            "old_errors": 90,
+            "corrected": 39,
+            "deteriorated": 349,
+            "candidate_correct": 525,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          },
+          "HC_M3": {
+            "n": 925,
+            "correct": 810,
+            "false_D": 0,
+            "old_errors": 115,
+            "corrected": 55,
+            "deteriorated": 340,
+            "candidate_correct": 525,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          }
+        },
+        "full_spell_f1": null,
+        "labels": "partial_weak_provider_event_anchors"
+      },
+      "prediction_sha": "ea4a59064d594ec29b6a76f9e33137847a3f5eff86b6b9ffd33e7d1cd4e09649"
+    },
+    {
+      "view": "shifted_time",
+      "metrics": {
+        "acquisition": {
+          "n": 776,
+          "positive": 129,
+          "average_precision": 0.17291841393092533,
+          "roc_auc": 0.5094592813582066,
+          "balanced_accuracy": 0.5119753663299905,
+          "confusion": [
+            [
+              502,
+              145
+            ],
+            [
+              97,
+              32
+            ]
+          ],
+          "fixed_budget": {
+            "n": 156,
+            "true_acquisitions": 30,
+            "correct_team_acquisitions": 13
+          }
+        },
+        "team": {
+          "n": 925,
+          "positive": 576,
+          "average_precision": 0.6193647459551399,
+          "roc_auc": 0.49012306988220317,
+          "balanced_accuracy": 0.500136799586119,
+          "confusion": [
+            [
+              134,
+              215
+            ],
+            [
+              221,
+              355
+            ]
+          ]
+        },
+        "against_frozen": {
+          "M3": {
+            "n": 925,
+            "correct": 835,
+            "false_D": 0,
+            "old_errors": 90,
+            "corrected": 35,
+            "deteriorated": 381,
+            "candidate_correct": 489,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          },
+          "HC_M3": {
+            "n": 925,
+            "correct": 810,
+            "false_D": 0,
+            "old_errors": 115,
+            "corrected": 47,
+            "deteriorated": 368,
+            "candidate_correct": 489,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          }
+        },
+        "full_spell_f1": null,
+        "labels": "partial_weak_provider_event_anchors"
+      },
+      "prediction_sha": "14eaa2712f454950f19a193531c8d391666423917e360e99f50afdf20c004447"
+    },
+    {
+      "view": "shuffled_team",
+      "metrics": {
+        "acquisition": {
+          "n": 776,
+          "positive": 129,
+          "average_precision": 0.4561861548032021,
+          "roc_auc": 0.8420018451289792,
+          "balanced_accuracy": 0.7639013694691061,
+          "confusion": [
+            [
+              507,
+              140
+            ],
+            [
+              33,
+              96
+            ]
+          ],
+          "fixed_budget": {
+            "n": 156,
+            "true_acquisitions": 73,
+            "correct_team_acquisitions": 37
+          }
+        },
+        "team": {
+          "n": 925,
+          "positive": 576,
+          "average_precision": 0.6309981138182343,
+          "roc_auc": 0.5139883794969755,
+          "balanced_accuracy": 0.523482270773639,
+          "confusion": [
+            [
+              120,
+              229
+            ],
+            [
+              171,
+              405
+            ]
+          ]
+        },
+        "against_frozen": {
+          "M3": {
+            "n": 925,
+            "correct": 835,
+            "false_D": 0,
+            "old_errors": 90,
+            "corrected": 39,
+            "deteriorated": 349,
+            "candidate_correct": 525,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          },
+          "HC_M3": {
+            "n": 925,
+            "correct": 810,
+            "false_D": 0,
+            "old_errors": 115,
+            "corrected": 55,
+            "deteriorated": 340,
+            "candidate_correct": 525,
+            "scope": "conditional H/A evidence only; not written over frozen D labels"
+          }
+        },
+        "full_spell_f1": null,
+        "labels": "partial_weak_provider_event_anchors"
+      },
+      "prediction_sha": "8fa234ce000aabc7f6cddeffe75d1f8a4f8467052b79029d7dced869b1bd286f"
+    }
+  ],
+  "counts": {
+    "1874553": {
+      "source_audit": {
+        "source_rows": {
+          "player_possession": 959,
+          "off_ball_run": 535,
+          "passing_option": 2543,
+          "on_ball_engagement": 878
+        },
+        "player_possessions": 959,
+        "eligible": 936,
+        "acquisition_counts": {
+          "-1": 182,
+          "0": 647,
+          "1": 130
+        },
+        "event_kind_counts": {
+          "unknown": 13,
+          "pass_reception": 672,
+          "recovery": 61,
+          "keep_possession": 54,
+          "free_kick_reception": 13,
+          "throw_in_reception": 35,
+          "pass_interception": 83,
+          "goal_kick_interception": 3,
+          "goal_kick_reception": 14,
+          "free_kick_interception": 1,
+          "corner_reception": 6,
+          "throw_in_interception": 3,
+          "corner_interception": 1
+        },
+        "one_frame": 209,
+        "phase_complement_used": false,
+        "missing_event_is_negative": false,
+        "full_spell_f1": null,
+        "validation_status": "PARTIAL_WEAK_SUPERVISION_ONLY"
+      },
+      "acquisition_anchors": 776,
+      "team_anchors": 925,
+      "team_anchor_missing_ball": 0
+    },
+    "1886347": {
+      "source_audit": {
+        "source_rows": {
+          "player_possession": 990,
+          "passing_option": 2573,
+          "on_ball_engagement": 957,
+          "off_ball_run": 595
+        },
+        "player_possessions": 990,
+        "eligible": 976,
+        "acquisition_counts": {
+          "-1": 171,
+          "0": 686,
+          "1": 133
+        },
+        "event_kind_counts": {
+          "unknown": 8,
+          "pass_reception": 702,
+          "free_kick_reception": 15,
+          "recovery": 75,
+          "pass_interception": 70,
+          "throw_in_reception": 38,
+          "keep_possession": 45,
+          "goal_kick_reception": 14,
+          "throw_in_interception": 10,
+          "corner_interception": 2,
+          "free_kick_interception": 4,
+          "corner_reception": 6,
+          "goal_kick_interception": 1
+        },
+        "one_frame": 230,
+        "phase_complement_used": false,
+        "missing_event_is_negative": false,
+        "full_spell_f1": null,
+        "validation_status": "PARTIAL_WEAK_SUPERVISION_ONLY"
+      },
+      "acquisition_anchors": 817,
+      "team_anchors": 963,
+      "team_anchor_missing_ball": 0
+    },
+    "1899585": {
+      "source_audit": {
+        "source_rows": {
+          "player_possession": 898,
+          "passing_option": 2266,
+          "on_ball_engagement": 934,
+          "off_ball_run": 467
+        },
+        "player_possessions": 898,
+        "eligible": 880,
+        "acquisition_counts": {
+          "-1": 190,
+          "0": 550,
+          "1": 158
+        },
+        "event_kind_counts": {
+          "unknown": 16,
+          "keep_possession": 53,
+          "pass_reception": 574,
+          "free_kick_interception": 5,
+          "pass_interception": 83,
+          "throw_in_reception": 34,
+          "recovery": 92,
+          "corner_reception": 4,
+          "throw_in_interception": 5,
+          "goal_kick_reception": 8,
+          "free_kick_reception": 18,
+          "corner_interception": 1,
+          "goal_kick_interception": 5
+        },
+        "one_frame": 225,
+        "phase_complement_used": false,
+        "missing_event_is_negative": false,
+        "full_spell_f1": null,
+        "validation_status": "PARTIAL_WEAK_SUPERVISION_ONLY"
+      },
+      "acquisition_anchors": 708,
+      "team_anchors": 853,
+      "team_anchor_missing_ball": 0
+    },
+    "1927964": {
+      "source_audit": {
+        "source_rows": {
+          "player_possession": 1140,
+          "passing_option": 3071,
+          "off_ball_run": 530,
+          "on_ball_engagement": 915
+        },
+        "player_possessions": 1140,
+        "eligible": 1122,
+        "acquisition_counts": {
+          "-1": 156,
+          "1": 131,
+          "0": 853
+        },
+        "event_kind_counts": {
+          "unknown": 10,
+          "pass_reception": 873,
+          "recovery": 76,
+          "pass_interception": 62,
+          "throw_in_reception": 26,
+          "keep_possession": 56,
+          "goal_kick_interception": 1,
+          "free_kick_reception": 14,
+          "goal_kick_reception": 13,
+          "corner_reception": 3,
+          "free_kick_interception": 3,
+          "throw_in_interception": 1,
+          "corner_interception": 2
+        },
+        "one_frame": 231,
+        "phase_complement_used": false,
+        "missing_event_is_negative": false,
+        "full_spell_f1": null,
+        "validation_status": "PARTIAL_WEAK_SUPERVISION_ONLY"
+      },
+      "acquisition_anchors": 982,
+      "team_anchors": 1098,
+      "team_anchor_missing_ball": 0
+    }
+  },
+  "code_sha": "778b3b2b7ab4316b721b9102a06f5abc140c9e4f",
+  "protocol_sha": "30476deb2a83675b08e6831693084ec45100ab67ac09f07eb5fd96f2ee6c0973",
+  "code_hashes": {
+    "r11/acquisition_events.py": "114099b82a3e5e8547ad95cc7558ab6073b1d25366dc18250248b69765de2d33",
+    "r11/event_learning.py": "d606f724962ee03c68fff3d52cbae1f6611bb4602156f206acaaa014578c9218",
+    "scripts/train_r11_events.py": "8750bd63e3e88b745173d6301e700fd011662847079c4b301657a85e48e7fa4c"
+  },
+  "fits": 4,
+  "full_spell_f1": null,
+  "decision": "SCIENTIFICALLY_INCONCLUSIVE_PARTIAL_EVENT_SUPERVISION_ONLY",
+  "competition_promoted": false,
+  "wall_s": 2.016758669167757,
+  "cpu_s": 2.1223099999999997,
+  "max_rss": 814059520
+}

@@ -1,0 +1,124 @@
+{
+  "base": "3fa13c4e66c8c04dffad5a4b0c56e9e4aeda3678",
+  "training_sha": "778b3b2b7ab4316b721b9102a06f5abc140c9e4f",
+  "models": [
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/single-acquisition.joblib",
+      "sha256": "d0850e51578f3fc403a400275ed1e068b9901a4f2dc429be613307f13128138f",
+      "train_counts": {
+        "1886347": {
+          "n": 817,
+          "positive": 132
+        },
+        "1899585": {
+          "n": 708,
+          "positive": 158
+        },
+        "1927964": {
+          "n": 982,
+          "positive": 131
+        }
+      },
+      "view": "single",
+      "target": "acquisition",
+      "iterations": [
+        80
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/single-team_away.joblib",
+      "sha256": "b4d1dd7baaa76e398f2f90b2fc026cd50daf15d3e44c033ae518113ec2d48a1e",
+      "train_counts": {
+        "1886347": {
+          "n": 963,
+          "positive": 442
+        },
+        "1899585": {
+          "n": 853,
+          "positive": 405
+        },
+        "1927964": {
+          "n": 1098,
+          "positive": 501
+        }
+      },
+      "view": "single",
+      "target": "team_away",
+      "iterations": [
+        52
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/context-acquisition.joblib",
+      "sha256": "25dc9ce5f2b4e4cdcc0b16b0107d5b0237425fb17faa650b8aa5c5e8809ef8d2",
+      "train_counts": {
+        "1886347": {
+          "n": 817,
+          "positive": 132
+        },
+        "1899585": {
+          "n": 708,
+          "positive": 158
+        },
+        "1927964": {
+          "n": 982,
+          "positive": 131
+        }
+      },
+      "view": "context",
+      "target": "acquisition",
+      "iterations": [
+        165
+      ]
+    },
+    {
+      "path": "local_artifacts/r11/event-logistic-v1/context-team_away.joblib",
+      "sha256": "5c5545ce9b4ccc60f233e5bf0f093003c8973e5bc812e9a09443a3014b53ccce",
+      "train_counts": {
+        "1886347": {
+          "n": 963,
+          "positive": 442
+        },
+        "1899585": {
+          "n": 853,
+          "positive": 405
+        },
+        "1927964": {
+          "n": 1098,
+          "positive": 501
+        }
+      },
+      "view": "context",
+      "target": "team_away",
+      "iterations": [
+        76
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "view": "single",
+      "sha256": "6977251d384a40878ed7330a440bca0922eda2817c1196e1a64db114c753d766"
+    },
+    {
+      "view": "context",
+      "sha256": "133f8412c3d91528457ba1e1cc101a37229bd1353dc7339de9393f08d162c9d5"
+    },
+    {
+      "view": "shuffled_time",
+      "sha256": "ea4a59064d594ec29b6a76f9e33137847a3f5eff86b6b9ffd33e7d1cd4e09649"
+    },
+    {
+      "view": "shifted_time",
+      "sha256": "14eaa2712f454950f19a193531c8d391666423917e360e99f50afdf20c004447"
+    },
+    {
+      "view": "shuffled_team",
+      "sha256": "8fa234ce000aabc7f6cddeffe75d1f8a4f8467052b79029d7dced869b1bd286f"
+    }
+  ],
+  "decision": "KEEP_RESEARCH_ONLY_NO_PROMOTION",
+  "rollback": "Frozen M3/HC_M3, no production changes",
+  "pathcrf": "NO_GO_ENVIRONMENT_FORWARD_NOT_RUN",
+  "historical_registry": "docs/R10_V3_MODEL_REGISTRY.json"
+}
