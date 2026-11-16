@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "id": "H4",
+      "decision": "KEEP_TOOL",
+      "comparisons": 15,
+      "new_fits": 0
+    },
+    {
+      "id": "H1",
+      "decision": "NO_GO_ENVIRONMENT",
+      "new_fits": 0,
+      "forward": "NOT_RUN"
+    },
+    {
+      "id": "H2",
+      "decision": "SCIENTIFICALLY_INCONCLUSIVE_PARTIAL_EVENT_SUPERVISION_ONLY",
+      "new_fits": 4,
+      "full_spell_f1": null,
+      "code_sha": "778b3b2b7ab4316b721b9102a06f5abc140c9e4f"
+    }
+  ],
+  "previous_ledger": "docs/R10_V3_DECISIONS.jsonl"
+}
