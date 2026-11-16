@@ -17,6 +17,7 @@ jobs:
           fetch-depth: 1
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /r12/*.py
             /r11p5/*.py
             /r11/*.py
             /r10/*.py

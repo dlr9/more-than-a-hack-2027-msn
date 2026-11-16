@@ -1,0 +1,77 @@
+{
+  "base": "a0acdbaa3b69186f3e161e58a288b2f96fea0693",
+  "protocol_commit": "0999cf7eb83b86945f5cee6fe36bc25e9233bd8d",
+  "decision": "NO_GO_REVERT_PROMOTION",
+  "rollback": [
+    "frozen HC_M3",
+    "frozen M3"
+  ],
+  "new_models_trained": 0,
+  "model_hashes": {
+    "local_artifacts/r6/idsse-m1-v1/J03WPY-M2_dropout.joblib": "11357d93b1ebba840eb6ceb1e19ac875a829dbe5de47aa2974d8bc1b92a62322",
+    "local_artifacts/r8/e08c/J03WPY.joblib": "3e0d085df0545c1d76918e0449512ac9119ee3c80ca2cd98877f16069d661bd0",
+    "local_artifacts/r6/idsse-m1-v1/J03WOH-M2_dropout.joblib": "3e992e6d9ba8e60c19c4572049289638803c28e38d03263ae3c7e0d31f54780b",
+    "local_artifacts/r8/e08c/J03WOH.joblib": "2f7940ade06004ded880dd3b4c1e54076965f4c1ecad595e6691ac4ab4f2246c",
+    "local_artifacts/r6/idsse-m1-v1/J03WQQ-M2_dropout.joblib": "d373dd244cf455b1cd74114fa0d2e01be2dde63240a2f1b12e424b66de854e58",
+    "local_artifacts/r8/e08c/J03WQQ.joblib": "a059931ae7dc4842aea98784fa4824706151f143ee3b7b802c24d169a0d61753",
+    "local_artifacts/v3/1874553/baseline.joblib": "e17380aca1d5634f9c341b9839472ae29abe96d4413cec1631ab09a3da5c2913"
+  },
+  "ledger": [
+    {
+      "id": "R12_GLOBAL_V1",
+      "status": "COMPLETE_NO_GO",
+      "configuration_count": 1,
+      "full_evaluations": 54,
+      "raw_match_domains": 6,
+      "predictions": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "sha256": "bc7c5f4100e6312e47e691f9199912e69942655f34146882f7fde490a6cecc88",
+          "anchor_sha256": "6ac6e0b0d3af8b6d84f3a0be95a8e8fc1d75e2569110e66b846d6b2f7f3a69b0"
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "sha256": "ba285ab456c2fda98eddac41f61098c2abfa62ecda9091400bdd662d562f049e",
+          "anchor_sha256": "3f1a08d8d9de83e2fe85f1ea676e27ce868d1b58e066ef513ec4020903cc687b"
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "sha256": "b066540c07b956fa6dad660b71bb0c1fc7140dc62abc1073827761700d96f709",
+          "anchor_sha256": "b6781725dcd367079acc6f3e72ee476ab84eb79c26a7a6c1653c207ae043450e"
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "sha256": "82c16f2b80892f487d3a305102ae02b8b39df83fd32e90c98cf5892b47630908",
+          "anchor_sha256": "3fff005cd363d56f53779f0eb7e1c9c04d56dfe2881e817068421ed33d9ee324"
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "sha256": "f3621029ef9a0392654b622ec118e2d304799c5ab9610c75b4b64a83e8c57b48",
+          "anchor_sha256": "68dc5916e7842cb9c2f49d4040f6c990341b2cef65a0c825365543eb9f48cc68"
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "sha256": "080e8d48d9483fa5059b474afc79f009fe4c8cf2689791f1c226fc3c50bd748d",
+          "anchor_sha256": "20d1b430678dd2dc1271b06d6df436f42b381ce7401db70f643c97e90526fb6f"
+        }
+      ]
+    },
+    {
+      "id": "R12_EXTERNAL_EVENT_AUDIT",
+      "status": "COMPLETE_SUPERVISION_AUDIT_ONLY",
+      "source": "ELASTIC J03WPY",
+      "training": false
+    },
+    {
+      "id": "R12_VISUAL",
+      "status": "BLOCKED_NOT_RUN",
+      "reason": "Paired legal full video/HAD not staged; low disk/noTorch; WACV weights/license unverified"
+    }
+  ]
+}
