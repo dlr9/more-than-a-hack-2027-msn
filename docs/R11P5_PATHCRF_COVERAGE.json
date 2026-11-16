@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "match": "J03WPY",
+      "source_sha": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c",
+      "windows": 584,
+      "complete_stable_identity_windows": 577,
+      "fraction": 0.988013698630137,
+      "verified_keeper_windows": null,
+      "strict_usable_fraction": null,
+      "reason": "GK metadata not verified; complete identity coverage is upper bound only, source optical tracking not automatic target tracking"
+    },
+    {
+      "match": "J03WOH",
+      "source_sha": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899",
+      "windows": 548,
+      "complete_stable_identity_windows": 540,
+      "fraction": 0.9854014598540146,
+      "verified_keeper_windows": null,
+      "strict_usable_fraction": null,
+      "reason": "GK metadata not verified; complete identity coverage is upper bound only, source optical tracking not automatic target tracking"
+    },
+    {
+      "match": "J03WQQ",
+      "source_sha": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e",
+      "windows": 568,
+      "complete_stable_identity_windows": 356,
+      "fraction": 0.6267605633802817,
+      "verified_keeper_windows": null,
+      "strict_usable_fraction": null,
+      "reason": "GK metadata not verified; complete identity coverage is upper bound only, source optical tracking not automatic target tracking"
+    },
+    {
+      "match": "SC1874553",
+      "source_sha": "ea97f58f8eaad925feaeacc6395ec24860dd80027af8a89450276adebd29d265",
+      "windows": 602,
+      "complete_stable_identity_windows": 0,
+      "fraction": 0.0,
+      "verified_keeper_windows": null,
+      "strict_usable_fraction": null,
+      "reason": "Detected players only, no extrapolation; metadata GK role unverified; strict coverage remains unresolved"
+    }
+  ],
+  "decision": "NO_INSTALL; unknown GK and detected coverage gap; no partial-input forward claim",
+  "labels_read": false,
+  "torch_installed": false
+}
