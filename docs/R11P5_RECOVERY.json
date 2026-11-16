@@ -1,0 +1,9 @@
+{
+  "reason": "HC_M3 cache contains decoded only; use matching frozen C1 Home probability. Four completed fits reused, no thresholds changed.",
+  "models": {
+    "local_artifacts/r11p5/e11a/J03WPY-instant-direction.joblib": "3dd2d3746aeee2f9a2f0f10b02df2083c11e4f6479598cca509db19474392af8",
+    "local_artifacts/r11p5/e11a/J03WPY-context-hazard.joblib": "b15a452b1949ebac9f5cd4b96d86aa49ee7a4d705836e958ab47165ec9c45843",
+    "local_artifacts/r11p5/e11a/J03WPY-context-direction.joblib": "659b5eb19222f94a09b17955919de36221fffd0241034c47103d6caa9a2d13d8",
+    "local_artifacts/r11p5/e11a/J03WPY-instant-hazard.joblib": "9904f5a3b16477259ee2b70fb24140498b4a82a415d677111c07811a910c1b30"
+  }
+}

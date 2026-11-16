@@ -16,11 +16,11 @@ from solution.idsse import digest
 from solution.evidence import labels_from_batch
 from solution.hierarchical_decoder import continuous_blocks
 from evaluation import possession_metrics as pm
-ROOT=Path('local_artifacts/r11p5/e11a');PROTOCOL=Path('docs/R11P5_PROTOCOL.json')
+ROOT=Path('local_artifacts/r11p5/e11a');PROTOCOL=Path('docs/R11P5_PROTOCOL_V2.json')
 DOMAINS=('natural','long');CODE=['r11p5/timeline.py','scripts/research_r11p5.py']
 
 def freeze():
- inputs={str(p):digest(p) for m in IDS for d in DOMAINS for p in [checked_path(m,d),hc_path(m,d),prediction_path(m,'M3',d),Path(f'local_artifacts/r10-v3/c2/{m}-{d}.npz')]}
+ inputs={str(p):digest(p) for m in IDS for d in DOMAINS for p in [checked_path(m,d),hc_path(m,d),Path(f'local_artifacts/r8/e08c/{m}-{d}.npz'),prediction_path(m,'M3',d),Path(f'local_artifacts/r10-v3/c2/{m}-{d}.npz')]}
  write_new(PROTOCOL,dict(id='E11.5-A',hypothesis='Full-source direct handover positives and clean interior negatives identify ordered team-control changes autonomously; symmetric temporal contrast is incremental to instantaneous geometry.',folds={m:[x for x in IDS if x!=m] for m in IDS},exposure='All3 intensely consumed development matches,shared home team. WMX/WN1 previously exposed, no sealed data opened.',source='IDSSE DFL CC BY4.0 BallStatus/Possession, independently crosschecked; not official target GT',inputs=inputs,code={p:digest(p) for p in CODE},features='Only team-relative distances/counts/speed, visibility, coverage; no absolute coordinates,ball motion,status,phase,event metadata. Team-swap invariant hazard and explicitly antisymmetric direction. context[-.8,0,+.8] vs instant.',labels='directHA first frame +/- .2s; negative alive >1s from ANY transition; D and transition-near others excluded. Direction all alive. All-timeline inference, no anchor required.',sampling='Training only: all positives, negatives on fixed5Hz grid; direction5Hz. Both natural and pre-existing label-independent long occlusion training domains. No validation sampling.',model='StandardScaler+LogisticRegression C1 balanced lbfgs max_iter500 seed115; hazard plus direction per view per fold=12fits. Direction train mirrored and predict antisymmetrized.',decoder='Frozen HC_M3 D AND baseline boundaries. Add only hazard>=.8 and -.8/+ .8s opposite direction each confident>=.8,matching prior baseline. Within baseline spell >=1s until next old boundary; no threshold tuning.',controls='Instant feature ablation; same120/half .5s spacing proposal budget HC/M3 probability difference,R10C2,learned,30s shift,shuffled direction. Full candidate plus shift/shuffle/instant decoded.',gate='>=2/3 natural positive fullspell AND mean>=.02,noDmaskchange,no >.02 short-recall loss; even if pass TRANSFER_NOT_VALIDATED. StageA matched missed-boundary information exceeds bestold in>=2matches.',uncertainty='1000 match bootstrap seed115;3 reused matches not statistical confirmation',stop='Fail => stop family; no tuning. Keep all receipts.',scorer_sha=digest('evaluation/possession_metrics.py')))
 
 def obs(b):return {k:b[k] for k in FIELDS}
@@ -74,12 +74,17 @@ def run():
    trained[name]=[]
    for target,x,y in [('hazard',np.vstack(hx),np.concatenate(hy)),('direction',np.vstack(dx),np.concatenate(dy))]:
     path=ROOT/f'{held}-{name}-{target}.joblib'
-    if path.exists():raise FileExistsError('partialfit preserved; no silent repeat')
-    model=fit(x,y,target=='direction');joblib.dump(model,path);trained[name].append(model);foldmodels.append(dict(path=str(path),sha256=digest(path),n=len(y),iterations=model[-1].n_iter_.tolist()))
-    print('FIT',held,name,target,len(y),flush=True)
+    if path.exists():
+     recovery=json.loads(Path('docs/R11P5_RECOVERY.json').read_text())['models']
+     if recovery.get(str(path))!=digest(path):raise ValueError('unapproved partial model')
+     model=joblib.load(path)
+    else:
+     model=fit(x,y,target=='direction');joblib.dump(model,path)
+    trained[name].append(model);foldmodels.append(dict(path=str(path),sha256=digest(path),n=len(y),iterations=model[-1].n_iter_.tolist()))
+    print('MODEL_READY',held,name,target,len(y),flush=True)
   foldrows=[]
   for domain in DOMAINS:
-   b=load(held,domain);g=labels_from_batch(b);blocks=list(continuous_blocks(b['frame'],b['period']));hc=dict(np.load(hc_path(held,domain)));m3=dict(np.load(prediction_path(held,'M3',domain)));base=hc['decoded'];y,t,ec=targets(g,b['frame'],b['period'],25)
+   b=load(held,domain);g=labels_from_batch(b);blocks=list(continuous_blocks(b['frame'],b['period']));hc=dict(np.load(hc_path(held,domain)));m3=dict(np.load(prediction_path(held,'M3',domain)));hc['p_home']=np.load(f'local_artifacts/r8/e08c/{held}-{domain}.npz')['p_home'];base=hc['decoded'];y,t,ec=targets(g,b['frame'],b['period'],25)
    probs={}
    for name in trained:
     a,s=features(obs(b),name=='context');probs[name]=(prob(trained[name][0],a),prob(trained[name][1],s,True))
