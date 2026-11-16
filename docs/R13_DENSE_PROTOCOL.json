@@ -1,0 +1,45 @@
+{
+  "id": "R13_DENSE_CONTROL_V1",
+  "hypothesis": "Human-confirmed receipt timing plus identity-coherent relative velocity learns control evidence absent from source-boundary supervision; dense non-event negatives prevent conditional-event inference.",
+  "train": [
+    "J03WPY"
+  ],
+  "evaluation": [
+    "J03WOH",
+    "J03WQQ"
+  ],
+  "exposure": "Previously consumed development matches, not blind confirmation. WPY training not scored for selection.",
+  "features": "48 scalar features: team nearest-player distance, identity-coherent relative velocity norm/radial motion/player speed, collective player speed/count/availability; at -.4,0,+.4s. No events/status/GT input at inference; no absolute direction dependence. Existing geometric observations, NOT new sensor data.",
+  "supervision": "Human receive times and recovery/keeper controls, corroborated by same team source HAD for next.4s; +/- .2s positives; exclude +/-1s event/transition ambiguity; remaining all-timeline5Hz none negatives. Same-feature source HA transition and shuffled positive-team supervision controls.",
+  "training": "3 StandardScaler+LogisticRegression C1 balanced max_iter500 lbfgs, team-swap augmented. Natural and existing label-independent long-occlusion training views. Unknown class is not Dead.",
+  "inference": "Predict3classes on EVERY frame; average mirrored outputs. Human potential = pH+.5*pUnknown. Equal .5 mixture with frozen C1 Home. Same fixed.3s binary decoder in frozen HC Dead segments for all arms. No new D changes. No geometry proposals required.",
+  "controls": [
+    "same_decoder_no_event",
+    "source_boundary_supervision",
+    "shuffled_positive_team_supervision",
+    "30s_shift_human_perhalf"
+  ],
+  "gate": "Both evaluation natural matches improve full HC_M3 spellF1,mean>=.02,net true matches positive atIoU.5,short recall no decrease>.02,real beats same-decoder/source/shuffle/time controls. Otherwise NO_GO; any success still needs untouched cross-provider full labels.",
+  "stop": "One configuration,3fits,no test-driven tuning; preserve failures and production HC/M3",
+  "hashes": {
+    "r12/dense_control.py": "47c2f4f83c0559454f784e7e46ff88edd0811b4d4ba39af57d1118e80206ec58",
+    "scripts/train_r13_dense.py": "b692096568a749f1160d105afc8a7d05a6584e5725173f3e2022da915c378212",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+    "local_artifacts/r12/source-audit/J03WPY.parquet": "8ba1df509b68f1e2081b520f87f43ad39218436538023de2abeb31287bfc6dad",
+    "local_artifacts/r6/prepared/J03WPY/raw.npz": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c",
+    "local_artifacts/r8/e08c/J03WPY-natural.npz": "f4aea9f92c36c60c4542a7de0d54eae8eae32ee61d4146447d73c03257a72107",
+    "local_artifacts/r12/global-v1/J03WPY-natural.npz": "bc7c5f4100e6312e47e691f9199912e69942655f34146882f7fde490a6cecc88",
+    "local_artifacts/r8/e08c/J03WPY-long.npz": "48e7ac7bd97fe2f9aa7439d32babfeabc562e968e567e4741621bf9b6506ff15",
+    "local_artifacts/r12/global-v1/J03WPY-long.npz": "ba285ab456c2fda98eddac41f61098c2abfa62ecda9091400bdd662d562f049e",
+    "local_artifacts/r6/prepared/J03WOH/raw.npz": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899",
+    "local_artifacts/r8/e08c/J03WOH-natural.npz": "3f257c01678f996097fc00b5c77f0a3939fd9883741ed00dfe5ca5030f6eba72",
+    "local_artifacts/r12/global-v1/J03WOH-natural.npz": "b066540c07b956fa6dad660b71bb0c1fc7140dc62abc1073827761700d96f709",
+    "local_artifacts/r8/e08c/J03WOH-long.npz": "175e675f2882b95c3788104b7527b8a8f2473dddf68595e3af4d8ecfa8a7269e",
+    "local_artifacts/r12/global-v1/J03WOH-long.npz": "82c16f2b80892f487d3a305102ae02b8b39df83fd32e90c98cf5892b47630908",
+    "local_artifacts/r6/prepared/J03WQQ/raw.npz": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e",
+    "local_artifacts/r8/e08c/J03WQQ-natural.npz": "116d6ba6b45a596bdecd95af39bbda63b6cd111767c981315fed0c16acc1bb25",
+    "local_artifacts/r12/global-v1/J03WQQ-natural.npz": "f3621029ef9a0392654b622ec118e2d304799c5ab9610c75b4b64a83e8c57b48",
+    "local_artifacts/r8/e08c/J03WQQ-long.npz": "66e58bb24be83e4464ecca965d1f4a9d3c79e432e07beab58e6000a84c1a86a9",
+    "local_artifacts/r12/global-v1/J03WQQ-long.npz": "080e8d48d9483fa5059b474afc79f009fe4c8cf2689791f1c226fc3c50bd748d"
+  }
+}
