@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-16T03:39:58Z",
+  "scope": "metadata, public official rules and safe public OTHER-match aggregate report only",
+  "prs": [
+    {
+      "number": 1,
+      "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/pull/1",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "head_repo": "dejavu0420/more-than-a-hack-2027-msn",
+      "head": "feat/model-v1-pipeline-20261114",
+      "head_sha": "83b262a9420c67eb494b39ed43ece90bd4e66623",
+      "base": "main",
+      "base_sha": "f8f2629ff1e0985f81d7e59d8413678514ee1530"
+    },
+    {
+      "number": 2,
+      "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/pull/2",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_repo": "dlr9/more-than-a-hack-2027-msn",
+      "head": "codex/pr1-v2-integration-20261114",
+      "head_sha": "093361a3d02ffa9ce195e65ccbb4ad5159624dad",
+      "base": "main",
+      "base_sha": "f8f2629ff1e0985f81d7e59d8413678514ee1530"
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/pull/3",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_repo": "dlr9/more-than-a-hack-2027-msn",
+      "head": "codex/r7b-player-only-missing-alive",
+      "head_sha": "ccc4b2a1382c20112624e86a4dcdf50921673560",
+      "base": "codex/pr1-v2-integration-20261114",
+      "base_sha": "093361a3d02ffa9ce195e65ccbb4ad5159624dad"
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/pull/4",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "head_repo": "dlr9/more-than-a-hack-2027-msn",
+      "head": "codex/r8-possession-centric-20261115",
+      "head_sha": "d73ca0f059f71d74a298236f8aed512a65eafad1",
+      "base": "codex/r7b-player-only-missing-alive",
+      "base_sha": "ccc4b2a1382c20112624e86a4dcdf50921673560"
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/pull/5",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_repo": "dlr9/more-than-a-hack-2027-msn",
+      "head": "codex/r9-v2-spell-events-20261115",
+      "head_sha": "9f701a4f193d776515a6c2129d5809b6e736b8b2",
+      "base": "codex/r8-possession-centric-20261115",
+      "base_sha": "d73ca0f059f71d74a298236f8aed512a65eafad1"
+    }
+  ],
+  "feat_data": {
+    "head_sha": "a54219dbff8948507b112234127816c133f7c08b",
+    "branch": "feat/data",
+    "source": "https://api.github.com/repos/dlr9/more-than-a-hack-2027-msn/branches/feat/data",
+    "relation_to_r9": "NO_COMMON_ANCESTOR",
+    "evidence": "GitHub compare API explicitly returned HTTP 404 with No common ancestor between the two pinned heads.",
+    "merge_allowed": false
+  },
+  "r9_ci": {
+    "run_id": 43729930613,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/dlr9/more-than-a-hack-2027-msn/actions/runs/43729930613",
+    "scope": "PR-triggered first-page workflow results; not a statement about R10 CI"
+  },
+  "official_sources": [
+    {
+      "path": "RULES.md",
+      "git_blob_sha": "d26a3835a93e800cc2039723943a250d90a44c20",
+      "url": "https://github.com/metrica-sports/more-than-a-hack-2027/blob/f8f2629ff1e0985f81d7e59d8413678514ee1530/RULES.md",
+      "ref": "f8f2629ff1e0985f81d7e59d8413678514ee1530"
+    },
+    {
+      "path": "EVALUATION.md",
+      "git_blob_sha": "0c281c41787cdbb77b1f8b6aba9403f28cf9c4a2",
+      "url": "https://github.com/metrica-sports/more-than-a-hack-2027/blob/f8f2629ff1e0985f81d7e59d8413678514ee1530/EVALUATION.md",
+      "ref": "f8f2629ff1e0985f81d7e59d8413678514ee1530"
+    },
+    {
+      "path": "SUBMISSION.md",
+      "git_blob_sha": "ef703837ba6855dba010704256d7375752a559f5",
+      "url": "https://github.com/metrica-sports/more-than-a-hack-2027/blob/f8f2629ff1e0985f81d7e59d8413678514ee1530/SUBMISSION.md",
+      "ref": "f8f2629ff1e0985f81d7e59d8413678514ee1530"
+    }
+  ],
+  "prior_skillcorner": {
+    "report": "docs/external_data_audit.md",
+    "report_sha256": "671f6ca8985c6c17401a7c0f2e2cad1f5c5871d7f68ff5eca3634775a540e36e",
+    "historical_reported_matches": 20,
+    "historical_reported_frames": 1241620,
+    "split_counts": {
+      "train": 14,
+      "validation": 3,
+      "test": 3
+    },
+    "fresh_blind": false,
+    "source_revision": "4340d274572876239c154c90bc507a9b3250a656",
+    "caveat": "Historical report, not a new data or training run. Its phase-complement D truth and complete weak-spell model-ranking recommendations are superseded; no complete cross-vendor H/A/D gate is inferred.",
+    "model_training_validation_report_read": false,
+    "reason_not_read": "Not needed to confirm historical exposure; omitted to avoid potentially mixed target-performance passages."
+  },
+  "p0": {
+    "TARGET_ASSETS": "UNKNOWN",
+    "OFFLINE_RUNNER_EXECUTED": "UNKNOWN",
+    "LOCAL_CSV_VALIDATED": "UNKNOWN",
+    "EXACT_CSV_REGENERATED": "UNKNOWN",
+    "PUBLIC_REPRODUCIBLE_CODE": "R9_PUBLIC_SOURCE_AND_CI_VERIFIED_TARGET_REPRODUCTION_UNKNOWN",
+    "TECHNICAL_DOCUMENT_FINAL": "UNKNOWN",
+    "FORM_ACCESS": "UNKNOWN",
+    "SUBMITTED": "UNKNOWN",
+    "user_estimate": "probably_not_submitted",
+    "user_estimate_is_confirmation": false,
+    "official_deadline_date": "2026-11-17",
+    "deadline_time_timezone": "UNKNOWN",
+    "research_blocks_delivery": false
+  },
+  "historical_verification_receipt": {
+    "code_checkpoint": "3da37b0bf3f8e7120b69dcbeb9e6c80b98978440",
+    "local_tests": 152,
+    "clean_source_tests": 152,
+    "exact_prediction_replays": 128,
+    "models_hash_checked": 15,
+    "new_fits": 0,
+    "rerun_in_this_qa": false
+  },
+  "guardrails": {
+    "target_assets_read": false,
+    "target_gt_read": false,
+    "target_derived_report_read": false,
+    "target_outputs_requested": false,
+    "external_messages_sent": false,
+    "commits_or_pushes": false
+  },
+  "bounded_tool_failures": [
+    {
+      "operation": "encoded feat%2Fdata branch URL",
+      "result": "INVALID_ARGUMENT",
+      "recovery": "single literal feat/data URL succeeded; no approval bypass"
+    },
+    {
+      "operation": "compare R9 and feat/data",
+      "result": "404 explicitly no common ancestor",
+      "recovery": "record incompatibility; no merge or broad fetch"
+    }
+  ]
+}

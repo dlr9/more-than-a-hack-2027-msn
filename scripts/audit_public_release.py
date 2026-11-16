@@ -3,7 +3,7 @@ import argparse, hashlib, json, re, subprocess
 from pathlib import PurePosixPath
 
 BASE='1d62c7219868dfcbf98921fd0c7464f10dbed55b'
-EXACT={'.github/workflows/public-solution.yml','requirements-idsse-tools.txt','docs/FEATURE_PROVENANCE.csv','docs/R6_EXPERIMENT_LEDGER.jsonl','docs/R8_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl'}
+EXACT={'.gitignore','docs/R10_V3_DECISIONS.jsonl','.github/workflows/public-solution.yml','requirements-idsse-tools.txt','docs/FEATURE_PROVENANCE.csv','docs/R6_EXPERIMENT_LEDGER.jsonl','docs/R8_EXPERIMENT_LEDGER.jsonl','docs/R9_V2_EXPERIMENT_LEDGER.jsonl'}
 SECRETS=[re.compile(rb'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),
          re.compile(rb'gh[pousr]_[A-Za-z0-9]{30,}'),re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),
          re.compile(rb'(?:AKIA|ASIA)[A-Z0-9]{16}'),re.compile(rb'https?://[^\s/:]+:[^\s/@]+@')]
@@ -13,7 +13,8 @@ def allowed(path):
     if '..'in p.parts or p.is_absolute():return False
     if path in EXACT:return True
     if len(p.parts)==2 and p.parts[0]in{'solution','scripts','tests'} and p.suffix in{'.py','.command'}:return True
-    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_','R7B_','R8_','R9_V2_')) and p.suffix in{'.json','.md'}:return True
+    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_','R7B_','R8_','R9_V2_','R10_V3_')) and p.suffix in{'.json','.md'}:return True
+    if p.parts and p.parts[0]=='r10' and len(p.parts) in (2,3) and p.suffix in {'.py','.md'} and (len(p.parts)==2 or p.parts[1]=='adapters'):return True
     return False
 
 def inspect_blob(path,content):

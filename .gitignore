@@ -69,3 +69,7 @@ local_artifacts/
 models/
 *.joblib
 *.npz
+
+# R10 worktree reuses the approved public cache/runtime through local symlinks.
+/.venv
+/local_artifacts

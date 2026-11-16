@@ -17,6 +17,8 @@ jobs:
           fetch-depth: 1
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /r10/*.py
+            /r10/adapters/*.py
             /solution/*.py
             /solution/config.json
             /tests/*.py
