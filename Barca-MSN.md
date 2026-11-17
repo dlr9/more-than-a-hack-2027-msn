@@ -1,8 +1,8 @@
-# Team MSN: Event-Triggered Multimodal Cascade Possession Inference
+# Team Barca-MSN: Event-Triggered Multimodal Cascade Possession Inference
 
 **Challenge**: More Than A Hack 2027 (Barça Innovation Hub / Metrica Sports)  
 **Deliverable**: Technical Document  
-**Submission File**: `MSN.csv`  
+**Submission File**: `Barca-MSN.csv`  
 **Repository**: `https://github.com/dlr9/more-than-a-hack-2027-msn`  
 
 ---
@@ -35,7 +35,7 @@ To solve this, we designed **Fusion V5: An Event-Triggered Multimodal Cascade Ar
                       - Selective boundary correction on ambiguous events
                                          |
                                          v
-                              Final Predictions (MSN.csv)
+                              Final Predictions (Barca-MSN.csv)
 ```
 
 - **Tier 1 (Physical Latching & HMM Decoding)**: We formulate base possession estimation as continuous Viterbi decoding over player-to-ball spatial proximity, team centroid dynamics, and transition penalties (`team_penalty=60.0`, `dead_penalty=30.0`). Crucially, we enforce a hard physical pitch boundary latch: any ball coordinate exiting the calibrated $105.3\text{ m} \times 68.0\text{ m}$ pitch immediately latches state to `D`, held until physical restart dynamics are confirmed (10 consecutive frames inside, nearest player $< 3\text{ m}$, speed $\in [3, 40]\text{ m/s}$).
@@ -104,10 +104,10 @@ pip install -r requirements.txt
 ### Reproduce the Submission File
 Run the complete pipeline from provided non-video tracking data to generate the exact submission file:
 ```bash
-# Generates full-match 199,319-frame prediction file MSN.csv
-python run_pipeline.py --model v5 --output MSN.csv
+# Generates full-match 199,319-frame prediction file Barca-MSN.csv
+python run_pipeline.py --model v5 --output Barca-MSN.csv
 
 # Official format validation (passes with 0 errors)
-python evaluation/validate_submission.py MSN.csv
+python evaluation/validate_submission.py Barca-MSN.csv
 ```
-The resulting `MSN.csv` matches the submitted deliverable byte-for-byte.
+The resulting `Barca-MSN.csv` matches the submitted deliverable byte-for-byte.
