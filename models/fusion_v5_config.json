@@ -4,6 +4,5 @@
   "dead_penalty": 30.0,
   "support": "movement",
   "out_latch": true,
-  "confirm_frames": 10,
-  "event_refine": true
+  "confirm_frames": 10
 }
