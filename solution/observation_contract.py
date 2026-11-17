@@ -51,12 +51,13 @@ def track_velocity(xy,frame,period,ids,contract):
     contiguous=validate_timeline(frame,period,contract.fps)
     if len(frame)!=len(x):raise ValueError('unaligned observations')
     valid=np.isfinite(x).all(-1);v=np.full_like(x,np.nan)
-    pairs=contiguous[:,None]&valid[1:]&valid[:-1]&(ids[1:]==ids[:-1])&(ids[1:]>=0)
+    known=(ids>=0) if np.issubdtype(ids.dtype,np.number) else ~np.isin(ids.astype(str),['','-1','None','nan','unknown'])
+    pairs=contiguous[:,None]&valid[1:]&valid[:-1]&(ids[1:]==ids[:-1])&known[1:]&known[:-1]
     if contract.identity_type=='dynamic_slot_unknown':pairs[:]=False
     v[1:]=np.where(pairs[...,None],np.diff(x,axis=0)*contract.fps,np.nan)
     age=np.zeros(valid.shape,int)
     for t in range(len(x)):
-        age[t]=np.where(valid[t]&(ids[t]>=0),1,0)
+        age[t]=np.where(valid[t]&known[t],1,0)
         if t:age[t]=np.where(pairs[t-1],age[t-1]+1,age[t])
     return dict(velocity_mps=v,valid_observation=valid,identity_stability=np.isfinite(v).all(-1),tracklet_age=age)
 
