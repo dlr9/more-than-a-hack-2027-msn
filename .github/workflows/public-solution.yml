@@ -17,6 +17,8 @@ jobs:
           fetch-depth: 1
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /multiview/*.py
+            /research_only/*.py
             /r12/*.py
             /r11p5/*.py
             /r11/*.py

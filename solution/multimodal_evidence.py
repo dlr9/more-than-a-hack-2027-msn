@@ -47,7 +47,7 @@ class EditProposal:
     independent_dead_evidence: bool=False
 
 def residual_candidates(packet,*,label,radius_frames=5):
-    if label not in 'HAD' or radius_frames<0:raise ValueError('candidate')
+    if label not in {'H','A','D'} or radius_frames<0:raise ValueError('candidate')
     return EditProposal(max(0,packet.frame-radius_frames),packet.frame+radius_frames+1,label,packet)
 
 def apply_edits(baseline,period,proposals,*,new_feature=False,trust=0.,model_off=True,calibrated_gate=None,max_edit_frames=25,max_changed_fraction=.01):
@@ -57,7 +57,7 @@ def apply_edits(baseline,period,proposals,*,new_feature=False,trust=0.,model_off
     out=p.copy();used=np.zeros(len(p),bool);budget=int(len(p)*max_changed_fraction)
     for edit in proposals:
         a,b=edit.start,edit.end
-        if not 0<=a<b<=len(p) or b-a>max_edit_frames or edit.label not in 'HAD' or not a<=edit.evidence.frame<b:continue
+        if not 0<=a<b<=len(p) or b-a>max_edit_frames or edit.label not in {'H','A','D'} or not a<=edit.evidence.frame<b:continue
         if np.any(period[a:b]!=edit.evidence.period) or used[a:b].any():continue
         # Both inserting D and removing old D require separately sourced Dead evidence.
         if (edit.label=='D' or np.any(p[a:b]=='D')) and not edit.independent_dead_evidence:continue

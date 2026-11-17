@@ -10,7 +10,7 @@ from multiview.fuse import fuse
 from multiview.camera import camera_proxies
 from solution.idsse import digest
 from scripts.research_r7 import write_new
-P=Path('docs/R14_MULTIVIEW_PROTOCOL.json')
+P=Path('docs/R14_MULTIVIEW_PROTOCOL_V2.json')
 
 def scene(t):
  rng=np.random.default_rng(1401);base=rng.uniform(.2,.8,(12,2));freq=rng.uniform(.12,.5,(12,2));phase=rng.uniform(0,6,(12,2))
@@ -23,9 +23,9 @@ def make_view(n=400,start=0.,drift=1.,missing=False,source='synthetic'):
 
 def freeze():
  paths=['multiview/'+x for x in ['contracts.py','fingerprint.py','align.py','fuse.py','camera.py']]+['scripts/research_r14_multiview.py']
- write_new(P,dict(id='R14_MULTIVIEW_V1',seed=1401,source='synthetic scene only, not external video',config=AlignmentConfig().__dict__,scenarios=['self','offset_and_drift','team_swap','slot_permutation','replay','clock_wrong','shape_wrong_time','missing_balls_with_clock','missing_balls_without_clock','bad_homography','coordinate_conflict'],gate='correct accepted mapping within1 reference frame; no second anchor/replay/conflict must reject; observed inputs preserved; default off exact. Passing is engineering only, NEVER production calibration.',camera='fixed H, smoothly changing H and cut; center/pan dynamics and null fixed-camera signal; no real information gain claim',hashes={p:digest(p) for p in paths}))
+ write_new(P,dict(id='R14_MULTIVIEW_V2',fix='V1 negative control found missing frames could be filled from a conflicting shot; V2 quarantines the whole shot after any intersection conflict. V1 results preserved.',seed=1401,source='synthetic scene only, not external video',config=AlignmentConfig().__dict__,scenarios=['self','offset_and_drift','team_swap','slot_permutation','replay','clock_wrong','shape_wrong_time','missing_balls_with_clock','missing_balls_without_clock','bad_homography','coordinate_conflict'],gate='correct accepted mapping within1 reference frame; no second anchor/replay/conflict must reject; observed inputs preserved; default off exact. Passing is engineering only, NEVER production calibration.',camera='fixed H, smoothly changing H and cut; center/pan dynamics and null fixed-camera signal; no real information gain claim',hashes={p:digest(p) for p in paths}))
 
-def run(out='docs/R14_MULTIVIEW_RESULTS.json'):
+def run(out='docs/R14_MULTIVIEW_RESULTS_V2.json'):
  protocol=json.loads(P.read_text())
  for p,h in protocol['hashes'].items():assert digest(p)==h,p
  ref=make_view(600,missing=True,source='synthetic_reference');other=make_view(400,2,1.02,source='synthetic_other');rng=np.random.default_rng(1401)
@@ -36,6 +36,7 @@ def run(out='docs/R14_MULTIVIEW_RESULTS.json'):
   began=time.monotonic();alignment=align(a,b);idx=alignment['index'];selected=np.flatnonzero(idx>=0);error=np.abs(a.clock_s[selected]-b.clock_s[idx[selected]])*25 if len(selected) and a.clock_s is not None and b.clock_s is not None else np.array([])
   fused=fuse(a,b,alignment,enabled=True,validated=True);off=fuse(a,b,alignment);assert off['ball'] is a.ball
   np.testing.assert_array_equal(fused['ball'][a.ball_observed],a.ball[a.ball_observed])
+  if name=='coordinate_conflict':assert fused['coverage_gain']==0
   if name in ['replay','clock_wrong','missing_balls_without_clock','bad_homography']:assert len(selected)==0,name
   rows.append(dict(case=name,accepted=int(len(selected)),mapping_coverage=float(len(selected)/len(a.frame)),false_alignment_rate=float(np.mean(error>1)) if len(error) else None,max_time_error_frames=float(error.max()) if len(error) else None,coverage_gain=fused['coverage_gain'],conflict_frames=int(fused['conflict'].sum()),intersection_ball_error_median=float(np.median(fused.get('intersection_ball_error_m',[]))) if len(fused.get('intersection_ball_error_m',[])) else None,shots=alignment['shots'],wall_s=time.monotonic()-began))
   print(name,rows[-1]['accepted'],rows[-1]['false_alignment_rate'],rows[-1]['coverage_gain'],flush=True)
@@ -44,4 +45,4 @@ def run(out='docs/R14_MULTIVIEW_RESULTS.json'):
  assert np.nanmax(abs(fixed['camera_pan_proxy_pxps']))==0;assert np.allclose(pan['camera_pan_proxy_pxps'][1:,0],50);assert cut['cut_suspected'][100]
  write_new(out,dict(source='SYNTHETIC_ONLY',rows=rows,camera=dict(fixed_pan_max=0.,known_pan_pxps=50.,cut_detected=bool(cut['cut_suspected'][100]),real_ball_prediction_information='NOT_TESTED'),decision='NO_EVIDENCE_TO_PROMOTE_REAL_MULTIVIEW',protocol_sha256=digest(P)))
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('action',choices=['freeze','run']);p.add_argument('--out',default='docs/R14_MULTIVIEW_RESULTS.json');a=p.parse_args();freeze() if a.action=='freeze' else run(a.out)
+ p=argparse.ArgumentParser();p.add_argument('action',choices=['freeze','run']);p.add_argument('--out',default='docs/R14_MULTIVIEW_RESULTS_V2.json');a=p.parse_args();freeze() if a.action=='freeze' else run(a.out)

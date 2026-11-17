@@ -25,6 +25,9 @@ class MultiviewTests(unittest.TestCase):
   a=make_view(40);b=replace(a,ball=a.ball+.1);r=align(a,b)
   self.assertIs(fuse(a,b,r)['ball'],a.ball);self.assertIs(fuse(a,b,r,enabled=True)['ball'],a.ball)
   out=fuse(a,b,r,enabled=True,validated=True);np.testing.assert_array_equal(out['ball'],a.ball);self.assertGreater(out['conflict'].sum(),0)
+ def test_conflicting_shot_never_fills_missing(self):
+  a=make_view(300,missing=True);b=replace(make_view(300),ball=make_view(300).ball+.1);r=align(a,b)
+  self.assertEqual(fuse(a,b,r,enabled=True,validated=True)['coverage_gain'],0)
  def test_ambiguous_static_shapes(self):
   a=make_view(40);a=replace(a,players=np.repeat(a.players[:1],40,axis=0));self.assertTrue((align(a,a)['index']==-1).all())
  def test_homography_horizon(self):
