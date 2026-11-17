@@ -27,12 +27,16 @@ DEFAULT = dict(
     dead_penalty=30.,
     support='movement',
     out_latch=True,
-    confirm_frames=10
+    confirm_frames=10,
+    restart_experiment='none'
 )
 
 def features(data_dir=None):
     """Load unified V5 features."""
-    return v3_features(data_dir)
+    f = v3_features(data_dir)
+    from load_smart_tagging import load
+    f['restart_events'] = load(data_dir=data_dir)
+    return f
 
 def latch_outside_pitch(ball, players, blocks, confirm=10):
     """Strict physical pitch boundary latching.
@@ -87,4 +91,8 @@ def predict(f, c=None, prepared=None):
         for lo, hi in BLOCKS:
             labels[lo:hi][held[lo:hi]] = 'D'
             
+    if cfg['restart_experiment'] != 'none':
+        from restart_experiments import masks
+        held, _ = masks(f, BLOCKS, f.get('restart_events', []), cfg['restart_experiment'])
+        labels[held] = 'D'
     return labels

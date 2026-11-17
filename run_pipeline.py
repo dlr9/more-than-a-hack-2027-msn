@@ -11,7 +11,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data-dir', default=r'F:\non_video_dataset')
     p.add_argument('--skip-extract', action='store_true')
-    p.add_argument('--model', choices=['auto','v1','v2','v3','v4','v5'], default='auto')
+    p.add_argument('--model', choices=['auto','v1','v2','v3','v4','v5','v6'], default='auto')
     p.add_argument('--config', type=Path)
     p.add_argument('--output', type=Path)
     a = p.parse_args()
@@ -23,7 +23,7 @@ def main():
         model = json.loads(manifest.read_text())['model'] if manifest.exists() else 'v1'
     from baseline import write_submission
     import possession_metrics as pm
-    if model in ('v2','v3','v4','v5'):
+    if model in ('v2','v3','v4','v5','v6'):
         import importlib
         module = importlib.import_module('fusion_'+model)
         config_path = a.config or root/f'models/fusion_{model}_config.json'
