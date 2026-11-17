@@ -13,7 +13,7 @@ def allowed(path):
     if '..'in p.parts or p.is_absolute():return False
     if path in EXACT:return True
     if len(p.parts)==2 and p.parts[0]in{'solution','scripts','tests'} and p.suffix in{'.py','.command'}:return True
-    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_','R7B_','R8_','R9_V2_','R10_V3_','R11_','R11P5_','R12_')) and p.suffix in{'.json','.md'}:return True
+    if len(p.parts)==2 and p.parts[0]=='docs' and p.name.startswith(('R6_','R7_','R7B_','R8_','R9_V2_','R10_V3_','R11_','R11P5_','R12_','R13_')) and p.suffix in{'.json','.md'}:return True
     if p.parts and p.parts[0]=='r10' and len(p.parts) in (2,3) and p.suffix in {'.py','.md'} and (len(p.parts)==2 or p.parts[1]=='adapters'):return True
     if len(p.parts)==2 and p.parts[0] in {'r11','r11p5','r12'} and p.suffix=='.py':return True
     return False
