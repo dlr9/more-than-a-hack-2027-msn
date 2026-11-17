@@ -1,0 +1,251 @@
+{
+  "decision": "NO_GO for all R13 primary candidates; KEEP research artifacts; unchanged HC_M3/M3 fallback",
+  "models": {
+    "models": {
+      "human": {
+        "sha256": "6901ebe37ca80f0fd57d2f42fdf321576fbc0ad6b50346b9d7e9787dc6e7bb90",
+        "n": 108968,
+        "iterations": [
+          214
+        ]
+      },
+      "source": {
+        "sha256": "564a357a201107ab8c2eef6054b5dd3ea1b6f18e44299793cca7d2a7e130a399",
+        "n": 111744,
+        "iterations": [
+          170
+        ]
+      },
+      "shuffle": {
+        "sha256": "0d6fb8ddf1a5c9259b054b1de8629b3e7954b97ed5e0127ad71c989b463742d5",
+        "n": 108968,
+        "iterations": [
+          142
+        ]
+      }
+    },
+    "training_counts": {
+      "human": {
+        "accepted_event_anchors": 836,
+        "counts": [
+          6236,
+          2893,
+          18113
+        ],
+        "excluded": 46565
+      },
+      "source": {
+        "accepted_event_anchors": 324,
+        "counts": [
+          1711,
+          1638,
+          24587
+        ],
+        "excluded": 19916
+      }
+    },
+    "protocol_sha": "46550e1f9f83230184102e74f6b0bbb9e0ab5fa7a4ec6ac49daca1b8334f1030"
+  },
+  "data": "Public DFL/IDSSE J03WPY training, human-timed ELASTIC J03WPY events (CC BY 4.0); full J03WOH/J03WQQ evaluation, all previously consumed development matches",
+  "new_fits": 3,
+  "scored_predictions": 72,
+  "prior_source": "Eligible training population only; not empirical calibration under covariate shift",
+  "model_distribution": "Models and full public-external predictions remain in ignored local cache; public hashes and recipes, no binary upload",
+  "runs": [
+    {
+      "family": "memory",
+      "protocol_commit": "5b01241",
+      "primary": "memory",
+      "decision": "NO_GO",
+      "results": "R13_RESULTS.json",
+      "rows": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "515643dc3ef4a24caf87809e637aaa8ad5dd431d91ebfbfd020728353370c68e",
+          "spellF1": 0.481570996978852,
+          "matches_vs_HC_at_0_5": {
+            "gained": 8,
+            "lost": 67,
+            "net": -59
+          }
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "f7e5bbbbde8315c544616fb6535b5e46a04ebab7cb0fea5065a77ea883d66caa",
+          "spellF1": 0.40849858356940516,
+          "matches_vs_HC_at_0_5": {
+            "gained": 12,
+            "lost": 57,
+            "net": -45
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "52bb89c6631b63d1cd6b670e8eb0c783a7b96f60d97976a8525d97bf8cae3e36",
+          "spellF1": 0.49559748427672956,
+          "matches_vs_HC_at_0_5": {
+            "gained": 13,
+            "lost": 84,
+            "net": -71
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "ce61918c41862b5f8017bae359aa2f0d9370f6d9bc007c8a781bffa4bd41f9b6",
+          "spellF1": 0.44107142857142856,
+          "matches_vs_HC_at_0_5": {
+            "gained": 17,
+            "lost": 74,
+            "net": -57
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "0f0dffb90a59ad4e0159013b5679888297b7bd343f6521c9c15c74a45d10f208",
+          "spellF1": 0.5206537890044577,
+          "matches_vs_HC_at_0_5": {
+            "gained": 15,
+            "lost": 87,
+            "net": -72
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "git_sha": "5b01241184da2a442bc3eff8460825e47e77c3e9",
+          "prediction_sha256": "8d7888280e260994c6defc20a2f820433d8ae0974151b30ce683ac061771eaba",
+          "spellF1": 0.44525139664804464,
+          "matches_vs_HC_at_0_5": {
+            "gained": 21,
+            "lost": 63,
+            "net": -42
+          }
+        }
+      ]
+    },
+    {
+      "family": "dense",
+      "protocol_commit": "203f8a5",
+      "primary": "human",
+      "decision": "NO_GO",
+      "results": "R13_DENSE_RESULTS.json",
+      "rows": [
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80",
+          "prediction_sha256": "28e4f01665cf94d57a9a7a8df99f8e657f21f137c08a830df00f97ef91a4b23b",
+          "spellF1": 0.5385556915544676,
+          "matches_vs_HC_at_0_5": {
+            "gained": 18,
+            "lost": 27,
+            "net": -9
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80",
+          "prediction_sha256": "45e38fd3a836e786945d3c3df3712417dffc468d0f8644b10e89534e5be27e48",
+          "spellF1": 0.4773881499395406,
+          "matches_vs_HC_at_0_5": {
+            "gained": 18,
+            "lost": 25,
+            "net": -7
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80",
+          "prediction_sha256": "feee98964177729d10b789cfcbd5069c6a91bcf0eca1b87cdff8dd216e950877",
+          "spellF1": 0.5690210656753407,
+          "matches_vs_HC_at_0_5": {
+            "gained": 13,
+            "lost": 26,
+            "net": -13
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80",
+          "prediction_sha256": "4905a360d75a1ddd942bffb31724f39ae8e9ed00a4f1e5a426b60560ef2def0a",
+          "spellF1": 0.4659286592865929,
+          "matches_vs_HC_at_0_5": {
+            "gained": 11,
+            "lost": 26,
+            "net": -15
+          }
+        }
+      ]
+    },
+    {
+      "family": "calibration",
+      "protocol_commit": "1e505c3",
+      "primary": "corrected",
+      "decision": "NO_GO",
+      "results": "R13_CALIBRATION_RESULTS.json",
+      "rows": [
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "git_sha": "1e505c30d57cdcfb5a265a85eb003fdf9f84d1ba",
+          "prediction_sha256": "39483cd1d5da127386e47b5b0197cd0f247b4eb5e7843e24ff38f6059547badb",
+          "spellF1": 0.4984749455337691,
+          "matches_vs_HC_at_0_5": {
+            "gained": 17,
+            "lost": 18,
+            "net": -1
+          }
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "git_sha": "1e505c30d57cdcfb5a265a85eb003fdf9f84d1ba",
+          "prediction_sha256": "8a7aabcd5ca18983d9e0e3de6b5d0427c7867035c477fb90c052ac0ca21ff818",
+          "spellF1": 0.4441558441558442,
+          "matches_vs_HC_at_0_5": {
+            "gained": 16,
+            "lost": 18,
+            "net": -2
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "git_sha": "1e505c30d57cdcfb5a265a85eb003fdf9f84d1ba",
+          "prediction_sha256": "67d84e3661bb644027e25588354bab6c9e71cc30312d7838a792014a28b08b68",
+          "spellF1": 0.5313043478260868,
+          "matches_vs_HC_at_0_5": {
+            "gained": 14,
+            "lost": 15,
+            "net": -1
+          }
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "git_sha": "1e505c30d57cdcfb5a265a85eb003fdf9f84d1ba",
+          "prediction_sha256": "1ca29ca5c5e8fa7542e2b7e10496e214d6d62706a5dab31a29202bb3b163eb72",
+          "spellF1": 0.4286644951140065,
+          "matches_vs_HC_at_0_5": {
+            "gained": 8,
+            "lost": 18,
+            "net": -10
+          }
+        }
+      ]
+    }
+  ]
+}

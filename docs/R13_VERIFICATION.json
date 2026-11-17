@@ -1,0 +1,56 @@
+{
+  "models_verified": 3,
+  "exact_probability_replays": 12,
+  "exact_full_prediction_replays": 72,
+  "official_ROI_score_equivalences": 72,
+  "bridges": [
+    {
+      "match": "J03WPY",
+      "domain": "natural",
+      "false_D_opposite_owner_bridges": {
+        "R12": 65,
+        "memory": 0
+      }
+    },
+    {
+      "match": "J03WPY",
+      "domain": "long",
+      "false_D_opposite_owner_bridges": {
+        "R12": 77,
+        "memory": 5
+      }
+    },
+    {
+      "match": "J03WOH",
+      "domain": "natural",
+      "false_D_opposite_owner_bridges": {
+        "R12": 55,
+        "memory": 0
+      }
+    },
+    {
+      "match": "J03WOH",
+      "domain": "long",
+      "false_D_opposite_owner_bridges": {
+        "R12": 65,
+        "memory": 7
+      }
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "natural",
+      "false_D_opposite_owner_bridges": {
+        "R12": 83,
+        "memory": 0
+      }
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "long",
+      "false_D_opposite_owner_bridges": {
+        "R12": 82,
+        "memory": 7
+      }
+    }
+  ]
+}

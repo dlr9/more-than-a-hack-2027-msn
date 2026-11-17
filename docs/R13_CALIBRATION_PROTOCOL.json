@@ -1,0 +1,56 @@
+{
+  "id": "R13_CALIBRATION_V1",
+  "reason": "R13 dense training class_weight=balanced does not output population event priors. Arithmetic mixture changes baseline even for neutral event evidence.",
+  "primary": "corrected: training eligible-class prior correction + neutral-preserving fixed unit log-odds pool. No validation-fitted coefficient.",
+  "factorial": [
+    "original uncorrected arithmetic in R13_DENSE_RESULTS",
+    "prior_only",
+    "neutral_only",
+    "corrected"
+  ],
+  "controls": [
+    "source_corrected",
+    "shuffle_corrected",
+    "time_shift_corrected",
+    "neutral_control"
+  ],
+  "priors": {
+    "human": [
+      0.04580715733697288,
+      0.04580715733697288,
+      0.9083856853260542
+    ],
+    "source": [
+      0.013258640484579753,
+      0.013258640484579753,
+      0.9734827190308405
+    ],
+    "shuffle": [
+      0.04580715733697288,
+      0.04580715733697288,
+      0.9083856853260542
+    ]
+  },
+  "limitations": "Priors describe labeled eligible training population, not ambiguous intervals or a new provider. Shared geometric input means opinion pool is NOT independent-sensor Bayes evidence.",
+  "gate": "Same R13 dense promotion gate. Primary fixed before scoring; do not select best factorial arm.",
+  "hashes": {
+    "r12/control_calibration.py": "74dae1c8f6254ab3b162bfa448ad8f979d219ef8213fd61301d8dcba651489ce",
+    "scripts/evaluate_r13_calibration.py": "d04e7db082c7b80b73d4b0a9c51f5ef3901039bb989a3c906272b5272274b1e7",
+    "r12/dense_control.py": "47c2f4f83c0559454f784e7e46ff88edd0811b4d4ba39af57d1118e80206ec58",
+    "local_artifacts/r13/dense-v1/models.json": "cfc1d651e078fde61f7455d76a550789d8f6ead96d00184b6be6492900244eb0",
+    "local_artifacts/r13/dense-v1/J03WOH-natural.npz": "28e4f01665cf94d57a9a7a8df99f8e657f21f137c08a830df00f97ef91a4b23b",
+    "local_artifacts/r8/e08c/J03WOH-natural.npz": "3f257c01678f996097fc00b5c77f0a3939fd9883741ed00dfe5ca5030f6eba72",
+    "local_artifacts/r12/global-v1/J03WOH-natural.npz": "b066540c07b956fa6dad660b71bb0c1fc7140dc62abc1073827761700d96f709",
+    "local_artifacts/r13/dense-v1/J03WOH-long.npz": "45e38fd3a836e786945d3c3df3712417dffc468d0f8644b10e89534e5be27e48",
+    "local_artifacts/r8/e08c/J03WOH-long.npz": "175e675f2882b95c3788104b7527b8a8f2473dddf68595e3af4d8ecfa8a7269e",
+    "local_artifacts/r12/global-v1/J03WOH-long.npz": "82c16f2b80892f487d3a305102ae02b8b39df83fd32e90c98cf5892b47630908",
+    "local_artifacts/r13/dense-v1/J03WQQ-natural.npz": "feee98964177729d10b789cfcbd5069c6a91bcf0eca1b87cdff8dd216e950877",
+    "local_artifacts/r8/e08c/J03WQQ-natural.npz": "116d6ba6b45a596bdecd95af39bbda63b6cd111767c981315fed0c16acc1bb25",
+    "local_artifacts/r12/global-v1/J03WQQ-natural.npz": "f3621029ef9a0392654b622ec118e2d304799c5ab9610c75b4b64a83e8c57b48",
+    "local_artifacts/r13/dense-v1/J03WQQ-long.npz": "4905a360d75a1ddd942bffb31724f39ae8e9ed00a4f1e5a426b60560ef2def0a",
+    "local_artifacts/r8/e08c/J03WQQ-long.npz": "66e58bb24be83e4464ecca965d1f4a9d3c79e432e07beab58e6000a84c1a86a9",
+    "local_artifacts/r12/global-v1/J03WQQ-long.npz": "080e8d48d9483fa5059b474afc79f009fe4c8cf2689791f1c226fc3c50bd748d"
+  },
+  "new_fits": 0,
+  "stop": "No further probability weight/threshold tuning on these matches"
+}

@@ -1,0 +1,3225 @@
+{
+  "models": {
+    "human": {
+      "sha256": "6901ebe37ca80f0fd57d2f42fdf321576fbc0ad6b50346b9d7e9787dc6e7bb90",
+      "n": 108968,
+      "iterations": [
+        214
+      ]
+    },
+    "source": {
+      "sha256": "564a357a201107ab8c2eef6054b5dd3ea1b6f18e44299793cca7d2a7e130a399",
+      "n": 111744,
+      "iterations": [
+        170
+      ]
+    },
+    "shuffle": {
+      "sha256": "0d6fb8ddf1a5c9259b054b1de8629b3e7954b97ed5e0127ad71c989b463742d5",
+      "n": 108968,
+      "iterations": [
+        142
+      ]
+    }
+  },
+  "training_counts": {
+    "human": {
+      "accepted_event_anchors": 836,
+      "counts": [
+        6236,
+        2893,
+        18113
+      ],
+      "excluded": 46565
+    },
+    "source": {
+      "accepted_event_anchors": 324,
+      "counts": [
+        1711,
+        1638,
+        24587
+      ],
+      "excluded": 19916
+    }
+  },
+  "rows": [
+    {
+      "match": "J03WOH",
+      "domain": "natural",
+      "results": {
+        "no_event": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7258485639686684,
+                  "recall": 0.6915422885572139,
+                  "f1": 0.70828025477707,
+                  "n_matched": 278,
+                  "n_spurious": 105,
+                  "n_missed": 124
+                },
+                "0.4": {
+                  "precision": 0.6657963446475196,
+                  "recall": 0.6343283582089553,
+                  "f1": 0.6496815286624203,
+                  "n_matched": 255,
+                  "n_spurious": 128,
+                  "n_missed": 147
+                },
+                "0.5": {
+                  "precision": 0.6109660574412533,
+                  "recall": 0.582089552238806,
+                  "f1": 0.5961783439490446,
+                  "n_matched": 234,
+                  "n_spurious": 149,
+                  "n_missed": 168
+                },
+                "0.6": {
+                  "precision": 0.5430809399477807,
+                  "recall": 0.5174129353233831,
+                  "f1": 0.5299363057324841,
+                  "n_matched": 208,
+                  "n_spurious": 175,
+                  "n_missed": 194
+                },
+                "0.7": {
+                  "precision": 0.4516971279373368,
+                  "recall": 0.43034825870646765,
+                  "f1": 0.44076433121019104,
+                  "n_matched": 173,
+                  "n_spurious": 210,
+                  "n_missed": 229
+                }
+              },
+              "mean_f1": 0.584968152866242,
+              "n_gt": 402,
+              "n_pred": 383
+            },
+            "macro_f1": 0.9131722902354271,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 7,
+                    "0.4": 6,
+                    "0.5": 6,
+                    "0.6": 6,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 112,
+                    "0.4": 94,
+                    "0.5": 81,
+                    "0.6": 69,
+                    "0.7": 54
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 159,
+                    "0.4": 155,
+                    "0.5": 147,
+                    "0.6": 133,
+                    "0.7": 115
+                  }
+                }
+              },
+              "missed_D_frames": 37,
+              "false_D_frames": 53,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 114,
+                "fp": 159,
+                "fn": 187,
+                "mean_abs_s": 0.2919298245614036
+              },
+              "enter_D": {
+                "tp": 65,
+                "fp": 45,
+                "fn": 36,
+                "mean_abs_s": 0.04
+              },
+              "exit_D": {
+                "tp": 91,
+                "fp": 18,
+                "fn": 9,
+                "mean_abs_s": 0.0
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.4": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.5": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.6": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.7": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 14,
+            "true_possessions_cut_by_D": 11,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 21,
+            "strata": {
+              "observed": {
+                "n": 137214,
+                "wrong": 9311,
+                "false_D": 53,
+                "missed_D": 37
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "human": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6602409638554216,
+                  "recall": 0.681592039800995,
+                  "f1": 0.6707466340269277,
+                  "n_matched": 274,
+                  "n_spurious": 141,
+                  "n_missed": 128
+                },
+                "0.4": {
+                  "precision": 0.6216867469879518,
+                  "recall": 0.6417910447761194,
+                  "f1": 0.631578947368421,
+                  "n_matched": 258,
+                  "n_spurious": 157,
+                  "n_missed": 144
+                },
+                "0.5": {
+                  "precision": 0.5421686746987951,
+                  "recall": 0.5597014925373134,
+                  "f1": 0.5507955936352509,
+                  "n_matched": 225,
+                  "n_spurious": 190,
+                  "n_missed": 177
+                },
+                "0.6": {
+                  "precision": 0.4530120481927711,
+                  "recall": 0.46766169154228854,
+                  "f1": 0.4602203182374541,
+                  "n_matched": 188,
+                  "n_spurious": 227,
+                  "n_missed": 214
+                },
+                "0.7": {
+                  "precision": 0.37349397590361444,
+                  "recall": 0.3855721393034826,
+                  "f1": 0.379436964504284,
+                  "n_matched": 155,
+                  "n_spurious": 260,
+                  "n_missed": 247
+                }
+              },
+              "mean_f1": 0.5385556915544676,
+              "n_gt": 402,
+              "n_pred": 415
+            },
+            "macro_f1": 0.9005625258097107,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 13,
+                    "0.4": 11,
+                    "0.5": 9,
+                    "0.6": 7,
+                    "0.7": 6
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 103,
+                    "0.4": 90,
+                    "0.5": 73,
+                    "0.6": 52,
+                    "0.7": 40
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 158,
+                    "0.4": 157,
+                    "0.5": 143,
+                    "0.6": 129,
+                    "0.7": 109
+                  }
+                }
+              },
+              "missed_D_frames": 37,
+              "false_D_frames": 53,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 113,
+                "fp": 192,
+                "fn": 188,
+                "mean_abs_s": 0.35327433628318583
+              },
+              "enter_D": {
+                "tp": 65,
+                "fp": 45,
+                "fn": 36,
+                "mean_abs_s": 0.04123076923076923
+              },
+              "exit_D": {
+                "tp": 88,
+                "fp": 21,
+                "fn": 12,
+                "mean_abs_s": 0.0
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 17,
+              "lost": 21,
+              "net": -4
+            },
+            "0.4": {
+              "gained": 22,
+              "lost": 19,
+              "net": 3
+            },
+            "0.5": {
+              "gained": 18,
+              "lost": 27,
+              "net": -9
+            },
+            "0.6": {
+              "gained": 18,
+              "lost": 38,
+              "net": -20
+            },
+            "0.7": {
+              "gained": 25,
+              "lost": 43,
+              "net": -18
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 14,
+            "true_possessions_cut_by_D": 11,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 22,
+            "strata": {
+              "observed": {
+                "n": 137214,
+                "wrong": 10675,
+                "false_D": 53,
+                "missed_D": 37
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "source": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.680306905370844,
+                  "recall": 0.6616915422885572,
+                  "f1": 0.6708701134930644,
+                  "n_matched": 266,
+                  "n_spurious": 125,
+                  "n_missed": 136
+                },
+                "0.4": {
+                  "precision": 0.6317135549872123,
+                  "recall": 0.6144278606965174,
+                  "f1": 0.6229508196721311,
+                  "n_matched": 247,
+                  "n_spurious": 144,
+                  "n_missed": 155
+                },
+                "0.5": {
+                  "precision": 0.5626598465473146,
+                  "recall": 0.5472636815920398,
+                  "f1": 0.5548549810844894,
+                  "n_matched": 220,
+                  "n_spurious": 171,
+                  "n_missed": 182
+                },
+                "0.6": {
+                  "precision": 0.48081841432225064,
+                  "recall": 0.46766169154228854,
+                  "f1": 0.4741488020176545,
+                  "n_matched": 188,
+                  "n_spurious": 203,
+                  "n_missed": 214
+                },
+                "0.7": {
+                  "precision": 0.3887468030690537,
+                  "recall": 0.3781094527363184,
+                  "f1": 0.38335435056746525,
+                  "n_matched": 152,
+                  "n_spurious": 239,
+                  "n_missed": 250
+                }
+              },
+              "mean_f1": 0.541235813366961,
+              "n_gt": 402,
+              "n_pred": 391
+            },
+            "macro_f1": 0.8984368433725652,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 14,
+                    "0.4": 12,
+                    "0.5": 10,
+                    "0.6": 8,
+                    "0.7": 6
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 99,
+                    "0.4": 85,
+                    "0.5": 72,
+                    "0.6": 57,
+                    "0.7": 40
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 153,
+                    "0.4": 150,
+                    "0.5": 138,
+                    "0.6": 123,
+                    "0.7": 106
+                  }
+                }
+              },
+              "missed_D_frames": 37,
+              "false_D_frames": 53,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 116,
+                "fp": 165,
+                "fn": 185,
+                "mean_abs_s": 0.3806896551724139
+              },
+              "enter_D": {
+                "tp": 67,
+                "fp": 43,
+                "fn": 34,
+                "mean_abs_s": 0.04059701492537314
+              },
+              "exit_D": {
+                "tp": 90,
+                "fp": 19,
+                "fn": 10,
+                "mean_abs_s": 0.0
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 15,
+              "lost": 27,
+              "net": -12
+            },
+            "0.4": {
+              "gained": 18,
+              "lost": 26,
+              "net": -8
+            },
+            "0.5": {
+              "gained": 16,
+              "lost": 30,
+              "net": -14
+            },
+            "0.6": {
+              "gained": 18,
+              "lost": 38,
+              "net": -20
+            },
+            "0.7": {
+              "gained": 23,
+              "lost": 44,
+              "net": -21
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 14,
+            "true_possessions_cut_by_D": 11,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 24,
+            "strata": {
+              "observed": {
+                "n": 137214,
+                "wrong": 10888,
+                "false_D": 53,
+                "missed_D": 37
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "shuffle": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.851985559566787,
+                  "recall": 0.5870646766169154,
+                  "f1": 0.6951399116347571,
+                  "n_matched": 236,
+                  "n_spurious": 41,
+                  "n_missed": 166
+                },
+                "0.4": {
+                  "precision": 0.7870036101083032,
+                  "recall": 0.5422885572139303,
+                  "f1": 0.642120765832106,
+                  "n_matched": 218,
+                  "n_spurious": 59,
+                  "n_missed": 184
+                },
+                "0.5": {
+                  "precision": 0.740072202166065,
+                  "recall": 0.5099502487562189,
+                  "f1": 0.6038291605301914,
+                  "n_matched": 205,
+                  "n_spurious": 72,
+                  "n_missed": 197
+                },
+                "0.6": {
+                  "precision": 0.6642599277978339,
+                  "recall": 0.4577114427860697,
+                  "f1": 0.5419734904270987,
+                  "n_matched": 184,
+                  "n_spurious": 93,
+                  "n_missed": 218
+                },
+                "0.7": {
+                  "precision": 0.5451263537906137,
+                  "recall": 0.3756218905472637,
+                  "f1": 0.44477172312223856,
+                  "n_matched": 151,
+                  "n_spurious": 126,
+                  "n_missed": 251
+                }
+              },
+              "mean_f1": 0.5855670103092784,
+              "n_gt": 402,
+              "n_pred": 277
+            },
+            "macro_f1": 0.9161716470148594,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 3,
+                    "0.4": 2,
+                    "0.5": 2,
+                    "0.6": 2,
+                    "0.7": 1
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 81,
+                    "0.4": 69,
+                    "0.5": 61,
+                    "0.6": 52,
+                    "0.7": 38
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 152,
+                    "0.4": 147,
+                    "0.5": 142,
+                    "0.6": 130,
+                    "0.7": 112
+                  }
+                }
+              },
+              "missed_D_frames": 37,
+              "false_D_frames": 53,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 84,
+                "fp": 83,
+                "fn": 217,
+                "mean_abs_s": 0.3114285714285715
+              },
+              "enter_D": {
+                "tp": 62,
+                "fp": 48,
+                "fn": 39,
+                "mean_abs_s": 0.03741935483870968
+              },
+              "exit_D": {
+                "tp": 91,
+                "fp": 18,
+                "fn": 9,
+                "mean_abs_s": 0.0
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 1,
+              "lost": 43,
+              "net": -42
+            },
+            "0.4": {
+              "gained": 5,
+              "lost": 42,
+              "net": -37
+            },
+            "0.5": {
+              "gained": 8,
+              "lost": 37,
+              "net": -29
+            },
+            "0.6": {
+              "gained": 14,
+              "lost": 38,
+              "net": -24
+            },
+            "0.7": {
+              "gained": 15,
+              "lost": 37,
+              "net": -22
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 14,
+            "true_possessions_cut_by_D": 11,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 21,
+            "strata": {
+              "observed": {
+                "n": 137214,
+                "wrong": 8999,
+                "false_D": 53,
+                "missed_D": 37
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "time_shift": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6882352941176471,
+                  "recall": 0.582089552238806,
+                  "f1": 0.6307277628032345,
+                  "n_matched": 234,
+                  "n_spurious": 106,
+                  "n_missed": 168
+                },
+                "0.4": {
+                  "precision": 0.6088235294117647,
+                  "recall": 0.5149253731343284,
+                  "f1": 0.5579514824797844,
+                  "n_matched": 207,
+                  "n_spurious": 133,
+                  "n_missed": 195
+                },
+                "0.5": {
+                  "precision": 0.5470588235294118,
+                  "recall": 0.4626865671641791,
+                  "f1": 0.5013477088948788,
+                  "n_matched": 186,
+                  "n_spurious": 154,
+                  "n_missed": 216
+                },
+                "0.6": {
+                  "precision": 0.4588235294117647,
+                  "recall": 0.3880597014925373,
+                  "f1": 0.42048517520215634,
+                  "n_matched": 156,
+                  "n_spurious": 184,
+                  "n_missed": 246
+                },
+                "0.7": {
+                  "precision": 0.36176470588235293,
+                  "recall": 0.30597014925373134,
+                  "f1": 0.33153638814016173,
+                  "n_matched": 123,
+                  "n_spurious": 217,
+                  "n_missed": 279
+                }
+              },
+              "mean_f1": 0.48840970350404317,
+              "n_gt": 402,
+              "n_pred": 340
+            },
+            "macro_f1": 0.885481523672628,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 2,
+                    "0.4": 2,
+                    "0.5": 2,
+                    "0.6": 1,
+                    "0.7": 0
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 84,
+                    "0.4": 67,
+                    "0.5": 57,
+                    "0.6": 45,
+                    "0.7": 33
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 148,
+                    "0.4": 138,
+                    "0.5": 127,
+                    "0.6": 110,
+                    "0.7": 90
+                  }
+                }
+              },
+              "missed_D_frames": 37,
+              "false_D_frames": 53,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 77,
+                "fp": 153,
+                "fn": 224,
+                "mean_abs_s": 0.332987012987013
+              },
+              "enter_D": {
+                "tp": 57,
+                "fp": 53,
+                "fn": 44,
+                "mean_abs_s": 0.04140350877192983
+              },
+              "exit_D": {
+                "tp": 85,
+                "fp": 24,
+                "fn": 15,
+                "mean_abs_s": 0.0
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 17,
+              "lost": 61,
+              "net": -44
+            },
+            "0.4": {
+              "gained": 16,
+              "lost": 64,
+              "net": -48
+            },
+            "0.5": {
+              "gained": 16,
+              "lost": 64,
+              "net": -48
+            },
+            "0.6": {
+              "gained": 17,
+              "lost": 69,
+              "net": -52
+            },
+            "0.7": {
+              "gained": 20,
+              "lost": 70,
+              "net": -50
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 14,
+            "true_possessions_cut_by_D": 11,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 13,
+            "strata": {
+              "observed": {
+                "n": 137214,
+                "wrong": 12275,
+                "false_D": 53,
+                "missed_D": 37
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        }
+      },
+      "prediction_sha": "28e4f01665cf94d57a9a7a8df99f8e657f21f137c08a830df00f97ef91a4b23b",
+      "protocol_sha": "46550e1f9f83230184102e74f6b0bbb9e0ab5fa7a4ec6ac49daca1b8334f1030",
+      "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80"
+    },
+    {
+      "match": "J03WOH",
+      "domain": "long",
+      "results": {
+        "no_event": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6399026763990268,
+                  "recall": 0.654228855721393,
+                  "f1": 0.6469864698646985,
+                  "n_matched": 263,
+                  "n_spurious": 148,
+                  "n_missed": 139
+                },
+                "0.4": {
+                  "precision": 0.5742092457420924,
+                  "recall": 0.5870646766169154,
+                  "f1": 0.5805658056580565,
+                  "n_matched": 236,
+                  "n_spurious": 175,
+                  "n_missed": 166
+                },
+                "0.5": {
+                  "precision": 0.5060827250608273,
+                  "recall": 0.5174129353233831,
+                  "f1": 0.5116851168511685,
+                  "n_matched": 208,
+                  "n_spurious": 203,
+                  "n_missed": 194
+                },
+                "0.6": {
+                  "precision": 0.43795620437956206,
+                  "recall": 0.44776119402985076,
+                  "f1": 0.44280442804428044,
+                  "n_matched": 180,
+                  "n_spurious": 231,
+                  "n_missed": 222
+                },
+                "0.7": {
+                  "precision": 0.34793187347931875,
+                  "recall": 0.35572139303482586,
+                  "f1": 0.35178351783517836,
+                  "n_matched": 143,
+                  "n_spurious": 268,
+                  "n_missed": 259
+                }
+              },
+              "mean_f1": 0.5067650676506765,
+              "n_gt": 402,
+              "n_pred": 411
+            },
+            "macro_f1": 0.8563692980368686,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 5,
+                    "0.4": 4,
+                    "0.5": 4,
+                    "0.6": 4,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 109,
+                    "0.4": 91,
+                    "0.5": 77,
+                    "0.6": 65,
+                    "0.7": 51
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 149,
+                    "0.4": 141,
+                    "0.5": 127,
+                    "0.6": 111,
+                    "0.7": 88
+                  }
+                }
+              },
+              "missed_D_frames": 250,
+              "false_D_frames": 7860,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 100,
+                "fp": 154,
+                "fn": 201,
+                "mean_abs_s": 0.28
+              },
+              "enter_D": {
+                "tp": 57,
+                "fp": 100,
+                "fn": 44,
+                "mean_abs_s": 0.06526315789473684
+              },
+              "exit_D": {
+                "tp": 81,
+                "fp": 75,
+                "fn": 19,
+                "mean_abs_s": 0.01037037037037037
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.4": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.5": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.6": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.7": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 109,
+            "true_possessions_cut_by_D": 104,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 17,
+            "strata": {
+              "observed": {
+                "n": 118639,
+                "wrong": 8599,
+                "false_D": 128,
+                "missed_D": 46
+              },
+              "missing": {
+                "n": 18575,
+                "wrong": 8051,
+                "false_D": 7732,
+                "missed_D": 204
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "human": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.611764705882353,
+                  "recall": 0.6467661691542289,
+                  "f1": 0.6287787182587667,
+                  "n_matched": 260,
+                  "n_spurious": 165,
+                  "n_missed": 142
+                },
+                "0.4": {
+                  "precision": 0.5670588235294117,
+                  "recall": 0.599502487562189,
+                  "f1": 0.5828295042321645,
+                  "n_matched": 241,
+                  "n_spurious": 184,
+                  "n_missed": 161
+                },
+                "0.5": {
+                  "precision": 0.47294117647058825,
+                  "recall": 0.5,
+                  "f1": 0.48609431680773885,
+                  "n_matched": 201,
+                  "n_spurious": 224,
+                  "n_missed": 201
+                },
+                "0.6": {
+                  "precision": 0.3788235294117647,
+                  "recall": 0.40049751243781095,
+                  "f1": 0.38935912938331313,
+                  "n_matched": 161,
+                  "n_spurious": 264,
+                  "n_missed": 241
+                },
+                "0.7": {
+                  "precision": 0.2917647058823529,
+                  "recall": 0.30845771144278605,
+                  "f1": 0.2998790810157195,
+                  "n_matched": 124,
+                  "n_spurious": 301,
+                  "n_missed": 278
+                }
+              },
+              "mean_f1": 0.4773881499395406,
+              "n_gt": 402,
+              "n_pred": 425
+            },
+            "macro_f1": 0.8433243163790075,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 11,
+                    "0.4": 9,
+                    "0.5": 7,
+                    "0.6": 5,
+                    "0.7": 5
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 100,
+                    "0.4": 87,
+                    "0.5": 68,
+                    "0.6": 46,
+                    "0.7": 34
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 149,
+                    "0.4": 145,
+                    "0.5": 126,
+                    "0.6": 110,
+                    "0.7": 85
+                  }
+                }
+              },
+              "missed_D_frames": 250,
+              "false_D_frames": 7860,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 96,
+                "fp": 172,
+                "fn": 205,
+                "mean_abs_s": 0.36541666666666667
+              },
+              "enter_D": {
+                "tp": 59,
+                "fp": 98,
+                "fn": 42,
+                "mean_abs_s": 0.06440677966101695
+              },
+              "exit_D": {
+                "tp": 78,
+                "fp": 78,
+                "fn": 22,
+                "mean_abs_s": 0.010769230769230769
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 16,
+              "lost": 19,
+              "net": -3
+            },
+            "0.4": {
+              "gained": 22,
+              "lost": 17,
+              "net": 5
+            },
+            "0.5": {
+              "gained": 18,
+              "lost": 25,
+              "net": -7
+            },
+            "0.6": {
+              "gained": 17,
+              "lost": 36,
+              "net": -19
+            },
+            "0.7": {
+              "gained": 20,
+              "lost": 39,
+              "net": -19
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 109,
+            "true_possessions_cut_by_D": 104,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 17,
+            "strata": {
+              "observed": {
+                "n": 118639,
+                "wrong": 9946,
+                "false_D": 128,
+                "missed_D": 46
+              },
+              "missing": {
+                "n": 18575,
+                "wrong": 8051,
+                "false_D": 7732,
+                "missed_D": 204
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "source": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6129807692307693,
+                  "recall": 0.6343283582089553,
+                  "f1": 0.6234718826405868,
+                  "n_matched": 255,
+                  "n_spurious": 161,
+                  "n_missed": 147
+                },
+                "0.4": {
+                  "precision": 0.5504807692307693,
+                  "recall": 0.5696517412935324,
+                  "f1": 0.5599022004889975,
+                  "n_matched": 229,
+                  "n_spurious": 187,
+                  "n_missed": 173
+                },
+                "0.5": {
+                  "precision": 0.46875,
+                  "recall": 0.48507462686567165,
+                  "f1": 0.47677261613691935,
+                  "n_matched": 195,
+                  "n_spurious": 221,
+                  "n_missed": 207
+                },
+                "0.6": {
+                  "precision": 0.3870192307692308,
+                  "recall": 0.40049751243781095,
+                  "f1": 0.39364303178484106,
+                  "n_matched": 161,
+                  "n_spurious": 255,
+                  "n_missed": 241
+                },
+                "0.7": {
+                  "precision": 0.28365384615384615,
+                  "recall": 0.2935323383084577,
+                  "f1": 0.2885085574572127,
+                  "n_matched": 118,
+                  "n_spurious": 298,
+                  "n_missed": 284
+                }
+              },
+              "mean_f1": 0.4684596577017114,
+              "n_gt": 402,
+              "n_pred": 416
+            },
+            "macro_f1": 0.840605844201917,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 12,
+                    "0.4": 10,
+                    "0.5": 8,
+                    "0.6": 7,
+                    "0.7": 5
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 98,
+                    "0.4": 82,
+                    "0.5": 68,
+                    "0.6": 51,
+                    "0.7": 34
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 145,
+                    "0.4": 137,
+                    "0.5": 119,
+                    "0.6": 103,
+                    "0.7": 79
+                  }
+                }
+              },
+              "missed_D_frames": 250,
+              "false_D_frames": 7860,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 102,
+                "fp": 157,
+                "fn": 199,
+                "mean_abs_s": 0.3949019607843137
+              },
+              "enter_D": {
+                "tp": 61,
+                "fp": 96,
+                "fn": 40,
+                "mean_abs_s": 0.06295081967213115
+              },
+              "exit_D": {
+                "tp": 80,
+                "fp": 76,
+                "fn": 20,
+                "mean_abs_s": 0.010499999999999999
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 16,
+              "lost": 24,
+              "net": -8
+            },
+            "0.4": {
+              "gained": 20,
+              "lost": 27,
+              "net": -7
+            },
+            "0.5": {
+              "gained": 18,
+              "lost": 31,
+              "net": -13
+            },
+            "0.6": {
+              "gained": 17,
+              "lost": 36,
+              "net": -19
+            },
+            "0.7": {
+              "gained": 18,
+              "lost": 43,
+              "net": -25
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 109,
+            "true_possessions_cut_by_D": 104,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 19,
+            "strata": {
+              "observed": {
+                "n": 118639,
+                "wrong": 10178,
+                "false_D": 128,
+                "missed_D": 46
+              },
+              "missing": {
+                "n": 18575,
+                "wrong": 8069,
+                "false_D": 7732,
+                "missed_D": 204
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "shuffle": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7540983606557377,
+                  "recall": 0.572139303482587,
+                  "f1": 0.6506364922206506,
+                  "n_matched": 230,
+                  "n_spurious": 75,
+                  "n_missed": 172
+                },
+                "0.4": {
+                  "precision": 0.6622950819672131,
+                  "recall": 0.5024875621890548,
+                  "f1": 0.5714285714285715,
+                  "n_matched": 202,
+                  "n_spurious": 103,
+                  "n_missed": 200
+                },
+                "0.5": {
+                  "precision": 0.6032786885245902,
+                  "recall": 0.4577114427860697,
+                  "f1": 0.5205091937765205,
+                  "n_matched": 184,
+                  "n_spurious": 121,
+                  "n_missed": 218
+                },
+                "0.6": {
+                  "precision": 0.5245901639344263,
+                  "recall": 0.39800995024875624,
+                  "f1": 0.45261669024045265,
+                  "n_matched": 160,
+                  "n_spurious": 145,
+                  "n_missed": 242
+                },
+                "0.7": {
+                  "precision": 0.3901639344262295,
+                  "recall": 0.2960199004975124,
+                  "f1": 0.3366336633663366,
+                  "n_matched": 119,
+                  "n_spurious": 186,
+                  "n_missed": 283
+                }
+              },
+              "mean_f1": 0.5063649222065063,
+              "n_gt": 402,
+              "n_pred": 305
+            },
+            "macro_f1": 0.8576656487769547,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 2,
+                    "0.4": 1,
+                    "0.5": 1,
+                    "0.6": 1,
+                    "0.7": 1
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 80,
+                    "0.4": 63,
+                    "0.5": 57,
+                    "0.6": 49,
+                    "0.7": 34
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 148,
+                    "0.4": 138,
+                    "0.5": 126,
+                    "0.6": 110,
+                    "0.7": 84
+                  }
+                }
+              },
+              "missed_D_frames": 250,
+              "false_D_frames": 7860,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 70,
+                "fp": 78,
+                "fn": 231,
+                "mean_abs_s": 0.284
+              },
+              "enter_D": {
+                "tp": 53,
+                "fp": 104,
+                "fn": 48,
+                "mean_abs_s": 0.0649056603773585
+              },
+              "exit_D": {
+                "tp": 81,
+                "fp": 75,
+                "fn": 19,
+                "mean_abs_s": 0.01037037037037037
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 4,
+              "lost": 37,
+              "net": -33
+            },
+            "0.4": {
+              "gained": 5,
+              "lost": 39,
+              "net": -34
+            },
+            "0.5": {
+              "gained": 9,
+              "lost": 33,
+              "net": -24
+            },
+            "0.6": {
+              "gained": 13,
+              "lost": 33,
+              "net": -20
+            },
+            "0.7": {
+              "gained": 11,
+              "lost": 35,
+              "net": -24
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 109,
+            "true_possessions_cut_by_D": 104,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 18,
+            "strata": {
+              "observed": {
+                "n": 118639,
+                "wrong": 8471,
+                "false_D": 128,
+                "missed_D": 46
+              },
+              "missing": {
+                "n": 18575,
+                "wrong": 8069,
+                "false_D": 7732,
+                "missed_D": 204
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "time_shift": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6264044943820225,
+                  "recall": 0.554726368159204,
+                  "f1": 0.5883905013192612,
+                  "n_matched": 223,
+                  "n_spurious": 133,
+                  "n_missed": 179
+                },
+                "0.4": {
+                  "precision": 0.5449438202247191,
+                  "recall": 0.48258706467661694,
+                  "f1": 0.5118733509234829,
+                  "n_matched": 194,
+                  "n_spurious": 162,
+                  "n_missed": 208
+                },
+                "0.5": {
+                  "precision": 0.45786516853932585,
+                  "recall": 0.4054726368159204,
+                  "f1": 0.43007915567282323,
+                  "n_matched": 163,
+                  "n_spurious": 193,
+                  "n_missed": 239
+                },
+                "0.6": {
+                  "precision": 0.3792134831460674,
+                  "recall": 0.3358208955223881,
+                  "f1": 0.3562005277044855,
+                  "n_matched": 135,
+                  "n_spurious": 221,
+                  "n_missed": 267
+                },
+                "0.7": {
+                  "precision": 0.28370786516853935,
+                  "recall": 0.2512437810945274,
+                  "f1": 0.26649076517150394,
+                  "n_matched": 101,
+                  "n_spurious": 255,
+                  "n_missed": 301
+                }
+              },
+              "mean_f1": 0.4306068601583113,
+              "n_gt": 402,
+              "n_pred": 356
+            },
+            "macro_f1": 0.8276427671415408,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 46,
+                  "matched_by_iou": {
+                    "0.3": 1,
+                    "0.4": 1,
+                    "0.5": 1,
+                    "0.6": 0,
+                    "0.7": 0
+                  }
+                },
+                "1to5": {
+                  "n_gt": 188,
+                  "matched_by_iou": {
+                    "0.3": 82,
+                    "0.4": 62,
+                    "0.5": 52,
+                    "0.6": 42,
+                    "0.7": 32
+                  }
+                },
+                "ge5": {
+                  "n_gt": 168,
+                  "matched_by_iou": {
+                    "0.3": 140,
+                    "0.4": 131,
+                    "0.5": 110,
+                    "0.6": 93,
+                    "0.7": 69
+                  }
+                }
+              },
+              "missed_D_frames": 250,
+              "false_D_frames": 7860,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 65,
+                "fp": 134,
+                "fn": 236,
+                "mean_abs_s": 0.28061538461538466
+              },
+              "enter_D": {
+                "tp": 50,
+                "fp": 107,
+                "fn": 51,
+                "mean_abs_s": 0.0656
+              },
+              "exit_D": {
+                "tp": 75,
+                "fp": 81,
+                "fn": 25,
+                "mean_abs_s": 0.0048
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 15,
+              "lost": 55,
+              "net": -40
+            },
+            "0.4": {
+              "gained": 16,
+              "lost": 58,
+              "net": -42
+            },
+            "0.5": {
+              "gained": 14,
+              "lost": 59,
+              "net": -45
+            },
+            "0.6": {
+              "gained": 14,
+              "lost": 59,
+              "net": -45
+            },
+            "0.7": {
+              "gained": 17,
+              "lost": 59,
+              "net": -42
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 109,
+            "true_possessions_cut_by_D": 104,
+            "same_team_restarts": 34,
+            "same_team_restarts_both_boundaries_within1s": 13,
+            "strata": {
+              "observed": {
+                "n": 118639,
+                "wrong": 11382,
+                "false_D": 128,
+                "missed_D": 46
+              },
+              "missing": {
+                "n": 18575,
+                "wrong": 8200,
+                "false_D": 7732,
+                "missed_D": 204
+              }
+            }
+          },
+          "dead_mask_exact": true
+        }
+      },
+      "prediction_sha": "45e38fd3a836e786945d3c3df3712417dffc468d0f8644b10e89534e5be27e48",
+      "protocol_sha": "46550e1f9f83230184102e74f6b0bbb9e0ab5fa7a4ec6ac49daca1b8334f1030",
+      "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80"
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "natural",
+      "results": {
+        "no_event": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7139423076923077,
+                  "recall": 0.7406483790523691,
+                  "f1": 0.7270501835985314,
+                  "n_matched": 297,
+                  "n_spurious": 119,
+                  "n_missed": 104
+                },
+                "0.4": {
+                  "precision": 0.6634615384615384,
+                  "recall": 0.6882793017456359,
+                  "f1": 0.675642594859241,
+                  "n_matched": 276,
+                  "n_spurious": 140,
+                  "n_missed": 125
+                },
+                "0.5": {
+                  "precision": 0.5985576923076923,
+                  "recall": 0.6209476309226932,
+                  "f1": 0.6095471236230111,
+                  "n_matched": 249,
+                  "n_spurious": 167,
+                  "n_missed": 152
+                },
+                "0.6": {
+                  "precision": 0.5192307692307693,
+                  "recall": 0.5386533665835411,
+                  "f1": 0.5287637698898408,
+                  "n_matched": 216,
+                  "n_spurious": 200,
+                  "n_missed": 185
+                },
+                "0.7": {
+                  "precision": 0.43509615384615385,
+                  "recall": 0.4513715710723192,
+                  "f1": 0.4430844553243574,
+                  "n_matched": 181,
+                  "n_spurious": 235,
+                  "n_missed": 220
+                }
+              },
+              "mean_f1": 0.5968176254589964,
+              "n_gt": 401,
+              "n_pred": 416
+            },
+            "macro_f1": 0.9212657866764387,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 8,
+                    "0.4": 6,
+                    "0.5": 6,
+                    "0.6": 5,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 112,
+                    "0.4": 98,
+                    "0.5": 79,
+                    "0.6": 68,
+                    "0.7": 51
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 177,
+                    "0.4": 172,
+                    "0.5": 164,
+                    "0.6": 143,
+                    "0.7": 126
+                  }
+                }
+              },
+              "missed_D_frames": 11,
+              "false_D_frames": 212,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 141,
+                "fp": 153,
+                "fn": 161,
+                "mean_abs_s": 0.3364539007092198
+              },
+              "enter_D": {
+                "tp": 63,
+                "fp": 59,
+                "fn": 36,
+                "mean_abs_s": 0.022857142857142857
+              },
+              "exit_D": {
+                "tp": 91,
+                "fp": 29,
+                "fn": 6,
+                "mean_abs_s": 0.0017582417582417582
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.4": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.5": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.6": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.7": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 30,
+            "true_possessions_cut_by_D": 20,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 28,
+            "strata": {
+              "observed": {
+                "n": 142345,
+                "wrong": 9912,
+                "false_D": 212,
+                "missed_D": 11
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "human": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7068965517241379,
+                  "recall": 0.71571072319202,
+                  "f1": 0.7112763320941758,
+                  "n_matched": 287,
+                  "n_spurious": 119,
+                  "n_missed": 114
+                },
+                "0.4": {
+                  "precision": 0.6551724137931034,
+                  "recall": 0.6633416458852868,
+                  "f1": 0.6592317224287484,
+                  "n_matched": 266,
+                  "n_spurious": 140,
+                  "n_missed": 135
+                },
+                "0.5": {
+                  "precision": 0.5812807881773399,
+                  "recall": 0.5885286783042394,
+                  "f1": 0.5848822800495662,
+                  "n_matched": 236,
+                  "n_spurious": 170,
+                  "n_missed": 165
+                },
+                "0.6": {
+                  "precision": 0.49014778325123154,
+                  "recall": 0.49625935162094764,
+                  "f1": 0.49318463444857497,
+                  "n_matched": 199,
+                  "n_spurious": 207,
+                  "n_missed": 202
+                },
+                "0.7": {
+                  "precision": 0.39408866995073893,
+                  "recall": 0.39900249376558605,
+                  "f1": 0.3965303593556382,
+                  "n_matched": 160,
+                  "n_spurious": 246,
+                  "n_missed": 241
+                }
+              },
+              "mean_f1": 0.5690210656753407,
+              "n_gt": 401,
+              "n_pred": 406
+            },
+            "macro_f1": 0.9119788590275938,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 6,
+                    "0.4": 6,
+                    "0.5": 4,
+                    "0.6": 4,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 103,
+                    "0.4": 87,
+                    "0.5": 67,
+                    "0.6": 51,
+                    "0.7": 31
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 178,
+                    "0.4": 173,
+                    "0.5": 165,
+                    "0.6": 144,
+                    "0.7": 125
+                  }
+                }
+              },
+              "missed_D_frames": 11,
+              "false_D_frames": 212,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 127,
+                "fp": 157,
+                "fn": 175,
+                "mean_abs_s": 0.43275590551181103
+              },
+              "enter_D": {
+                "tp": 66,
+                "fp": 56,
+                "fn": 33,
+                "mean_abs_s": 0.021818181818181816
+              },
+              "exit_D": {
+                "tp": 87,
+                "fp": 33,
+                "fn": 10,
+                "mean_abs_s": 0.0004597701149425287
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 13,
+              "lost": 23,
+              "net": -10
+            },
+            "0.4": {
+              "gained": 13,
+              "lost": 23,
+              "net": -10
+            },
+            "0.5": {
+              "gained": 13,
+              "lost": 26,
+              "net": -13
+            },
+            "0.6": {
+              "gained": 18,
+              "lost": 35,
+              "net": -17
+            },
+            "0.7": {
+              "gained": 16,
+              "lost": 37,
+              "net": -21
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 30,
+            "true_possessions_cut_by_D": 20,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 26,
+            "strata": {
+              "observed": {
+                "n": 142345,
+                "wrong": 11038,
+                "false_D": 212,
+                "missed_D": 11
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "source": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7233502538071066,
+                  "recall": 0.7107231920199502,
+                  "f1": 0.7169811320754716,
+                  "n_matched": 285,
+                  "n_spurious": 109,
+                  "n_missed": 116
+                },
+                "0.4": {
+                  "precision": 0.6675126903553299,
+                  "recall": 0.655860349127182,
+                  "f1": 0.661635220125786,
+                  "n_matched": 263,
+                  "n_spurious": 131,
+                  "n_missed": 138
+                },
+                "0.5": {
+                  "precision": 0.6015228426395939,
+                  "recall": 0.5910224438902744,
+                  "f1": 0.5962264150943396,
+                  "n_matched": 237,
+                  "n_spurious": 157,
+                  "n_missed": 164
+                },
+                "0.6": {
+                  "precision": 0.4949238578680203,
+                  "recall": 0.486284289276808,
+                  "f1": 0.49056603773584906,
+                  "n_matched": 195,
+                  "n_spurious": 199,
+                  "n_missed": 206
+                },
+                "0.7": {
+                  "precision": 0.42385786802030456,
+                  "recall": 0.4164588528678304,
+                  "f1": 0.420125786163522,
+                  "n_matched": 167,
+                  "n_spurious": 227,
+                  "n_missed": 234
+                }
+              },
+              "mean_f1": 0.5771069182389936,
+              "n_gt": 401,
+              "n_pred": 394
+            },
+            "macro_f1": 0.9096753198651341,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 7,
+                    "0.4": 6,
+                    "0.5": 5,
+                    "0.6": 4,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 101,
+                    "0.4": 84,
+                    "0.5": 66,
+                    "0.6": 55,
+                    "0.7": 38
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 177,
+                    "0.4": 173,
+                    "0.5": 166,
+                    "0.6": 136,
+                    "0.7": 125
+                  }
+                }
+              },
+              "missed_D_frames": 11,
+              "false_D_frames": 212,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 121,
+                "fp": 151,
+                "fn": 181,
+                "mean_abs_s": 0.4347107438016529
+              },
+              "enter_D": {
+                "tp": 65,
+                "fp": 57,
+                "fn": 34,
+                "mean_abs_s": 0.025230769230769234
+              },
+              "exit_D": {
+                "tp": 88,
+                "fp": 32,
+                "fn": 9,
+                "mean_abs_s": 0.0018181818181818182
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 12,
+              "lost": 24,
+              "net": -12
+            },
+            "0.4": {
+              "gained": 11,
+              "lost": 24,
+              "net": -13
+            },
+            "0.5": {
+              "gained": 14,
+              "lost": 26,
+              "net": -12
+            },
+            "0.6": {
+              "gained": 18,
+              "lost": 39,
+              "net": -21
+            },
+            "0.7": {
+              "gained": 23,
+              "lost": 37,
+              "net": -14
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 30,
+            "true_possessions_cut_by_D": 20,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 27,
+            "strata": {
+              "observed": {
+                "n": 142345,
+                "wrong": 11333,
+                "false_D": 212,
+                "missed_D": 11
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "shuffle": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.7963525835866262,
+                  "recall": 0.6533665835411472,
+                  "f1": 0.7178082191780822,
+                  "n_matched": 262,
+                  "n_spurious": 67,
+                  "n_missed": 139
+                },
+                "0.4": {
+                  "precision": 0.7446808510638298,
+                  "recall": 0.6109725685785536,
+                  "f1": 0.6712328767123289,
+                  "n_matched": 245,
+                  "n_spurious": 84,
+                  "n_missed": 156
+                },
+                "0.5": {
+                  "precision": 0.668693009118541,
+                  "recall": 0.5486284289276808,
+                  "f1": 0.6027397260273972,
+                  "n_matched": 220,
+                  "n_spurious": 109,
+                  "n_missed": 181
+                },
+                "0.6": {
+                  "precision": 0.5775075987841946,
+                  "recall": 0.47381546134663344,
+                  "f1": 0.5205479452054795,
+                  "n_matched": 190,
+                  "n_spurious": 139,
+                  "n_missed": 211
+                },
+                "0.7": {
+                  "precision": 0.49240121580547114,
+                  "recall": 0.40399002493765584,
+                  "f1": 0.4438356164383562,
+                  "n_matched": 162,
+                  "n_spurious": 167,
+                  "n_missed": 239
+                }
+              },
+              "mean_f1": 0.5912328767123288,
+              "n_gt": 401,
+              "n_pred": 329
+            },
+            "macro_f1": 0.9214001657752391,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 5,
+                    "0.4": 3,
+                    "0.5": 3,
+                    "0.6": 3,
+                    "0.7": 3
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 87,
+                    "0.4": 78,
+                    "0.5": 58,
+                    "0.6": 45,
+                    "0.7": 35
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 170,
+                    "0.4": 164,
+                    "0.5": 159,
+                    "0.6": 142,
+                    "0.7": 124
+                  }
+                }
+              },
+              "missed_D_frames": 11,
+              "false_D_frames": 212,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 112,
+                "fp": 95,
+                "fn": 190,
+                "mean_abs_s": 0.33142857142857146
+              },
+              "enter_D": {
+                "tp": 63,
+                "fp": 59,
+                "fn": 36,
+                "mean_abs_s": 0.020952380952380955
+              },
+              "exit_D": {
+                "tp": 88,
+                "fp": 32,
+                "fn": 9,
+                "mean_abs_s": 0.0018181818181818182
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 0,
+              "lost": 35,
+              "net": -35
+            },
+            "0.4": {
+              "gained": 1,
+              "lost": 32,
+              "net": -31
+            },
+            "0.5": {
+              "gained": 5,
+              "lost": 34,
+              "net": -29
+            },
+            "0.6": {
+              "gained": 11,
+              "lost": 37,
+              "net": -26
+            },
+            "0.7": {
+              "gained": 14,
+              "lost": 33,
+              "net": -19
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 30,
+            "true_possessions_cut_by_D": 20,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 23,
+            "strata": {
+              "observed": {
+                "n": 142345,
+                "wrong": 9880,
+                "false_D": 212,
+                "missed_D": 11
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "time_shift": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6840659340659341,
+                  "recall": 0.6209476309226932,
+                  "f1": 0.6509803921568628,
+                  "n_matched": 249,
+                  "n_spurious": 115,
+                  "n_missed": 152
+                },
+                "0.4": {
+                  "precision": 0.6263736263736264,
+                  "recall": 0.5685785536159601,
+                  "f1": 0.5960784313725489,
+                  "n_matched": 228,
+                  "n_spurious": 136,
+                  "n_missed": 173
+                },
+                "0.5": {
+                  "precision": 0.5631868131868132,
+                  "recall": 0.5112219451371571,
+                  "f1": 0.5359477124183006,
+                  "n_matched": 205,
+                  "n_spurious": 159,
+                  "n_missed": 196
+                },
+                "0.6": {
+                  "precision": 0.489010989010989,
+                  "recall": 0.44389027431421446,
+                  "f1": 0.465359477124183,
+                  "n_matched": 178,
+                  "n_spurious": 186,
+                  "n_missed": 223
+                },
+                "0.7": {
+                  "precision": 0.38186813186813184,
+                  "recall": 0.34663341645885287,
+                  "f1": 0.36339869281045745,
+                  "n_matched": 139,
+                  "n_spurious": 225,
+                  "n_missed": 262
+                }
+              },
+              "mean_f1": 0.5223529411764706,
+              "n_gt": 401,
+              "n_pred": 364
+            },
+            "macro_f1": 0.8992781527745023,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 4,
+                    "0.4": 3,
+                    "0.5": 3,
+                    "0.6": 2,
+                    "0.7": 2
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 80,
+                    "0.4": 69,
+                    "0.5": 56,
+                    "0.6": 49,
+                    "0.7": 37
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 165,
+                    "0.4": 156,
+                    "0.5": 146,
+                    "0.6": 127,
+                    "0.7": 100
+                  }
+                }
+              },
+              "missed_D_frames": 11,
+              "false_D_frames": 212,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 94,
+                "fp": 148,
+                "fn": 208,
+                "mean_abs_s": 0.3727659574468084
+              },
+              "enter_D": {
+                "tp": 61,
+                "fp": 61,
+                "fn": 38,
+                "mean_abs_s": 0.021639344262295083
+              },
+              "exit_D": {
+                "tp": 83,
+                "fp": 37,
+                "fn": 14,
+                "mean_abs_s": 0.001927710843373494
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 14,
+              "lost": 62,
+              "net": -48
+            },
+            "0.4": {
+              "gained": 17,
+              "lost": 65,
+              "net": -48
+            },
+            "0.5": {
+              "gained": 19,
+              "lost": 63,
+              "net": -44
+            },
+            "0.6": {
+              "gained": 22,
+              "lost": 60,
+              "net": -38
+            },
+            "0.7": {
+              "gained": 20,
+              "lost": 62,
+              "net": -42
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 30,
+            "true_possessions_cut_by_D": 20,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 23,
+            "strata": {
+              "observed": {
+                "n": 142345,
+                "wrong": 12590,
+                "false_D": 212,
+                "missed_D": 11
+              },
+              "missing": {
+                "n": 0,
+                "wrong": 0,
+                "false_D": 0,
+                "missed_D": 0
+              }
+            }
+          },
+          "dead_mask_exact": true
+        }
+      },
+      "prediction_sha": "feee98964177729d10b789cfcbd5069c6a91bcf0eca1b87cdff8dd216e950877",
+      "protocol_sha": "46550e1f9f83230184102e74f6b0bbb9e0ab5fa7a4ec6ac49daca1b8334f1030",
+      "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80"
+    },
+    {
+      "match": "J03WQQ",
+      "domain": "long",
+      "results": {
+        "no_event": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6116279069767442,
+                  "recall": 0.655860349127182,
+                  "f1": 0.6329723225030084,
+                  "n_matched": 263,
+                  "n_spurious": 167,
+                  "n_missed": 138
+                },
+                "0.4": {
+                  "precision": 0.5581395348837209,
+                  "recall": 0.5985037406483791,
+                  "f1": 0.5776173285198556,
+                  "n_matched": 240,
+                  "n_spurious": 190,
+                  "n_missed": 161
+                },
+                "0.5": {
+                  "precision": 0.48604651162790696,
+                  "recall": 0.5211970074812967,
+                  "f1": 0.5030084235860409,
+                  "n_matched": 209,
+                  "n_spurious": 221,
+                  "n_missed": 192
+                },
+                "0.6": {
+                  "precision": 0.3930232558139535,
+                  "recall": 0.42144638403990026,
+                  "f1": 0.4067388688327316,
+                  "n_matched": 169,
+                  "n_spurious": 261,
+                  "n_missed": 232
+                },
+                "0.7": {
+                  "precision": 0.313953488372093,
+                  "recall": 0.33665835411471323,
+                  "f1": 0.3249097472924188,
+                  "n_matched": 135,
+                  "n_spurious": 295,
+                  "n_missed": 266
+                }
+              },
+              "mean_f1": 0.4890493381468112,
+              "n_gt": 401,
+              "n_pred": 430
+            },
+            "macro_f1": 0.8469714344444265,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 6,
+                    "0.4": 5,
+                    "0.5": 5,
+                    "0.6": 4,
+                    "0.7": 3
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 92,
+                    "0.4": 80,
+                    "0.5": 65,
+                    "0.6": 56,
+                    "0.7": 41
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 165,
+                    "0.4": 155,
+                    "0.5": 139,
+                    "0.6": 109,
+                    "0.7": 91
+                  }
+                }
+              },
+              "missed_D_frames": 153,
+              "false_D_frames": 11913,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 118,
+                "fp": 124,
+                "fn": 184,
+                "mean_abs_s": 0.33016949152542374
+              },
+              "enter_D": {
+                "tp": 54,
+                "fp": 134,
+                "fn": 45,
+                "mean_abs_s": 0.031111111111111114
+              },
+              "exit_D": {
+                "tp": 83,
+                "fp": 103,
+                "fn": 14,
+                "mean_abs_s": 0.014939759036144579
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.4": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.5": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.6": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            },
+            "0.7": {
+              "gained": 0,
+              "lost": 0,
+              "net": 0
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 168,
+            "true_possessions_cut_by_D": 149,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 22,
+            "strata": {
+              "observed": {
+                "n": 123320,
+                "wrong": 8382,
+                "false_D": 305,
+                "missed_D": 9
+              },
+              "missing": {
+                "n": 19025,
+                "wrong": 11890,
+                "false_D": 11608,
+                "missed_D": 144
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "human": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.616504854368932,
+                  "recall": 0.6334164588528678,
+                  "f1": 0.6248462484624846,
+                  "n_matched": 254,
+                  "n_spurious": 158,
+                  "n_missed": 147
+                },
+                "0.4": {
+                  "precision": 0.5631067961165048,
+                  "recall": 0.5785536159600998,
+                  "f1": 0.5707257072570726,
+                  "n_matched": 232,
+                  "n_spurious": 180,
+                  "n_missed": 169
+                },
+                "0.5": {
+                  "precision": 0.470873786407767,
+                  "recall": 0.4837905236907731,
+                  "f1": 0.47724477244772445,
+                  "n_matched": 194,
+                  "n_spurious": 218,
+                  "n_missed": 207
+                },
+                "0.6": {
+                  "precision": 0.36893203883495146,
+                  "recall": 0.3790523690773067,
+                  "f1": 0.37392373923739236,
+                  "n_matched": 152,
+                  "n_spurious": 260,
+                  "n_missed": 249
+                },
+                "0.7": {
+                  "precision": 0.279126213592233,
+                  "recall": 0.286783042394015,
+                  "f1": 0.2829028290282903,
+                  "n_matched": 115,
+                  "n_spurious": 297,
+                  "n_missed": 286
+                }
+              },
+              "mean_f1": 0.4659286592865929,
+              "n_gt": 401,
+              "n_pred": 412
+            },
+            "macro_f1": 0.8412008571487831,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 5,
+                    "0.4": 5,
+                    "0.5": 3,
+                    "0.6": 3,
+                    "0.7": 3
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 84,
+                    "0.4": 72,
+                    "0.5": 53,
+                    "0.6": 42,
+                    "0.7": 24
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 165,
+                    "0.4": 155,
+                    "0.5": 138,
+                    "0.6": 107,
+                    "0.7": 88
+                  }
+                }
+              },
+              "missed_D_frames": 153,
+              "false_D_frames": 11913,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 102,
+                "fp": 122,
+                "fn": 200,
+                "mean_abs_s": 0.4203921568627451
+              },
+              "enter_D": {
+                "tp": 57,
+                "fp": 131,
+                "fn": 42,
+                "mean_abs_s": 0.03929824561403509
+              },
+              "exit_D": {
+                "tp": 80,
+                "fp": 106,
+                "fn": 17,
+                "mean_abs_s": 0.014000000000000002
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 10,
+              "lost": 19,
+              "net": -9
+            },
+            "0.4": {
+              "gained": 11,
+              "lost": 19,
+              "net": -8
+            },
+            "0.5": {
+              "gained": 11,
+              "lost": 26,
+              "net": -15
+            },
+            "0.6": {
+              "gained": 14,
+              "lost": 31,
+              "net": -17
+            },
+            "0.7": {
+              "gained": 11,
+              "lost": 31,
+              "net": -20
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 168,
+            "true_possessions_cut_by_D": 149,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 21,
+            "strata": {
+              "observed": {
+                "n": 123320,
+                "wrong": 9022,
+                "false_D": 305,
+                "missed_D": 9
+              },
+              "missing": {
+                "n": 19025,
+                "wrong": 11884,
+                "false_D": 11608,
+                "missed_D": 144
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "source": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6268656716417911,
+                  "recall": 0.628428927680798,
+                  "f1": 0.6276463262764633,
+                  "n_matched": 252,
+                  "n_spurious": 150,
+                  "n_missed": 149
+                },
+                "0.4": {
+                  "precision": 0.5771144278606966,
+                  "recall": 0.5785536159600998,
+                  "f1": 0.5778331257783313,
+                  "n_matched": 232,
+                  "n_spurious": 170,
+                  "n_missed": 169
+                },
+                "0.5": {
+                  "precision": 0.48756218905472637,
+                  "recall": 0.48877805486284287,
+                  "f1": 0.48816936488169366,
+                  "n_matched": 196,
+                  "n_spurious": 206,
+                  "n_missed": 205
+                },
+                "0.6": {
+                  "precision": 0.3706467661691542,
+                  "recall": 0.371571072319202,
+                  "f1": 0.3711083437110835,
+                  "n_matched": 149,
+                  "n_spurious": 253,
+                  "n_missed": 252
+                },
+                "0.7": {
+                  "precision": 0.2935323383084577,
+                  "recall": 0.2942643391521197,
+                  "f1": 0.29389788293897884,
+                  "n_matched": 118,
+                  "n_spurious": 284,
+                  "n_missed": 283
+                }
+              },
+              "mean_f1": 0.4717310087173101,
+              "n_gt": 401,
+              "n_pred": 402
+            },
+            "macro_f1": 0.8379412275662164,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 5,
+                    "0.4": 5,
+                    "0.5": 4,
+                    "0.6": 4,
+                    "0.7": 4
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 83,
+                    "0.4": 73,
+                    "0.5": 54,
+                    "0.6": 42,
+                    "0.7": 28
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 164,
+                    "0.4": 154,
+                    "0.5": 138,
+                    "0.6": 103,
+                    "0.7": 86
+                  }
+                }
+              },
+              "missed_D_frames": 153,
+              "false_D_frames": 11913,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 96,
+                "fp": 118,
+                "fn": 206,
+                "mean_abs_s": 0.42458333333333337
+              },
+              "enter_D": {
+                "tp": 55,
+                "fp": 133,
+                "fn": 44,
+                "mean_abs_s": 0.04436363636363637
+              },
+              "exit_D": {
+                "tp": 80,
+                "fp": 106,
+                "fn": 17,
+                "mean_abs_s": 0.0155
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 11,
+              "lost": 22,
+              "net": -11
+            },
+            "0.4": {
+              "gained": 14,
+              "lost": 22,
+              "net": -8
+            },
+            "0.5": {
+              "gained": 15,
+              "lost": 28,
+              "net": -13
+            },
+            "0.6": {
+              "gained": 14,
+              "lost": 34,
+              "net": -20
+            },
+            "0.7": {
+              "gained": 13,
+              "lost": 30,
+              "net": -17
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 168,
+            "true_possessions_cut_by_D": 149,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 22,
+            "strata": {
+              "observed": {
+                "n": 123320,
+                "wrong": 9379,
+                "false_D": 305,
+                "missed_D": 9
+              },
+              "missing": {
+                "n": 19025,
+                "wrong": 11908,
+                "false_D": 11608,
+                "missed_D": 144
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "shuffle": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.688953488372093,
+                  "recall": 0.5910224438902744,
+                  "f1": 0.6362416107382551,
+                  "n_matched": 237,
+                  "n_spurious": 107,
+                  "n_missed": 164
+                },
+                "0.4": {
+                  "precision": 0.6395348837209303,
+                  "recall": 0.5486284289276808,
+                  "f1": 0.5906040268456376,
+                  "n_matched": 220,
+                  "n_spurious": 124,
+                  "n_missed": 181
+                },
+                "0.5": {
+                  "precision": 0.5436046511627907,
+                  "recall": 0.46633416458852867,
+                  "f1": 0.5020134228187918,
+                  "n_matched": 187,
+                  "n_spurious": 157,
+                  "n_missed": 214
+                },
+                "0.6": {
+                  "precision": 0.436046511627907,
+                  "recall": 0.3740648379052369,
+                  "f1": 0.40268456375838924,
+                  "n_matched": 150,
+                  "n_spurious": 194,
+                  "n_missed": 251
+                },
+                "0.7": {
+                  "precision": 0.34011627906976744,
+                  "recall": 0.29177057356608477,
+                  "f1": 0.31409395973154364,
+                  "n_matched": 117,
+                  "n_spurious": 227,
+                  "n_missed": 284
+                }
+              },
+              "mean_f1": 0.4891275167785235,
+              "n_gt": 401,
+              "n_pred": 344
+            },
+            "macro_f1": 0.8478256970252319,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 3,
+                    "0.4": 2,
+                    "0.5": 2,
+                    "0.6": 2,
+                    "0.7": 2
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 72,
+                    "0.4": 64,
+                    "0.5": 47,
+                    "0.6": 36,
+                    "0.7": 27
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 162,
+                    "0.4": 154,
+                    "0.5": 138,
+                    "0.6": 112,
+                    "0.7": 88
+                  }
+                }
+              },
+              "missed_D_frames": 153,
+              "false_D_frames": 11913,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 87,
+                "fp": 69,
+                "fn": 215,
+                "mean_abs_s": 0.30712643678160917
+              },
+              "enter_D": {
+                "tp": 53,
+                "fp": 135,
+                "fn": 46,
+                "mean_abs_s": 0.04
+              },
+              "exit_D": {
+                "tp": 81,
+                "fp": 105,
+                "fn": 16,
+                "mean_abs_s": 0.015308641975308642
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 1,
+              "lost": 27,
+              "net": -26
+            },
+            "0.4": {
+              "gained": 4,
+              "lost": 24,
+              "net": -20
+            },
+            "0.5": {
+              "gained": 6,
+              "lost": 28,
+              "net": -22
+            },
+            "0.6": {
+              "gained": 10,
+              "lost": 29,
+              "net": -19
+            },
+            "0.7": {
+              "gained": 7,
+              "lost": 25,
+              "net": -18
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 168,
+            "true_possessions_cut_by_D": 149,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 18,
+            "strata": {
+              "observed": {
+                "n": 123320,
+                "wrong": 8258,
+                "false_D": 305,
+                "missed_D": 9
+              },
+              "missing": {
+                "n": 19025,
+                "wrong": 11897,
+                "false_D": 11608,
+                "missed_D": 144
+              }
+            }
+          },
+          "dead_mask_exact": true
+        },
+        "time_shift": {
+          "metrics": {
+            "spell": {
+              "per_iou": {
+                "0.3": {
+                  "precision": 0.6015625,
+                  "recall": 0.5760598503740648,
+                  "f1": 0.5885350318471337,
+                  "n_matched": 231,
+                  "n_spurious": 153,
+                  "n_missed": 170
+                },
+                "0.4": {
+                  "precision": 0.5494791666666666,
+                  "recall": 0.5261845386533666,
+                  "f1": 0.5375796178343949,
+                  "n_matched": 211,
+                  "n_spurious": 173,
+                  "n_missed": 190
+                },
+                "0.5": {
+                  "precision": 0.4609375,
+                  "recall": 0.44139650872817954,
+                  "f1": 0.45095541401273886,
+                  "n_matched": 177,
+                  "n_spurious": 207,
+                  "n_missed": 224
+                },
+                "0.6": {
+                  "precision": 0.3723958333333333,
+                  "recall": 0.3566084788029925,
+                  "f1": 0.3643312101910828,
+                  "n_matched": 143,
+                  "n_spurious": 241,
+                  "n_missed": 258
+                },
+                "0.7": {
+                  "precision": 0.2734375,
+                  "recall": 0.26184538653366585,
+                  "f1": 0.267515923566879,
+                  "n_matched": 105,
+                  "n_spurious": 279,
+                  "n_missed": 296
+                }
+              },
+              "mean_f1": 0.44178343949044585,
+              "n_gt": 401,
+              "n_pred": 384
+            },
+            "macro_f1": 0.8283505745762424,
+            "diagnostics": {
+              "short": {
+                "lt1": {
+                  "n_gt": 37,
+                  "matched_by_iou": {
+                    "0.3": 3,
+                    "0.4": 3,
+                    "0.5": 3,
+                    "0.6": 2,
+                    "0.7": 2
+                  }
+                },
+                "1to5": {
+                  "n_gt": 175,
+                  "matched_by_iou": {
+                    "0.3": 71,
+                    "0.4": 62,
+                    "0.5": 48,
+                    "0.6": 41,
+                    "0.7": 29
+                  }
+                },
+                "ge5": {
+                  "n_gt": 189,
+                  "matched_by_iou": {
+                    "0.3": 157,
+                    "0.4": 146,
+                    "0.5": 126,
+                    "0.6": 100,
+                    "0.7": 74
+                  }
+                }
+              },
+              "missed_D_frames": 153,
+              "false_D_frames": 11913,
+              "complete_D_misses": 0
+            },
+            "boundaries": {
+              "direct": {
+                "tp": 76,
+                "fp": 120,
+                "fn": 226,
+                "mean_abs_s": 0.33421052631578946
+              },
+              "enter_D": {
+                "tp": 52,
+                "fp": 136,
+                "fn": 47,
+                "mean_abs_s": 0.04076923076923077
+              },
+              "exit_D": {
+                "tp": 77,
+                "fp": 109,
+                "fn": 20,
+                "mean_abs_s": 0.016103896103896103
+              }
+            }
+          },
+          "matched_changes_vs_HC": {
+            "0.3": {
+              "gained": 14,
+              "lost": 46,
+              "net": -32
+            },
+            "0.4": {
+              "gained": 19,
+              "lost": 48,
+              "net": -29
+            },
+            "0.5": {
+              "gained": 18,
+              "lost": 50,
+              "net": -32
+            },
+            "0.6": {
+              "gained": 19,
+              "lost": 45,
+              "net": -26
+            },
+            "0.7": {
+              "gained": 15,
+              "lost": 45,
+              "net": -30
+            }
+          },
+          "additional": {
+            "false_D_runs_inside_true_possessions": 168,
+            "true_possessions_cut_by_D": 149,
+            "same_team_restarts": 42,
+            "same_team_restarts_both_boundaries_within1s": 19,
+            "strata": {
+              "observed": {
+                "n": 123320,
+                "wrong": 10418,
+                "false_D": 305,
+                "missed_D": 9
+              },
+              "missing": {
+                "n": 19025,
+                "wrong": 11965,
+                "false_D": 11608,
+                "missed_D": 144
+              }
+            }
+          },
+          "dead_mask_exact": true
+        }
+      },
+      "prediction_sha": "4905a360d75a1ddd942bffb31724f39ae8e9ed00a4f1e5a426b60560ef2def0a",
+      "protocol_sha": "46550e1f9f83230184102e74f6b0bbb9e0ab5fa7a4ec6ac49daca1b8334f1030",
+      "git_sha": "203f8a5b4f468c027cb4dbe0425206bf6c93aa80"
+    }
+  ],
+  "new_fits": 3,
+  "transfer": "NOT_VALIDATED"
+}

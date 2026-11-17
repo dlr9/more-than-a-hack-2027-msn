@@ -1,0 +1,38 @@
+{
+  "posthoc": true,
+  "selection": "GT H/A and corrected event posterior max(H,A)>NONE; diagnostic only, not deployable gate",
+  "limitations": "Event team versus persistent ownership are different tasks. Results do not prove that capacity or other sensors cannot help. No candidate changed.",
+  "model_sha256": "6901ebe37ca80f0fd57d2f42fdf321576fbc0ad6b50346b9d7e9787dc6e7bb90",
+  "rows": [
+    {
+      "match": "J03WPY",
+      "training_match": true,
+      "selected_frames": 12122,
+      "expert_correct_selected": 9336,
+      "baseline_correct_selected": 10410,
+      "disagreement_frames": 14764,
+      "expert_correct_disagreement": 3323,
+      "baseline_correct_disagreement": 11385
+    },
+    {
+      "match": "J03WOH",
+      "training_match": false,
+      "selected_frames": 10786,
+      "expert_correct_selected": 8049,
+      "baseline_correct_selected": 9309,
+      "disagreement_frames": 13255,
+      "expert_correct_disagreement": 3145,
+      "baseline_correct_disagreement": 10098
+    },
+    {
+      "match": "J03WQQ",
+      "training_match": false,
+      "selected_frames": 9262,
+      "expert_correct_selected": 6917,
+      "baseline_correct_selected": 7871,
+      "disagreement_frames": 14352,
+      "expert_correct_disagreement": 2550,
+      "baseline_correct_disagreement": 11782
+    }
+  ]
+}

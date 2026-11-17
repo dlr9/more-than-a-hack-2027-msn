@@ -1,0 +1,39 @@
+{
+  "append_only": true,
+  "experiments": [
+    {
+      "experiment": "memory",
+      "protocol_commit": "5b01241",
+      "hypothesis": "Remembering last owner across Dead removes the proven cheap D bridge without changing any R12 numerical cost. This is a causal structural repair, NOT independent evidence.",
+      "results": "R13_RESULTS.json",
+      "validation": "Full five-IoU official spell scorer, exact prediction replay, controls, previously consumed external development matches",
+      "decision": "NO_GO promotion / KEEP artifacts",
+      "failure": "Eliminates cheap false Dead bridges but suppresses genuine handovers when control anchors are absent.",
+      "rollback": "Unchanged frozen HC_M3/M3; no default replacement",
+      "next": "Independent sensor/control evidence and semantic validation; no more penalty/weight tuning on these matches"
+    },
+    {
+      "experiment": "dense",
+      "protocol_commit": "203f8a5",
+      "hypothesis": "Human-confirmed receipt timing plus identity-coherent relative velocity learns control evidence absent from source-boundary supervision; dense non-event negatives prevent conditional-event inference.",
+      "results": "R13_DENSE_RESULTS.json",
+      "validation": "Full five-IoU official spell scorer, exact prediction replay, controls, previously consumed external development matches",
+      "decision": "NO_GO promotion / KEEP artifacts",
+      "failure": "Dense human-event supervision on geometric observations fails to add reliable persistent ownership information.",
+      "rollback": "Unchanged frozen HC_M3/M3; no default replacement",
+      "next": "Independent sensor/control evidence and semantic validation; no more penalty/weight tuning on these matches"
+    },
+    {
+      "experiment": "calibration",
+      "protocol_commit": "1e505c3",
+      "hypothesis": "R13 dense training class_weight=balanced does not output population event priors. Arithmetic mixture changes baseline even for neutral event evidence.",
+      "results": "R13_CALIBRATION_RESULTS.json",
+      "validation": "Full five-IoU official spell scorer, exact prediction replay, controls, previously consumed external development matches",
+      "decision": "NO_GO promotion / KEEP artifacts",
+      "failure": "Prior and neutral-pooling semantic corrections do not repair the event-to-ownership mismatch; primary scores fall.",
+      "rollback": "Unchanged frozen HC_M3/M3; no default replacement",
+      "next": "Independent sensor/control evidence and semantic validation; no more penalty/weight tuning on these matches"
+    }
+  ],
+  "posthoc": "R13_EVENT_DIAGNOSTIC.json; no candidate selected or changed"
+}
