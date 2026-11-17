@@ -1,0 +1,282 @@
+{
+  "source": "SYNTHETIC_ONLY",
+  "rows": [
+    {
+      "case": "self",
+      "accepted": 600,
+      "mapping_coverage": 1.0,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.0,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": 0.0,
+      "shots": [
+        {
+          "start": 0,
+          "end": 600,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 600,
+          "ball_anchors": 520,
+          "pairs": 600,
+          "shift_s": -1.1603114287023093e-15,
+          "drift": 1.0,
+          "max_residual_s": 1.7763568394002505e-15
+        }
+      ],
+      "wall_s": 1.7291537469718605
+    },
+    {
+      "case": "offset_and_drift",
+      "accepted": 362,
+      "mapping_coverage": 0.6033333333333334,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.46000000000003816,
+      "coverage_gain": 0.11166666666666666,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": 0.03446792891426065,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 362,
+          "ball_anchors": 295,
+          "pairs": 362,
+          "shift_s": 1.9988837506450357,
+          "drift": 1.020150150761741,
+          "max_residual_s": 0.019223698486728225
+        }
+      ],
+      "wall_s": 1.3816880921367556
+    },
+    {
+      "case": "team_swap",
+      "accepted": 362,
+      "mapping_coverage": 0.6033333333333334,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.46000000000003816,
+      "coverage_gain": 0.11166666666666666,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": 0.03446792891426065,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 362,
+          "ball_anchors": 295,
+          "pairs": 362,
+          "shift_s": 1.9988837506450357,
+          "drift": 1.020150150761741,
+          "max_residual_s": 0.019223698486728225
+        }
+      ],
+      "wall_s": 1.3857642610091716
+    },
+    {
+      "case": "slot_permutation",
+      "accepted": 362,
+      "mapping_coverage": 0.6033333333333334,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.46000000000003816,
+      "coverage_gain": 0.11166666666666666,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": 0.03446792891426065,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 362,
+          "ball_anchors": 295,
+          "pairs": 362,
+          "shift_s": 1.9988837506450357,
+          "drift": 1.020150150761741,
+          "max_residual_s": 0.019223698486728225
+        }
+      ],
+      "wall_s": 1.8192841161508113
+    },
+    {
+      "case": "replay",
+      "accepted": 0,
+      "mapping_coverage": 0.0,
+      "false_alignment_rate": null,
+      "max_time_error_frames": null,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": false,
+          "reason": "insufficient_shape"
+        }
+      ],
+      "wall_s": 1.9839489250443876
+    },
+    {
+      "case": "clock_wrong",
+      "accepted": 0,
+      "mapping_coverage": 0.0,
+      "false_alignment_rate": null,
+      "max_time_error_frames": null,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": false,
+          "reason": "independent_clock_conflict"
+        }
+      ],
+      "wall_s": 1.46949737588875
+    },
+    {
+      "case": "shape_wrong_time",
+      "accepted": 0,
+      "mapping_coverage": 0.0,
+      "false_alignment_rate": null,
+      "max_time_error_frames": null,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": false,
+          "reason": "nonmonotonic_or_replay"
+        }
+      ],
+      "wall_s": 1.5409273661207408
+    },
+    {
+      "case": "missing_balls_with_clock",
+      "accepted": 362,
+      "mapping_coverage": 0.6033333333333334,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.46000000000003816,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 362,
+          "ball_anchors": 0,
+          "pairs": 362,
+          "shift_s": 1.9988837506450357,
+          "drift": 1.020150150761741,
+          "max_residual_s": 0.019223698486728225
+        }
+      ],
+      "wall_s": 1.4986931539606303
+    },
+    {
+      "case": "missing_balls_without_clock",
+      "accepted": 0,
+      "mapping_coverage": 0.0,
+      "false_alignment_rate": null,
+      "max_time_error_frames": null,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": false,
+          "reason": "no_second_anchor",
+          "clock_anchors": 0,
+          "ball_anchors": 0
+        }
+      ],
+      "wall_s": 1.4591959021054208
+    },
+    {
+      "case": "bad_homography",
+      "accepted": 0,
+      "mapping_coverage": 0.0,
+      "false_alignment_rate": null,
+      "max_time_error_frames": null,
+      "coverage_gain": 0.0,
+      "conflict_frames": 0,
+      "intersection_ball_error_median": null,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": false,
+          "reason": "insufficient_shape"
+        }
+      ],
+      "wall_s": 1.8819380230270326
+    },
+    {
+      "case": "coordinate_conflict",
+      "accepted": 362,
+      "mapping_coverage": 0.6033333333333334,
+      "false_alignment_rate": 0.0,
+      "max_time_error_frames": 0.46000000000003816,
+      "coverage_gain": 0.0,
+      "conflict_frames": 295,
+      "intersection_ball_error_median": 12.515034901960709,
+      "shots": [
+        {
+          "start": 0,
+          "end": 400,
+          "shot": 0,
+          "period": 1,
+          "accepted": true,
+          "reason": "synthetic_tolerance_pass_not_calibrated",
+          "clock_anchors": 362,
+          "ball_anchors": 0,
+          "pairs": 362,
+          "shift_s": 1.9988837506450357,
+          "drift": 1.020150150761741,
+          "max_residual_s": 0.019223698486728225
+        }
+      ],
+      "wall_s": 1.635827043093741
+    }
+  ],
+  "camera": {
+    "fixed_pan_max": 0.0,
+    "known_pan_pxps": 50.0,
+    "cut_detected": true,
+    "real_ball_prediction_information": "NOT_TESTED"
+  },
+  "decision": "NO_EVIDENCE_TO_PROMOTE_REAL_MULTIVIEW",
+  "protocol_sha256": "17d2e7b75d0b898ce10c9a33b140a392f05908ff60e760687207f6464a5e7d9d"
+}

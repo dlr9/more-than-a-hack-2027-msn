@@ -1,0 +1,57 @@
+[
+  {
+    "id": "P0",
+    "decision": "KEEP_CONTRACT",
+    "failure": "raw S unit and kloppy verification unavailable; derive from declared position/time only"
+  },
+  {
+    "id": "oracle_v1",
+    "decision": "REPAIR_BEFORE_SCORING",
+    "failure": "latent B cuts lost on merged directions"
+  },
+  {
+    "id": "oracle_v2",
+    "decision": "DIAGNOSTIC_ONLY",
+    "result": "72 complete scores; all ABC=truth; official ROI equivalence"
+  },
+  {
+    "id": "multiview_v1",
+    "decision": "REVERT_FUSION",
+    "failure": "wrong-ball control filled missing frames"
+  },
+  {
+    "id": "multiview_v2",
+    "decision": "KEEP_PROTOTYPE_NOT_PROMOTE",
+    "result": "conflicting shot no fills; only synthetic validation"
+  },
+  {
+    "id": "dynamic_v1",
+    "decision": "REPAIR_NUMERIC_ASSERT",
+    "failure": "zero atol rejected ~4e-17 roundoff; retain completed WPY result"
+  },
+  {
+    "id": "dynamic_v2",
+    "decision": "STOP_NO_TIMING_INCREMENT",
+    "result": "0/3 pass frozen gate; no fit"
+  },
+  {
+    "id": "public_images",
+    "decision": "INCOMPLETE",
+    "failure": "ENOSPC; no verified complete download or training; preserved 7072a6f"
+  },
+  {
+    "id": "paired_visual",
+    "decision": "BLOCKED_DATA_GATE",
+    "failure": "no verified lawful paired video plus full H/A/D and overlap audit; no access bypass"
+  },
+  {
+    "id": "saved_score_verify",
+    "decision": "PASS_72",
+    "failure": "Initial verifier JSON string-vs-float IoU keys repaired; no scored artifact modified"
+  },
+  {
+    "id": "clean_export",
+    "decision": "PASS_257",
+    "failure": "Initial export omitted shell wrappers; restored allowlisted .command files, no runtime change"
+  }
+]

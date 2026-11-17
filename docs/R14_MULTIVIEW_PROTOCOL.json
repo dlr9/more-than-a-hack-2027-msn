@@ -1,0 +1,41 @@
+{
+  "id": "R14_MULTIVIEW_V1",
+  "seed": 1401,
+  "source": "synthetic scene only, not external video",
+  "config": {
+    "max_shape_distance": 0.025,
+    "ambiguity_margin": 0.0001,
+    "max_reprojection_px": 2.0,
+    "min_pairs": 4,
+    "max_clock_error_s": 0.08,
+    "max_ball_error_m": 2.0,
+    "max_fit_residual_s": 0.12,
+    "drift_range": [
+      0.8,
+      1.25
+    ]
+  },
+  "scenarios": [
+    "self",
+    "offset_and_drift",
+    "team_swap",
+    "slot_permutation",
+    "replay",
+    "clock_wrong",
+    "shape_wrong_time",
+    "missing_balls_with_clock",
+    "missing_balls_without_clock",
+    "bad_homography",
+    "coordinate_conflict"
+  ],
+  "gate": "correct accepted mapping within1 reference frame; no second anchor/replay/conflict must reject; observed inputs preserved; default off exact. Passing is engineering only, NEVER production calibration.",
+  "camera": "fixed H, smoothly changing H and cut; center/pan dynamics and null fixed-camera signal; no real information gain claim",
+  "hashes": {
+    "multiview/contracts.py": "2e28ca8eeb828c0148173a409b3cd1730707712836fa7cdf422335b3a665d108",
+    "multiview/fingerprint.py": "819160f8174ca3b0f18c265343cfb03672e5cce998ed88159a5c84572204ac82",
+    "multiview/align.py": "db80b08289074349d19a4b80a80ee4be32f89aac5a4bf35122c404f237321564",
+    "multiview/fuse.py": "f3b5734f24ee3defba2a33534e7e4d2fb0b2266ddfff8a527f47a86809490820",
+    "multiview/camera.py": "60e064172323192be00a6246b40ecd16e9f5b2430efe8c2a798e5bfa77ef799d",
+    "scripts/research_r14_multiview.py": "2c3934ec599dacfbcbd77be809d42be6f63b0745339f83ff9c31d0110fd55588"
+  }
+}

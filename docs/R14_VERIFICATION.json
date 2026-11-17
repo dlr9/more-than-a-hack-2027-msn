@@ -1,0 +1,15 @@
+{
+  "oracle_saved_score_rechecks": 72,
+  "artifact_and_protocol_hashes": true,
+  "historical_source_versions_verified": true,
+  "unique_hash_checks": 34,
+  "timing_gate": false,
+  "decision": "NO_EVIDENCE_TO_PROMOTE",
+  "git_sha": "fd1e7ca9e777cb2c0052a97a01f0c23c3cb77c00",
+  "local_tests": 257,
+  "clean_source_tests": 257,
+  "clean_source_initial_failure": "Export omitted .command wrappers: 3 safety-wrapper assertions failed with127. Export repaired without modifying wrappers; full suite then passed.",
+  "verification_initial_failure": "JSON IoU keys deserialize as strings; verifier normalized numeric keys before comparison, no metric or artifact changed.",
+  "public_path_guard": "passed",
+  "limits": "Synthetic multi-view only; all 3 real matches previously consumed; no real visual model run or model promotion"
+}

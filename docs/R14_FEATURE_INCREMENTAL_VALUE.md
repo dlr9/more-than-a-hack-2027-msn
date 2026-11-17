@@ -1,0 +1,26 @@
+# R14 feature increment: actual external result is NO-GO
+
+Frozen before scoring: equal budget of 120 proposals per half, .5s NMS, ±1s untyped timing match. New signal is ball-free team-centroid velocity change across .8s; strong timing control is frozen Home probability change on the same window. Thirty-second time shift and time reversal are negative controls; slot/team permutations preserve features to 1e-12. No labels, event timestamps, Dead mask or new fitted model enter proposal generation. Ground-truth events enter only the evaluator. All three matches are reused development data.
+
+| Match | Dynamic precision | Probability precision | Recovered old misses: dynamic / probability / shift / reverse | Dynamic proposals on D |
+|---|---:|---:|---|---:|
+| J03WPY | 0.1042 | 0.3250 | 11 / 23 / 8 / 10 | 100/240 |
+| J03WOH | 0.0958 | 0.2708 | 17 / 16 / 9 / 8 | 125/240 |
+| J03WQQ | 0.1583 | 0.3167 | 15 / 13 / 11 / 12 | 128/240 |
+
+The preregistered gate requires ≥5 percentage-point missed-boundary-recall improvement over EACH baseline/control in at least 2/3 matches. Zero matches pass. Some old misses coincide with movement changes, but this is not reliable incremental evidence: timing precision is lower, and 100/125/128 proposals occur during D. Collective acceleration can reflect restarts, phase changes or source-track discontinuities rather than opponent acquisition. This experiment cannot discriminate those causes without independent observations, and it does not prove all player-motion representations fail. STOP this representation; no post-hoc filtering, parameter search or classifier fitting.
+
+Independent information audit: group reactions are derived from existing positions, not a new sensor. Interception returns future ground-ball reachability and lane clearance, never current possession or a calibrated acquisition probability. It is untested on real grounded-ball observations because this cache has no trusted ball height/grounded flag. Camera proxies and multiview are synthetic-only. ContactEvidence separates touch from sustain; WhistleEvidence is an interface only. No real contact/audio/visual model is claimed.
+
+The six complete natural/long HC_M3 evaluations were run through three disabled-switch modes; predictions are byte-identical, all official five-IoU scores unchanged, gained/lost matches zero. No calibrated residual-edit model exists; even an enabled channel without that gate is a no-op. Bounded edits never flip an unrestricted suffix and require separate Dead evidence to insert or remove D. No new model is promoted.
+
+Failure bookkeeping: V1 numerical permutation assertion used zero absolute tolerance and halted at values near 1e-15 with a maximum violating difference of 4.04e-17. V2 changes only the verification tolerance to 1e-12; the complete WPY V1 result is reused with its original protocol/code SHA. WOH/WQQ V2 rows retain their own SHA. This is not score-driven tuning. The repaired protocol also hashes the stricter singleton label validation in the disabled edit interface. Source/proposal hashes and actual coverage/speed audits are in the JSON, including natural missing-ball count zero.
+
+## Public visual routes: evidence and gates
+
+- [CropDrop author paper](https://arxiv.org/html/2512.19528v1): player crops plus positions/types can potentially add posture/context unavailable to centroid trajectories. The reported tactical dataset is proprietary; usable weights, license, overlap inventory and full H/A/D evaluation pairing are unverified. No inference run; no paper metric presented as our result.
+- [FOOTPASS primary repository](https://github.com/JeremieOchin/FOOTPASS): README blob e6c08950f5ffb1416167e3b5355d7011a709427e describes 54 broadcast matches (48/3/3), frame-anchored actions including Drive/Pass/Tackle, code/annotations CC BY-NC 4.0 and video access requiring SoccerNet NDA. Access conditions were not accepted or bypassed. Instant actions do not label sustained ownership or Dead. Pretrained inference checkpoint and complete possession pairing remain unverified; no large install.
+- [OSL model repository](https://huggingface.co/OpenSportsLab/OSL-loc-snbas-2025-e2e): inherited R12 audit pins revision 54e24a663a5a0ed057ef12cf16d9460d270ddc6e and AGPL-3.0 model route. CPU feasibility is not equivalent to available aligned legal video, action labels and complete H/A/D. No new download/inference; model scores cannot support competition claims.
+- Public ball-image dataset investigation remains a separate preserved attempt. Partial images, no completed checksum receipt and disk exhaustion are not a verified external detector evaluation. Randomly masking visible balls would not establish natural-missing performance anyway.
+
+Single next main research direction: independently labeled visual evidence of sustained control immediately after receipt/contact, measured on lawful OTHER-match video synchronized with complete H/A/D and non-events. First establish that paired dataset and overlap/license/identity contract; use negative timing/team controls and old missed short spells. If this data gate cannot be satisfied, stop model expansion and retain HC_M3. Do not rename the rejected motion signal or train on official five-minute GT.

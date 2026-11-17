@@ -1,0 +1,89 @@
+{
+  "decision": "NO_EVIDENCE_TO_PROMOTE",
+  "new_models": 0,
+  "fallback": "HC_M3/M3 unchanged",
+  "base": "49558064e0ebac6be5d1cc27b70523d69be61f92",
+  "historical_registry": "R13_MODEL_REGISTRY.json",
+  "runs": [
+    {
+      "name": "oracle",
+      "decision": "DIAGNOSTIC_ONLY",
+      "rows": [
+        {
+          "match": "J03WPY",
+          "domain": "natural",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "7c6bf05a125412a5f6c0c476567223769b9d97b31dc875b6ffd572b3bdb156aa",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        },
+        {
+          "match": "J03WPY",
+          "domain": "long",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "e5cb1abadb6cb295218af3f98c8a61303d40745249411ce58310ab6cb5621f72",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        },
+        {
+          "match": "J03WOH",
+          "domain": "natural",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "805a72196f465ecbdc20699051d27a252929ce3ce926c346a1ecf295df0b65f1",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        },
+        {
+          "match": "J03WOH",
+          "domain": "long",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "e70661e82c84da3759a447b76ef55377773751848cfcbcd66c93d1fccced8c41",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "natural",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "89dfb5989813753b4ec8bb1cd148eeb36fb757cf6456575c690fbc4e7fbf4f09",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        },
+        {
+          "match": "J03WQQ",
+          "domain": "long",
+          "git_sha": "861cea993e9b16e848136d9420c93db2d36adc5d",
+          "prediction_sha256": "3b73e544cb0e13572625aa483a8faa097c1f4f0cbedec12739393b2922eaa95e",
+          "protocol_sha256": "8e49f50fbc7a9bee5da6bfc016196ed601324e2324f48b3c063c8328c3e68b1a"
+        }
+      ]
+    },
+    {
+      "name": "dynamic",
+      "decision": "STOP_NO_TIMING_INCREMENT",
+      "rows": [
+        {
+          "match": "J03WPY",
+          "git_sha": "cfc8b10158e726da2f83022f3ed689a719cba74d",
+          "proposal_sha256": "69aa9a4aec6699391ef4b5117b77a0775b25d9135ab2adfbaa7fb4c33ebda34e",
+          "protocol_sha256": "dc55bcc2a25eebf305c0386a1af5ba4e6da76242f585de7d07222a3791784ca0"
+        },
+        {
+          "match": "J03WOH",
+          "git_sha": "fd1e7ca9e777cb2c0052a97a01f0c23c3cb77c00",
+          "proposal_sha256": "a6727ce6fe18a246a8f2265196ee446b78008d0f034e004987a80b7a11fa73a8",
+          "protocol_sha256": "e75433ad81c09c31c86b58bf91a7072aa8773965672d52b325733941702322d6"
+        },
+        {
+          "match": "J03WQQ",
+          "git_sha": "fd1e7ca9e777cb2c0052a97a01f0c23c3cb77c00",
+          "proposal_sha256": "fd8c255593c7649a11f3e667e89d9ac8f72400ce1f91f805da46e99cb930c69d",
+          "protocol_sha256": "e75433ad81c09c31c86b58bf91a7072aa8773965672d52b325733941702322d6"
+        }
+      ]
+    },
+    {
+      "name": "multiview_v1",
+      "decision": "FAIL_CONFLICT_FILL"
+    },
+    {
+      "name": "multiview_v2",
+      "decision": "SYNTHETIC_ONLY"
+    }
+  ]
+}
