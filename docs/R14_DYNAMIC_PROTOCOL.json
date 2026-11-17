@@ -1,0 +1,37 @@
+{
+  "id": "R14_DYNAMIC_V1",
+  "source": "3 consumed public DFL development matches; no target, no independent sensor",
+  "hypothesis": "Ball-free collective velocity changes localize direct control changes missed by frozen probability-change timing.",
+  "signals": "Sum over teams of centroid-velocity change norm at t-.4s vs t+.4s. All positions in metres, fps25, identity/gap/half reset. Teams exchange invariant. No labels/events in inputs.",
+  "baseline": "Frozen C1 Home probability absolute change over same .8s window; HC_M3 hard-boundary misses evaluator only",
+  "controls": [
+    "shift30s_perhalf",
+    "reverse_time_perhalf",
+    "team_swap",
+    "slot_permutation"
+  ],
+  "budget": "120 proposals per continuous block, .5s NMS, same for all methods; none filtered by GT",
+  "gate": ">=2/3 matches missed-boundary-recall increase>=.05 vs probability AND shift AND reverse controls; otherwise STOP, no fits or tuning. Passing cannot promote without full independent spell gain.",
+  "dead_and_missing": "All-timeline proposals; D false proposals reported. Natural ball missing zero; ball-free features identical under synthetic mask, no natural-missing evidence.",
+  "speed": "Derive from explicit metres and25FPS source contract; reported S/3.6 only audited, not used. Raw-speed unit metadata and kloppy unavailable => UNVERIFIED, no claim teammate bug.",
+  "default_off": "All three switches exact baseline bytes, 6 complete domain/match official scores; no edits because no independently calibrated edit gate.",
+  "hashes": {
+    "solution/observation_contract.py": "68756fabe2c1984d38c50cf3e11bd8f3966ede280aebb2d1d081b8f8dce07158",
+    "solution/group_reactions.py": "259be02c5f977c2aeaf68188bd2d969b0ae53df70074f9a757cb61dbbfd3899a",
+    "solution/multimodal_evidence.py": "d75dcf68f033aa22e54cfab134f0ba3e00b8e64720848cbec1d735eaf8120793",
+    "scripts/research_r14_dynamic.py": "cbbb28458e99f135e8f3efbe85fe00721abf2739c2d68ea0912121c8d3f9424b",
+    "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+    "local_artifacts/r6/prepared/J03WPY/raw.npz": "673abd10e7bb5bbab867595da7d663f967d3df531d7aa12d05f5f6a24d95bf0c",
+    "local_artifacts/r8/e08c/J03WPY-natural.npz": "f4aea9f92c36c60c4542a7de0d54eae8eae32ee61d4146447d73c03257a72107",
+    "local_artifacts/r12/global-v1/J03WPY-natural.npz": "bc7c5f4100e6312e47e691f9199912e69942655f34146882f7fde490a6cecc88",
+    "local_artifacts/r12/global-v1/J03WPY-long.npz": "ba285ab456c2fda98eddac41f61098c2abfa62ecda9091400bdd662d562f049e",
+    "local_artifacts/r6/prepared/J03WOH/raw.npz": "4fee61d723c90bf470852472a32df3f1e3f96f48092038b8b6f04da2bdc57899",
+    "local_artifacts/r8/e08c/J03WOH-natural.npz": "3f257c01678f996097fc00b5c77f0a3939fd9883741ed00dfe5ca5030f6eba72",
+    "local_artifacts/r12/global-v1/J03WOH-natural.npz": "b066540c07b956fa6dad660b71bb0c1fc7140dc62abc1073827761700d96f709",
+    "local_artifacts/r12/global-v1/J03WOH-long.npz": "82c16f2b80892f487d3a305102ae02b8b39df83fd32e90c98cf5892b47630908",
+    "local_artifacts/r6/prepared/J03WQQ/raw.npz": "fe13bf275ae7d26688bf9097cf34471479cb96374d3a0c30b077d805722f734e",
+    "local_artifacts/r8/e08c/J03WQQ-natural.npz": "116d6ba6b45a596bdecd95af39bbda63b6cd111767c981315fed0c16acc1bb25",
+    "local_artifacts/r12/global-v1/J03WQQ-natural.npz": "f3621029ef9a0392654b622ec118e2d304799c5ab9610c75b4b64a83e8c57b48",
+    "local_artifacts/r12/global-v1/J03WQQ-long.npz": "080e8d48d9483fa5059b474afc79f009fe4c8cf2689791f1c226fc3c50bd748d"
+  }
+}
